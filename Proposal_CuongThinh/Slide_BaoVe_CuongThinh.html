@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảo vệ Đề cương Tiến sĩ - NCS Nguyễn Cường Thịnh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+    <style>
+        :root {
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --gold: #c9a94e;
+            --gold-light: #e0c97a;
+            --white: #ffffff;
+            --gray: #e2e8f0;
+            --text: #1e293b;
+            --accent-red: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .deck {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            padding: 60px 80px;
+            background: var(--white);
+            overflow: hidden;
+        }
+        .slide.active { display: flex; }
+
+        /* === SLIDE TYPES === */
+        .slide-title {
+            background: var(--navy);
+            color: var(--white);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide-title .uni-badge {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .slide-title h1 {
+            font-family: 'Noto Serif', serif;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.5;
+            max-width: 950px;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+        .slide-title .meta {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+        .slide-title .meta strong { color: var(--gold-light); }
+        .slide-title .gold-line {
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 25px auto;
+        }
+
+        .slide-section {
+            background: var(--navy);
+            color: var(--white);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide-section .section-num {
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        .slide-section h2 {
+            font-family: 'Noto Serif', serif;
+            font-size: 36px;
+            margin-top: 10px;
+        }
+
+        .slide-content {
+            background: var(--white);
+        }
+
+        /* === HEADER BAR === */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--navy);
+            margin-bottom: 30px;
+            flex-shrink: 0;
+        }
+        .header-bar h2 {
+            font-family: 'Noto Serif', serif;
+            font-size: 24px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+        .header-bar .slide-tag {
+            font-size: 12px;
+            color: var(--gold);
+            background: var(--navy);
+            padding: 4px 14px;
+            border-radius: 3px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* === CONTENT === */
+        .content-body {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .content-body h3 {
+            font-size: 18px;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .content-body p, .content-body li {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text);
+        }
+        .content-body ul {
+            padding-left: 20px;
+        }
+        .content-body li {
+            margin-bottom: 8px;
+        }
+        .content-body li strong {
+            color: var(--navy);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+        .three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            flex: 1;
+        }
+
+        .highlight-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--navy);
+            padding: 15px 20px;
+            border-radius: 0 6px 6px 0;
+            margin-top: 5px;
+        }
+        .highlight-box p {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .gap-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+        }
+        .gap-card .gap-num {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Noto Serif', serif;
+        }
+        .gap-card h4 {
+            font-size: 14px;
+            color: var(--navy);
+            margin: 10px 0;
+            font-weight: 700;
+        }
+        .gap-card p {
+            font-size: 12.5px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            background: var(--navy);
+            color: var(--white);
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        .stat-item .num {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .stat-item .label {
+            font-size: 11px;
+            margin-top: 5px;
+            color: #94a3b8;
+        }
+
+        .hyp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+        }
+        .hyp-table th {
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .hyp-table td {
+            padding: 8px 14px;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--text);
+        }
+        .hyp-table tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+        .hyp-table .dir-pos { color: #16a34a; font-weight: 700; }
+        .hyp-table .dir-neg { color: var(--accent-red); font-weight: 700; }
+        .hyp-table .dir-mod { color: var(--gold); font-weight: 700; }
+
+        /* Model SVG */
+        .model-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .model-container svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* === FOOTER === */
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 11px;
+            color: #94a3b8;
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+
+        /* === NAVIGATION === */
+        .nav-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+        .nav-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid var(--navy);
+            background: var(--white);
+            color: var(--navy);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+        .nav-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 28px;
+            left: 30px;
+            font-size: 13px;
+            color: #64748b;
+            z-index: 100;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        @media print {
+            .slide { page-break-after: always; display: flex !important; position: relative; height: 100vh; }
+            .nav-controls, .slide-counter { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+    <!-- ==================== SLIDE 1: TITLE ==================== -->
+    <div class="slide slide-title active" data-slide="1">
+        <div class="uni-badge">Trường Đại học Nha Trang</div>
+        <div class="gold-line"></div>
+        <h1>Tác động của tương tác AI Chatbot đến hành vi mua sắm thiết bị điện tử của người tiêu dùng thế hệ Z:<br/>Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý</h1>
+        <div class="gold-line"></div>
+        <div class="meta">
+            <strong>Nghiên cứu sinh:</strong> Nguyễn Cường Thịnh<br/>
+            <strong>Chuyên ngành:</strong> Quản trị Kinh doanh — Mã số: 9340101<br/>
+            <strong>Bảo vệ Đề cương Dự tuyển Nghiên cứu sinh</strong>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 2: NỘI DUNG TRÌNH BÀY ==================== -->
+    <div class="slide slide-content" data-slide="2">
+        <div class="header-bar">
+            <h2>Nội dung Trình bày</h2>
+            <span class="slide-tag">TỔNG QUAN</span>
+        </div>
+        <div class="content-body" style="justify-content: center;">
+            <div style="max-width: 750px; margin: 0 auto; width: 100%;">
+                <ol style="font-size: 19px; line-height: 2.2; list-style-type: none; padding: 0;">
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 6px 0;"><strong style="color: var(--gold); margin-right: 15px;">01</strong> Lý do chọn đề tài & Sự cấp thiết</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 6px 0;"><strong style="color: var(--gold); margin-right: 15px;">02</strong> Tổng quan lý thuyết & Khoảng trống nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 6px 0;"><strong style="color: var(--gold); margin-right: 15px;">03</strong> Mục tiêu & Câu hỏi nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 6px 0;"><strong style="color: var(--gold); margin-right: 15px;">04</strong> Đối tượng & Phạm vi nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 6px 0;"><strong style="color: var(--gold); margin-right: 15px;">05</strong> Mô hình nghiên cứu & Giả thuyết</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 6px 0;"><strong style="color: var(--gold); margin-right: 15px;">06</strong> Thiết kế thực nghiệm & Phương pháp nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 6px 0;"><strong style="color: var(--gold); margin-right: 15px;">07</strong> Đóng góp dự kiến & Kế hoạch thực hiện</li>
+                </ol>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 3: BỐI CẢNH THỰC TIỄN ==================== -->
+    <div class="slide slide-content" data-slide="3">
+        <div class="header-bar">
+            <h2>1. Bối cảnh thực tiễn & Sự bùng nổ của AI</h2>
+            <span class="slide-tag">LÝ DO CHỌN ĐỀ TÀI</span>
+        </div>
+        <div class="content-body">
+            <div class="stat-row">
+                <div class="stat-item">
+                    <div class="num">30%</div>
+                    <div class="label">Tỷ lệ dân số Gen Z<br/>tại đô thị VN (2025)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">72%</div>
+                    <div class="label">Khách hàng Gen Z ưu tiên<br/>giao diện tự phục vụ/AI</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">100%</div>
+                    <div class="label">Doanh nghiệp bán lẻ hàng đầu<br/>tích hợp Conversational AI</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">1.5 tỷ USD</div>
+                    <div class="label">Quy mô thị trường thiết bị<br/>điện tử cá nhân VN (2024)</div>
+                </div>
+            </div>
+            <div class="two-col" style="margin-top: 15px;">
+                <div>
+                    <h3>Gen Z - Thế hệ "Bản địa số" thực thụ</h3>
+                    <ul>
+                        <li>Đòi hỏi tốc độ phản hồi tức thì và tính cá nhân hóa cực cao trong trải nghiệm.</li>
+                        <li>Quyết định mua sắm laptop, PC mang tính <strong>liên kết cao (high-involvement)</strong>, đòi hỏi so sánh kỹ thuật phức tạp.</li>
+                        <li>AI Chatbot hội thoại (Conversational AI) trở thành công cụ tư vấn tối ưu hoạt động 24/7.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Cuộc đua Conversational AI</h3>
+                    <ul>
+                        <li>Các chuỗi lớn (TGDĐ, FPT Shop, CellphoneS) tích hợp LLM Chatbots vào tư vấn kỹ thuật.</li>
+                        <li>Năng lực tổng hợp dữ liệu cấu hình, linh kiện cực lớn trong tích tắc của AI vượt trội so với con người.</li>
+                        <li>Giảm thiểu rào cản bất cân xứng thông tin, thúc đẩy hành vi mua sắm nhanh chóng.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <p><strong>Bối cảnh cốt lõi:</strong> Doanh nghiệp bán lẻ thiết bị điện tử đang phụ thuộc mạnh mẽ vào tư vấn thuật toán thông minh để thuyết phục Gen Z. Tuy nhiên, sự can thiệp của thuật toán đang tạo ra các phản ứng tâm lý học phức tạp.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 4: NGHỊCH LÝ HÀNH VI ==================== -->
+    <div class="slide slide-content" data-slide="4">
+        <div class="header-bar">
+            <h2>1. Nghịch lý hành vi: Mặt sáng & Mặt tối của AI</h2>
+            <span class="slide-tag">LÝ DO CHỌN ĐỀ TÀI</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3 style="color: #16a34a;">Mặt sáng: Sự đánh giá cao thuật toán</h3>
+                    <div style="background: rgba(22, 163, 74, 0.05); border-left: 4px solid #16a34a; padding: 15px; border-radius: 0 6px 6px 0;">
+                        <p style="margin-bottom: 8px;"><strong>Algorithm Appreciation (Logg et al., 2019):</strong></p>
+                        <p style="font-size: 13.5px; margin-bottom: 8px;">• Khách hàng tin tưởng thuật toán khách quan, không thiên vị, không bị chi phối bởi KPI doanh số hay hoa hồng.</p>
+                        <p style="font-size: 13.5px;">• Thiết kế <strong>Nhân hóa (Anthropomorphism)</strong> và <strong>Cá nhân hóa (Personalization)</strong> giúp xây dựng <strong>Niềm tin thuật toán (Algorithmic Trust)</strong> vững chắc.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-red);">Mặt tối: Sự kháng cự tâm lý</h3>
+                    <div style="background: rgba(220, 38, 38, 0.05); border-left: 4px solid var(--accent-red); padding: 15px; border-radius: 0 6px 6px 0;">
+                        <p style="margin-bottom: 8px;"><strong>Psychological Reactance Theory (Brehm, 1966):</strong></p>
+                        <p style="font-size: 13.5px; margin-bottom: 8px;">• Sự can thiệp quá mức, định hướng lộ liễu, hối thúc mua hàng của AI kích hoạt cảm giác bị theo dõi và mất tự do chọn lựa.</p>
+                        <p style="font-size: 13.5px;">• Sự xâm nhập cảm nhận dẫn đến <strong>Sự kháng cự tâm lý (Psychological Reactance)</strong>, kích hoạt hành vi né tránh, tẩy chay sản phẩm.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 15px;">
+                <p><strong>Nghịch lý nghiên cứu:</strong> Tính cá nhân hóa là con dao hai lưỡi. Một mặt thúc đẩy niềm tin thuật toán, mặt khác đánh thức sự phản kháng tự vệ của khách hàng. Doanh nghiệp cần tìm ra điểm bùng phát (tipping point) để cân bằng trải nghiệm tương tác.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 5: TỔNG QUAN TÀI LIỆU ==================== -->
+    <div class="slide slide-content" data-slide="5">
+        <div class="header-bar">
+            <h2>2. Tổng quan tài liệu & Các dòng nghiên cứu</h2>
+            <span class="slide-tag">TỔNG QUAN TÀI LIỆU</span>
+        </div>
+        <div class="content-body">
+            <table class="hyp-table" style="font-size: 12.5px;">
+                <thead>
+                <tr><th style="width:18%">Tác giả (Năm)</th><th style="width:20%">Bối cảnh</th><th style="width:22%">Biến chính</th><th style="width:22%">Phát hiện chính</th><th style="width:18%">Khoảng trống</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>Awad & Krishnan (2006)</td><td>Thương mại điện tử tĩnh</td><td>Personalization, Privacy Paradox</td><td>Nghịch lý giữa cá nhân hóa và nỗi lo sợ mất quyền riêng tư.</td><td>Chưa có AI hội thoại tương tác thực.</td></tr>
+                <tr><td>Dietvorst et al. (2015)</td><td>Dự báo định lượng chung</td><td>Algorithm Aversion</td><td>Con người mất niềm tin vào thuật toán nhanh hơn con người khi máy mắc lỗi.</td><td>LLM hiện đại đã đảo ngược hiện tượng này.</td></tr>
+                <tr><td>Logg et al. (2019)</td><td>Quyết định đầu tư số</td><td>Algorithm Appreciation</td><td>Con người thích tin vào lời khuyên định lượng hơn chuyên gia con người.</td><td>Bỏ qua biến số phản kháng, ép buộc.</td></tr>
+                <tr><td>Pelau et al. (2021)</td><td>Dịch vụ khách hàng</td><td>Anthropomorphism, Acceptance</td><td>Nhân hóa kích hoạt vùng não xã hội, tăng sự đồng cảm và hài lòng.</td><td>Chưa xem xét tính xâm nhập cảm nhận.</td></tr>
+                <tr><td>White et al. (2008)</td><td>Marketing trực tiếp (Email)</td><td>Psychological Reactance</td><td>Cá nhân hóa quá sâu dẫn đến phản kháng và né tránh thương hiệu.</td><td>Chưa áp dụng cho tác nhân thông minh.</td></tr>
+                </tbody>
+            </table>
+            <div class="highlight-box" style="margin-top: 5px;">
+                <p><strong>Nhận định khoảng trống:</strong> Các nghiên cứu chấp nhận công nghệ truyền thống (TAM, UTAUT) tiếp cận phiến diện theo hướng tích cực, xem AI là công cụ thụ động, bỏ qua cơ chế phản kháng phòng vệ tự nhiên khi con người tương tác với các thuật toán có năng lực thao túng.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 6: KHUNG LÝ THUYẾT ==================== -->
+    <div class="slide slide-content" data-slide="6">
+        <div class="header-bar">
+            <h2>2. Khung Lý thuyết tích hợp S-O-R và PRT</h2>
+            <span class="slide-tag">TỔNG QUAN TÀI LIỆU</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Khung S-O-R (Stimulus-Organism-Response)</h3>
+                    <p>Cung cấp lăng kính theo dõi biến đổi tâm lý học của khách hàng thông qua 3 thành phần:</p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Stimulus (S - Kích thích):</strong> Các điểm chạm thiết kế tương tác bao gồm: Tính cá nhân hóa (PP), Tính nhân hóa (PA), Sự xâm nhập cảm nhận (PI).</li>
+                        <li><strong>Organism (O - Cơ thể/Tâm lý):</strong> Hộp đen tâm lý diễn ra hai luồng đối lập song song: Niềm tin thuật toán (AT) và Sự kháng cự tâm lý (AR).</li>
+                        <li><strong>Response (R - Phản hồi):</strong> Hành vi kinh tế: Chấp nhận lời khuyên (RA) và Ý định mua sắm (PUR).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Lý thuyết Kháng cự Tâm lý (PRT)</h3>
+                    <p>Brehm (1966) - Bản chất con người luôn khao khát bảo vệ tự do lựa chọn (freedom of choice):</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Khi tự do lựa chọn bị thu hẹp hoặc đe dọa bởi tác nhân ngoại sinh (AI ép chốt đơn), con người nảy sinh kháng cự tâm lý.</li>
+                        <li>Phản ứng tự nhiên là thực hiện hành vi ngược lại với khuyến nghị để khôi phục cảm giác tự chủ.</li>
+                        <li>Tích hợp PRT giúp giải mã vùng tối của hành vi chấp nhận AI trong thương mại số.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <p><strong>Sự đóng góp lý thuyết:</strong> Việc mô hình hóa song song sự tồn tại của Niềm tin (Trust) và Phản kháng (Reactance) phản ánh chính xác nhất thực tế tâm lý giằng xé của Gen Z khi đối mặt với tác nhân AI siêu thông minh.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 7: MỤC TIÊU & CÂU HỎI ==================== -->
+    <div class="slide slide-content" data-slide="7">
+        <div class="header-bar">
+            <h2>3. Mục tiêu & Câu hỏi Nghiên cứu</h2>
+            <span class="slide-tag">MỤC TIÊU</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Mục tiêu tổng quát</h3>
+                    <p>Xây dựng và kiểm định mô hình tác động kép (Dual-path) giải thích cơ chế ảnh hưởng của tương tác AI Chatbot đến ý định mua sắm thiết bị điện tử của Gen Z thông qua hai phản ứng tâm lý đối lập: Niềm tin thuật toán và Sự kháng cự tâm lý.</p>
+                    <h3 style="margin-top: 20px;">Mục tiêu cụ thể</h3>
+                    <ol style="padding-left: 18px; font-size: 14px;">
+                        <li>Đo lường tác động của các kích thích tương tác AI (Nhân hóa, Cá nhân hóa, Xâm nhập) đến tâm lý khách hàng.</li>
+                        <li>Kiểm định vai trò trung gian tích cực của Niềm tin thuật toán và vai trò trung gian kìm hãm của Kháng cự tâm lý.</li>
+                        <li>Xác lập tính chất hai mặt (Dual-effect) của sự cá nhân hóa.</li>
+                        <li>Đề xuất hàm ý thiết kế giao diện CX/UI tối ưu hóa tỷ lệ chuyển đổi mà không gây phản tác dụng.</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>Câu hỏi nghiên cứu</h3>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 10px;">
+                        <p style="margin-bottom: 12px; font-size: 14.5px;"><strong>RQ1:</strong> Các kích thích giao tiếp từ AI Chatbot tác động như thế nào đến việc hình thành Niềm tin thuật toán và Sự kháng cự tâm lý ở Gen Z?</p>
+                        <p style="margin-bottom: 12px; font-size: 14.5px;"><strong>RQ2:</strong> Liệu có tồn tại cơ chế trung gian kép (Dual-mediation) đối lập nhau trong việc điều hướng hành vi chấp nhận lời khuyên của AI?</p>
+                        <p style="font-size: 14.5px;"><strong>RQ3:</strong> Điểm bùng phát (tipping point) nào của Tính cá nhân hóa sẽ biến sự thấu hiểu công nghệ thành sự xâm nhập quyền riêng tư?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 8: PHẠM VI NGHIÊN CỨU ==================== -->
+    <div class="slide slide-content" data-slide="8">
+        <div class="header-bar">
+            <h2>4. Phạm vi & Đối tượng Nghiên cứu</h2>
+            <span class="slide-tag">PHẠM VI NGHIÊN CỨU</span>
+        </div>
+        <div class="content-body" style="justify-content: center;">
+            <div class="three-col">
+                <div class="gap-card">
+                    <div class="gap-num">01</div>
+                    <h4>Đối tượng nghiên cứu</h4>
+                    <p>Bản chất cơ chế tác động tâm lý kép (Niềm tin thuật toán và Sự kháng cự tâm lý) và hành vi mua sắm thiết bị điện tử khi tương tác với AI Chatbot.</p>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-num">02</div>
+                    <h4>Đối tượng khảo sát</h4>
+                    <p>Khách hàng thế hệ Z (sinh năm 1997 - 2012) đang sinh sống, học tập và làm việc tại khu vực đô thị trọng điểm TP. Hồ Chí Minh.</p>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-num">03</div>
+                    <h4>Phạm vi ngữ cảnh</h4>
+                    <p>Môi trường tương tác dựa trên văn bản tự nhiên (Text-based / LLM AI Chatbot). Ngành hàng thiết bị điện tử cá nhân giá trị cao (Laptop, PC, Tablet).</p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 20px;">
+                <p><strong>Lý do chọn TP.HCM và ngành điện tử:</strong> TP.HCM là trung tâm công nghệ và kinh tế lớn nhất, tập trung tệp Gen Z tiên phong tiêu dùng số. Sản phẩm công nghệ là sản phẩm phức tạp, cần tư vấn thông số kỹ thuật sâu, phát huy tối đa năng lực của AI.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 9: MÔ HÌNH NGHIÊN CỨU ==================== -->
+    <div class="slide slide-content" data-slide="9">
+        <div class="header-bar">
+            <h2>5. Mô hình Nghiên cứu đề xuất (Dual-path Model)</h2>
+            <span class="slide-tag">MÔ HÌNH</span>
+        </div>
+        <div class="content-body">
+            <div class="model-container">
+                <svg viewBox="0 0 1250 440" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px; width: 100%; font-family: 'Inter', sans-serif;">
+                    <defs>
+                        <!-- Unified rigorous academic black arrowhead -->
+                        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="#000000"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Subgraph boxes (Academic standard: solid thin black outlines, no fills) -->
+                    <!-- Stimulus (S) -->
+                    <rect x="20" y="30" width="220" height="340" rx="0" fill="none" stroke="#000000" stroke-width="1"/>
+                    <text x="130" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#000000">Stimulus (S)</text>
+
+                    <!-- Organism (O) -->
+                    <rect x="290" y="30" width="320" height="340" rx="0" fill="none" stroke="#000000" stroke-width="1"/>
+                    <text x="450" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#000000">Organism (O)</text>
+
+                    <!-- Response (R) -->
+                    <rect x="650" y="30" width="580" height="340" rx="0" fill="none" stroke="#000000" stroke-width="1"/>
+                    <text x="940" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#000000">Response (R)</text>
+
+                    <!-- Nodes (Academic standard: white background, thin black border, sharp corners) -->
+                    <!-- Stimulus Nodes -->
+                    <!-- PP (Perceived Personalization) -->
+                    <rect x="40" y="80" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="130" y="101" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Perceived Personalization</text>
+                    <text x="130" y="117" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(PP)</text>
+
+                    <!-- PA (Perceived Anthropomorphism) -->
+                    <rect x="40" y="190" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="130" y="211" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Perceived Anthropomorphism</text>
+                    <text x="130" y="227" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(PA)</text>
+
+                    <!-- PI (Perceived Intrusiveness) -->
+                    <rect x="40" y="300" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="130" y="321" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Perceived Intrusiveness</text>
+                    <text x="130" y="337" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(PI)</text>
+
+                    <!-- Organism Nodes -->
+                    <!-- AT (Algorithmic Trust) -->
+                    <rect x="360" y="120" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="450" y="141" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Algorithmic Trust</text>
+                    <text x="450" y="157" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(AT)</text>
+
+                    <!-- AR (Psychological Reactance) -->
+                    <rect x="360" y="260" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="450" y="281" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Psychological Reactance</text>
+                    <text x="450" y="297" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(AR)</text>
+
+                    <!-- Response Nodes -->
+                    <!-- RA (Recommendation Adoption) -->
+                    <rect x="680" y="190" width="200" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="780" y="211" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Recommendation Adoption</text>
+                    <text x="780" y="227" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(RA)</text>
+
+                    <!-- PUR (Purchase Intention) -->
+                    <rect x="1000" y="190" width="200" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="1100" y="211" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Purchase Intention</text>
+                    <text x="1100" y="227" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(PUR)</text>
+
+                    <!-- Connections & Arrows (Strictly straight hard lines, black, 8px buffer) -->
+                    <!-- H1a: PP → AT -->
+                    <line x1="220" y1="103" x2="352" y2="139" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="235" y="99" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="256" y="111" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H1a (+)</text>
+                    </g>
+
+                    <!-- H1b: PA → AT -->
+                    <line x1="220" y1="213" x2="352" y2="147" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="235" y="189" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="256" y="201" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H1b (+)</text>
+                    </g>
+
+                    <!-- H2a: PP → AR (Dual effect of personalization) -->
+                    <line x1="220" y1="103" x2="352" y2="279" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="295" y="212" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="316" y="224" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H2a (+)</text>
+                    </g>
+
+                    <!-- H2b: PI → AR -->
+                    <line x1="220" y1="323" x2="352" y2="287" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="235" y="301" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="256" y="313" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H2b (+)</text>
+                    </g>
+
+                    <!-- H3: AT → RA -->
+                    <line x1="540" y1="143" x2="672" y2="209" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="562" y="152" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="583" y="164" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H3 (+)</text>
+                    </g>
+
+                    <!-- H4: AR → RA -->
+                    <line x1="540" y1="283" x2="672" y2="217" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="562" y="252" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="583" y="264" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H4 (-)</text>
+                    </g>
+
+                    <!-- H5: RA → PUR -->
+                    <line x1="880" y1="213" x2="992" y2="213" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="915" y="204" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="936" y="216" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H5 (+)</text>
+                    </g>
+                </svg>
+            </div>
+            <p style="text-align: center; font-size: 13px; color: #64748b; font-style: italic;">Hình 1. Sơ đồ mô hình nghiên cứu tác động kép tích hợp S-O-R và PRT</p>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 10: GIẢ THUYẾT NGHIÊN CỨU ==================== -->
+    <div class="slide slide-content" data-slide="10">
+        <div class="header-bar">
+            <h2>5. Hệ thống Giả thuyết Nghiên cứu</h2>
+            <span class="slide-tag">GIẢ THUYẾT</span>
+        </div>
+        <div class="content-body">
+            <table class="hyp-table">
+                <thead>
+                <tr><th style="width:10%">Giả thuyết</th><th style="width:10%">Chiều</th><th style="width:40%">Quan hệ tác động đề xuất</th><th style="width:40%">Cơ sở lý thuyết biện luận</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>H1a</td><td class="dir-pos">+</td><td>Tính cá nhân hóa (PP) → Niềm tin thuật toán (AT)</td><td>Algorithm Appreciation (Logg et al., 2019)</td></tr>
+                <tr><td>H1b</td><td class="dir-pos">+</td><td>Tính nhân hóa (PA) → Niềm tin thuật toán (AT)</td><td>Social Response Theory (Waytz et al., 2014)</td></tr>
+                <tr><td>H2a</td><td class="dir-pos">+</td><td>Tính cá nhân hóa (PP) → Kháng cự tâm lý (AR)</td><td>Privacy Paradox (Awad & Krishnan, 2006)</td></tr>
+                <tr><td>H2b</td><td class="dir-pos">+</td><td>Sự xâm nhập cảm nhận (PI) → Kháng cự tâm lý (AR)</td><td>Psychological Reactance Theory (Brehm, 1966)</td></tr>
+                <tr><td>H3</td><td class="dir-pos">+</td><td>Niềm tin thuật toán (AT) → Chấp nhận lời khuyên (RA)</td><td>Technology Trust Models (Gefen et al., 2003)</td></tr>
+                <tr><td>H4</td><td class="dir-neg">−</td><td>Kháng cự tâm lý (AR) → Chấp nhận lời khuyên (RA)</td><td>Reactance Backfire Effect (Dillard & Shen, 2005)</td></tr>
+                <tr><td>H5</td><td class="dir-pos">+</td><td>Chấp nhận lời khuyên (RA) → Ý định mua sắm (PUR)</td><td>Theory of Reasoned Action (TRA/UTAUT)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 11: THIẾT KẾ THỰC NGHIỆM ==================== -->
+    <div class="slide slide-content" data-slide="11">
+        <div class="header-bar">
+            <h2>5. Thiết kế Thực nghiệm Factorial 2×2</h2>
+            <span class="slide-tag">PHƯƠNG PHÁP</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Phương pháp nghiên cứu thực nghiệm</h3>
+                    <ul>
+                        <li>Cô lập hoàn toàn các yếu tố nhiễu ngoại lai (như ác cảm thương hiệu từ trước).</li>
+                        <li>Sử dụng kịch bản hội thoại mô phỏng với Chatbot của cửa hàng giả định <strong>"TechZone"</strong>.</li>
+                        <li>Phân bổ ngẫu nhiên <strong>(Random Assignment)</strong> đáp viên vào 1 trong 4 ô thực nghiệm:</li>
+                    </ul>
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <p><strong>Ý nghĩa thiết thực:</strong> Thiết kế này giúp xác định chính xác hành vi phản kháng phát sinh từ sự "ép buộc" của thuật toán so với sự "tự do tự quyết" của người dùng.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>Ma trận thực nghiệm Factorial 2×2</h3>
+                    <table class="hyp-table" style="margin-top: 10px;">
+                        <thead>
+                        <tr>
+                            <th>Yếu tố tác động</th>
+                            <th>Mức 1: Nhân hóa & Cá nhân hóa cao (PA & PP)</th>
+                            <th>Mức 2: Nhân hóa & Cá nhân hóa thấp</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>Ép buộc/Xâm nhập cao (PI)</strong></td>
+                            <td style="background: rgba(220, 38, 38, 0.05);"><strong>Nhóm 1:</strong> Chatbot gọi tên, xưng "em" + Ép chốt Laptop trong 5 phút.</td>
+                            <td><strong>Nhóm 2:</strong> Chatbot xưng "hệ thống" + Ép chốt dòng laptop cố định.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ép buộc/Xâm nhập thấp</strong></td>
+                            <td><strong>Nhóm 3:</strong> Chatbot gọi tên, xưng "em" + Liệt kê 3 option gợi ý tùy chọn tự do.</td>
+                            <td style="background: rgba(22, 163, 74, 0.05);"><strong>Nhóm 4:</strong> Chatbot xưng "hệ thống" + Liệt kê 3 option gợi ý tùy chọn tự do.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 12: THANG ĐO & LẤY MẪU ==================== -->
+    <div class="slide slide-content" data-slide="12">
+        <div class="header-bar">
+            <h2>5. Thang đo Đo lường & Quy trình lấy mẫu</h2>
+            <span class="slide-tag">PHƯƠNG PHÁP</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Thang đo đo lường (Likert 7 điểm)</h3>
+                    <ul>
+                        <li><strong>Tính cá nhân hóa (PP)</strong> - 3 biến quan sát: Kế thừa từ <em>Awad & Krishnan (2006)</em>. Đo lường sự ăn khớp nhu cầu.</li>
+                        <li><strong>Tính nhân hóa (PA)</strong> - 3 biến quan sát: Kế thừa từ <em>Waytz et al. (2014)</em>. Đo lường cảm giác giao tiếp xã hội tự nhiên.</li>
+                        <li><strong>Sự xâm nhập cảm nhận (PI)</strong> - 3 biến quan sát: Kế thừa từ <em>Barth & de Jong (2017)</em>. Đo lường sự cản trở tự do lựa chọn.</li>
+                        <li><strong>Niềm tin thuật toán (AT)</strong> - 4 biến quan sát: Kế thừa từ <em>Logg et al. (2019)</em>. Đo lường độ khách quan dữ liệu.</li>
+                        <li><strong>Sự kháng cự tâm lý (AR)</strong> - 4 biến quan sát: Kế thừa từ <em>Dillard & Shen (2005)</em>. Đo lường sự phẫn nộ, ức chế.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quy trình Thu thập & Lấy mẫu</h3>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+                        <p style="margin-bottom: 12px;"><strong>• Đối tượng khảo sát:</strong> Người tiêu dùng thế hệ Z (1997 - 2012) tại khu vực đô thị TP. Hồ Chí Minh.</p>
+                        <p style="margin-bottom: 12px;"><strong>• Phương pháp lấy mẫu:</strong> Phi xác suất có mục đích (Purposive Sampling). Đáp viên vượt qua câu hỏi gạn lọc có nhu cầu mua thiết bị điện tử.</p>
+                        <p style="margin-bottom: 12px;"><strong>• Cỡ mẫu dự kiến:</strong> <strong>n = 400 - 500</strong> đáp viên hợp lệ. Đảm bảo tối thiểu 100 mẫu/ô thực nghiệm phục vụ phân tích đa nhóm MGA.</p>
+                        <p><strong>• Data Cleaning:</strong> Loại bỏ các phản hồi quá nhanh (Speeders < 2 phút) và phản hồi trùng lặp (Straight-liners).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 13: PHÂN TÍCH PLS-SEM ==================== -->
+    <div class="slide slide-content" data-slide="13">
+        <div class="header-bar">
+            <h2>5. Quy trình phân tích PLS-SEM (SmartPLS 4)</h2>
+            <span class="slide-tag">PHƯƠNG PHÁP</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Tại sao chọn PLS-SEM?</h3>
+                    <ul>
+                        <li>Ưu việt trong việc ước lượng các mô hình cấu trúc phức tạp hướng dự báo (prediction-oriented) chứa các biến trung gian nối tiếp.</li>
+                        <li>Không đòi hỏi quá khắt khe về phân phối chuẩn của dữ liệu mẫu đầu vào (Hair et al., 2022).</li>
+                        <li>Phù hợp cho việc thực hiện phân tích đa nhóm (Multi-group Analysis - MGA) giữa các kịch bản thực nghiệm.</li>
+                    </ul>
+                    <h3 style="margin-top: 15px;">Kiểm soát CMB (Sai lệch phương pháp chung)</h3>
+                    <ul>
+                        <li>Kỹ thuật Full Collinearity VIF của Kock (2015).</li>
+                        <li>Đảm bảo toàn bộ hệ số VIF đa cộng tuyến cấp độ nhân tố <strong>VIF < 3.3</strong>.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quy trình phân tích 4 bước</h3>
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <p style="margin-bottom: 10px; font-size: 13.5px;"><strong>Bước 1: Đánh giá Mô hình Đo lường (Outer Model)</strong><br/>• Hệ số Cronbach's Alpha, CR &ge; 0.7; giá trị hội tụ AVE &ge; 0.5.</p>
+                        <p style="margin-bottom: 10px; font-size: 13.5px;"><strong>Bước 2: Đánh giá Giá trị Phân biệt</strong><br/>• Chỉ số Fornell-Larcker & Tỷ lệ HTMT < 0.85 (Henseler et al., 2015).</p>
+                        <p style="margin-bottom: 10px; font-size: 13.5px;"><strong>Bước 3: Đánh giá Mô hình Cấu trúc (Inner Model)</strong><br/>• Kiểm định hệ số &beta;, R&sup2;, f&sup2;, mức độ phù hợp và đa cộng tuyến.</p>
+                        <p style="font-size: 13.5px;"><strong>Bước 4: Kiểm định Giả thuyết & Mediation</strong><br/>• Bootstrapping 5.000 mẫu lặp để xác định ý nghĩa thống kê của các đường dẫn và tác động trung gian kép.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 14: ĐÓNG GÓP DỰ KIẾN ==================== -->
+    <div class="slide slide-content" data-slide="14">
+        <div class="header-bar">
+            <h2>6. Đóng góp dự kiến của Luận án</h2>
+            <span class="slide-tag">ĐÓNG GÓP DỰ KIẾN</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Đóng góp về mặt Học thuật</h3>
+                    <ul>
+                        <li><strong>Mở rộng biên giới của lý thuyết PRT:</strong> Cấu trúc hóa sự kháng cự tâm lý trong mô hình cạnh tranh trực diện với niềm tin thuật toán.</li>
+                        <li style="margin-top: 10px;"><strong>Làm sáng tỏ tính chất hai mặt của sự cá nhân hóa:</strong> Thách thức nhận định phiến diện của các mô hình TAM/UTAUT truyền thống về sự hữu ích của công nghệ.</li>
+                        <li style="margin-top: 10px;"><strong>Bổ sung dữ liệu thực chứng:</strong> Cung cấp bằng chứng thực chứng giá trị về Algorithm Appreciation của tệp khách hàng Gen Z tại thị trường mới nổi Việt Nam.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Đóng góp về mặt Thực tiễn (Hàm ý quản trị)</h3>
+                    <ul>
+                        <li><strong>Thiết lập giới hạn đỏ về quyền riêng tư:</strong> Giúp doanh nghiệp định vị điểm bùng phát mà tại đó sự chăm sóc cá nhân hóa trở thành sự theo dõi xâm nhập.</li>
+                        <li style="margin-top: 10px;"><strong>Tối ưu hóa chiến lược UX/UI hội thoại:</strong> Cung cấp chỉ số thực tế để thiết kế chatbot thông minh, duy trì sự khách quan và tôn trọng quyền tự quyết.</li>
+                        <li style="margin-top: 10px;"><strong>Gia tăng tỷ lệ chuyển đổi (CRO):</strong> Giúp các nhà bán lẻ thiết bị số (như Thế Giới Di Động, FPT Shop) chốt đơn thành công mà không gây phản tác dụng tâm lý.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 15: KẾ HOẠCH TOÀN KHÓA ==================== -->
+    <div class="slide slide-content" data-slide="15">
+        <div class="header-bar">
+            <h2>7. Kế hoạch Học tập & Nghiên cứu toàn khóa (36 tháng)</h2>
+            <span class="slide-tag">TIẾN ĐỘ THỰC HIỆN</span>
+        </div>
+        <div class="content-body" style="justify-content: center;">
+            <table class="hyp-table" style="font-size: 13px;">
+                <thead>
+                <tr><th style="width:12%">Giai đoạn</th><th style="width:18%">Thời gian</th><th style="width:40%">Nội dung công việc khoa học trọng tâm</th><th style="width:30%">Kết quả / Tiêu chí đánh giá</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>Kỳ 1</td><td>Tháng 1 – 6</td><td>Hoàn thành các học phần Tiến sĩ bắt buộc tại Đại học Nha Trang.</td><td>Tích lũy đủ tín chỉ</td></tr>
+                <tr><td>Kỳ 2</td><td>Tháng 7 – 12</td><td>Viết, hoàn thiện và bảo vệ Tiểu luận tổng quan trước hội đồng chuyên ngành.</td><td>Tiểu luận đạt yêu cầu</td></tr>
+                <tr><td>Kỳ 3</td><td>Tháng 13 – 18</td><td>Thực hiện phỏng vấn sâu chuyên gia định tính (n=12), thiết kế Mockup thực nghiệm.</td><td>02 Chuyên đề Tiến sĩ</td></tr>
+                <tr><td>Kỳ 4</td><td>Tháng 19 – 24</td><td>Khảo sát thực địa diện rộng (n=500). Chạy mô hình PLS-SEM trên SmartPLS 4.</td><td>Bộ dữ liệu sạch & Báo cáo SEM</td></tr>
+                <tr><td>Kỳ 5</td><td>Tháng 25 – 30</td><td>Viết bản thảo báo cáo luận án, đăng tạp chí chuyên ngành.</td><td>Tối thiểu 02 bài báo tạp chí HĐGS</td></tr>
+                <tr><td>Kỳ 6</td><td>Tháng 31 – 36</td><td>Chỉnh sửa toàn văn, phản biện kín, bảo vệ cấp Cơ sở và cấp Trường.</td><td>Nhận học vị Tiến sĩ</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Nguyễn Cường Thịnh — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 16: CẢM ƠN ==================== -->
+    <div class="slide slide-title" data-slide="16">
+        <div class="uni-badge">Trường Đại học Nha Trang</div>
+        <div class="gold-line"></div>
+        <h1 style="font-size: 42px;">Xin trân trọng cảm ơn<br/>Hội đồng Khoa học</h1>
+        <div class="gold-line"></div>
+        <div class="meta">
+            <strong>Nghiên cứu sinh:</strong> Nguyễn Cường Thịnh<br/>
+            <strong>Email:</strong> cuongthinh@ntu.edu.vn<br/><br/>
+            <em style="color: #64748b;">Kính mong Hội đồng cho ý kiến góp ý để hoàn thiện đề cương nghiên cứu.</em>
+        </div>
+    </div>
+
+</div>
+
+<!-- Navigation Controls -->
+<div class="slide-counter" id="counter">1 / 16</div>
+<div class="nav-controls">
+    <button class="nav-btn" onclick="prevSlide()">◀</button>
+    <button class="nav-btn" onclick="nextSlide()">▶</button>
+    <button class="nav-btn" onclick="exportToPPTX()" title="Xuất PowerPoint (.pptx)" style="width: auto; padding: 0 15px; border-radius: 20px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 5px;">
+        📊 Xuất PPTX
+    </button>
+</div>
+
+<script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    const total = slides.length;
+
+    function showSlide(idx) {
+        slides.forEach(s => s.classList.remove('active'));
+        slides[idx].classList.add('active');
+        document.getElementById('counter').textContent = `${idx + 1} / ${total}`;
+    }
+
+    function nextSlide() {
+        if (current < total - 1) { current++; showSlide(current); }
+    }
+    function prevSlide() {
+        if (current > 0) { current--; showSlide(current); }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); nextSlide(); }
+        if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prevSlide(); }
+        if (e.key === 'Home') { current = 0; showSlide(0); }
+        if (e.key === 'End') { current = total - 1; showSlide(current); }
+    });
+
+    async function exportToPPTX() {
+        const btn = document.querySelector('button[onclick="exportToPPTX()"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "⏳ Đang tạo PPTX...";
+        btn.disabled = true;
+
+        try {
+            let pptx = new PptxGenJS();
+            pptx.layout = 'LAYOUT_16x9';
+
+            const bgDark = "0D1B2A";
+            const gold = "C9A94E";
+            const textLight = "FFFFFF";
+            const textDark = "1E293B";
+            const accentRed = "DC2626";
+
+            function addSlideDecorations(slide, title, tag = "MÔ HÌNH") {
+                slide.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 0.2, w: 9.0, h: 0.05, fill: bgDark });
+                slide.addText(title, { x: 0.5, y: 0.35, w: 7.5, h: 0.5, fontSize: 18, bold: true, color: bgDark, fontFace: "Inter" });
+                slide.addText(tag, { x: 8.0, y: 0.35, w: 1.5, h: 0.4, fontSize: 9, bold: true, color: gold, align: "right", fontFace: "Inter" });
+                slide.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 5.1, w: 9.0, h: 0.01, fill: "E2E8F0" });
+                slide.addText("NCS Nguyễn Cường Thịnh — ĐH Nha Trang", { x: 0.5, y: 5.15, w: 5.0, h: 0.3, fontSize: 9, color: "94A3B8", fontFace: "Inter" });
+                slide.addText("Bảo vệ Đề cương Dự tuyển", { x: 5.5, y: 5.15, w: 4.0, h: 0.3, fontSize: 9, color: "94A3B8", align: "right", fontFace: "Inter" });
+            }
+
+            // SLIDE 1: Title
+            {
+                let s = pptx.addSlide();
+                s.background = { fill: bgDark };
+                s.addText("TRƯỜNG ĐẠI HỌC NHA TRANG", { x: 0.5, y: 1.0, w: 9.0, h: 0.4, fontSize: 13, bold: true, color: gold, align: "center", fontFace: "Inter" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 1.5, w: 1.0, h: 0.03, fill: gold });
+                s.addText("Tác động của tương tác AI Chatbot đến hành vi mua sắm thiết bị điện tử của người tiêu dùng thế hệ Z:\nPhân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý", 
+                    { x: 0.5, y: 1.8, w: 9.0, h: 1.8, fontSize: 20, bold: true, color: textLight, align: "center", fontFace: "Noto Serif" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 3.8, w: 1.0, h: 0.03, fill: gold });
+                s.addText("Nghiên cứu sinh: Nguyễn Cường Thịnh\nChuyên ngành: Quản trị Kinh doanh — Mã số: 9340101\nBảo vệ Đề cương Dự tuyển Nghiên cứu sinh", 
+                    { x: 0.5, y: 4.1, w: 9.0, h: 1.2, fontSize: 12, color: "94A3B8", align: "center", fontFace: "Inter", lineSpacing: 22 });
+            }
+
+            // SLIDE 2: Table of Contents
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "Nội dung Trình bày", "TỔNG QUAN");
+                let list = [
+                    "01. Lý do chọn đề tài & Sự cấp thiết",
+                    "02. Tổng quan tài liệu & Khoảng trống nghiên cứu",
+                    "03. Mục tiêu & Câu hỏi nghiên cứu",
+                    "04. Đối tượng & Phạm vi nghiên cứu",
+                    "05. Khung lý thuyết & Mô hình nghiên cứu đề xuất",
+                    "06. Thiết kế thực nghiệm & Thiết kế nghiên cứu định lượng",
+                    "07. Đóng góp luận án & Kế hoạch học tập 36 tháng"
+                ];
+                list.forEach((item, idx) => {
+                    s.addText(item, { x: 1.5, y: 1.2 + idx * 0.5, w: 7.0, h: 0.4, fontSize: 15, bold: true, color: bgDark, fontFace: "Inter" });
+                });
+            }
+
+            // SLIDE 3: Bối cảnh
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "1. Bối cảnh thực tiễn & Thị trường điện tử", "LÝ DO CHỌN ĐỀ TÀI");
+                let stats = [
+                    { num: "30%", desc: "Dân số Gen Z tại các đô thị lớn VN (2025)" },
+                    { num: "72%", desc: "Gen Z ưu tiên kênh tự phục vụ, chatbot AI" },
+                    { num: "100%", desc: "Chuỗi bán lẻ điện máy lớn tích hợp chatbot" },
+                    { num: "1.5 tỷ $", desc: "Thị trường thiết bị điện tử cá nhân VN" }
+                ];
+                stats.forEach((item, idx) => {
+                    s.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.5 + idx * 2.3, y: 1.0, w: 2.1, h: 1.1, fill: bgDark, radius: 0.05 });
+                    s.addText(item.num, { x: 0.5 + idx * 2.3, y: 1.1, w: 2.1, h: 0.4, fontSize: 18, bold: true, color: gold, align: "center", fontFace: "Inter" });
+                    s.addText(item.desc, { x: 0.5 + idx * 2.3, y: 1.5, w: 2.1, h: 0.5, fontSize: 8, color: "94A3B8", align: "center", fontFace: "Inter" });
+                });
+                s.addText("Gen Z - Thế hệ 'Bản địa số' thực thụ", { x: 0.5, y: 2.3, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Khao khát tốc độ phản hồi tức thì và cá nhân hóa trải nghiệm sâu sắc.\n• Quyết định mua sắm Laptop, PC có tính liên kết và rủi ro tài chính cao.\n• Tư vấn thông số kỹ thuật là điểm tựa then chốt của quá trình chốt đơn.", 
+                    { x: 0.5, y: 2.6, w: 4.3, h: 1.2, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                s.addText("Cuộc đua Conversational AI", { x: 5.2, y: 2.3, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Thế Giới Di Động, FPT Shop, CellphoneS tích cực ứng dụng Conversational AI.\n• Khả năng xử lý lượng dữ liệu khổng lồ của thuật toán hỗ trợ tư vấn tức thì.\n• Giảm bớt bất cân xứng thông tin cấu hình phần cứng phức tạp cho khách hàng.", 
+                    { x: 5.2, y: 2.6, w: 4.3, h: 1.2, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                s.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 4.0, w: 9.0, h: 0.8, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                s.addText("Bối cảnh cốt lõi: Doanh nghiệp bán lẻ thiết bị điện tử đang phụ thuộc mạnh mẽ vào tư vấn thuật toán thông minh để thuyết phục Gen Z. Tuy nhiên, sự can thiệp của thuật toán đang tạo ra các phản ứng tâm lý học phức tạp.", 
+                    { x: 0.6, y: 4.05, w: 8.8, h: 0.7, fontSize: 10.5, italic: true, color: textDark, fontFace: "Inter" });
+            }
+
+            // SLIDE 4: Nghịch lý hành vi
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "1. Nghịch lý hành vi: Mặt sáng & Mặt tối của AI", "LÝ DO CHỌN ĐỀ TÀI");
+                s.addText("Mặt sáng: Sự đánh giá cao thuật toán (Algorithm Appreciation)", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: "16A34A", fontFace: "Inter" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 1.4, w: 4.3, h: 1.5, fill: "F8FAFC", line: { color: "16A34A", width: 1 } });
+                s.addText("• Logg et al. (2019): Khách hàng tin tưởng thuật toán khách quan, không thiên vị, không bị áp lực KPI hoa hồng bán hàng tư vấn.\n• Tính nhân hóa và cá nhân hóa của AI Chatbot giúp kiến tạo Niềm tin thuật toán (Algorithmic Trust) mạnh mẽ, xúc tác ý định mua.", 
+                    { x: 0.6, y: 1.5, w: 4.1, h: 1.3, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                s.addText("Mặt tối: Sự kháng cự tâm lý (Psychological Reactance)", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: accentRed, fontFace: "Inter" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 5.2, y: 1.4, w: 4.3, h: 1.5, fill: "F8FAFC", line: { color: accentRed, width: 1 } });
+                s.addText("• Brehm (1966): Bản chất con người luôn giữ quyền tự do lựa chọn. AI ép chốt đơn hoặc can thiệp quá sâu sẽ kích hoạt tự vệ.\n• Sự xâm nhập riêng tư nảy sinh trạng thái kháng cự tâm lý tiêu cực, thúc đẩy NTD chống đối, né tránh và tẩy chay hệ thống.", 
+                    { x: 5.3, y: 1.5, w: 4.1, h: 1.3, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                s.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 3.2, w: 9.0, h: 1.5, fill: bgDark, radius: 0.05 });
+                s.addText("Nghịch lý nghiên cứu & Tính cấp thiết:", { x: 0.7, y: 3.3, w: 8.6, h: 0.3, fontSize: 14, bold: true, color: gold, fontFace: "Inter" });
+                s.addText("Tính cá nhân hóa là con dao hai lưỡi. Một mặt thúc đẩy niềm tin thuật toán, mặt khác đánh thức sự phản kháng tự vệ của khách hàng. Luận án nghiên cứu cơ chế tác động song song này nhằm giúp doanh nghiệp tìm ra điểm bùng phát (tipping point) để cân bằng trải nghiệm tương tác.", 
+                    { x: 0.7, y: 3.6, w: 8.6, h: 1.0, fontSize: 11, color: textLight, fontFace: "Inter", lineSpacing: 18 });
+            }
+
+            // SLIDE 5: Tổng quan tài liệu
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "2. Tổng quan các dòng nghiên cứu trước đây", "TỔNG QUAN");
+                let rows = [
+                    [
+                        { text: "Tác giả (Năm)", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Bối cảnh nghiên cứu", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Biến chính", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Phát hiện chính", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Khoảng trống lý thuyết", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } }
+                    ],
+                    ["Awad & Krishnan (2006)", "Thương mại điện tử tĩnh", "Personalization, Privacy", "Tìm ra nghịch lý giữa cá nhân hóa và nỗi lo sợ mất quyền riêng tư.", "Chưa nghiên cứu AI hội thoại thời gian thực."],
+                    ["Dietvorst et al. (2015)", "Dự báo định lượng", "Algorithm Aversion", "NTD dễ mất niềm tin vào thuật toán hơn con người khi máy mắc sai lầm.", "LLM hiện đại đã đảo ngược hiện tượng này."],
+                    ["Logg et al. (2019)", "Khoa học quyết định", "Algorithm Appreciation", "Khách hàng thích nghe lời khuyên định lượng của máy tính hơn con người.", "Bỏ qua yếu tố về phản kháng hay ép buộc."],
+                    ["Pelau et al. (2021)", "Dịch vụ thông minh", "Anthropomorphism, Acceptance", "Nhân hóa giúp tăng cường chất lượng dịch vụ cảm nhận, độ đồng cảm.", "Bỏ qua tác động tiêu cực của tính xâm nhập."],
+                    ["White et al. (2008)", "Marketing trực tiếp", "Psychological Reactance", "Cá nhân hóa quá sâu làm nảy sinh phản kháng và né tránh thương hiệu.", "Chưa áp dụng vào các chatbot hội thoại thông minh."]
+                ];
+                s.addTable(rows, { x: 0.5, y: 1.0, w: 9.0, h: 3.8, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 8.5, fontFace: "Inter" });
+            }
+
+            // SLIDE 6: Gaps & S-O-R
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "2. Khoảng trống lý thuyết & Khung S-O-R", "TỔNG QUAN");
+                
+                s.addText("Khung S-O-R (Stimulus - Organism - Response)", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Mehrabian & Russell (1974): Kích thích (S) → Cơ thể (O) → Phản hồi (R).\n• S (Kích thích ngoại sinh): PP (Cá nhân hóa), PA (Nhân hóa), PI (Sự xâm nhập cảm nhận) phát sinh từ chatbot.\n• O (Nhận thức nội tại): AT (Niềm tin thuật toán) đối đầu song song với AR (Kháng cự tâm lý).\n• R (Phản hồi hành vi): Chấp nhận lời khuyên (RA) và Ý định mua sắm cuối cùng (PUR).", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 1.8, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 18 });
+
+                s.addText("Lý thuyết Kháng cự tâm lý (Psychological Reactance)", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Brehm (1966): Khi tự do lựa chọn bị thu hẹp hoặc đe dọa bởi tác nhân ngoại sinh (AI hối thúc ép buộc), con người trải qua kích động tiêu cực.\n• Phản ứng phòng vệ tự nhiên: NtD tìm cách khôi phục tự do bằng việc chống đối đề xuất, tẩy chay nhãn hàng.\n• Việc tích hợp PRT giúp giải mã hoàn hảo nghịch lý 'Mặt tối' của Conversational AI trong thời đại số hóa.", 
+                    { x: 5.2, y: 1.3, w: 4.3, h: 1.8, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 18 });
+
+                s.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 3.6, w: 9.0, h: 1.1, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                s.addText("Sự giao thoa và đóng góp học thuật quan trọng:\nTích hợp S-O-R và PRT để làm rõ cơ chế tác động song song và cạnh tranh quyết liệt giữa Trust và Reactance trong não bộ NTD. Điều này thách thức chủ nghĩa thực chứng công nghệ của các mô hình TAM/UTAUT cũ.", 
+                    { x: 0.6, y: 3.65, w: 8.8, h: 1.0, fontSize: 10.5, italic: true, color: textDark, fontFace: "Inter" });
+            }
+
+            // SLIDE 7: Mục tiêu
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "3. Mục tiêu & Câu hỏi Nghiên cứu", "MỤC TIÊU");
+                
+                s.addText("Mục tiêu nghiên cứu cụ thể", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("1. Nhận diện và đo lường cường độ tác động của các yếu tố kích thích tương tác AI Chatbot (PP, PA, PI) đến hộp đen tâm lý.\n2. Kiểm định vai trò trung gian kép đối lập của Niềm tin thuật toán (tích cực) và Sự kháng cự tâm lý (tiêu cực).\n3. Làm rõ tính chất hai mặt và ranh giới điểm bùng phát của sự cá nhân hóa thông tin.\n4. Đề xuất hàm ý thực chiến cho thiết kế UX/UI chatbot bán lẻ.", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 2.2, fontSize: 10.5, color: textDark, fontFace: "Inter", lineSpacing: 18 });
+
+                s.addText("Câu hỏi nghiên cứu (Research Questions)", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                let rqs = [
+                    { label: "RQ1", txt: "Các kích thích giao tiếp từ AI Chatbot tác động ra sao đến Niềm tin thuật toán và Sự kháng cự tâm lý ở đối tượng Gen Z?" },
+                    { label: "RQ2", txt: "Cơ chế trung gian kép đối lập nhau có thực sự tồn tại và chi phối hành vi chấp nhận lời khuyên tư vấn phần cứng của chatbot AI?" },
+                    { label: "RQ3", txt: "Điểm bùng phát (tipping point) nào của Tính cá nhân hóa sẽ biến sự thấu hiểu công nghệ hữu ích thành sự xâm phạm riêng tư?" }
+                ];
+                rqs.forEach((item, idx) => {
+                    s.addShape(pptx.shapes.RECTANGLE, { x: 5.2, y: 1.4 + idx * 1.1, w: 4.3, h: 1.0, fill: "F8FAFC", line: { color: "E2E8F0", width: 1 } });
+                    s.addText(item.label + ":", { x: 5.3, y: 1.45 + idx * 1.1, w: 0.8, h: 0.3, fontSize: 11, bold: true, color: gold, fontFace: "Inter" });
+                    s.addText(item.txt, { x: 5.3, y: 1.75 + idx * 1.1, w: 4.1, h: 0.6, fontSize: 9.5, color: textDark, fontFace: "Inter" });
+                });
+            }
+
+            // SLIDE 8: Phạm vi
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "4. Phạm vi & Đối tượng Nghiên cứu", "PHẠM VI");
+                let gaps = [
+                    { num: "Đối tượng", title: "Cơ chế tâm lý kép", desc: "Phân tích trạng thái giằng xé nội tâm (Trust vs Reactance) và hành vi mua sắm thiết bị điện tử khi chịu can thiệp từ hệ thống AI Chatbot." },
+                    { num: "Khách thể", title: "Người tiêu dùng thế hệ Z", desc: "Thế hệ bản địa số sinh năm 1997 - 2012, có thói quen tiêu dùng trực tuyến, đang sống và học tập tại khu vực TP. Hồ Chí Minh." },
+                    { num: "Ngữ cảnh", title: "Thiết bị điện tử phức tạp", desc: "Giới hạn trong môi trường Text-based AI Chatbot (LLM-based). Ngành hàng thiết bị điện tử cá nhân giá trị cao (Laptop, PC, Tablet)." }
+                ];
+                gaps.forEach((item, idx) => {
+                    s.addShape(pptx.shapes.RECTANGLE, { x: 0.5 + idx * 3.1, y: 1.1, w: 2.8, h: 2.5, fill: "F8FAFC", line: { color: "E2E8F0", width: 1 } });
+                    s.addText(item.num, { x: 0.5 + idx * 3.1, y: 1.2, w: 2.8, h: 0.4, fontSize: 18, bold: true, color: gold, align: "center", fontFace: "Noto Serif" });
+                    s.addText(item.title, { x: 0.5 + idx * 3.1, y: 1.6, w: 2.8, h: 0.3, fontSize: 12, bold: true, color: bgDark, align: "center", fontFace: "Inter" });
+                    s.addText(item.desc, { x: 0.6 + idx * 3.1, y: 2.0, w: 2.6, h: 1.5, fontSize: 9.5, color: textDark, align: "center", fontFace: "Inter" });
+                });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 3.9, w: 9.0, h: 0.8, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                s.addText("Định vị nghiên cứu: Tập trung vào tệp Gen Z đô thị và sản phẩm công nghệ high-involvement giúp cô lập tốt các hành vi lý tính, bộc lộ rõ nét nhất cơ chế tác động kép trong khoa học quyết định tiêu dùng số.", 
+                    { x: 0.6, y: 3.95, w: 8.8, h: 0.7, fontSize: 10.5, italic: true, color: textDark, fontFace: "Inter" });
+            }
+
+            // SLIDE 9: Mô hình nghiên cứu (SVG)
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "5. Mô hình Nghiên cứu đề xuất (Dual-path Model)", "MÔ HÌNH");
+                const svg = document.querySelector('.model-container svg');
+                if (svg) {
+                    try {
+                        const pngData = await convertSvgToPng(svg);
+                        s.addImage({ data: pngData, x: 0.5, y: 0.9, w: 9.0, h: 3.6 });
+                    } catch (err) {
+                        console.error(err);
+                        s.addText("[Sơ đồ mô hình tác động kép: Stimulus → Trust/Reactance → Adoption → Purchase]", { x: 0.5, y: 2.0, w: 9.0, h: 1.0, fontSize: 15, color: bgDark, align: "center" });
+                    }
+                }
+                s.addText("Hình 1. Sơ đồ mô hình nghiên cứu tác động kép tích hợp S-O-R và PRT", { x: 0.5, y: 4.6, w: 9.0, h: 0.3, fontSize: 11, italic: true, color: "64748B", align: "center", fontFace: "Inter" });
+            }
+
+            // SLIDE 10: Giả thuyết
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "5. Hệ thống Giả thuyết Nghiên cứu", "GIẢ THUYẾT");
+                let rows = [
+                    [
+                        { text: "Giả thuyết", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Chiều", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Nội dung mối quan hệ tác động đề xuất", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Nền tảng lý thuyết chủ đạo", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } }
+                    ],
+                    ["H1a", "+ (Thuận)", "Tính cá nhân hóa (PP) → Niềm tin thuật toán (AT)", "Algorithm Appreciation (Logg, 2019)"],
+                    ["H1b", "+ (Thuận)", "Tính nhân hóa (PA) → Niềm tin thuật toán (AT)", "Social Response Theory (Waytz, 2014)"],
+                    ["H2a", "+ (Thuận)", "Tính cá nhân hóa (PP) → Kháng cự tâm lý (AR)", "Privacy Paradox (Awad & Krishnan, 2006)"],
+                    ["H2b", "+ (Thuận)", "Sự xâm nhập cảm nhận (PI) → Kháng cự tâm lý (AR)", "Psychological Reactance Theory (Brehm, 1966)"],
+                    ["H3", "+ (Thuận)", "Niềm tin thuật toán (AT) → Chấp nhận lời khuyên (RA)", "Technology Trust (Gefen et al., 2003)"],
+                    ["H4", "- (Nghịch)", "Kháng cự tâm lý (AR) → Chấp nhận lời khuyên (RA)", "Reactance Backfire (Dillard & Shen, 2005)"],
+                    ["H5", "+ (Thuận)", "Chấp nhận lời khuyên (RA) → Ý định mua sắm (PUR)", "Theory of Reasoned Action (TAM/UTAUT)"]
+                ];
+                s.addTable(rows, { x: 0.5, y: 1.0, w: 9.0, h: 3.8, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 9.5, fontFace: "Inter" });
+            }
+
+            // SLIDE 11: Thiết kế Thực nghiệm
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "5. Thiết kế Thực nghiệm Factorial 2×2", "PHƯƠNG PHÁP");
+                
+                s.addText("Phương pháp Thực nghiệm dựa trên Kịch bản", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Phương pháp Scenario-based Experiment giúp cô lập tốt các biến nhiễu ngoại lai.\n• Kịch bản tương tác được mô phỏng sinh động qua giao diện giả định của TechZone.\n• Gán ngẫu nhiên (Random Assignment) đáp viên vào 1 trong 4 nhóm tương ứng:\n  - Nhóm 1: PA/PP cao + Ép buộc chốt đơn nhanh (PI cao)\n  - Nhóm 2: PA/PP thấp + Ép buộc chốt đơn nhanh (PI cao)\n  - Nhóm 3: PA/PP cao + Để NTD tự quyết (PI thấp)\n  - Nhóm 4: PA/PP thấp + Để NTD tự quyết (PI thấp)", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+
+                s.addText("Ma trận thực nghiệm Factorial 2×2", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                let tableRows = [
+                    [
+                        { text: "Bố cục kịch bản", opts: { fill: bgDark, bold: true, color: "FFFFFF" } },
+                        { text: "Nhân hóa & Cá nhân hóa cao", opts: { fill: bgDark, bold: true, color: "FFFFFF", align: "center" } },
+                        { text: "Nhân hóa & Cá nhân hóa thấp", opts: { fill: bgDark, bold: true, color: "FFFFFF", align: "center" } }
+                    ],
+                    [{ text: "Xâm nhập / Ép buộc cao", opts: { bold: true, fill: "F8FAFC" } }, "Nhóm 1 (Thực nghiệm)", "Nhóm 2 (Thực nghiệm)"],
+                    [{ text: "Xâm nhập / Ép buộc thấp", opts: { bold: true, fill: "F8FAFC" } }, "Nhóm 3 (Kiểm chứng)", "Nhóm 4 (Kiểm chứng)"]
+                ];
+                s.addTable(tableRows, { x: 5.2, y: 1.4, w: 4.3, h: 1.3, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 9.5, fontFace: "Inter" });
+                s.addText("• Thẩm định kịch bản: Thông qua hội đồng nghiên cứu định tính và chạy thử pilot test (n=30) nhằm kiểm duyệt tính chân thực và sự phân biệt rõ ràng giữa các ô kịch bản.", 
+                    { x: 5.2, y: 2.9, w: 4.3, h: 1.0, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 14 });
+            }
+
+            // SLIDE 12: Thang đo & Lấy mẫu
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "5. Thang đo Đo lường & Quy trình lấy mẫu", "PHƯƠNG PHÁP");
+                
+                s.addText("Xây dựng Thang đo đo lường", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("Kế thừa từ thang đo Likert 7 điểm chuẩn hóa quốc tế:\n• Tính cá nhân hóa (PP) - 3 biến quan sát (Awad & Krishnan, 2006)\n• Tính nhân hóa (PA) - 3 biến quan sát (Waytz et al., 2014)\n• Sự xâm nhập cảm nhận (PI) - 3 biến quan sát (Barth & de Jong, 2017)\n• Niềm tin thuật toán (AT) - 4 biến quan sát (Logg et al., 2019)\n• Sự kháng cự tâm lý (AR) - 4 biến quan sát (Dillard & Shen, 2005)\n• Chấp nhận lời khuyên (RA) - 3 biến (Gefen et al., 2003)\n• Ý định mua (PUR) - 3 biến (Venkatesh et al., 2003)", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 2.5, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+
+                s.addText("Quy trình Thu thập & Lấy mẫu", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Lấy mẫu phi xác suất có mục đích (Purposive Sampling) kết hợp câu hỏi gạn lọc để lọc đúng đối tượng.\n• Tệp đáp viên: Thế hệ Gen Z (1997-2012) năng động đô thị tại TP.HCM.\n• Cỡ mẫu mục tiêu: n = 400 - 500 phiếu hợp lệ. Bảo đảm tối thiểu 100 mẫu/ô thực nghiệm phục vụ phân tích cấu trúc đa nhóm MGA.\n• Manipulation Check: Các câu hỏi gạn lọc đảm bảo đáp viên nhận thức rõ ràng kịch bản trước khi ghi nhận hành vi.", 
+                    { x: 5.2, y: 1.3, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+            }
+
+            // SLIDE 13: Quy trình PLS-SEM
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "5. Quy trình phân tích PLS-SEM (SmartPLS 4)", "PHƯƠNG PHÁP");
+                
+                s.addText("Tại sao chọn PLS-SEM (SmartPLS 4)?", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Phân tích hiệu quả các mô hình cấu trúc phức tạp hướng dự báo hành vi, giải quyết tốt cơ chế tác động trung gian song song.\n• Không yêu cầu phân phối chuẩn nghiêm ngặt đối với mẫu đầu vào.\n• Hỗ trợ công cụ phân tích cấu trúc đa nhóm (MGA) mạnh mẽ.\n• Kiểm soát CMB (Common Method Bias) thông qua Full Collinearity VIF của Kock (2015). Yêu cầu toàn bộ hệ số VIF nhân tố < 3.3.", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+
+                s.addText("Quy trình Phân tích 4 bước chuẩn khoa học", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                let steps = [
+                    "B1. Đánh giá Mô hình Đo lường (Outer Model): Đạt hệ số Cronbach's Alpha, CR >= 0.7; giá trị AVE >= 0.5.",
+                    "B2. Đánh giá Giá trị Phân biệt: Chỉ số Fornell-Larcker & Tỷ lệ HTMT < 0.85.",
+                    "B3. Đánh giá Mô hình Cấu trúc (Inner Model): Xác định hệ số đường dẫn path coefficient beta, R², f² và khả năng dự báo ngoài mẫu PLSpredict Q².",
+                    "B4. Kiểm định Giả thuyết & Tác động trung gian: Chạy thuật toán Bootstrapping với 5.000 mẫu lặp."
+                ];
+                steps.forEach((step, idx) => {
+                    s.addShape(pptx.shapes.RECTANGLE, { x: 5.2, y: 1.35 + idx * 0.85, w: 4.3, h: 0.8, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                    s.addText(step, { x: 5.3, y: 1.4 + idx * 0.85, w: 4.1, h: 0.7, fontSize: 8.5, color: textDark, fontFace: "Inter" });
+                });
+            }
+
+            // SLIDE 14: Đóng góp dự kiến
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "6. Đóng góp dự kiến của Luận án", "ĐÓNG GÓP DỰ KIẾN");
+                
+                s.addText("Đóng góp về mặt Học thuật (Học lý thuyết)", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Lần đầu tiên tích hợp lý thuyết PRT để mô hình hóa trạng thái kháng cự tâm lý song song với niềm tin thuật toán trong một cơ chế tác động kép cạnh tranh.\n• Khai phá tính chất hai mặt 'con dao hai lưỡi' của sự cá nhân hóa dữ liệu, xác định ranh giới chuyển đổi từ hữu ích sang xâm nhập.\n• Bổ sung tài liệu khoa học và dữ liệu thực chứng cho Algorithm Appreciation đối với tệp Gen Z đô thị tại thị trường Việt Nam.", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+
+                s.addText("Đóng góp về mặt Thực tiễn (Hàm ý quản trị)", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Thiết lập giới hạn đỏ về quyền riêng tư giúp nhà bán lẻ tránh bẫy phản tác dụng khi ép buộc NtD mua hàng bằng AI.\n• Tối ưu hóa trải nghiệm khách hàng (CX) và thiết kế hội thoại chatbot (UX/UI) có điểm dừng hợp lý, tăng trưởng niềm tin.\n• Gia tăng hiệu quả chuyển đổi đơn hàng và lòng trung thành thương hiệu số đối với thiết bị điện tử giá trị cao.", 
+                    { x: 5.2, y: 1.3, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+            }
+
+            // SLIDE 15: Tiến độ thực hiện
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "7. Kế hoạch Học tập & Nghiên cứu (36 tháng)", "TIẾN ĐỘ THỰC HIỆN");
+                let rows = [
+                    [
+                        { text: "Giai đoạn", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Thời gian", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Nội dung công việc khoa học trọng tâm", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Đầu ra / Tiêu chí đánh giá", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } }
+                    ],
+                    ["Kỳ 1", "Tháng 1 – 6", "Hoàn thành các học phần Tiến sĩ bắt buộc tại Đại học Nha Trang.", "Tích lũy đủ tín chỉ"],
+                    ["Kỳ 2", "Tháng 7 – 12", "Tổng hợp lý thuyết viết và trình bày Tiểu luận tổng quan luận án.", "Tiểu luận tổng quan thông qua"],
+                    ["Kỳ 3", "Tháng 13 – 18", "Thực hiện phỏng vấn sâu (n=12), viết chuyên đề TS, pilot test thang đo.", "02 chuyên đề & Thang mockup"],
+                    ["Kỳ 4", "Tháng 19 – 24", "Thu thập dữ liệu định lượng chính thức (n=500), phân tích mô hình SEM.", "Bộ dữ liệu sạch & Báo cáo SEM"],
+                    ["Kỳ 5", "Tháng 25 – 30", "Viết bản thảo báo cáo kết quả, đăng bài tạp chí chuyên ngành.", "Tối thiểu 02 bài báo tạp chí HĐGS"],
+                    ["Kỳ 6", "Tháng 31 – 36", "Hoàn thiện bản thảo luận án, nộp phản biện, bảo vệ chính thức.", "Nhận học vị Tiến sĩ"]
+                ];
+                s.addTable(rows, { x: 0.5, y: 0.9, w: 9.0, h: 4.0, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 8.5, fontFace: "Inter" });
+            }
+
+            // SLIDE 16: Thank You
+            {
+                let s = pptx.addSlide();
+                s.background = { fill: bgDark };
+                s.addText("TRƯỜNG ĐẠI HỌC NHA TRANG", { x: 0.5, y: 1.0, w: 9.0, h: 0.4, fontSize: 13, bold: true, color: gold, align: "center", fontFace: "Inter" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 1.5, w: 1.0, h: 0.03, fill: gold });
+                s.addText("Xin trân trọng cảm ơn\nHội đồng Khoa học!", 
+                    { x: 0.5, y: 1.8, w: 9.0, h: 1.5, fontSize: 32, bold: true, color: textLight, align: "center", fontFace: "Noto Serif" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 3.5, w: 1.0, h: 0.03, fill: gold });
+                s.addText("Nghiên cứu sinh: Nguyễn Cường Thịnh\nEmail: cuongthinh@ntu.edu.vn\n\nKính mong Hội đồng cho ý kiến góp ý để hoàn thiện đề cương nghiên cứu.", 
+                    { x: 0.5, y: 3.8, w: 9.0, h: 1.3, fontSize: 12, italic: true, color: "94A3B8", align: "center", fontFace: "Inter", lineSpacing: 22 });
+            }
+
+            pptx.writeFile({ fileName: "Slide_BaoVe_DeCuong_NCS_NguyenCuongThinh.pptx" });
+
+        } catch (error) {
+            console.error("Lỗi xuất PPTX:", error);
+            alert("Đã xảy ra lỗi trong quá trình xuất PPTX. Vui lòng kiểm tra console hoặc thử lại!");
+        } finally {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    }
+
+    function convertSvgToPng(svgElement) {
+        return new Promise((resolve, reject) => {
+            try {
+                const clonedSvg = svgElement.cloneNode(true);
+                clonedSvg.setAttribute('width', '1100');
+                clonedSvg.setAttribute('height', '440');
+                const svgString = new XMLSerializer().serializeToString(clonedSvg);
+                const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+                const DOMURL = window.URL || window.webkitURL || window;
+                const url = DOMURL.createObjectURL(svgBlob);
+                
+                const image = new Image();
+                image.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 2200;
+                    canvas.height = 880;
+                    const context = canvas.getContext('2d');
+                    context.fillStyle = '#ffffff';
+                    context.fillRect(0, 0, canvas.width, canvas.height);
+                    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+                    const pngData = canvas.toDataURL('image/png');
+                    DOMURL.revokeObjectURL(url);
+                    resolve(pngData);
+                };
+                image.onerror = function(err) {
+                    DOMURL.revokeObjectURL(url);
+                    reject(err);
+                };
+                image.src = url;
+            } catch (e) {
+                reject(e);
+            }
+        });
+    }
+</script>
+</body>
+</html>

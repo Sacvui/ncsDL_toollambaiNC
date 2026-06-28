@@ -1,0 +1,22 @@
+# 6. TÀI LIỆU THAM KHẢO
+
+1.  Allen, J. A., Rogelberg, S. G., & Scott, J. C. (2012). Mind your meetings: Improving meeting quality to boost organizational effectiveness. *IEEE Engineering Management Review, 40*(1), 6-12. https://doi.org/10.1109/EMR.2012.6186413
+2.  Bakker, A. B. (2008). The work-related flow inventory: Construction and initial validation of the WOLF. *Journal of Occupational Health Psychology, 13*(4), 400–414. https://doi.org/10.1037/a0012641
+3.  Demerouti, E., Bakker, A. B., Nachreiner, F., & Schaufeli, W. B. (2001). The job demands-resources model of burnout. *Journal of Applied Psychology, 86*(3), 499-512. https://doi.org/10.1037/0021-9010.86.3.499
+4.  Geimer, J. L., Rogelberg, S. G., & Small Group Science Consortium. (2015). Meetings at work in the 21st century: Meeting science and practice. *Small Group Research, 46*(3), 300-327. https://doi.org/10.1177/1046496415584556
+5.  Hair, J. F., Hult, G. T. M., Ringle, C. M., & Sarstedt, M. (2022). *A Primer on Partial Least Squares Structural Equation Modeling (PLS-SEM)* (3rd ed.). Sage Publications.
+6.  Hobfoll, S. E. (1989). Conservation of resources: A new attempt at conceptualizing stress. *American Psychologist, 44*(3), 513–524. https://doi.org/10.1037/0003-066X.44.3.513
+7.  Hobfoll, S. E. (2001). The influence of resource loss, resource gain, and resource conservation on stress and rapid recovery. *Review of General Psychology, 5*(3), 185–196. https://doi.org/10.1037/1089-2680.5.3.185
+8.  Karasek, R. A. (1979). Job demands, job decision latitude, and mental strain: Implications for job redesign. *Administrative Science Quarterly, 24*(2), 285-308. https://doi.org/10.2307/2392498
+9.  Kock, N. (2015). Common method bias in PLS-SEM: A full collinearity assessment approach. *International Journal of e-Collaboration, 11*(4), 1-10. https://doi.org/10.4018/ijec.2015100101
+10. Lindell, M. K., & Whitney, D. J. (2001). Accounting for common method variance in cross-sectional research designs. *Journal of Applied Psychology, 86*(1), 114–121. https://doi.org/10.1037/0021-9010.86.1.114
+11. Luong, A., & Rogelberg, S. G. (2005). Meetings and more meetings: The relationship between meeting load and the daily well-being of employees. *Group Dynamics: Theory, Research, and Practice, 9*(1), 58–67. https://doi.org/10.1037/1089-2699.9.1.58
+12. Navigos Group. (2024). *Vietnam Workplace Productivity and Mental Health Trends Report*. Navigos Research.
+13. Podsakoff, P. M., MacKenzie, S. B., Lee, J. Y., & Podsakoff, N. P. (2003). Common method biases in behavioral research: A critical review of the literature and recommended remedies. *Journal of Applied Psychology, 88*(5), 879-903. https://doi.org/10.1037/0021-9010.88.5.879
+14. Rizzo, J. R., House, R. J., & Lirtzman, S. I. (1970). Role conflict and ambiguity in complex organizations. *Administrative Science Quarterly, 15*(2), 150-163. https://doi.org/10.2307/2392498
+15. Rogelberg, S. G., Luong, A., Suleski, M. E., & Knight, J. L. (2006). Not another meeting: Are meetings making us irritable, tired, and unmotivated? *Group Dynamics: Theory, Research, and Practice, 10*(4), 269–277. https://doi.org/10.1037/1089-2699.10.4.269
+16. Rogelberg, S. G., Allen, J. A., Shanock, L., Scott, C., & Shuffler, M. (2010). The meeting doldrums: Identifying the characteristics of meetings that lead to employee frustration. *Journal of Business and Psychology, 25*(1), 149-160. https://doi.org/10.1007/s10869-009-9149-7
+17. Schaufeli, W. B., Bakker, A. B., & Salanova, M. (2006). The measurement of work engagement with a short questionnaire: A cross-national study. *Educational and Psychological Measurement, 66*(4), 701-716. https://doi.org/10.1177/0013164405282471
+18. Shirom, A. (2004). Vigor as a positive affect at work: Conceptualizing and measuring vigor's facets. In P. A. Linley & S. Joseph (Eds.), *Positive psychology in practice* (pp. 500-514). John Wiley & Sons.
+19. Ter Hoeven, C. L., van Zoonen, W., & Fonner, K. L. (2016). The link between communication technology use and employee well-being: An organizational resource perspective. *Journal of Computer-Mediated Communication, 21*(6), 407-424. https://doi.org/10.1111/jcc4.12175
+20. Williams, L. J., & Anderson, S E. (1991). Job satisfaction and organizational commitment as predictors of organizational citizenship and in-role behaviors. *Journal of Management, 17*(3), 601-617. https://doi.org/10.1177/014920639101700305

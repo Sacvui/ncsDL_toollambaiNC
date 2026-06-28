@@ -1,0 +1,5 @@
+## 10. DỰ KIẾN VIỆC LÀM VÀ CÁC NGHIÊN CỨU TIẾP THEO SAU KHI TỐT NGHIỆP
+- **Định hướng nghề nghiệp:** Tiếp tục kết hợp nghiên cứu khoa học và giảng dạy chuyên sâu về Marketing chiến lược, Giao diện Tiếp thị - Tài chính và Kinh tế lượng ứng dụng tại các trường đại học uy tín; đồng thời đảm nhận vai trò Cố vấn chiến lược định lượng, đo lường năng suất tiếp thị và hiệu năng kênh phân phối cho các doanh nghiệp lớn tại Việt Nam.
+- **Định hướng mở rộng nghiên cứu (Post-doc):**
+  1. **Marketing-Finance Interface trong ngành dịch vụ:** Mở rộng mô hình nghiên cứu sang các ngành dịch vụ có chi phí chuyển đổi cao và dữ liệu tài chính phức tạp hơn như Ngân hàng thương mại, Bảo hiểm và Công nghệ tài chính (Fintech).
+  2. **Phát triển công cụ phân tích kinh tế lượng:** Nghiên cứu và tích hợp các thuật toán kinh tế lượng dữ liệu bảng nâng cao (như hồi quy phân vị dữ liệu bảng - Panel Quantile Regression, hoặc hồi quy phi tham số) vào hệ thống phân tích định lượng mở `ncskit.org` nhằm hỗ trợ cộng đồng nghiên cứu sinh Việt Nam trong việc giải quyết các bài toán nội sinh phức tạp.

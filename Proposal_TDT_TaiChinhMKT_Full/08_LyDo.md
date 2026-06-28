@@ -1,0 +1,3 @@
+## 8. LÝ DO CHỌN ĐẠI HỌC TÔN ĐỨC THẮNG LÀM CƠ SỞ ĐÀO TẠO
+- **Hệ sinh thái liên ngành xuất sắc:** TDTU là trường đại học chú trọng sự giao thoa giữa Kinh tế học và Khoa học Dữ liệu. Sự hỗ trợ từ cơ sở hạ tầng điện toán và các chuyên gia CNTT tại trường là nền tảng phù hợp cho việc xử lý hàng trăm ngàn dòng dữ liệu Text của đề án.
+- **Tiêu chuẩn học thuật quốc tế minh bạch:** Môi trường nghiên cứu liêm chính, khắt khe và hệ thống tài nguyên thư viện chuẩn mực quốc tế của TDTU cung cấp nguồn cảm hứng và động lực lớn lao để hoàn thành luận án với chất lượng cao nhất, đủ điều kiện công bố tại các tạp chí thuộc danh mục ISI/Scopus.

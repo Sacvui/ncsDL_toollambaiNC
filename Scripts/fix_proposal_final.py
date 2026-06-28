@@ -1,0 +1,54 @@
+import re
+
+file_path = 'c:/ncsDL/Proposal_LePhucHai/PhD_NhaTrang_HAILP.md'
+with open(file_path, 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# 1. Replace section 1.1
+old_1_1 = """Trong bối cảnh nền kinh tế xanh toàn cầu đang trỗi dậy, Yến sào không chỉ đơn thuần là một thực phẩm chức năng cao cấp mà còn là một mắt xích quan trọng trong chuỗi giá trị nông nghiệp bền vững của Việt Nam. Riêng tại Khánh Hòa, ngành Yến sào đóng vai trò trụ cột kinh tế với những đóng góp cụ thể:
+1.  **Đóng góp kinh tế vĩ mô:** Theo báo cáo ngành (2024), ngành Yến sào đóng góp đáng kể vào tổng kim ngạch xuất khẩu nông sản địa phương, tạo ra hệ sinh thái kinh tế cho hàng ngàn lao động và đóng góp vào GDP của tỉnh.
+2.  **Di sản văn hóa và Thương hiệu quốc gia:** Được mệnh danh là “Vàng trắng”, Yến sào Khánh Hòa là biểu tượng của tinh hoa thiên nhiên và kỹ nghệ khai thác truyền thống, đóng vai trò là đại sứ thương hiệu nông sản Việt Nam trên thị trường quốc tế.
+3.  **Nghịch lý giá trị:** Mặc dù có giá trị kinh tế và hàm lượng dinh dưỡng cao, ngành hàng nước yến (FMCG) đang đối mặt với "khủng hoảng danh tiếng". Thay vì vấn nạn hàng giả của yến tổ truyền thống, người tiêu dùng hiện đại đặc biệt quan ngại về **"Hàm lượng yến thật" và "Chất bảo quản/Đường hóa học"**. Người tiêu dùng Gen Z rất quan tâm đến sức khỏe nhưng lại hoài nghi các dòng nước yến đóng chai công nghiệp trên thị trường có "nhiều đường hơn yến". Theo các nghiên cứu gần đây, niềm tin đối với các cam kết "tự nhiên" của nước yến đóng chai đã sụt giảm. Trong bối cảnh này, công nghệ Blockchain được kỳ vọng có tiềm năng minh bạch hóa tỷ lệ phần trăm yến thực tế trong từng hũ sản phẩm, bảo vệ người tiêu dùng khỏi các thông điệp lập lờ."""
+
+new_1_1 = """Trong bối cảnh kinh tế toàn cầu, Yến sào không chỉ là thực phẩm chức năng cao cấp mà còn là mắt xích quan trọng trong chuỗi giá trị nông nghiệp của Việt Nam. Tại Khánh Hòa, ngành Yến sào đóng vai trò trụ cột kinh tế với những đóng góp cụ thể:
+1.  **Đóng góp kinh tế vĩ mô:** Theo ước tính của ngành (Cục Xuất nhập khẩu, 2024), ngành Yến sào có đóng góp cụ thể vào kim ngạch xuất khẩu nông sản địa phương. Ngành cũng tạo ra hệ sinh thái kinh tế cho lực lượng lao động lớn và đóng góp vào GDP của tỉnh.
+2.  **Di sản văn hóa và Thương hiệu quốc gia:** Yến sào Khánh Hòa là biểu tượng của tinh hoa thiên nhiên và kỹ nghệ khai thác truyền thống. Sản phẩm đóng vai trò là đại sứ thương hiệu nông sản Việt Nam trên thị trường quốc tế.
+3.  **Nghịch lý giá trị:** Mặc dù có giá trị kinh tế cao, ngành hàng nước yến đóng lon (RTD Bird's Nest) đang đối mặt với thử thách về niềm tin. Thay vì vấn nạn hàng giả của yến tổ thô, người tiêu dùng hiện đại quan ngại về hàm lượng yến thật và việc sử dụng chất bảo quản. Người tiêu dùng Gen Z quan tâm đến sức khỏe nhưng có sự hoài nghi đối với các dòng nước yến đóng chai công nghiệp. Theo một số nghiên cứu gần đây, niềm tin đối với các cam kết "tự nhiên" của nước yến có xu hướng giảm. Trong bối cảnh này, công nghệ Blockchain được kỳ vọng có tiềm năng minh bạch hóa tỷ lệ thành phần thực tế trong từng sản phẩm. Từ đó, công nghệ này giúp bảo vệ người tiêu dùng khỏi sự thiếu rõ ràng về thông tin."""
+
+content = content.replace(old_1_1, new_1_1)
+
+# 2. Replace cú hích lớn
+old_7_2 = """Nghiên cứu kỳ vọng sẽ tạo ra một cú hích lớn, chuyển dịch ngành yến sào từ mô hình "kinh doanh dựa trên danh tiếng cũ" sang mô hình "kinh doanh dựa trên sự xác thực số minh bạch", đảm bảo sự phát triển bền vững trong kỷ nguyên công nghệ 4.0."""
+new_7_2 = """Nghiên cứu kỳ vọng sẽ có những đóng góp quan trọng, hỗ trợ chuyển dịch ngành yến sào từ mô hình kinh doanh dựa trên danh tiếng truyền thống sang mô hình kinh doanh dựa trên sự xác thực số minh bạch. Điều này góp phần đảm bảo sự phát triển bền vững trong kỷ nguyên công nghệ số."""
+content = content.replace(old_7_2, new_7_2)
+
+# 3. Capitalization consistency (avoid references section)
+parts = content.split('## 13. TÀI LIỆU THAM KHẢO (REFERENCES)')
+main_body = parts[0]
+refs = '## 13. TÀI LIỆU THAM KHẢO (REFERENCES)' + parts[1]
+
+# Capitalize specific terms using regex to preserve surrounding text but update the exact matched word case
+def replacer(match):
+    # This just capitalizes the match by looking at a dictionary or replacing with target
+    text = match.group(0).lower()
+    mapping = {
+        'blockchain': 'Blockchain',
+        'brand authenticity': 'Brand Authenticity',
+        'green trust': 'Green Trust',
+        'green skepticism': 'Green Skepticism',
+        'rtd bird\\'s nest': "RTD Bird's Nest"
+    }
+    return mapping.get(text, match.group(0))
+
+pattern = re.compile(r'\b(?:blockchain|brand authenticity|green trust|green skepticism|rtd bird\'s nest)\b', re.IGNORECASE)
+main_body = pattern.sub(replacer, main_body)
+
+# In section 2.6, replace "niềm tin (trust)" with "Niềm tin xanh (Green Trust)" and "Brand Authenticity" is already fixed by regex
+# Let's fix specific lines if needed:
+main_body = main_body.replace('niềm tin (trust)', 'Niềm tin xanh (Green Trust)')
+
+content = main_body + refs
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(content)
+print("Updated successfully")

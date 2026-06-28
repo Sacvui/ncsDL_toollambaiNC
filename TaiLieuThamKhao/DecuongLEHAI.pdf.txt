@@ -1,0 +1,137 @@
+
+
+ĐỀ CƯƠNG CHI TIẾT LUẬN ÁN TIẾN SĨ 
+Tác giả: Lê Phúc Hải 
+Trường dự kiến: Đại học Đà Lạt 
+Khóa học: 2026–2029 
+Tên đề tài: 
+Sự cộng hưởng giữa Tín hiệu Marketing xanh và Minh bạch chuỗi cung ứng dựa trên 
+Blockchain trong việc hóa giải sự hoài nghi và xây dựng niềm tin của người tiêu dùng: 
+Nghiên cứu thực nghiệm trong ngành trà Atiso Việt Nam 
+ 
+CHƯƠNG 1 – TỔNG QUAN 
+1.1 Bối cảnh và tính cấp thiết 
+Trong bối cảnh biến đổi khí hậu, khan hiếm tài nguyên và áp lực từ các phong trào tiêu dùng 
+bền vững, marketing xanh trở thành xu hướng tất yếu để doanh nghiệp nâng cao lợi thế 
+cạnh tranh và đáp ứng kỳ vọng của người tiêu dùng. Tuy nhiên, sự hoài nghi đối với tuyên bố 
+xanh (green claims) vẫn ở mức cao, chủ yếu do “greenwashing” – hành vi truyền thông sai 
+lệch hoặc phóng đại các đặc tính môi trường của sản phẩm/dịch vụ. 
+Blockchain, với tính minh bạch, bất biến và khả năng truy xuất nguồn gốc theo thời gian 
+thực, được kỳ vọng là công cụ hữu hiệu để gia tăng tính xác thực của tín hiệu marketing 
+xanh. Việc tích hợp Blockchain vào chuỗi cung ứng trà Atiso – sản phẩm đặc sản của Lâm 
+Đồng – không chỉ góp phần bảo vệ thương hiệu địa phương, mà còn có thể mở rộng thị 
+trường và tăng niềm tin người tiêu dùng. 
+Mặc dù có nhiều nghiên cứu riêng lẻ về marketing xanh hoặc Blockchain trong chuỗi cung 
+ứng, các nghiên cứu tích hợp cả hai yếu tố trong bối cảnh thực nghiệm tại Việt Nam, đặc 
+biệt là ngành trà Atiso, còn rất hạn chế. Khoảng trống này tạo cơ hội để thực hiện nghiên 
+cứu mang tính tiên phong, vừa có ý nghĩa học thuật vừa có giá trị thực tiễn. 
+ 
+1.2 Khoảng trống nghiên cứu 
+ Thiếu các nghiên cứu kiểm định tác động đồng thời của marketing xanh và 
+Blockchain đối với nhận thức và hành vi người tiêu dùng. 
+ Thiếu mô hình lý thuyết tích hợp giải thích cơ chế hóa giải sự hoài nghi xanh (green 
+skepticism) thông qua tín hiệu minh bạch. 
+
+ Ít nghiên cứu thực nghiệm trong ngành nông sản đặc sản tại Việt Nam, nơi yếu tố 
+“xuất xứ” và “chất lượng” đóng vai trò quan trọng trong niềm tin người tiêu dùng. 
+ 
+1.3 Mục tiêu nghiên cứu 
+Mục tiêu tổng quát: 
+Xây dựng và kiểm định mô hình tích hợp giữa Marketing xanh và minh bạch Blockchain 
+nhằm hóa giải sự hoài nghi và gia tăng niềm tin người tiêu dùng đối với sản phẩm trà Atiso 
+Việt Nam. 
+Mục tiêu cụ thể: 
+1. Đánh giá tác động của Marketing xanh đến nhận thức giá trị và niềm tin của người 
+tiêu dùng. 
+2. Phân tích vai trò của Blockchain trong việc tăng tính minh bạch và giảm hoài nghi 
+xanh. 
+3. Kiểm định tác động cộng hưởng của Marketing xanh và Blockchain đến ý định mua 
+hàng. 
+4. Đề xuất khuyến nghị quản trị cho doanh nghiệp và chính quyền địa phương. 
+ 
+1.4 Câu hỏi nghiên cứu 
+1. Marketing xanh ảnh hưởng như thế nào đến niềm tin và ý định mua hàng? 
+2. Minh bạch dựa trên Blockchain có làm giảm sự hoài nghi xanh hay không? 
+3. Tác động cộng hưởng giữa Marketing xanh và Blockchain được thể hiện ra sao? 
+4. Mô hình nghiên cứu có thể áp dụng cho các ngành nông sản khác ngoài trà Atiso hay 
+không? 
+ 
+1.5 Đối tượng và phạm vi nghiên cứu 
+ Đối tượng nghiên cứu: Người tiêu dùng trà Atiso tại Việt Nam. 
+ Phạm vi nội dung: Marketing xanh (4P xanh), minh bạch chuỗi cung ứng dựa trên 
+Blockchain, sự hoài nghi xanh, niềm tin, ý định mua hàng. 
+ Phạm vi không gian: Tỉnh Lâm Đồng và một số thị trường tiêu thụ chính. 
+
+ Phạm vi thời gian: 2026–2029. 
+ 
+CHƯƠNG 2 – CƠ SỞ LÝ THUYẾT VÀ MÔ HÌNH 
+2.1 Lý thuyết nền 
+ Lý thuyết tín hiệu (Signaling Theory): Giải thích cách doanh nghiệp truyền tải thông 
+tin về chất lượng và tính bền vững để giảm bất cân xứng thông tin. 
+ Lý thuyết hành vi dự định (TPB): Giải thích mối quan hệ giữa thái độ, chuẩn chủ 
+quan, kiểm soát hành vi và ý định mua hàng. 
+ Lý thuyết minh bạch và niềm tin: Khẳng định vai trò của minh bạch thông tin trong 
+việc giảm hoài nghi và tăng sự tin tưởng. 
+ 
+2.2 Tổng quan nghiên cứu 
+Tổng hợp các nghiên cứu trước đây về: 
+ Marketing xanh và tác động đến hành vi tiêu dùng. 
+ Blockchain trong chuỗi cung ứng nông sản. 
+ Cơ chế giảm hoài nghi xanh thông qua minh bạch thông tin. 
+ Khoảng trống về nghiên cứu tích hợp hai yếu tố này. 
+ 
+2.3 Mô hình và giả thuyết 
+Biến độc lập: Marketing xanh (Green 4P) và Minh bạch Blockchain. 
+Biến trung gian: Sự hoài nghi xanh, Niềm tin. 
+Biến phụ thuộc: Ý định mua hàng. 
+Giả thuyết: 
+ H1: Marketing xanh → Niềm tin (+) 
+ H2: Marketing xanh → Giảm hoài nghi xanh (−) 
+ H3: Minh bạch Blockchain → Niềm tin (+) 
+ H4: Minh bạch Blockchain → Giảm hoài nghi xanh (−) 
+ H5: Niềm tin → Ý định mua hàng (+) 
+
+ H6: Hoài nghi xanh → Ý định mua hàng (−) 
+ H7: Tác động cộng hưởng của Marketing xanh & Blockchain → Niềm tin và Ý định mua 
+hàng (+) 
+ 
+CHƯƠNG 3 – PHƯƠNG PHÁP 
+3.1 Thiết kế nghiên cứu 
+Nghiên cứu hỗn hợp hai giai đoạn: 
+1. Định tính: Khám phá và điều chỉnh thang đo. 
+2. Định lượng: Khảo sát và kiểm định mô hình. 
+ 
+3.2 Giai đoạn 1: Định tính 
+ Phỏng vấn sâu 15–20 chuyên gia trong lĩnh vực marketing, công nghệ chuỗi cung 
+ứng và nông sản. 
+ Phân tích nội dung để xác định yếu tố quan trọng, điều chỉnh thang đo từ nghiên cứu 
+trước. 
+ 
+3.3 Giai đoạn 2: Định lượng 
+ Thiết kế bảng câu hỏi dựa trên thang đo đã điều chỉnh. 
+ Chọn mẫu ngẫu nhiên phân tầng từ nhóm người tiêu dùng trà Atiso. 
+ Kích thước mẫu: ≥ 400 mẫu hợp lệ. 
+ Phân tích dữ liệu bằng SEM (Structural Equation Modeling). 
+ 
+3.4 Phân tích dữ liệu 
+ Kiểm định độ tin cậy (Cronbach’s Alpha, Composite Reliability). 
+ Kiểm định giá trị (CFA – Confirmatory Factor Analysis). 
+ Phân tích cấu trúc tuyến tính (SEM) để kiểm định giả thuyết. 
+ Kiểm tra tác động trung gian và tương tác. 
+
+ 
+CHƯƠNG 4 – TIẾN ĐỘ 
+ 2026: Tổng quan tài liệu, định tính, xây dựng thang đo. 
+ 2027: Thu thập dữ liệu định lượng, phân tích sơ bộ. 
+ 2028: Phân tích SEM, viết luận án. 
+ 2029: Hoàn thiện và bảo vệ luận án. 
+ 
+CHƯƠNG 5 – ĐÓNG GÓP DỰ KIẾN 
+5.1 Học thuật 
+ Đề xuất mô hình tích hợp giữa Marketing xanh và minh bạch Blockchain. 
+ Mở rộng lý thuyết tín hiệu trong bối cảnh công nghệ chuỗi cung ứng. 
+5.2 Quản trị và chính sách 
+ Cung cấp cơ sở dữ liệu cho doanh nghiệp xây dựng chiến lược marketing xanh hiệu 
+quả. 
+ Hỗ trợ nhà quản lý địa phương trong việc thúc đẩy sản phẩm nông sản bền vững. 
+ 

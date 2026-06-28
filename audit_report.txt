@@ -1,0 +1,6 @@
+BÁO CÁO KIỂM TOÁN HỌC THUẬT - PhD_NhaTrang_HAILP.md
+============================================================
+[CẢNH BÁO] Trụ cột 5 - Còn sót 72 cụm tiếng Anh trong ngoặc. Ví dụ:  (Skepticism),  (RTD),  (RTD)
+[OK] Trụ cột 1 - Đã sạch các từ ngữ tuyệt đối hóa/siêu cấp.
+[CẢNH BÁO] Trụ cột 7 - Lặp công thức AI quá nhiều (>3 lần): 'Trong bối cảnh': 10 lần
+[CẢNH BÁO] Trụ cột 6 - Phát hiện 1 đoạn văn vi phạm quy tắc độ dài (vượt quá 5 câu/đoạn).

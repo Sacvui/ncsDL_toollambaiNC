@@ -1,0 +1,7 @@
+node_modules/
+.vscode/
+*.docx
+*.pdf
+extracted_raw_text.txt
+sync_report.txt
+sentence_sync_report.txt

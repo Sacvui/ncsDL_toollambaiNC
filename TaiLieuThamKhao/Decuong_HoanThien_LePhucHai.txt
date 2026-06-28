@@ -1,0 +1,76 @@
+# ĐỀ CƯƠNG DỰ TUYỂN TRÌNH ĐỘ TIẾN SĨ
+**Năm 2026**
+
+**TÊN ĐỀ TÀI:** 
+**SỰ CỘNG HƯỞNG GIỮA TÍN HIỆU MARKETING XANH VÀ MINH BẠCH CHUỖI CUNG ỨNG DỰ TRÊN BLOCKCHAIN TRONG VIỆC HÓA GIẢI SỰ HOÀI NGHI VÀ XÂY DỰNG NIỀM TIN CỦA NGƯỜI TIÊU DÙNG: NGHIÊN CỨU THỰC NGHIỆM TRONG NGÀNH TRÀ ATISO VIỆT NAM**
+
+**Chuyên ngành:** Quản trị kinh doanh
+**Mã số:** 9340101
+**Tên người dự tuyển:** Lê Phục Hải
+**Cơ quan công tác:** [Cần bổ sung thông tin]
+
+---
+
+## 1. ĐẶT VẤN ĐỀ
+Thế kỷ 21 chứng kiến những chuyển biến sâu rộng trong nhận thức của nhân loại về mối quan hệ giữa hoạt động kinh tế và môi trường tự nhiên. Sự gia tăng không ngừng của các vấn đề môi trường toàn cầu đã trở thành một thách thức mang tính sống còn đối với sự phát triển bền vững của xã hội (IPCC, 2023). Trong bối cảnh đó, Marketing xanh (Green Marketing) đã nổi lên như một triết lý và chiến lược kinh doanh không thể thiếu (Kotler & Keller, 2016). 
+
+Tuy nhiên, sự bùng nổ của Marketing xanh cũng kéo theo hiện tượng "Greenwashing" (xanh hóa giả tạo), gây ra sự "Hoài nghi xanh" (Green Skepticism) ở mức độ báo động (Leonidou & Skarmeas, 2017). Người tiêu dùng dần mất niềm tin vào các tuyên bố bền vững thiếu căn cứ. Để giải quyết thách thức này, công nghệ Blockchain với đặc tính bất biến và minh bạch (Tapscott, 2016) nổi lên như một giải pháp đột phá để xác thực thông tin sản phẩm xuyên suốt chuỗi cung ứng.
+
+Tại Việt Nam, tỉnh Lâm Đồng sở hữu sản phẩm trà Atiso là một thương hiệu chủ lực. Tuy nhiên, ngành trà này đang đối mặt với sự bất cân xứng thông tin và thiếu minh bạch về quy trình canh tác hữu cơ. Việc thiếu một cơ chế xác thực khiến các chương trình Marketing xanh của doanh nghiệp dễ bị coi là thiếu trung thực. Do đó, việc nghiên cứu tác động cộng hưởng của Marketing xanh và Minh bạch Blockchain là hết sức cấp thiết để hóa giải sự hoài nghi, kiến tạo niềm tin bền vững và nâng cao lợi thế cạnh tranh cho nông sản Việt Nam.
+
+## 2. TỔNG QUAN VẤN ĐỀ NGHIÊN CỨU
+### 2.1. Cơ sở lý thuyết nền tảng
+Luận án kế thừa và tích hợp ba nhóm lý thuyết chính:
+*   **Lý thuyết Tín hiệu (Signaling Theory):** Giải thích cách doanh nghiệp truyền tải thông tin chất lượng xanh để giảm bất cân xứng thông tin (Spence, 1973). Marketing xanh và Blockchain được xem là các tín hiệu chi phí cao giúp định vị thương hiệu.
+*   **Lý thuyết Hành vi dự định (Theory of Planned Behavior - TPB):** Phân tích sự hình thành ý định mua hàng dựa trên thái độ, chuẩn mực chủ quan và kiểm soát hành vi nhận thức (Ajzen, 1991).
+*   **Lý thuyết Minh bạch và Niềm tin:** Khẳng định minh bạch thông tin là tiền tố cốt lõi của niềm tin tổ chức và tiêu dùng (Rawlins, 2008). 
+
+### 2.2. Khoảng trống nghiên cứu
+Qua rà soát lược khảo tài liệu, luận án xác định hai khoảng trống lớn:
+1.  **Khoảng trống lý thuyết:** Đa số nghiên cứu xem xét Marketing xanh và Blockchain như các yếu tố độc lập. Hiện chưa có mô hình tích hợp kiểm định **"Tác động cộng hưởng" (Synergy Effect)** giữa hai yếu tố này.
+2.  **Khoảng trống thực tiễn:** Tại thị trường mới nổi như Việt Nam, các nghiên cứu về Blockchain trong chuỗi cung ứng nông sản mới chỉ dừng lại ở góc độ kỹ thuật, chưa được phân tích dưới góc nhìn hành vi tiêu dùng và quản trị marketing.
+
+## 3. MỤC TIÊU VÀ NỘI DUNG CỦA LUẬN ÁN
+### 3.1. Mục tiêu của luận án
+*   **Mục tiêu tổng quát:** Xây dựng và kiểm định mô hình cộng hưởng giữa Marketing xanh và Minh bạch Blockchain nhằm hóa giải sự hoài nghi xanh và thúc đẩy ý định mua hàng của người tiêu dùng đối với sản phẩm trà Atiso Việt Nam.
+*   **Mục tiêu cụ thể:**
+    1. Xác định các thành phần của Marketing xanh (Green 4Ps) và Hệ thống Minh bạch Blockchain phù hợp ngành trà và bối cảnh hành vi tại địa phương.
+    2. Đánh giá và định lượng tác động của Minh bạch Blockchain trong việc giảm mức độ hoài nghi của khách hàng.
+    3. Kiểm định vai trò trung gian của Niềm tin và Hoài nghi xanh trong mối quan hệ giữa các hoạt động marketing và hành vi mua hàng.
+    4. Kiểm định sự cộng hưởng (Synergy Effect) khi kết hợp cả hai yếu tố để tạo ra lòng tin vượt trội.
+
+### 3.2. Nội dung nghiên cứu chính
+Luận án tập trung giải quyết các bài toán sau:
+*   Phát triển hệ thống chỉ số đo lường (thang đo) tích hợp cho Marketing xanh và Minh bạch Blockchain dựa trên nghiên cứu của Chen (2012) và Kamilaris (2019).
+*   Khám phá cơ chế tâm lý của khách hàng khi tiếp nhận thông tin được xác thực trên Blockchain.
+*   Kiểm định mô hình bằng phương pháp khảo sát n=500 khách hàng.
+
+### 3.3. Cấu trúc dự kiến của luận án
+Bố cục luận án gồm 5 chương:
+*   Chương 1: Tổng quan đề tài nghiên cứu.
+*   Chương 2: Cơ sở lý thuyết và mô hình nghiên cứu.
+*   Chương 3: Thiết kế và phương pháp nghiên cứu.
+*   Chương 4: Kết quả nghiên cứu và thảo luận.
+*   Chương 5: Kết luận và hàm ý quản trị.
+
+## 4. TIẾN ĐỘ THỰC HIỆN ĐỀ TÀI
+*   **Năm 1 (2026):** Tổng quan tài liệu, thực hiện nghiên cứu định tính (phỏng vấn chuyên gia), điều chỉnh thang đo và xây dựng bảng câu hỏi.
+*   **Năm 2 (2027):** Thực hiện khảo sát định lượng chính thức, xử lý dữ liệu sơ bộ và kiểm định độ tin cậy thang đo.
+*   **Năm 3 (2028):** Phân tích mô hình cấu trúc tuyến tính SEM, thảo luận kết quả nghiên cứu và viết bản thảo luận án.
+*   **Năm 4 (2029):** Hoàn thiện bản thảo, công bố bài báo quốc tế và bảo vệ luận án chính thức.
+
+## 5. DỰ KIẾN KẾT QUẢ ĐẠT ĐƯỢC
+*   **Về học thuật:** Cung cấp mô hình lý thuyết tích hợp tiên phong về hiệu ứng cộng hưởng "Xanh + Công nghệ" giúp khắc phục các hệ lụy của hiện tượng Greenwashing.
+*   **Về thực tiễn:** Cung cấp "lộ trình số hóa xanh" cho doanh nghiệp trà Atiso Lâm Đồng để xây dựng niềm tin bền vững, nâng tầm giá trị thương hiệu đặc sản vùng miền.
+*   **Công bố:** 01-02 bài báo trên tạp chí Scopus/ISI và bài báo chuyên ngành uy tín trong nước.
+
+## 6. DANH MỤC TÀI LIỆU THAM KHẢO (APA)
+1.  Ajzen, I. (1991). The theory of planned behavior. *Organizational Behavior and Human Decision Processes*, 50(2), 179-211.
+2.  Chen, Y. S., & Chang, C. H. (2012). Enhance green purchase intentions: The roles of green perceived value, green perceived risk, and green trust. *Management Decision*.
+3.  Kamilaris, A., Fonts, A., & Prenafeta-Boldú, F. X. (2019). The rise of blockchain technology in agriculture and food supply chains. *Trends in Food Science & Technology*, 91, 640-652.
+4.  Leonidou, C. N., & Skarmeas, D. (2017). Gray shades of green: Causes and consequences of green skepticism. *Journal of Business Ethics*, 144(2), 401-415.
+5.  Spence, M. (1973). Job market signaling. *The Quarterly Journal of Economics*, 87(3), 355-374.
+
+## 7. CÁN BỘ HƯỚNG DẪN DỰ KIẾN
+*   **Hướng dẫn 1:** [Họ và tên - Học vị - Cơ quan công tác]
+*   **Hướng dẫn 2:** [Họ và tên - Học vị - Cơ quan công tác]

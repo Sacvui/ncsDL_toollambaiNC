@@ -1,0 +1,4 @@
+## 7. MỤC TIÊU VÀ MONG MUỐN ĐẠT ĐƯỢC KHI ĐĂNG KÝ TUYỂN SINH
+- **Nâng tầm năng lực nghiên cứu liên ngành:** Vượt qua ranh giới của một nhà nghiên cứu Marketing truyền thống để trở thành một chuyên gia phân tích dữ liệu ứng dụng.
+- **Giải quyết bài toán thực tiễn:** Cung cấp cho các doanh nghiệp FMCG Việt Nam một bộ tiêu chuẩn khoa học về cách thức eWOM định giá doanh nghiệp, giúp các nhà quản trị Marketing tự tin giải trình ngân sách trước cổ đông.
+- **Đóng góp y văn toàn cầu:** Đưa dữ liệu thị trường Việt Nam và đặc tính ngôn ngữ tiếng Việt vào bản đồ các nghiên cứu về trách nhiệm giải trình tiếp thị và khai phá văn bản trên các tạp chí quốc tế ISI/Scopus.

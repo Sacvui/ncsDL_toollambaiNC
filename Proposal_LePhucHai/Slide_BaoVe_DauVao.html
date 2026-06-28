@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảo vệ Đề cương Tiến sĩ - NCS Lê Phúc Hải</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+    <style>
+        :root {
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --gold: #c9a94e;
+            --gold-light: #e0c97a;
+            --white: #ffffff;
+            --gray: #e2e8f0;
+            --text: #1e293b;
+            --accent-red: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .deck {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            padding: 60px 80px;
+            background: var(--white);
+            overflow: hidden;
+        }
+        .slide.active { display: flex; }
+
+        /* === SLIDE TYPES === */
+        .slide-title {
+            background: var(--navy);
+            color: var(--white);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide-title .uni-badge {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .slide-title h1 {
+            font-family: 'Noto Serif', serif;
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1.5;
+            max-width: 900px;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+        .slide-title .meta {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+        .slide-title .meta strong { color: var(--gold-light); }
+        .slide-title .gold-line {
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 25px auto;
+        }
+
+        .slide-section {
+            background: var(--navy);
+            color: var(--white);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide-section .section-num {
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        .slide-section h2 {
+            font-family: 'Noto Serif', serif;
+            font-size: 36px;
+            margin-top: 10px;
+        }
+
+        .slide-content {
+            background: var(--white);
+        }
+
+        /* === HEADER BAR === */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--navy);
+            margin-bottom: 30px;
+            flex-shrink: 0;
+        }
+        .header-bar h2 {
+            font-family: 'Noto Serif', serif;
+            font-size: 24px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+        .header-bar .slide-tag {
+            font-size: 12px;
+            color: var(--gold);
+            background: var(--navy);
+            padding: 4px 14px;
+            border-radius: 3px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* === CONTENT === */
+        .content-body {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .content-body h3 {
+            font-size: 18px;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .content-body p, .content-body li {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+        }
+        .content-body ul {
+            padding-left: 20px;
+        }
+        .content-body li {
+            margin-bottom: 8px;
+        }
+        .content-body li strong {
+            color: var(--navy);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+        .three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            flex: 1;
+        }
+
+        .highlight-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--navy);
+            padding: 18px 22px;
+            border-radius: 0 6px 6px 0;
+            margin-top: 10px;
+        }
+        .highlight-box p {
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        .gap-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .gap-card .gap-num {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Noto Serif', serif;
+        }
+        .gap-card h4 {
+            font-size: 14px;
+            color: var(--navy);
+            margin: 10px 0;
+            font-weight: 700;
+        }
+        .gap-card p {
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            background: var(--navy);
+            color: var(--white);
+            padding: 18px 25px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        .stat-item .num {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .stat-item .label {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #94a3b8;
+        }
+
+        .hyp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .hyp-table th {
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .hyp-table td {
+            padding: 9px 14px;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--text);
+        }
+        .hyp-table tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+        .hyp-table .dir-pos { color: #16a34a; font-weight: 700; }
+        .hyp-table .dir-neg { color: var(--accent-red); font-weight: 700; }
+        .hyp-table .dir-mod { color: var(--gold); font-weight: 700; }
+
+        .timeline-row {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+        }
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px 10px;
+            border-right: 2px solid var(--navy);
+            position: relative;
+        }
+        .timeline-item:last-child { border-right: none; }
+        .timeline-item .t-period {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .timeline-item .t-task {
+            font-size: 13px;
+            color: var(--navy);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .timeline-item .t-output {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 6px;
+        }
+
+        /* Model SVG */
+        .model-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .model-container svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* === FOOTER === */
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 11px;
+            color: #94a3b8;
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+
+        /* === NAVIGATION === */
+        .nav-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+        .nav-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid var(--navy);
+            background: var(--white);
+            color: var(--navy);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+        .nav-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 28px;
+            left: 30px;
+            font-size: 13px;
+            color: #64748b;
+            z-index: 100;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Mermaid */
+        .mermaid-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+        .mermaid-wrap .mermaid {
+            max-width: 100%;
+        }
+
+        /* Print */
+        @media print {
+            .slide { page-break-after: always; display: flex !important; position: relative; height: 100vh; }
+            .nav-controls, .slide-counter { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+    <!-- ==================== SLIDE 1: TITLE ==================== -->
+    <div class="slide slide-title active" data-slide="1">
+        <div class="uni-badge">Trường Đại học Nha Trang</div>
+        <div class="gold-line"></div>
+        <h1>Cơ chế tác động của Truy xuất Nguồn gốc Số đến Ý định mua sản phẩm Nước yến chế biến sẵn:<br/>Vai trò của Tính xác thực Thương hiệu và Niềm tin</h1>
+        <div class="gold-line"></div>
+        <div class="meta">
+            <strong>Nghiên cứu sinh:</strong> Lê Phúc Hải<br/>
+            <strong>Chuyên ngành:</strong> Quản trị Kinh doanh — Mã số: 9340101<br/>
+            <strong>Bảo vệ Đề cương Dự tuyển Nghiên cứu sinh</strong>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 2: NỘI DUNG TRÌNH BÀY ==================== -->
+    <div class="slide slide-content" data-slide="2">
+        <div class="header-bar">
+            <h2>Nội dung Trình bày</h2>
+            <span class="slide-tag">TỔNG QUAN</span>
+        </div>
+        <div class="content-body" style="justify-content: center;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <ol style="font-size: 20px; line-height: 2.4; list-style-type: none; padding: 0;">
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 8px 0;"><strong style="color: var(--gold); margin-right: 15px;">01</strong> Lý do chọn đề tài & Bối cảnh thực tiễn</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 8px 0;"><strong style="color: var(--gold); margin-right: 15px;">02</strong> Tổng quan tài liệu & Khoảng trống nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 8px 0;"><strong style="color: var(--gold); margin-right: 15px;">03</strong> Mục tiêu & Câu hỏi nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 8px 0;"><strong style="color: var(--gold); margin-right: 15px;">04</strong> Khung lý thuyết & Mô hình nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 8px 0;"><strong style="color: var(--gold); margin-right: 15px;">05</strong> Giả thuyết nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 8px 0;"><strong style="color: var(--gold); margin-right: 15px;">06</strong> Phương pháp nghiên cứu</li>
+                    <li style="border-bottom: 1px solid #e2e8f0; padding: 8px 0;"><strong style="color: var(--gold); margin-right: 15px;">07</strong> Đóng góp dự kiến & Kế hoạch thực hiện</li>
+                </ol>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 3: BỐI CẢNH ==================== -->
+    <div class="slide slide-content" data-slide="3">
+        <div class="header-bar">
+            <h2>1. Bối cảnh thực tiễn & Vấn đề nghiên cứu</h2>
+            <span class="slide-tag">LÝ DO CHỌN ĐỀ TÀI</span>
+        </div>
+        <div class="content-body">
+            <div class="stat-row">
+                <div class="stat-item">
+                    <div class="num">8.500 tỷ</div>
+                    <div class="label">Quy mô thị trường<br/>Nước yến VN (VNĐ, 2023)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">12%</div>
+                    <div class="label">Tăng trưởng TB/năm<br/>(Euromonitor, 2023)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">1.200+</div>
+                    <div class="label">Vụ vi phạm hàng giả<br/>TPCHỨC NĂNG (2021)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="num">3.595 tỷ</div>
+                    <div class="label">Doanh thu Yến Sào<br/>Khánh Hòa (2024)</div>
+                </div>
+            </div>
+            <div class="two-col" style="margin-top: 15px;">
+                <div>
+                    <h3>Bất cân xứng thông tin (Akerlof, 1970)</h3>
+                    <ul>
+                        <li>Nước yến RTD = <strong>hàng hóa dựa trên niềm tin</strong> (Credence goods)</li>
+                        <li>Người tiêu dùng <strong>không thể kiểm chứng</strong> chất lượng ngay cả sau khi tiêu dùng</li>
+                        <li>Tỷ lệ yến thật, quy trình tiệt trùng — hoàn toàn phụ thuộc lời hứa nhà sản xuất</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Khủng hoảng niềm tin & Đặc thù Khánh Hòa</h3>
+                    <ul>
+                        <li>"Yến sào Khánh Hòa" — <strong>Chỉ dẫn Địa lý Quốc gia</strong></li>
+                        <li>Doanh thu SKV giảm >600 tỷ do hàng giả, hàng nhái (DNSE, 2025)</li>
+                        <li>Gen Z: sẵn sàng chi nhưng <strong>đòi hỏi minh bạch</strong> (Kantar, 2023)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <p><strong>Vấn đề cốt lõi:</strong> Các tín hiệu marketing truyền thống (tem nhãn, chứng nhận tĩnh) đang mất hiệu lực. Cần chuyển dịch sang <strong>Marketing dựa trên tín hiệu minh bạch số</strong> — Truy xuất nguồn gốc.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 4: TỔNG QUAN TÀI LIỆU ==================== -->
+    <div class="slide slide-content" data-slide="4">
+        <div class="header-bar">
+            <h2>2. Tổng quan Tài liệu — Các dòng nghiên cứu</h2>
+            <span class="slide-tag">TỔNG QUAN</span>
+        </div>
+        <div class="content-body">
+            <table class="hyp-table" style="font-size: 13px;">
+                <thead>
+                <tr><th style="width:18%">Tác giả</th><th style="width:15%">Bối cảnh</th><th style="width:22%">Biến chính</th><th style="width:22%">Kết quả chính</th><th style="width:23%">Khoảng trống</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>Akerlof (1970)</td><td>Thị trường bất cân xứng</td><td>Information Asymmetry</td><td>Lựa chọn bất lợi</td><td>Chưa có giải pháp kỹ thuật</td></tr>
+                <tr><td>Spence (1973)</td><td>Thị trường lao động</td><td>Signaling → Quality</td><td>Tín hiệu chi phí cao giúp giảm BĐX</td><td>Chưa áp dụng cho tiêu dùng số</td></tr>
+                <tr><td>Morhart et al. (2015)</td><td>Thương hiệu</td><td>Brand Authenticity</td><td>4 thành phần: Credibility, Integrity, Continuity, Symbolism</td><td>Chưa gắn với tín hiệu kỹ thuật</td></tr>
+                <tr><td>Francisco & Swanson (2018)</td><td>Chuỗi cung ứng</td><td>Blockchain → Transparency</td><td>Tăng minh bạch chuỗi cung ứng</td><td>Thiếu góc người tiêu dùng</td></tr>
+                <tr><td>Kamble et al. (2020)</td><td>Nông sản, Ấn Độ</td><td>Blockchain → SC</td><td>Mô hình hóa hiệu quả</td><td>Thiếu biến tâm lý</td></tr>
+                <tr><td><strong>Luận án này</strong></td><td><strong>Nước yến RTD, VN</strong></td><td><strong>TR → PIQ → TT → BA → PI/WTP</strong></td><td><strong>Đang kiểm định</strong></td><td><strong>Giải quyết các khoảng trống</strong></td></tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box" style="margin-top: 10px;">
+                <p><strong>Nhận định:</strong> Đa số nghiên cứu tiếp cận từ góc độ <em>quản trị chuỗi cung ứng</em> (phía cung), chưa kiểm định <strong>cơ chế tâm lý chuyển hóa</strong> từ tín hiệu kỹ thuật sang nhận thức thương hiệu ở phía cầu (người tiêu dùng).</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 5: KHOẢNG TRỐNG ==================== -->
+    <div class="slide slide-content" data-slide="5">
+        <div class="header-bar">
+            <h2>2. Khoảng trống Nghiên cứu (Research Gaps)</h2>
+            <span class="slide-tag">TỔNG QUAN</span>
+        </div>
+        <div class="content-body" style="justify-content: center;">
+            <div class="three-col">
+                <div class="gap-card">
+                    <div class="gap-num">Gap 1</div>
+                    <h4>Cơ chế trung gian</h4>
+                    <p>Brand Authenticity như biến trung gian cấp cao giữa tín hiệu kỹ thuật và hành vi tiêu dùng FMCG — chưa được kiểm định.</p>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-num">Gap 2</div>
+                    <h4>Tích hợp lý thuyết</h4>
+                    <p>Đứt gãy giữa dòng quản trị chuỗi cung ứng (Supply chain) và dòng tâm lý hành vi (Consumer behavior). Thiếu mô hình tích hợp.</p>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-num">Gap 3</div>
+                    <h4>Bối cảnh</h4>
+                    <p>Nghiên cứu thực chứng chủ yếu ở thị trường phát triển, cho nông sản thô. Thiếu bằng chứng tại Việt Nam cho FMCG chế biến.</p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 25px;">
+                <p><strong>Định vị nghiên cứu:</strong> Luận án kiểm định cơ chế tác động từ <em>tín hiệu truy xuất số</em> đến <em>hành vi tiêu dùng</em>, thông qua chuỗi trung gian <strong>PIQ → Trust → Brand Authenticity</strong>, trong bối cảnh nước yến RTD tại Việt Nam.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 6: MỤC TIÊU ==================== -->
+    <div class="slide slide-content" data-slide="6">
+        <div class="header-bar">
+            <h2>3. Mục tiêu & Câu hỏi Nghiên cứu</h2>
+            <span class="slide-tag">MỤC TIÊU</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Mục tiêu tổng quát</h3>
+                    <p>Kiểm định cơ chế tác động của tín hiệu truy xuất nguồn gốc số đối với nhận thức, tính xác thực thương hiệu và hành vi tiêu dùng nước yến RTD.</p>
+                    <h3 style="margin-top: 25px;">Mục tiêu cụ thể</h3>
+                    <ol style="padding-left: 18px;">
+                        <li>Hệ thống hóa cơ sở lý luận về bất cân xứng TT, lý thuyết tín hiệu và niềm tin</li>
+                        <li>Xây dựng & kiểm định mô hình: TR → SK / PIQ → TT → BA</li>
+                        <li>Đo lường tác động BA → PI / WTP</li>
+                        <li>Đề xuất hàm ý quản trị cho DN yến RTD</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>Câu hỏi nghiên cứu</h3>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 10px;">
+                        <p style="margin-bottom: 15px;"><strong>RQ1:</strong> Tín hiệu truy xuất nguồn gốc số tác động như thế nào đến hoài nghi và niềm tin?</p>
+                        <p style="margin-bottom: 15px;"><strong>RQ2:</strong> Tính xác thực thương hiệu đóng vai trò trung gian như thế nào trong việc hình thành ý định tiêu dùng?</p>
+                        <p><strong>RQ3:</strong> Cơ chế tương tác giữa thông điệp tiếp thị và xác thực số diễn ra như thế nào?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 7: KHUNG LÝ THUYẾT ==================== -->
+    <div class="slide slide-content" data-slide="7">
+        <div class="header-bar">
+            <h2>4. Khung Lý thuyết tích hợp</h2>
+            <span class="slide-tag">LÝ THUYẾT</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Lý thuyết Tín hiệu (Signaling Theory)</h3>
+                    <p>Spence (1973): Tín hiệu chi phí cao, khó giả mạo → giảm bất cân xứng thông tin. Truy xuất nguồn gốc số = tín hiệu chi phí cao.</p>
+                    <h3 style="margin-top: 20px;">Khung S-O-R</h3>
+                    <p>Mehrabian & Russell (1974): Kích thích → Cơ thể (nhận thức) → Phản hồi (hành vi).</p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>S — Stimulus:</strong> TR (Truy xuất), NC (Thông điệp tự nhiên)</li>
+                        <li><strong>O — Organism:</strong> PIQ, Skepticism, Trust, Brand Authenticity</li>
+                        <li><strong>R — Response:</strong> Purchase Intention, WTP</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Brand Authenticity (Morhart et al., 2015)</h3>
+                    <p>4 thành phần cốt lõi:</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;">
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px; text-align:center;">
+                            <strong>Credibility</strong><br/><span style="font-size:13px; color:#64748b;">Đáng tin cậy</span>
+                        </div>
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px; text-align:center;">
+                            <strong>Integrity</strong><br/><span style="font-size:13px; color:#64748b;">Liêm chính</span>
+                        </div>
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px; text-align:center;">
+                            <strong>Continuity</strong><br/><span style="font-size:13px; color:#64748b;">Nhất quán</span>
+                        </div>
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px; text-align:center;">
+                            <strong>Symbolism</strong><br/><span style="font-size:13px; color:#64748b;">Biểu tượng</span>
+                        </div>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <p>Hướng nhân quả: Trust → Brand Authenticity.<br/>"Niềm tin vào dữ liệu" = bệ phóng tâm lý để quy gán tính xác thực cho thương hiệu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 8: MÔ HÌNH NGHIÊN CỨU ==================== -->
+    <div class="slide slide-content" data-slide="8">
+        <div class="header-bar">
+            <h2>4. Mô hình Nghiên cứu đề xuất</h2>
+            <span class="slide-tag">MÔ HÌNH</span>
+        </div>
+        <div class="content-body">
+            <div class="model-container">
+                <svg viewBox="0 0 1250 440" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px; width: 100%; font-family: 'Inter', sans-serif;">
+                    <!-- Definitions of markers -->
+                    <defs>
+                        <!-- Unified rigorous academic black arrowhead -->
+                        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="#000000"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Subgraph boxes (Academic standard: solid thin black outlines, no fills) -->
+                    <!-- Stimulus (S) -->
+                    <rect x="20" y="30" width="220" height="320" rx="0" fill="none" stroke="#000000" stroke-width="1"/>
+                    <text x="130" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#000000">Stimulus (S)</text>
+
+                    <!-- Organism (O) -->
+                    <rect x="290" y="30" width="650" height="320" rx="0" fill="none" stroke="#000000" stroke-width="1"/>
+                    <text x="615" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#000000">Organism (O)</text>
+
+                    <!-- Response (R) -->
+                    <rect x="970" y="30" width="260" height="320" rx="0" fill="none" stroke="#000000" stroke-width="1"/>
+                    <text x="1100" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#000000">Response (R)</text>
+
+                    <!-- Nodes (Academic standard: white background, thin black border, sharp corners) -->
+                    <!-- Top Row -->
+                    <!-- TR (Perceived Traceability) -->
+                    <rect x="40" y="80" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="130" y="101" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Perceived Traceability</text>
+                    <text x="130" y="117" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(TR)</text>
+
+                    <!-- PIQ (Perceived Info Quality) -->
+                    <rect x="320" y="80" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="410" y="101" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Perceived Info Quality</text>
+                    <text x="410" y="117" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(PIQ)</text>
+
+                    <!-- PI (Purchase Intention) -->
+                    <rect x="1000" y="80" width="200" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="1100" y="101" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Purchase Intention</text>
+                    <text x="1100" y="117" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(PI)</text>
+
+                    <!-- Second Row -->
+                    <!-- SK (Skepticism) -->
+                    <rect x="350" y="180" width="120" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="410" y="201" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Skepticism</text>
+                    <text x="410" y="217" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(SK)</text>
+
+                    <!-- Third Row -->
+                    <!-- TT (Trust) -->
+                    <rect x="580" y="230" width="100" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="630" y="251" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Trust</text>
+                    <text x="630" y="267" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(TT)</text>
+
+                    <!-- BA (Brand Authenticity) -->
+                    <rect x="740" y="230" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="830" y="251" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Brand Authenticity</text>
+                    <text x="830" y="267" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(BA)</text>
+
+                    <!-- Fourth Row -->
+                    <!-- NC (Naturalness Claim) -->
+                    <rect x="40" y="300" width="180" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="130" y="321" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Naturalness Claim</text>
+                    <text x="130" y="337" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(NC)</text>
+
+                    <!-- WTP (Willingness to Pay) -->
+                    <rect x="1000" y="300" width="200" height="46" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+                    <text x="1100" y="321" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">Willingness to Pay</text>
+                    <text x="1100" y="337" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">(WTP)</text>
+
+                    <!-- Interaction Box (Outside) -->
+                    <!-- TR x NC -->
+                    <rect x="350" y="380" width="100" height="36" rx="0" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-dasharray="5 5"/>
+                    <text x="400" y="402" text-anchor="middle" font-size="12" font-weight="600" fill="#000000">TR x NC</text>
+
+                    <!-- Connections & Arrows (Strictly straight hard lines, black) -->
+
+                    <!-- H1 (+): TR → PIQ -->
+                    <line x1="220" y1="103" x2="312" y2="103" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="245" y="95" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="266" y="107" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H1 (+)</text>
+                    </g>
+
+                    <!-- H2 (-): TR → SK -->
+                    <line x1="180" y1="126" x2="344" y2="200" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="238" y="152" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="259" y="164" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H2 (-)</text>
+                    </g>
+
+                    <!-- H3 (+): NC → TT -->
+                    <line x1="220" y1="323" x2="572" y2="255" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="375" y="278" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="396" y="290" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H3 (+)</text>
+                    </g>
+
+                    <!-- H6 (+): TR x NC → TT (Dashed moderation path, straight) -->
+                    <line x1="430" y1="380" x2="572" y2="276" stroke="#000000" stroke-width="1.2" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="480" y="318" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="501" y="330" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H6 (+)</text>
+                    </g>
+
+                    <!-- H4 (+): PIQ → TT -->
+                    <line x1="500" y1="103" x2="586" y2="224" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="522" y="152" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="543" y="164" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H4 (+)</text>
+                    </g>
+
+                    <!-- H5 (-): SK → TT -->
+                    <line x1="470" y1="203" x2="572" y2="245" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="500" y="213" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="521" y="225" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H5 (-)</text>
+                    </g>
+
+                    <!-- H7 (+): TT → BA -->
+                    <line x1="680" y1="253" x2="732" y2="253" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="685" y="244" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="706" y="256" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H7 (+)</text>
+                    </g>
+
+                    <!-- BA → PI (H8+) -->
+                    <line x1="920" y1="240" x2="994" y2="110" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="936" y="164" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="957" y="176" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H8 (+)</text>
+                    </g>
+
+                    <!-- BA → WTP (H9+) -->
+                    <line x1="920" y1="266" x2="994" y2="318" stroke="#000000" stroke-width="1.2" marker-end="url(#arrow)"/>
+                    <g>
+                        <rect x="936" y="281" width="42" height="16" fill="#ffffff" stroke="#000000" stroke-width="0.5"/>
+                        <text x="957" y="293" text-anchor="middle" font-size="9.5" font-weight="600" fill="#000000">H9 (+)</text>
+                    </g>
+                </svg>
+            </div>
+            <p style="text-align: center; font-size: 13px; color: #64748b; font-style: italic;">Hình 1. Mô hình nghiên cứu tích hợp S-O-R và Lý thuyết Tín hiệu</p>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 9: GIẢI THÍCH BIẾN SỐ ==================== -->
+    <div class="slide slide-content" data-slide="9">
+        <div class="header-bar">
+            <h2>4. Giải thích thuật ngữ & Biến số Nghiên cứu</h2>
+            <span class="slide-tag">BIẾN SỐ</span>
+        </div>
+        <div class="content-body" style="font-size: 13px;">
+            <table class="hyp-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%">Ký hiệu & Tên tiếng Anh</th>
+                        <th style="width: 25%">Thuật ngữ tiếng Việt dịch nghĩa</th>
+                        <th style="width: 50%">Định nghĩa chi tiết & Nội hàm khoa học</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Perceived Traceability (TR)</strong></td>
+                        <td>Truy xuất nguồn gốc cảm nhận</td>
+                        <td>Khả năng người tiêu dùng theo dõi và truy cập thông tin chi tiết về nguồn gốc, quy trình chế biến, và chứng nhận chất lượng sản phẩm qua các giải pháp số (mã QR, dữ liệu Blockchain).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Perceived Info Quality (PIQ)</strong></td>
+                        <td>Chất lượng thông tin cảm nhận</td>
+                        <td>Sự đánh giá của người tiêu dùng về tính chính xác, tính đầy đủ, tính kịp thời và mức độ hữu ích của dữ liệu nguồn gốc số được cung cấp.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Skepticism (SK)</strong></td>
+                        <td>Sự hoài nghi cảm nhận</td>
+                        <td>Xu hướng hoài nghi, thiếu tin tưởng hoặc nghi ngờ của người tiêu dùng đối với các tuyên bố tiếp thị, cam kết chất lượng thông thường từ nhà sản xuất.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trust (TT)</strong></td>
+                        <td>Niềm tin thương hiệu</td>
+                        <td>Sự tin tưởng của người tiêu dùng vào tính trung thực, năng lực và thiện chí của thương hiệu nước yến, đảm bảo rằng sản phẩm an toàn và đúng cam kết.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brand Authenticity (BA)</strong></td>
+                        <td>Tính xác thực thương hiệu</td>
+                        <td>Nhận thức của khách hàng về tính chân thật, tính liêm chính, tính kế thừa và biểu tượng của thương hiệu (gồm 4 khía cạnh: Credibility, Integrity, Continuity, và Symbolism).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Naturalness Claim (NC)</strong></td>
+                        <td>Thông điệp quảng cáo tự nhiên</td>
+                        <td>Các cam kết, tuyên bố tiếp thị từ nhà sản xuất khẳng định sản phẩm nước yến có nguồn gốc 100% tự nhiên, không chứa chất bảo quản hay phụ gia nhân tạo.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purchase Intention (PI)</strong></td>
+                        <td>Ý định mua hàng</td>
+                        <td>Mức độ sẵn lòng hoặc khả năng người tiêu dùng sẽ lựa chọn mua sản phẩm nước yến chế biến sẵn (RTD) trong tương lai gần.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Willingness to Pay (WTP)</strong></td>
+                        <td>Sẵn lòng chi trả thêm</td>
+                        <td>Mức độ sẵn sàng trả mức giá trội hơn (premium price) của người dùng để sở hữu sản phẩm nước yến minh bạch, xác thực so với sản phẩm thông thường.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TR x NC</strong></td>
+                        <td>Tác động tương tác điều tiết</td>
+                        <td>Sự kết hợp đồng thời giữa thông tin khách quan từ truy xuất số (TR) và thông điệp tiếp thị cảm xúc (NC) nhằm tạo hiệu ứng cộng hưởng niềm tin thương hiệu.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 10: GIẢ THUYẾT ==================== -->
+    <div class="slide slide-content" data-slide="10">
+        <div class="header-bar">
+            <h2>5. Hệ thống Giả thuyết Nghiên cứu</h2>
+            <span class="slide-tag">GIẢ THUYẾT</span>
+        </div>
+        <div class="content-body">
+            <table class="hyp-table">
+                <thead>
+                <tr><th style="width:10%">Giả thuyết</th><th style="width:10%">Chiều</th><th style="width:40%">Nội dung</th><th style="width:40%">Nền tảng lý thuyết</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>H1</td><td class="dir-pos">+</td><td>TR → Chất lượng thông tin cảm nhận (PIQ)</td><td>Signaling Theory (Spence, 1973)</td></tr>
+                <tr><td>H2</td><td class="dir-neg">−</td><td>TR → Giảm Hoài nghi (SK)</td><td>Connelly et al. (2011)</td></tr>
+                <tr><td>H3</td><td class="dir-pos">+</td><td>Thông điệp tự nhiên (NC) → Niềm tin (TT)</td><td>Chen (2012)</td></tr>
+                <tr><td>H4</td><td class="dir-pos">+</td><td>PIQ → Niềm tin (TT)</td><td>Nelson et al. (2005)</td></tr>
+                <tr><td>H5</td><td class="dir-neg">−</td><td>SK → Giảm Niềm tin (TT)</td><td>Skarmeas & Leonidou (2013)</td></tr>
+                <tr><td>H6</td><td class="dir-mod">Mod</td><td>TR × NC → Khuếch đại TT</td><td>Interaction effect (S-O-R)</td></tr>
+                <tr><td>H7</td><td class="dir-pos">+</td><td>TT → Brand Authenticity (BA)</td><td>Morhart et al. (2015)</td></tr>
+                <tr><td>H8</td><td class="dir-pos">+</td><td>BA → Purchase Intention (PI)</td><td>Newman & Dhar (2014)</td></tr>
+                <tr><td>H9</td><td class="dir-pos">+</td><td>BA → Willingness to Pay (WTP)</td><td>Napolitano et al. (2010)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 11: PHƯƠNG PHÁP ==================== -->
+    <div class="slide slide-content" data-slide="11">
+        <div class="header-bar">
+            <h2>6. Phương pháp Nghiên cứu — Tổng quan</h2>
+            <span class="slide-tag">PHƯƠNG PHÁP</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Giai đoạn 1: Nghiên cứu Định tính</h3>
+                    <ul>
+                        <li><strong>Phỏng vấn sâu</strong> hội đồng chuyên gia (n = 15)</li>
+                        <li>Nhóm 1: 08 quản lý phân phối FMCG</li>
+                        <li>Nhóm 2: 07 chuyên gia CNTT truy xuất nguồn gốc</li>
+                        <li><strong>Đầu ra:</strong> Hiệu chỉnh thang đo + Thẩm định kịch bản Mockup</li>
+                    </ul>
+                    <h3 style="margin-top: 25px;">Thang đo</h3>
+                    <ul>
+                        <li>Likert <strong>7 điểm</strong> (Hair et al., 2022)</li>
+                        <li>Quy trình dịch xuôi – dịch ngược</li>
+                        <li>Pilot test: n ≈ 30</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Giai đoạn 2: Thực nghiệm Định lượng</h3>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin-top: 8px;">
+                        <p style="font-weight: 700; margin-bottom: 10px;">Thiết kế Thực nghiệm 2×2 (Factorial Design)</p>
+                        <table class="hyp-table" style="margin: 0;">
+                            <thead><tr><th></th><th>NC: Tự nhiên</th><th>NC: Chức năng</th></tr></thead>
+                            <tbody>
+                            <tr><td><strong>Có TR</strong></td><td>Nhóm 1</td><td>Nhóm 2</td></tr>
+                            <tr><td><strong>Không TR</strong></td><td>Nhóm 3</td><td>Nhóm 4</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 style="margin-top: 20px;">Cỡ mẫu & Phân tích</h3>
+                    <ul>
+                        <li>n = <strong>400 – 500</strong> đáp viên Gen Z (TP.HCM)</li>
+                        <li>G*Power 3.1: α=5%, power=80%</li>
+                        <li><strong>PLS-SEM</strong> (SmartPLS 4)</li>
+                        <li>Bootstrapping <strong>5.000</strong> mẫu lặp</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 12: KIỂM SOÁT SAI LỆCH ==================== -->
+    <div class="slide slide-content" data-slide="12">
+        <div class="header-bar">
+            <h2>6. Kiểm soát Sai lệch & Đạo đức Nghiên cứu</h2>
+            <span class="slide-tag">PHƯƠNG PHÁP</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Kiểm soát Common Method Bias</h3>
+                    <ul>
+                        <li><strong>Hoán đổi thứ tự</strong> câu hỏi trong bảng khảo sát</li>
+                        <li><strong>Biến đánh dấu</strong> (Marker Variable)</li>
+                        <li>Full collinearity <strong>VIF < 3.3</strong> (Kock, 2015)</li>
+                    </ul>
+                    <h3 style="margin-top: 20px;">Manipulation Check</h3>
+                    <ul>
+                        <li>Câu hỏi kiểm tra thao tác thực nghiệm: Đáp viên có nhận diện đúng kịch bản không?</li>
+                    </ul>
+                    <h3 style="margin-top: 20px;">Data Cleaning</h3>
+                    <ul>
+                        <li>Loại bỏ <strong>"Speeders"</strong> (trả lời quá nhanh)</li>
+                        <li>Loại bỏ <strong>"Straight-liners"</strong> (chọn cùng 1 đáp án)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quy trình PLS-SEM 4 bước</h3>
+                    <div style="counter-reset: step;">
+                        <div style="background: #f8fafc; border-left: 4px solid var(--navy); padding: 12px 16px; margin-bottom: 10px; border-radius: 0 6px 6px 0;">
+                            <strong>Bước 1:</strong> Mô hình đo lường — α, CR, AVE ≥ 0.5
+                        </div>
+                        <div style="background: #f8fafc; border-left: 4px solid var(--navy); padding: 12px 16px; margin-bottom: 10px; border-radius: 0 6px 6px 0;">
+                            <strong>Bước 2:</strong> Giá trị phân biệt — Fornell-Larcker & HTMT < 0.85
+                        </div>
+                        <div style="background: #f8fafc; border-left: 4px solid var(--navy); padding: 12px 16px; margin-bottom: 10px; border-radius: 0 6px 6px 0;">
+                            <strong>Bước 3:</strong> Mô hình cấu trúc — β, R², f², PLSpredict Q²
+                        </div>
+                        <div style="background: #f8fafc; border-left: 4px solid var(--navy); padding: 12px 16px; border-radius: 0 6px 6px 0;">
+                            <strong>Bước 4:</strong> Trung gian nối tiếp & MGA (Bootstrap 5.000)
+                        </div>
+                    </div>
+                    <h3 style="margin-top: 20px;">Đạo đức nghiên cứu</h3>
+                    <ul>
+                        <li>Tự nguyện, ẩn danh, mã hóa tuyệt đối</li>
+                        <li>Tuân thủ Hội đồng Đạo đức ĐH Nha Trang</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 13: ĐÓNG GÓP ==================== -->
+    <div class="slide slide-content" data-slide="13">
+        <div class="header-bar">
+            <h2>7. Đóng góp dự kiến của Luận án</h2>
+            <span class="slide-tag">ĐÓNG GÓP</span>
+        </div>
+        <div class="content-body">
+            <div class="two-col">
+                <div>
+                    <h3>Đóng góp Học thuật</h3>
+                    <ul>
+                        <li><strong>Bằng chứng thực nghiệm cho Lý thuyết Tín hiệu:</strong> Giải mã cơ chế chuyển hóa dữ liệu số → giá trị nhận thức thương hiệu trong bối cảnh credence goods</li>
+                        <li style="margin-top: 12px;"><strong>Kiểm định điều kiện biên:</strong> Xác định giới hạn hiệu quả tín hiệu marketing truyền thống khi rủi ro cảm nhận cao</li>
+                        <li style="margin-top: 12px;"><strong>Vai trò Brand Authenticity:</strong> Xác lập vai trò trung gian cấp cao kết nối lý trí & cảm xúc</li>
+                        <li style="margin-top: 12px;"><strong>Bối cảnh Việt Nam:</strong> Bổ sung dữ liệu thực chứng từ thị trường mới nổi cho Gen Z</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Đóng góp Thực tiễn</h3>
+                    <ul>
+                        <li>Cung cấp <strong>hàm ý chiến lược</strong> cho DN nước yến RTD về khai thác truy xuất nguồn gốc số</li>
+                        <li style="margin-top: 12px;">Tối ưu hóa <strong>giao diện truy xuất</strong> phù hợp hành vi tương tác số của Gen Z</li>
+                        <li style="margin-top: 12px;">Bảo vệ <strong>Chỉ dẫn Địa lý</strong> "Yến sào Khánh Hòa" bằng minh bạch số</li>
+                    </ul>
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <p><strong>Lộ trình công bố:</strong><br/>• T6-7/2027: Hội thảo KH quốc gia/quốc tế<br/>• T3/2028: 02-03 bài tạp chí HĐGS<br/>• T12/2028: Bảo vệ luận án</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 14: TIẾN ĐỘ ==================== -->
+    <div class="slide slide-content" data-slide="14">
+        <div class="header-bar">
+            <h2>7. Kế hoạch Nghiên cứu Toàn khóa (36 tháng)</h2>
+            <span class="slide-tag">TIẾN ĐỘ</span>
+        </div>
+        <div class="content-body" style="justify-content: center;">
+            <table class="hyp-table" style="font-size: 13px;">
+                <thead>
+                <tr><th>STT</th><th>Nội dung</th><th>Thời gian</th><th>Kết quả dự kiến</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>1</td><td>Học phần Tiến sĩ</td><td>Tháng 1 – 6</td><td>8 Tín chỉ</td></tr>
+                <tr><td>2</td><td>Tiểu luận tổng quan</td><td>Tháng 7 – 12</td><td>4 Tín chỉ</td></tr>
+                <tr><td>3</td><td>Chuyên đề Tiến sĩ 1 & 2</td><td>Tháng 13 – 18</td><td>8 Tín chỉ</td></tr>
+                <tr><td>4</td><td>Nghiên cứu định tính + Pilot test</td><td>Tháng 16 – 18</td><td>Thang đo, Mockup</td></tr>
+                <tr><td>5</td><td>Thực nghiệm định lượng (2×2)</td><td>Tháng 19 – 24</td><td>Dữ liệu n=400-500</td></tr>
+                <tr><td>6</td><td>Phân tích PLS-SEM</td><td>Tháng 22 – 24</td><td>Báo cáo kết quả</td></tr>
+                <tr><td>7</td><td>Viết & đăng bài báo</td><td>Tháng 25 – 30</td><td>≥ 02 bài tạp chí HĐGS</td></tr>
+                <tr><td>8</td><td>Nộp & bảo vệ luận án</td><td>Tháng 31 – 36</td><td>Học vị Tiến sĩ</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="slide-footer">
+            <span>NCS Lê Phúc Hải — ĐH Nha Trang</span>
+            <span>Bảo vệ Đề cương Dự tuyển</span>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 15: KẾT LUẬN ==================== -->
+    <div class="slide slide-title" data-slide="15" style="text-align: left; padding: 80px; align-items: flex-start;">
+        <div class="uni-badge" style="text-align: left;">Tóm tắt & Kết luận</div>
+        <div class="gold-line" style="margin: 15px 0;"></div>
+        <div style="max-width: 800px;">
+            <p style="font-size: 20px; line-height: 1.8; color: #cbd5e1; margin-bottom: 25px;">Nghiên cứu này nhằm <strong style="color: #fff;">kiểm định thực chứng</strong> cơ chế tâm lý chuyển hóa từ <strong style="color: var(--gold-light);">tín hiệu truy xuất nguồn gốc số</strong> sang <strong style="color: var(--gold-light);">hành vi tiêu dùng</strong>, thông qua chuỗi trung gian:</p>
+            <p style="font-size: 22px; color: #fff; font-family: 'Noto Serif', serif; font-weight: 700; text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                TR → PIQ / SK → Trust → Brand Authenticity → PI / WTP
+            </p>
+            <ul style="font-size: 17px; color: #94a3b8; line-height: 2.2; margin-top: 25px; list-style: none; padding: 0;">
+                <li>✓ Tích hợp <strong style="color: #fff;">S-O-R</strong> và <strong style="color: #fff;">Signaling Theory</strong> trong bối cảnh FMCG Việt Nam</li>
+                <li>✓ Thiết kế thực nghiệm <strong style="color: #fff;">2×2</strong> kết hợp PLS-SEM (n = 400–500)</li>
+                <li>✓ Bảo vệ <strong style="color: var(--gold-light);">Chỉ dẫn Địa lý "Yến sào Khánh Hòa"</strong> bằng minh bạch số</li>
+                <li>✓ Đóng góp lý thuyết: Brand Authenticity như trung gian cấp cao</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 16: CẢM ƠN ==================== -->
+    <div class="slide slide-title" data-slide="16">
+        <div class="uni-badge">Trường Đại học Nha Trang</div>
+        <div class="gold-line"></div>
+        <h1 style="font-size: 42px;">Xin trân trọng cảm ơn<br/>Hội đồng Khoa học</h1>
+        <div class="gold-line"></div>
+        <div class="meta">
+            <strong>Nghiên cứu sinh:</strong> Lê Phúc Hải<br/>
+            <strong>Email:</strong> lephuchai@ntu.edu.vn<br/><br/>
+            <em style="color: #64748b;">Kính mong Hội đồng cho ý kiến góp ý để hoàn thiện đề cương.</em>
+        </div>
+    </div>
+
+</div>
+
+<!-- Navigation -->
+<div class="slide-counter" id="counter">1 / 16</div>
+<div class="nav-controls">
+    <button class="nav-btn" onclick="prevSlide()">◀</button>
+    <button class="nav-btn" onclick="nextSlide()">▶</button>
+    <button class="nav-btn" onclick="exportToPPTX()" title="Xuất PowerPoint (.pptx)" style="width: auto; padding: 0 15px; border-radius: 20px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 5px;">
+        📊 Xuất PPTX
+    </button>
+</div>
+
+<script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    const total = slides.length;
+
+    function showSlide(idx) {
+        slides.forEach(s => s.classList.remove('active'));
+        slides[idx].classList.add('active');
+        document.getElementById('counter').textContent = `${idx + 1} / ${total}`;
+    }
+
+    function nextSlide() {
+        if (current < total - 1) { current++; showSlide(current); }
+    }
+    function prevSlide() {
+        if (current > 0) { current--; showSlide(current); }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); nextSlide(); }
+        if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prevSlide(); }
+        if (e.key === 'Home') { current = 0; showSlide(0); }
+        if (e.key === 'End') { current = total - 1; showSlide(current); }
+    });
+
+    async function exportToPPTX() {
+        // Show loading notification/indicator
+        const btn = document.querySelector('button[onclick="exportToPPTX()"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "⏳ Đang tạo PPTX...";
+        btn.disabled = true;
+
+        try {
+            let pptx = new PptxGenJS();
+            pptx.layout = 'LAYOUT_16x9';
+
+            // Master styles
+            const bgDark = "0D1B2A";
+            const gold = "C9A94E";
+            const textLight = "FFFFFF";
+            const textDark = "1E293B";
+
+            // Helper to add standard slide headers/footers
+            function addSlideDecorations(slide, title, tag = "MÔ HÌNH") {
+                slide.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 0.2, w: 9.0, h: 0.05, fill: bgDark });
+                slide.addText(title, { x: 0.5, y: 0.35, w: 7.5, h: 0.5, fontSize: 18, bold: true, color: bgDark, fontFace: "Inter" });
+                slide.addText(tag, { x: 8.0, y: 0.35, w: 1.5, h: 0.4, fontSize: 9, bold: true, color: gold, align: "right", fontFace: "Inter" });
+                slide.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 5.1, w: 9.0, h: 0.01, fill: "E2E8F0" });
+                slide.addText("NCS Lê Phúc Hải — ĐH Nha Trang", { x: 0.5, y: 5.15, w: 5.0, h: 0.3, fontSize: 9, color: "94A3B8", fontFace: "Inter" });
+                slide.addText("Bảo vệ Đề cương Dự tuyển", { x: 5.5, y: 5.15, w: 4.0, h: 0.3, fontSize: 9, color: "94A3B8", align: "right", fontFace: "Inter" });
+            }
+
+            // SLIDE 1: Title Slide
+            {
+                let s = pptx.addSlide();
+                s.background = { fill: bgDark };
+                s.addText("TRƯỜNG ĐẠI HỌC NHA TRANG", { x: 0.5, y: 1.0, w: 9.0, h: 0.4, fontSize: 13, bold: true, color: gold, align: "center", fontFace: "Inter" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 1.5, w: 1.0, h: 0.03, fill: gold });
+                
+                s.addText("Cơ chế tác động của Truy xuất Nguồn gốc Số đến Ý định mua sản phẩm Nước yến chế biến sẵn:\nVai trò của Tính xác thực Thương hiệu và Niềm tin", 
+                    { x: 0.5, y: 1.8, w: 9.0, h: 1.8, fontSize: 22, bold: true, color: textLight, align: "center", fontFace: "Noto Serif" });
+                
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 3.8, w: 1.0, h: 0.03, fill: gold });
+                
+                s.addText("Nghiên cứu sinh: Lê Phúc Hải\nChuyên ngành: Quản trị Kinh doanh — Mã số: 9340101\nBảo vệ Đề cương Dự tuyển Nghiên cứu sinh", 
+                    { x: 0.5, y: 4.1, w: 9.0, h: 1.2, fontSize: 12, color: "94A3B8", align: "center", fontFace: "Inter", lineSpacing: 22 });
+            }
+
+            // SLIDE 2: Table of Contents
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "Nội dung Trình bày", "TỔNG QUAN");
+                
+                let list = [
+                    "01. Lý do chọn đề tài & Bối cảnh thực tiễn",
+                    "02. Tổng quan tài liệu & Khoảng trống nghiên cứu",
+                    "03. Mục tiêu & Câu hỏi nghiên cứu",
+                    "04. Khung lý thuyết & Mô hình nghiên cứu",
+                    "05. Giả thuyết nghiên cứu",
+                    "06. Phương pháp nghiên cứu",
+                    "07. Đóng góp dự kiến & Kế hoạch thực hiện"
+                ];
+                
+                list.forEach((item, idx) => {
+                    s.addText(item, { x: 1.5, y: 1.2 + idx * 0.5, w: 7.0, h: 0.4, fontSize: 15, bold: true, color: bgDark, fontFace: "Inter" });
+                });
+            }
+
+            // SLIDE 3: Bối cảnh thực tiễn & Vấn đề nghiên cứu
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "1. Bối cảnh thực tiễn & Vấn đề nghiên cứu", "LÝ DO CHỌN ĐỀ TÀI");
+                
+                // Stat row
+                let stats = [
+                    { num: "8.500 tỷ", desc: "Quy mô thị trường Nước yến VN (VNĐ, 2023)" },
+                    { num: "12%", desc: "Tăng trưởng TB/năm (Euromonitor, 2023)" },
+                    { num: "1.200+", desc: "Vụ vi phạm hàng giả TP CHỨC NĂNG (2021)" },
+                    { num: "3.595 tỷ", desc: "Doanh thu Yến Sào Khánh Hòa (2024)" }
+                ];
+                
+                stats.forEach((item, idx) => {
+                    s.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.5 + idx * 2.3, y: 1.0, w: 2.1, h: 1.1, fill: bgDark, radius: 0.05 });
+                    s.addText(item.num, { x: 0.5 + idx * 2.3, y: 1.1, w: 2.1, h: 0.4, fontSize: 18, bold: true, color: gold, align: "center", fontFace: "Inter" });
+                    s.addText(item.desc, { x: 0.5 + idx * 2.3, y: 1.5, w: 2.1, h: 0.5, fontSize: 8, color: "94A3B8", align: "center", fontFace: "Inter" });
+                });
+
+                // Two columns
+                s.addText("Bất cân xứng thông tin (Akerlof, 1970)", { x: 0.5, y: 2.3, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Nước yến RTD = hàng hóa dựa trên niềm tin (Credence goods)\n• Người tiêu dùng không thể kiểm chứng chất lượng sau tiêu dùng\n• Tỷ lệ yến thật, quy trình tiệt trùng hoàn toàn phụ thuộc nhà SX", 
+                    { x: 0.5, y: 2.6, w: 4.3, h: 1.2, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                s.addText("Khủng hoảng niềm tin & Đặc thù Khánh Hòa", { x: 5.2, y: 2.3, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• 'Yến sào Khánh Hòa' — Chỉ dẫn Địa lý Quốc gia uy tín\n• Doanh thu yến giảm mạnh do hàng giả, hàng nhái tràn lan\n• Khảo sát Gen Z: Sẵn sàng chi tiền cao nhưng đòi hỏi minh bạch số", 
+                    { x: 5.2, y: 2.6, w: 4.3, h: 1.2, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                // Highlight box
+                s.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 4.0, w: 9.0, h: 0.8, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                s.addText("Vấn đề cốt lõi: Các tín hiệu marketing truyền thống (tem nhãn, chứng nhận tĩnh) đang mất hiệu lực. Cần dịch chuyển sang Marketing dựa trên tín hiệu minh bạch số — Truy xuất nguồn gốc.", 
+                    { x: 0.6, y: 4.05, w: 8.8, h: 0.7, fontSize: 11, italic: true, color: textDark, fontFace: "Inter" });
+            }
+
+            // SLIDE 4: Tổng quan tài liệu
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "2. Tổng quan Tài liệu — Các dòng nghiên cứu", "TỔNG QUAN");
+                
+                // Table
+                let rows = [
+                    [
+                        { text: "Tác giả", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Bối cảnh", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Biến chính", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Kết quả chính", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Khoảng trống", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } }
+                    ],
+                    ["Akerlof (1970)", "Thị trường bất cân xứng", "Information Asymmetry", "Lựa chọn bất lợi", "Chưa có giải pháp kỹ thuật"],
+                    ["Spence (1973)", "Thị trường lao động", "Signaling → Quality", "Tín hiệu chi phí cao giảm BĐX", "Chưa áp dụng tiêu dùng số"],
+                    ["Morhart (2015)", "Thương hiệu tiêu dùng", "Brand Authenticity (4 thành phần)", "Continuity, Credibility, Integrity...", "Chưa gắn với tín hiệu số"],
+                    ["Francisco (2018)", "Chuỗi cung ứng toàn cầu", "Blockchain → Transparency", "Tăng minh bạch chuỗi cung ứng", "Thiếu góc độ người tiêu dùng"],
+                    ["Luận án này", "Nước yến RTD, Việt Nam", "TR → PIQ → TT → BA → PI/WTP", "Đang trong tiến trình kiểm định", "Giải quyết các khoảng trống trên"]
+                ];
+
+                s.addTable(rows, { x: 0.5, y: 1.0, w: 9.0, h: 2.7, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 9.5, fontFace: "Inter" });
+
+                // Highlight box
+                s.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 3.9, w: 9.0, h: 0.8, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                s.addText("Nhận định: Đa số nghiên cứu tiếp cận từ góc độ quản trị chuỗi cung ứng (phía cung), chưa kiểm định cơ chế tâm lý chuyển hóa từ tín hiệu kỹ thuật số sang nhận thức thương hiệu ở phía cầu (người tiêu dùng).", 
+                    { x: 0.6, y: 3.95, w: 8.8, h: 0.7, fontSize: 10.5, italic: true, color: textDark, fontFace: "Inter" });
+            }
+
+            // SLIDE 5: Khoảng trống Nghiên cứu
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "2. Khoảng trống Nghiên cứu (Research Gaps)", "TỔNG QUAN");
+                
+                let gaps = [
+                    { num: "Gap 1", title: "Cơ chế trung gian", desc: "Brand Authenticity đóng vai trò là biến trung gian cấp cao nối liền tín hiệu kỹ thuật số và hành vi tiêu dùng FMCG — hiện chưa được kiểm chứng thực tế." },
+                    { num: "Gap 2", title: "Tích hợp lý thuyết", desc: "Có sự đứt gãy giữa dòng quản trị chuỗi cung ứng (Supply Chain) và dòng tâm lý học hành vi người tiêu dùng (Consumer Behavior). Thiếu mô hình tích hợp." },
+                    { num: "Gap 3", title: "Đặc thù bối cảnh", desc: "Nghiên cứu thực chứng chủ yếu thực hiện ở các quốc gia phát triển với nông sản thô. Thiếu bằng chứng khoa học cho sản phẩm chế biến sâu tại Việt Nam." }
+                ];
+
+                gaps.forEach((item, idx) => {
+                    s.addShape(pptx.shapes.RECTANGLE, { x: 0.5 + idx * 3.1, y: 1.1, w: 2.8, h: 2.5, fill: "F8FAFC", line: { color: "E2E8F0", width: 1 } });
+                    s.addText(item.num, { x: 0.5 + idx * 3.1, y: 1.2, w: 2.8, h: 0.4, fontSize: 18, bold: true, color: gold, align: "center", fontFace: "Noto Serif" });
+                    s.addText(item.title, { x: 0.5 + idx * 3.1, y: 1.6, w: 2.8, h: 0.3, fontSize: 12, bold: true, color: bgDark, align: "center", fontFace: "Inter" });
+                    s.addText(item.desc, { x: 0.6 + idx * 3.1, y: 2.0, w: 2.6, h: 1.5, fontSize: 9.5, color: textDark, align: "center", fontFace: "Inter" });
+                });
+
+                // Highlight box
+                s.addShape(pptx.shapes.RECTANGLE, { x: 0.5, y: 3.9, w: 9.0, h: 0.8, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                s.addText("Định vị nghiên cứu: Luận án kiểm định cơ chế tác động trực tiếp & gián tiếp từ tín hiệu truy xuất số đến hành vi tiêu dùng thực tế, thông qua chuỗi trung gian nối tiếp PIQ → Trust → Brand Authenticity.", 
+                    { x: 0.6, y: 3.95, w: 8.8, h: 0.7, fontSize: 10.5, italic: true, color: textDark, fontFace: "Inter" });
+            }
+
+            // SLIDE 6: Mục tiêu & Câu hỏi
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "3. Mục tiêu & Câu hỏi Nghiên cứu", "MỤC TIÊU");
+                
+                // Col 1
+                s.addText("Mục tiêu tổng quát", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("Kiểm định cơ chế tác động của tín hiệu truy xuất nguồn gốc số đối với nhận thức, tính xác thực thương hiệu và hành vi tiêu dùng nước yến chế biến sẵn (RTD).", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 0.8, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                s.addText("Mục tiêu cụ thể", { x: 0.5, y: 2.2, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("1. Hệ thống hóa cơ sở lý luận về bất cân xứng thông tin, lý thuyết tín hiệu và niềm tin thương hiệu tiêu dùng.\n2. Xây dựng và kiểm định mô hình cấu trúc: TR → SK / PIQ → TT → BA.\n3. Đo lường mức độ ảnh hưởng của BA lên hành vi ý định (PI) và mức chi trả thêm (WTP).\n4. Đề xuất hàm ý quản trị thiết thực cho DN nước yến RTD.", 
+                    { x: 0.5, y: 2.5, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 18 });
+
+                // Col 2
+                s.addText("Câu hỏi nghiên cứu (Research Questions)", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                
+                let rqs = [
+                    { label: "RQ1", txt: "Tín hiệu truy xuất nguồn gốc số tác động như thế nào đến việc làm giảm thiểu sự hoài nghi và nâng cao niềm tin của NTD?" },
+                    { label: "RQ2", txt: "Tính xác thực thương hiệu (Brand Authenticity) đóng vai trò trung gian như thế nào trong tiến trình thúc đẩy hành vi tiêu dùng số?" },
+                    { label: "RQ3", txt: "Cơ chế tương tác điều tiết giữa thông điệp tiếp thị và xác thực dữ liệu số (TR x NC) diễn ra như thế nào?" }
+                ];
+                
+                rqs.forEach((item, idx) => {
+                    s.addShape(pptx.shapes.RECTANGLE, { x: 5.2, y: 1.4 + idx * 1.1, w: 4.3, h: 1.0, fill: "F8FAFC", line: { color: "E2E8F0", width: 1 } });
+                    s.addText(item.label + ":", { x: 5.3, y: 1.45 + idx * 1.1, w: 0.8, h: 0.3, fontSize: 11, bold: true, color: gold, fontFace: "Inter" });
+                    s.addText(item.txt, { x: 5.3, y: 1.75 + idx * 1.1, w: 4.1, h: 0.6, fontSize: 9.5, color: textDark, fontFace: "Inter" });
+                });
+            }
+
+            // SLIDE 7: Khung Lý thuyết tích hợp
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "4. Khung Lý thuyết tích hợp", "LÝ THUYẾT");
+                
+                // Col 1
+                s.addText("Lý thuyết Tín hiệu (Signaling Theory)", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Spence (1973): Tín hiệu chất lượng có chi phí cao, khó giả mạo sẽ giúp giải quyết bất cân xứng thông tin hiệu quả.\n• Hệ thống truy xuất nguồn gốc số chính là tín hiệu có độ tin cậy cực cao được DN cam kết đầu tư bài bản.", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 1.1, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                s.addText("Khung lý thuyết S-O-R", { x: 0.5, y: 2.5, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Mehrabian & Russell (1974): Kích thích (Stimulus) → Cơ thể (Organism) → Phản hồi (Response).\n• S (Kích thích): TR (Truy xuất số), NC (Thông điệp tiếp thị tự nhiên)\n• O (Nhận thức): PIQ (Chất lượng TT), SK (Hoài nghi), TT (Niềm tin), BA (Tính xác thực thương hiệu)\n• R (Hành vi): Ý định mua (PI), Sẵn lòng chi trả thêm (WTP)", 
+                    { x: 0.5, y: 2.8, w: 4.3, h: 1.9, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 18 });
+
+                // Col 2
+                s.addText("Brand Authenticity (Morhart et al., 2015)", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                
+                let dims = [
+                    { title: "Credibility", sub: "Độ tin cậy của thông tin" },
+                    { title: "Integrity", sub: "Sự nhất quán và liêm chính" },
+                    { title: "Continuity", sub: "Tính kế thừa và bền vững" },
+                    { title: "Symbolism", sub: "Giá trị biểu tượng văn hóa" }
+                ];
+                
+                dims.forEach((item, idx) => {
+                    let rx = 5.2 + (idx % 2) * 2.2;
+                    let ry = 1.4 + Math.floor(idx / 2) * 0.9;
+                    s.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: rx, y: ry, w: 2.0, h: 0.8, fill: "F8FAFC", line: { color: "E2E8F0", width: 1 }, radius: 0.05 });
+                    s.addText(item.title, { x: rx, y: ry + 0.1, w: 2.0, h: 0.3, fontSize: 11, bold: true, color: bgDark, align: "center", fontFace: "Inter" });
+                    s.addText(item.sub, { x: rx, y: ry + 0.4, w: 2.0, h: 0.3, fontSize: 8.5, color: "94A3B8", align: "center", fontFace: "Inter" });
+                });
+
+                // Highlight box in col 2
+                s.addShape(pptx.shapes.RECTANGLE, { x: 5.2, y: 3.4, w: 4.3, h: 1.3, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                s.addText("Mối quan hệ nhân quả quyết định:\nTrust → Brand Authenticity\nNiềm tin tuyệt đối vào dữ liệu truy xuất số là tiền đề tâm lý cốt lõi để NTD gán tính xác thực và uy tín cho thương hiệu.", 
+                    { x: 5.3, y: 3.45, w: 4.1, h: 1.2, fontSize: 10, italic: true, color: textDark, fontFace: "Inter" });
+            }
+
+            // SLIDE 8: Research Model (Rendered SVG Image)
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "4. Mô hình Nghiên cứu đề xuất", "MÔ HÌNH");
+
+                const svg = document.querySelector('.model-container svg');
+                if (svg) {
+                    try {
+                        const pngData = await convertSvgToPng(svg);
+                        s.addImage({ data: pngData, x: 0.5, y: 0.9, w: 9.0, h: 3.6 });
+                    } catch (err) {
+                        console.error("Lỗi chuyển đổi SVG sang PNG:", err);
+                        // Fallback text if image render fails
+                        s.addText("[Sơ đồ mô hình nghiên cứu khoa học chuẩn đen trắng]", { x: 0.5, y: 2.0, w: 9.0, h: 1.0, fontSize: 16, color: bgDark, align: "center", fontFace: "Inter" });
+                    }
+                }
+
+                s.addText("Hình 1. Mô hình nghiên cứu tích hợp S-O-R và Lý thuyết Tín hiệu", { x: 0.5, y: 4.6, w: 9.0, h: 0.3, fontSize: 11, italic: true, color: "64748B", align: "center", fontFace: "Inter" });
+            }
+
+            // SLIDE 9: Variable Definitions Table
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "4. Giải thích thuật ngữ & Biến số Nghiên cứu", "BIẾN SỐ");
+                
+                let rows = [
+                    [
+                        { text: "Ký hiệu & Tên tiếng Anh", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Thuật ngữ tiếng Việt dịch nghĩa", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Định nghĩa chi tiết & Nội hàm khoa học", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } }
+                    ],
+                    ["Perceived Traceability (TR)", "Truy xuất nguồn gốc cảm nhận", "Khả năng NTD theo dõi và truy cập thông tin chi tiết về nguồn gốc, quy trình chế biến, và chứng nhận chất lượng qua các giải pháp số (mã QR, Blockchain)."],
+                    ["Perceived Info Quality (PIQ)", "Chất lượng thông tin cảm nhận", "Sự đánh giá của NTD về tính chính xác, tính đầy đủ, tính kịp thời và mức độ hữu ích của dữ liệu nguồn gốc số được cung cấp."],
+                    ["Skepticism (SK)", "Sự hoài nghi cảm nhận", "Xu hướng hoài nghi, thiếu tin tưởng hoặc nghi ngờ của NTD đối với các tuyên bố tiếp thị, cam kết chất lượng thông thường từ nhà sản xuất."],
+                    ["Trust (TT)", "Niềm tin thương hiệu", "Sự tin tưởng của NTD vào tính trung thực, năng lực và thiện chí của thương hiệu nước yến, đảm bảo rằng sản phẩm an toàn và đúng cam kết."],
+                    ["Brand Authenticity (BA)", "Tính xác thực thương hiệu", "Nhận thức của khách hàng về tính chân thật, tính liêm chính, tính kế thừa và biểu tượng (gồm: Credibility, Integrity, Continuity, Symbolism)."],
+                    ["Naturalness Claim (NC)", "Thông điệp quảng cáo tự nhiên", "Các cam kết, tuyên bố tiếp thị từ nhà sản xuất khẳng định sản phẩm nước yến có nguồn gốc 100% tự nhiên, không chứa chất bảo quản."],
+                    ["Purchase Intention (PI)", "Ý định mua hàng", "Mức độ sẵn lòng hoặc khả năng NTD sẽ lựa chọn mua sản phẩm nước yến chế biến sẵn (RTD) trong tương lai gần."],
+                    ["Willingness to Pay (WTP)", "Sẵn lòng chi trả thêm", "Mức độ sẵn sàng trả mức giá trội hơn (premium price) của người dùng để sở hữu sản phẩm nước yến minh bạch, xác thực so với sản phẩm thông thường."],
+                    ["TR x NC", "Tác động tương tác điều tiết", "Sự kết hợp đồng thời giữa thông tin khách quan từ truy xuất số (TR) và thông điệp tiếp thị cảm xúc (NC) nhằm tạo hiệu ứng cộng hưởng niềm tin thương hiệu."]
+                ];
+
+                s.addTable(rows, { x: 0.5, y: 0.9, w: 9.0, h: 4.0, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 8.5, fontFace: "Inter" });
+            }
+
+            // SLIDE 10: Hypotheses Table
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "5. Hệ thống Giả thuyết Nghiên cứu", "GIẢ THUYẾT");
+                
+                let rows = [
+                    [
+                        { text: "Giả thuyết", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Chiều", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Nội dung quan hệ tác động", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Nền tảng lý thuyết chủ đạo", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } }
+                    ],
+                    ["H1", "+ (Thuận)", "TR (Truy xuất số) → Chất lượng thông tin cảm nhận (PIQ)", "Signaling Theory (Spence, 1973)"],
+                    ["H2", "- (Nghịch)", "TR (Truy xuất số) → Làm giảm thiểu Hoài nghi (SK)", "Connelly et al. (2011)"],
+                    ["H3", "+ (Thuận)", "Thông điệp quảng cáo tự nhiên (NC) → Niềm tin (TT)", "Chen (2012)"],
+                    ["H4", "+ (Thuận)", "PIQ (Chất lượng thông tin) → Niềm tin (TT)", "Nelson et al. (2005)"],
+                    ["H5", "- (Nghịch)", "Hoài nghi cảm nhận (SK) → Làm suy giảm Niềm tin (TT)", "Skarmeas & Leonidou (2013)"],
+                    ["H6", "Điều tiết", "TR × NC (Tương tác truy xuất & thông điệp) → Khuếch đại TT", "Mô hình tương tác S-O-R"],
+                    ["H7", "+ (Thuận)", "Niềm tin (TT) → Tính xác thực thương hiệu (BA)", "Morhart et al. (2015)"],
+                    ["H8", "+ (Thuận)", "Tính xác thực thương hiệu (BA) → Ý định mua hàng (PI)", "Newman & Dhar (2014)"],
+                    ["H9", "+ (Thuận)", "Tính xác thực thương hiệu (BA) → Sẵn lòng chi trả thêm (WTP)", "Napolitano et al. (2010)"]
+                ];
+
+                s.addTable(rows, { x: 0.5, y: 0.9, w: 9.0, h: 4.0, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 9, fontFace: "Inter" });
+            }
+
+            // SLIDE 11: Research Method — Overview & Design
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "6. Phương pháp Nghiên cứu — Tổng quan", "PHƯƠNG PHÁP");
+                
+                // Col 1
+                s.addText("Giai đoạn 1: Nghiên cứu Định tính", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Phỏng vấn sâu hội đồng chuyên gia học thuật và thực tiễn (n = 15)\n  - Nhóm 1: 08 nhà quản lý phân phối chuỗi FMCG\n  - Nhóm 2: 07 chuyên gia công nghệ thông tin chuyên sâu Blockchain\n• Đầu ra cốt lõi: Hiệu chỉnh Việt hóa thang đo đo lường + Thẩm định thiết kế Mockup thực nghiệm 2x2.\n• Thang đo: Likert 7 điểm chuẩn quốc tế (Hair et al., 2022)\n• Quy trình dịch ngược (Back-translation) & Kiểm định sơ bộ (n=30)", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+
+                // Col 2
+                s.addText("Giai đoạn 2: Nghiên cứu Định lượng (Thực nghiệm)", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Thiết kế thực nghiệm mô phỏng 2×2 (Factorial Experimental Design)\n• Bố cục phân nhóm ngẫu nhiên (Random Assignment):", 
+                    { x: 5.2, y: 1.3, w: 4.3, h: 0.7, fontSize: 10.5, color: textDark, fontFace: "Inter" });
+
+                let tableRows = [
+                    [
+                        { text: "", opts: { fill: bgDark, bold: true, color: "FFFFFF" } },
+                        { text: "NC: Tự nhiên", opts: { fill: bgDark, bold: true, color: "FFFFFF", align: "center" } },
+                        { text: "NC: Chức năng", opts: { fill: bgDark, bold: true, color: "FFFFFF", align: "center" } }
+                    ],
+                    [{ text: "Có TR (Mã QR hoạt động)", opts: { bold: true, fill: "F8FAFC" } }, "Nhóm 1 (Thực nghiệm)", "Nhóm 2 (Thực nghiệm)"],
+                    [{ text: "Không TR (Không có mã QR)", opts: { bold: true, fill: "F8FAFC" } }, "Nhóm 3 (Kiểm chứng)", "Nhóm 4 (Kiểm chứng)"]
+                ];
+                s.addTable(tableRows, { x: 5.2, y: 2.1, w: 4.3, h: 1.2, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 9, fontFace: "Inter" });
+
+                s.addText("• Cỡ mẫu khảo sát thực tế: n = 400 – 500 đáp viên trẻ Gen Z tại TP.HCM\n• Ước lượng cỡ mẫu bằng G*Power 3.1: α=5%, Power=80%\n• Phân tích dữ liệu: PLS-SEM (SmartPLS 4) + Bootstrap 5.000 mẫu lặp", 
+                    { x: 5.2, y: 3.4, w: 4.3, h: 1.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 15 });
+            }
+
+            // SLIDE 12: Kiểm soát sai lệch & PLS-SEM
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "6. Kiểm soát Sai lệch & Đạo đức Nghiên cứu", "PHƯƠNG PHÁP");
+                
+                // Col 1
+                s.addText("Kiểm soát Sai lệch Phương pháp chung (CMB)", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Hoán đổi ngẫu nhiên thứ tự các nhóm câu hỏi đo lường trong bảng khảo sát.\n• Sử dụng biến đánh dấu (Marker Variable) để kiểm soát hậu kỳ.\n• Đánh giá hệ số đa cộng tuyến toàn diện: VIF < 3.3 (Kock, 2015).\n• Manipulation Check: Câu hỏi gạn lọc, xác thực đáp viên thực sự nhận thức rõ kịch bản thực nghiệm trước khi trả lời tiếp.\n• Làm sạch dữ liệu: Tự động loại bỏ 'Speeders' (trả lời quá nhanh dưới 2 phút) và 'Straight-liners' (chọn một đáp án duy nhất).", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+
+                // Col 2
+                s.addText("Quy trình phân tích PLS-SEM 4 bước", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                
+                let steps = [
+                    "B1. Đánh giá Mô hình đo lường: Hệ số tin cậy Cronbach's Alpha >= 0.7; độ tin cậy tổng hợp CR >= 0.7; tổng phương sai trích AVE >= 0.5.",
+                    "B2. Đánh giá Giá trị phân biệt: Chỉ số chéo Fornell-Larcker & Tỷ lệ HTMT < 0.85.",
+                    "B3. Đánh giá Mô hình cấu trúc: Hệ số đường dẫn tác động β, hệ số xác định R², hệ số tác động f², và khả năng dự báo ngoài mẫu PLSpredict Q².",
+                    "B4. Kiểm định Giả thuyết trung gian & tương tác điều tiết: Thực hiện thuật toán Bootstrapping với 5.000 mẫu lặp."
+                ];
+                
+                steps.forEach((step, idx) => {
+                    s.addShape(pptx.shapes.RECTANGLE, { x: 5.2, y: 1.35 + idx * 0.85, w: 4.3, h: 0.8, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                    s.addText(step, { x: 5.3, y: 1.4 + idx * 0.85, w: 4.1, h: 0.7, fontSize: 8.5, color: textDark, fontFace: "Inter" });
+                });
+
+                s.addText("• Đạo đức Nghiên cứu: Cam kết ẩn danh dữ liệu 100%, bảo mật tuyệt đối thông tin cá nhân của đáp viên, tuân thủ đúng chuẩn của ĐH Nha Trang.", 
+                    { x: 5.2, y: 4.8, w: 4.3, h: 0.3, fontSize: 8, italic: true, color: "64748B", fontFace: "Inter" });
+            }
+
+            // SLIDE 13: Đóng góp dự kiến
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "7. Đóng góp dự kiến của Luận án", "ĐÓNG GÓP");
+                
+                // Col 1
+                s.addText("Đóng góp về mặt Học thuật", { x: 0.5, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Cung cấp bằng chứng thực nghiệm mạnh mẽ cho Lý thuyết Tín hiệu: Giải mã thành công cơ chế tâm lý NTD chuyển hóa từ dữ liệu kỹ thuật số thô sang nhận thức thương hiệu vô hình.\n• Kiểm định điều kiện biên: Xác định rõ giới hạn hiệu lực của các tín hiệu quảng cáo truyền thống khi mức hoài nghi của NTD vượt ngưỡng.\n• Làm sáng tỏ vai trò Brand Authenticity: Xác lập đây là nhân tố trung gian cấp cao kết nối hài hòa giữa lý trí & cảm xúc.\n• Bối cảnh thực chứng: Đóng góp hệ dữ liệu quý giá từ thị trường mới nổi Việt Nam tập trung vào nhóm đáp viên Gen Z.", 
+                    { x: 0.5, y: 1.3, w: 4.3, h: 2.2, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+
+                // Col 2
+                s.addText("Đóng góp về mặt Thực tiễn", { x: 5.2, y: 1.0, w: 4.3, h: 0.3, fontSize: 13, bold: true, color: bgDark, fontFace: "Inter" });
+                s.addText("• Định hướng hàm ý quản trị chiến lược cho doanh nghiệp nước yến RTD trong việc đầu tư xây dựng hệ thống truy xuất số hiệu quả.\n• Tối ưu hóa thiết kế giao diện hiển thị thông tin truy xuất nguồn gốc số tương thích với thói quen và trải nghiệm số của người trẻ Gen Z.\n• Giải pháp công nghệ vững chắc hỗ trợ bảo vệ và gia tăng giá trị Chỉ dẫn Địa lý Quốc gia 'Yến sào Khánh Hòa' trên thị trường tiêu dùng số.", 
+                    { x: 5.2, y: 1.3, w: 4.3, h: 1.7, fontSize: 10, color: textDark, fontFace: "Inter", lineSpacing: 16 });
+
+                // Highlight box in Col 2
+                s.addShape(pptx.shapes.RECTANGLE, { x: 5.2, y: 3.2, w: 4.3, h: 1.5, fill: "F8FAFC", line: { color: bgDark, width: 1 } });
+                s.addText("Lộ trình công bố dự kiến:\n- Tháng 6-7/2027: Tham gia báo cáo tại Hội thảo Khoa học quốc gia/quốc tế.\n- Tháng 3/2028: Đăng tải thành công 02-03 bài báo chuyên ngành uy tín trong danh mục tạp chí của HĐGS Nhà nước.\n- Tháng 12/2028: Hoàn tất và bảo vệ chính thức luận án Tiến sĩ.", 
+                    { x: 5.3, y: 3.25, w: 4.1, h: 1.4, fontSize: 9.5, italic: true, color: textDark, fontFace: "Inter" });
+            }
+
+            // SLIDE 14: Kế hoạch nghiên cứu toàn khóa
+            {
+                let s = pptx.addSlide();
+                addSlideDecorations(s, "7. Kế hoạch Nghiên cứu Toàn khóa (36 tháng)", "TIẾN ĐỘ");
+                
+                let rows = [
+                    [
+                        { text: "STT", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Nội dung công việc chính", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Thời gian thực hiện", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } },
+                        { text: "Đầu ra / Kết quả dự kiến", opts: { bold: true, color: "FFFFFF", fill: bgDark, align: "center" } }
+                    ],
+                    ["1", "Hoàn thành các học phần Tiến sĩ bắt buộc", "Tháng 1 – 6", "Đạt 8 Tín chỉ học tập"],
+                    ["2", "Viết và trình bày Tiểu luận tổng quan luận án", "Tháng 7 – 12", "Đạt 4 Tín chỉ tổng quan"],
+                    ["3", "Hoàn tất Chuyên đề Tiến sĩ 1 & 2", "Tháng 13 – 18", "Đạt 8 Tín chỉ chuyên đề"],
+                    ["4", "Thực hiện nghiên cứu định tính + Thử nghiệm pilot", "Tháng 16 – 18", "Hiệu chỉnh Thang đo, thiết kế Mockup"],
+                    ["5", "Thu thập dữ liệu định lượng chính thức (Thực nghiệm 2x2)", "Tháng 19 – 24", "Hệ dữ liệu sạch n = 400 - 500 đáp viên"],
+                    ["6", "Phân tích dữ liệu thực chứng (PLS-SEM)", "Tháng 22 – 24", "Báo cáo phân tích SEM chi tiết"],
+                    ["7", "Viết bản thảo và đăng báo chuyên ngành khoa học", "Tháng 25 – 30", "Tối thiểu 02 bài báo đăng tạp chí uy tín"],
+                    ["8", "Nộp dự thảo, phản biện kín và Bảo vệ chính thức luận án", "Tháng 31 – 36", "Nhận học vị Tiến sĩ Quản trị Kinh doanh"]
+                ];
+
+                s.addTable(rows, { x: 0.5, y: 0.9, w: 9.0, h: 4.0, border: { pt: 1, color: "E2E8F0" }, fill: "FFFFFF", fontSize: 8.5, fontFace: "Inter" });
+            }
+
+            // SLIDE 15: Summary & Conclusion
+            {
+                let s = pptx.addSlide();
+                s.background = { fill: bgDark };
+                s.addText("TÓM TẮT & KẾT LUẬN", { x: 0.5, y: 0.6, w: 9.0, h: 0.4, fontSize: 13, bold: true, color: gold, align: "center", fontFace: "Inter" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 1.1, w: 1.0, h: 0.03, fill: gold });
+
+                s.addText("Nghiên cứu này nhằm kiểm định thực chứng cơ chế tâm lý chuyển hóa từ tín hiệu truy xuất nguồn gốc số sang hành vi tiêu dùng thực tế thông qua chuỗi trung gian nối tiếp:", 
+                    { x: 0.8, y: 1.4, w: 8.4, h: 0.6, fontSize: 13, color: textLight, align: "center", fontFace: "Inter" });
+
+                s.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 2.1, w: 8.4, h: 0.8, fill: "1E293B", radius: 0.05 });
+                s.addText("TR → PIQ / SK → Trust → Brand Authenticity → PI / WTP", 
+                    { x: 0.8, y: 2.3, w: 8.4, h: 0.5, fontSize: 16, bold: true, color: textLight, align: "center", fontFace: "Noto Serif" });
+
+                let bullets = [
+                    "✓ Tích hợp nhuần nhuyễn mô hình kích thích-cơ thể-phản hồi (S-O-R) và Lý thuyết Tín hiệu (Signaling Theory) vào sản phẩm FMCG RTD Việt Nam.",
+                    "✓ Thiết kế thực nghiệm factorial 2×2 kết hợp phân tích cấu trúc tuyến tính PLS-SEM (n = 400–500 đáp viên).",
+                    "✓ Đóng góp giải pháp thiết thực hỗ trợ bảo tồn giá trị Chỉ dẫn Địa lý Quốc gia 'Yến sào Khánh Hòa' trong môi trường số.",
+                    "✓ Đóng góp giá trị lý thuyết: Khẳng định vai trò trung gian cấp cao đặc biệt của nhân tố Brand Authenticity."
+                ];
+
+                bullets.forEach((bullet, idx) => {
+                    s.addText(bullet, { x: 0.8, y: 3.1 + idx * 0.45, w: 8.4, h: 0.4, fontSize: 10.5, color: "cbd5e1", fontFace: "Inter" });
+                });
+            }
+
+            // SLIDE 16: Thank You Slide
+            {
+                let s = pptx.addSlide();
+                s.background = { fill: bgDark };
+                
+                s.addText("TRƯỜNG ĐẠI HỌC NHA TRANG", { x: 0.5, y: 1.0, w: 9.0, h: 0.4, fontSize: 13, bold: true, color: gold, align: "center", fontFace: "Inter" });
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 1.5, w: 1.0, h: 0.03, fill: gold });
+                
+                s.addText("Xin trân trọng cảm ơn\nHội đồng Khoa học!", 
+                    { x: 0.5, y: 1.8, w: 9.0, h: 1.5, fontSize: 32, bold: true, color: textLight, align: "center", fontFace: "Noto Serif" });
+                
+                s.addShape(pptx.shapes.RECTANGLE, { x: 4.5, y: 3.5, w: 1.0, h: 0.03, fill: gold });
+                
+                s.addText("Nghiên cứu sinh: Lê Phúc Hải\nEmail: lephuchai@ntu.edu.vn\n\nKính mong Hội đồng cho ý kiến góp ý để hoàn thiện đề cương.", 
+                    { x: 0.5, y: 3.8, w: 9.0, h: 1.3, fontSize: 12, italic: true, color: "94A3B8", align: "center", fontFace: "Inter", lineSpacing: 22 });
+            }
+
+            // Save Presentation
+            pptx.writeFile({ fileName: "Slide_BaoVe_DeCuong_NCS_LePhucHai.pptx" });
+
+        } catch (error) {
+            console.error("Lỗi xuất PPTX:", error);
+            alert("Đã xảy ra lỗi trong quá trình xuất PPTX. Vui lòng kiểm tra console hoặc thử lại!");
+        } finally {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    }
+
+    // Helper function to render SVG onto a canvas and return base64 png
+    function convertSvgToPng(svgElement) {
+        return new Promise((resolve, reject) => {
+            try {
+                // Ensure SVG has proper dimensions in XML
+                const clonedSvg = svgElement.cloneNode(true);
+                clonedSvg.setAttribute('width', '1100');
+                clonedSvg.setAttribute('height', '440');
+
+                // Serialize SVG
+                const svgString = new XMLSerializer().serializeToString(clonedSvg);
+                
+                // Create Blob URL
+                const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+                const DOMURL = window.URL || window.webkitURL || window;
+                const url = DOMURL.createObjectURL(svgBlob);
+                
+                const image = new Image();
+                image.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 2200; // Double width for higher resolution (retina support)
+                    canvas.height = 880; // Double height
+                    const context = canvas.getContext('2d');
+                    
+                    // Fill background white
+                    context.fillStyle = '#ffffff';
+                    context.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    // Draw scaled image
+                    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+                    
+                    const pngData = canvas.toDataURL('image/png');
+                    DOMURL.revokeObjectURL(url);
+                    resolve(pngData);
+                };
+                image.onerror = function(err) {
+                    DOMURL.revokeObjectURL(url);
+                    reject(err);
+                };
+                image.src = url;
+            } catch (e) {
+                reject(e);
+            }
+        });
+    }
+</script>
+</body>
+</html>

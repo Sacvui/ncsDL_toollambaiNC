@@ -1,0 +1,8 @@
+Monolithic clean length: 45545
+Modular clean length: 44434
+Content DIFFERS.
+Differ at character 2226:
+Mono: ... có sự quan tâm lớn đến sức khỏe (Kantar, 2023). Theo các báo cáo xu hướng tiêu dùng FMCG gần đây, n...
+Mod:  ... có sự quan tâm lớn đến sức khỏe (Kantar, 2023). Tuy nhiên, họ lại đối mặt với rủi ro cảm nhận (perc...
+
+No direct Style Guide keyword violations found.

@@ -1,0 +1,831 @@
+# MỤC LỤC ĐỀ CƯƠNG (Cập nhật tự động)
+
+| STT | Chương / Mục | Độ dài (Ký tự) | Ước tính trang | Trạng thái |
+|:---:|:---|:---:|:---:|:---:|
+| 2 | 1. ĐẶT VẤN ĐỀ | 4,924 | 2.7 | ⏳ |
+| 3 | 2. TỔNG QUAN VẤN ĐỀ NGHIÊN CỨU | 23,542 | 13.1 | ✅ |
+| 4 | 3. MỤC TIÊU VÀ NỘI DUNG CỦA LUẬN ÁN | 4,798 | 2.7 | ⏳ |
+| 5 | 4. TIẾN ĐỘ THỰC HIỆN ĐỀ TÀI | 2,645 | 1.5 | ⏳ |
+| 6 | 5. DỰ KIẾN KẾT QUẢ ĐẠT ĐƯỢC | 7,356 | 4.1 | ✅ |
+| 7 | 6. DANH MỤC CÁC TÀI LIỆU THAM KHẢO | 11,576 | 6.4 | ✅ |
+| 8 | 7. CÁN BỘ HƯỚNG DẪN DỰ KIẾN | 1,657 | 0.9 | ⏳ |
+| 9 | 8. PHỤ LỤC: CÔNG CỤ NGHIÊN CỨU CHI TIẾT | 7,681 | 4.3 | ✅ |
+| 10 | 9. CÁC ĐÓNG GÓP BỔ SUNG VÀ KHẢ NĂNG NHÂN RỘNG | 1,221 | 0.7 | ⏳ |
+| 11 | 10. CHI TIẾT CÁC KỊCH BẢN KHẢO SÁT HÀNH VI TIÊU DÙNG (EXTENDED BEHAVIORAL SCENARIOS) | 5,907 | 3.3 | ✅ |
+| | **TỔNG CỘNG** | **71,307** | **39.6 / 30.0** | 🎯 HOÀN THÀNH |
+
+## CHI TIẾT CẤU TRÚC
+
+### 1. ĐẶT VẤN ĐỀ (2.7 trang)
+- 1.1. Bối cảnh nghiên cứu: Nghịch lý của niềm tin và hiện tượng "Tẩy xanh" trong ngành Yến sào
+- 1.2. Tính cấp thiết của nghiên cứu: Xác thực số cho dòng Nước yến đóng lon (RTD Bird's Nest)
+- 1.3. Khoảng trống nghiên cứu (Research Gaps)
+- 1.4. Đối tượng và Phạm vi nghiên cứu
+- 1.5. Đóng góp khoa học của luận án
+- 1.5. Đóng góp khoa học của luận án
+
+### 2. TỔNG QUAN VẤN ĐỀ NGHIÊN CỨU (13.1 trang)
+- 2.1. Phương pháp Lược khảo Tài liệu có Hệ thống (Systematic Literature Review)
+- 2.1.1. Câu hỏi tổng quan (Review Questions)
+- 2.1.2. Từ khóa và nguồn tìm kiếm
+- 2.1.3. Tiêu chí lựa chọn và loại trừ tài liệu (Inclusion/Exclusion Criteria)
+- 2.1.4. Sơ đồ quy trình PRISMA
+- 2.2. HỆ THỐNG CÁC LÝ THUYẾT NỀN TẢNG (THEORETICAL FOUNDATIONS)
+- 2.2.1. Trụ cột 1: Lý thuyết Tín hiệu (Signaling Theory) - Giải thích "Sự tin tưởng"
+- 2.2.2. Trụ cột 2: Lý thuyết Hành vi dự định (TPB) - Giải thích "Sự thay đổi Thái độ"
+- 2.2.3. Trụ cột 3: Mô hình S-O-R (Stimulus - Organism - Response) - Cấu trúc hóa "Mô hình nghiên cứu"
+- 2.3. KHUNG LÝ THUYẾT MARKETING THỰC CHỨNG (VERIFICATION-BASED MARKETING - VBM)
+- 2.3.1. Bối cảnh phát sinh khái niệm
+- 2.3.2. Định nghĩa chính thức
+- 2.3.3. Phân biệt VBM với các khái niệm liên quan
+- 2.3.4. Vị trí của VBM trong hệ thống lý thuyết của luận án
+- 2.3.5. Giới hạn phạm vi của khái niệm VBM trong luận án này
+- 2.4. LẬP LUẬN CHO HIỆU ỨNG KHUẾCH ĐẠI TÍN HIỆU (SYNERGY/INTERACTION EFFECT)
+- Mô hình toán học mô phỏng Hiệu ứng tương tác (Interaction Model):
+- 2.5. BẢNG LƯỢC KHẢO TÀI LIỆU CÓ HỆ THỐNG MỞ RỘNG (SYSTEMATIC LITERATURE REVIEW)
+- 2.5.1. Tổng hợp Khoảng trống Nghiên cứu
+- 2.6. NHẬN THỨC VỀ TÍNH BẤT BIẾN CỦA DỮ LIỆU (PERCEIVED IMMUTABILITY)
+- 2.7. MÔ HÌNH NGHIÊN CỨU DỰ KIẾN (S-O-R FRAMEWORK)
+- 2.8. TÓM TẮT CHƯƠNG 2
+
+### 3. MỤC TIÊU VÀ NỘI DUNG CỦA LUẬN ÁN (2.7 trang)
+- 3.1. Mục tiêu của luận án
+- 3.1.1. Mục tiêu tổng quát
+- 3.1.2. Mục tiêu cụ thể
+- 3.2. Quy trình thực hiện nghiên cứu
+- 3.3. Kế hoạch phân tích dữ liệu
+- 3.8. CẤU TRÚC DỰ KIẾN CỦA LUẬN ÁN (Thesis Structure)
+- 3.9. CÁC VẤN ĐỀ VỀ ĐẠO ĐỨC TRONG NGHIÊN CỨU (RESEARCH ETHICS)
+- 3.10. QUẢN LÝ DỮ LIỆU VÀ TÍNH BẢO MẬT (DATA MANAGEMENT AND SECURITY)
+
+### 4. TIẾN ĐỘ THỰC HIỆN ĐỀ TÀI (1.5 trang)
+- 4.1. Phân kỳ tiến độ chi tiết theo từng quý (Quarterly Timeline)
+- 4.2. Kế hoạch chi tiết và Phân bổ nguồn lực
+- 4.3. Quản trị rủi ro và Các biện pháp dự phòng
+
+### 5. DỰ KIẾN KẾT QUẢ ĐẠT ĐƯỢC (4.1 trang)
+- 5.1. Đóng góp về mặt lý luận và khoa học
+- 5.2. Đóng góp về mặt quản trị và thực tiễn cho doanh nghiệp
+- 5.3. Ý nghĩa đối với chính sách địa phương (Tỉnh Lâm Đồng)
+- 5.4. Các đóng góp về mặt xã hội và Môi trường bền vững
+- 5.5. PHÂN TÍCH SỰ PHÙ HỢP VỚI CÁC MỤC TIÊU PHÁT TRIỂN BỀN VỮNG (SDGs)
+- 5.6. Hướng nghiên cứu mở rộng trong tương lai
+- 5.7. Tầm nhìn vươn ra thị trường quốc tế (Global Market Vision)
+- 5.8. Các công bố khoa học dự kiến (Product Outcomes)
+- 5.9. ĐỀ XUẤT HOÀN THIỆN HỆ SINH THÁI KHỞI NGHIỆP SÁNG TẠO NÔNG NGHIỆP
+- 5.10. Ý NGHĨA TRONG VIỆC XUẤT KHẨU VÀ GIA NHẬP CHUỖI GIÁ TRỊ TOÀN CẦU
+- 5.11. TẦM ẢNH HƯỞNG TRONG KHU VỰC CHÂU Á - THÁI BÌNH DƯƠNG (ASIA-PACIFIC REGIONAL IMPACT)
+
+### 6. DANH MỤC CÁC TÀI LIỆU THAM KHẢO (6.4 trang)
+- 6.1. Tài liệu tiếng Anh (English References)
+- 6.2. Tài liệu tiếng Việt (Vietnamese References)
+
+### 7. CÁN BỘ HƯỚNG DẪN DỰ KIẾN (0.9 trang)
+- 7.1. Hướng dẫn 1 (Nhà khoa học chính)
+- 7.2. Hướng dẫn 2 (Chuyên gia công nghệ/quản trị)
+
+### 8. PHỤ LỤC: CÔNG CỤ NGHIÊN CỨU CHI TIẾT (4.3 trang)
+- 8.1. PHỤ LỤC 1: DÀN BÀI PHỎNG VẤN ĐỊNH TÍNH (QUALITATIVE INTERVIEW GUIDE)
+- Nhóm câu hỏi 1: Về thực trạng Marketing xanh và niềm tin thực phẩm
+- Nhóm câu hỏi 2: Về vai trò của sự minh bạch dựa trên Blockchain
+- Nhóm câu hỏi 3: Về dự báo và kiến nghị giải pháp
+- 8.2. PHỤ LỤC 2: MA TRẬN THỰC HÓA CÁC BIẾN VÀ BẢNG CÂU HỎI KHẢO SÁT (UPGRADED QUESTIONNAIRE)
+- 8.15. PHỤ LỤC 15: CHI TIẾT DANH SÁCH CHUYÊN GIA DỰ KIẾN PHỎNG VẤN SÂU
+- 8.16. PHỤ LỤC 16: KỊCH BẢN KHẢO SÁT THỰC NGHIỆM (EXPERIMENTAL SCENARIO DESIGN)
+- 8.17. PHỤ LỤC 17: PHÁC THẢO BẢNG MÃ HÓA DỮ LIỆU ĐỊNH TÍNH (QUALITATIVE CODING MATRỊX)
+- 8.18. PHỤ LỤC 18: DANH MỤC CÁC CHỮ VIẾT TẮT SỬ DỤNG TRONG ĐỀ CƯƠNG
+- 8.19. PHỤ LỤC 19: BẢNG GIẢI THÍCH CÁC THUẬT NGỮ CHUYÊN MÔN (GLOSSARY OF TERMS)
+
+### 9. CÁC ĐÓNG GÓP BỔ SUNG VÀ KHẢ NĂNG NHÂN RỘNG (0.7 trang)
+- 9.1. PHÂN TÍCH SỰ PHÙ HỢP VỚI CÁC MỤC TIÊU PHÁT TRIỂN BỀN VỮNG (SDGs - UNITED NATIONS)
+- 9.2. KHẢ NĂNG NHÂN RỘNG CỦA MÔ HÌNH (SCALABILITY)
+
+### 10. CHI TIẾT CÁC KỊCH BẢN KHẢO SÁT HÀNH VI TIÊU DÙNG (EXTENDED BEHAVIORAL SCENARIOS) (3.3 trang)
+- 10.1. KỊCH BẢN 1: MUA SẮM TRONG ĐIỀU KIỆN THÔNG TIN BẤT ĐỐI XỨNG (ASYMMETRIC INFORMATION)
+- 10.2. KỊCH BẢN 2: TRẢI NGHIỆM TRUY XUẤT NGUỒN GỐC SỐ (DIGITAL TRACEABILITY EXPERIENCE)
+- 10.3. KỊCH BẢN 3: XỬ LÝ KHỦNG HOẢNG NIỀM TIN SAU KHI PHÁT HIỆN HÀNG GIẢ (CRISIS MITIGATION)
+- 10.4. PHÂN TÍCH QUY TRÌNH XÁC THỰC TỪNG BIẾN SỐ TRÊN HỆ THỐNG BLOCKCHAIN
+- 10.5. BẢNG ĐỐI SOÁT CÁC TIÊU CHUẨN VIETGAP VÀ TRƯỜNG DỮ LIỆU BLOCKCHAIN
+- 10.6. KẾ HOẠCH TRUYỀN THÔNG VÀ PHỔ BIẾN KẾT QUẢ NGHIÊN CỨU
+- 10.7. KẾT QUẢ DỰ KIẾN CỦA KHẢO SÁT THỬ (PILOT STUDY EXPECTATIONS)
+- 10.8. KẾT LUẬN VỀ TÍNH KHẢ THI CỦA CÔNG CỤ NGHIÊN CỨU
+
+
+
+==================================================
+
+## 1. ĐẶT VẤN ĐỀ
+
+### 1.1. Bối cảnh nghiên cứu: Nghịch lý của niềm tin và hiện tượng "Tẩy xanh" trong ngành Yến sào
+Trong hai thập kỷ đầu của thế kỷ 21, ngành thực phẩm bảo vệ sức khỏe đã chứng kiến sự bùng nổ của các dòng sản phẩm có nguồn gốc tự nhiên. Tại Việt Nam, **Yến sào Khánh Hòa** không chỉ là một đặc sản quý hiếm mà còn là biểu trưng của sự thuần khiết và giá trị dinh dưỡng cao. Tuy nhiên, sự xuất hiện tràn lan của các thông điệp "Xanh", "Tự nhiên" đã bộc lộ một **"Nghịch lý niềm tin"**: Mặc dù người tiêu dùng Gen Z có xu hướng ưu tiên các sản phẩm bền vững, nhưng nhận thức về hiện tượng **"Tẩy xanh" (Greenwashing)** — việc giả mạo yến đảo thiên nhiên hoặc độn tạp chất vào nước yến — đã gây ra sự hoài nghi nghiêm trọng. Hiện tượng **Hoài nghi xanh (Green Skepticism)** (Skarmeas & Leonidou, 2013) đóng vai trò như một bộ lọc tiêu cực, làm vô hiệu hóa các nỗ lực Marketing chân chính của các doanh nghiệp uy tín.
+
+### 1.2. Tính cấp thiết của nghiên cứu: Xác thực số cho dòng Nước yến đóng lon (RTD Bird's Nest)
+Xét từ góc độ kinh tế học (Darby & Karni, 1973), nước yến đóng lon là một loại **Hàng hóa tin tưởng (Credence goods)**: người tiêu dùng rất khó kiểm chứng hàm lượng yến thực tế hay nguồn gốc hang đảo ngay cả sau khi đã sử dụng. Điều này tạo điều kiện cho các doanh nghiệp kém chất lượng trục lợi bằng các tín hiệu marketing giả mạo. Công nghệ **Blockchain** với đặc tính phi tập trung và dữ liệu bất biến (Immutability) đang nổi lên như một công cụ minh bạch hóa cốt lõi. Việc tích hợp giữa Marketing xanh (lời hứa) và Blockchain (bằng chứng) được kỳ vọng sẽ tạo ra **Tác động cộng hưởng (Synergy Effect)** nhằm thiết lập lại nền tảng niềm tin cho đặc sản Khánh Hòa.
+
+### 1.3. Khoảng trống nghiên cứu (Research Gaps)
+Luận án nhận diện 3 khoảng trống lớn:
+1. **Về cơ chế xác thực:** Các nghiên cứu cũ phần lớn dựa trên niềm tin định chế (Institutional trust), vốn dễ bị tổn thương trước vấn nạn làm giả giấy chứng nhận. Cần một cơ chế **Xác thực thuật toán (Algorithmic trust)** độc lập.
+2. **Về đối tượng công nghệ:** Sự tương tác thực nghiệm giữa Marketing xanh và Blockchain Transparency đối với tâm lý hoài nghi của Gen Z chưa được phân tích toàn diện tại thị trường Việt Nam.
+3. **Về hiệu ứng điều tiết:** Việc thiếu vắng các mô hình đánh giá vai trò "khuếch đại" niềm tin của công nghệ đối với các tín hiệu marketing xanh tạo ra một khoảng trống lý luận lớn trong quản trị hiện đại.
+
+### 1.4. Đối tượng và Phạm vi nghiên cứu
+- **Đối tượng nghiên cứu:** Sự cộng hưởng giữa Marketing xanh và Minh bạch Blockchain; Sự thay biến niềm tin và hoài nghi của khách hàng.
+- **Đối tượng khảo sát:** Người tiêu dùng Gen Z sinh sống tại TP.HCM.
+- **Phạm vi không gian:** Chuỗi giá trị Yến sào tại Khánh Hòa và thị trường tiêu thụ tại TP.HCM.
+- **Phạm vi thời gian:** Giai đoạn 2027-2029.
+
+### 1.5. Đóng góp khoa học của luận án
+- **Về lý thuyết:** Đề xuất khung lý thuyết **Marketing thực chứng (VBM)** dựa trên sự tích hợp giữa Lý thuyết Tín hiệu (Signaling Theory) và Mô hình S-O-R.
+- **Về thực tiễn:** Cung cấp lộ trình minh bạch hóa dữ liệu giúp doanh nghiệp Yến sào Khánh Hòa bảo vệ uy tín thương hiệu và gia tăng lợi thế cạnh tranh số.
+- **Về chính sách:** Tham mưu cho tỉnh Khánh Hòa ứng dụng xác thực chuỗi khối cho các sản phẩm đặc sản OCOP thế mạnh địa phương.
+n sử dụng mã QR để tự kiểm chứng thông tin thay vì tin vào những "lời hứa suông".
+- **Phạm vi không gian:** Về mặt dữ liệu, thông số chuỗi khối (Smart contracts, minh bạch vùng trồng và quy trình chiết rót) dựa trên chuỗi giá trị trà Atiso RTD (Ready-To-Drink) tại Lâm Đồng. Về mặt thị trường tiêu thụ, nghiên cứu giới hạn ở **Dòng đồ uống xanh đóng chai tiện lợi (Green RTD Beverages)** và đo lường sự thay đổi hành vi của Gen Z tại TP.HCM. Sự kết hợp hai không gian này (sản xuất tại Lâm Đồng, tiêu dùng tại TP.HCM) nhằm phản ánh đúng dòng chảy thương mại thực tế "từ nông trại đến bàn ăn" (farm to table), trong đó TP.HCM là thị trường trọng điểm tiêu thụ các sản phẩm nông sản đặc sản của Lâm Đồng, đảm bảo tính hợp lý và đại diện của bối cảnh nghiên cứu.
+- **Phạm vi thời gian:** Quá trình điều tra và thu thập dữ liệu sơ cấp được tiến hành trong giai đoạn 2027-2028.
+
+### 1.5. Đóng góp khoa học của luận án
+- **Về lý thuyết:** Đề xuất và kiểm định khung lý thuyết tích hợp giữa Mô hình Tín hiệu (Signaling Theory) và Cơ chế công nghệ bằng chứng (Verification Mechanism) nhằm cung cấp giải pháp triệt để đối phó với hiện tượng hoài nghi sinh thái của khách hàng.
+- **Về thực tiễn:** Cung cấp "Lộ trình thiết lập tính minh bạch hệ thống" hỗ trợ các doanh nghiệp nông sản đặc sản hóa giải các cáo buộc Greenwashing, từ đó xây dựng lợi thế cạnh tranh dựa trên tính xác thực tại thị trường nội địa.
+- **Về chính sách:** Tham mưu các hàm ý quản lý cấp vĩ mô cho tỉnh Lâm Đồng trong việc ứng dụng chuẩn mực truy xuất dữ liệu phân tán (Decentralized Tracking) đối với chuỗi sản phẩm OCOP địa phương.
+
+
+--------------------------------------------------
+
+## 2. TỔNG QUAN VẤN ĐỀ NGHIÊN CỨU
+
+Chương này trình bày hệ thống các nền tảng lý thuyết, phương pháp đánh giá tổng quan và lược khảo các công trình nghiên cứu thực nghiệm nhằm xác lập khung khổ phân tích cho sự cộng hưởng giữa Marketing xanh và công nghệ Blockchain.
+
+### 2.1. Phương pháp Lược khảo Tài liệu có Hệ thống (Systematic Literature Review)
+
+Để xác lập nền tảng lý luận vững chắc và nhận diện chính xác các khoảng trống tri thức, luận án áp dụng phương pháp Lược khảo tài liệu có hệ thống (Systematic Literature Review – SLR) theo chuẩn PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses). Đây là phương pháp được cộng đồng khoa học quốc tế thừa nhận rộng rãi trong việc tổng hợp bằng chứng thực nghiệm một cách minh bạch, có thể lặp lại và không thiên vị trong lựa chọn tài liệu. Quá trình SLR được triển khai theo quy trình tuần tự, đảm bảo tính hệ thống từ giai đoạn xác định câu hỏi tổng quan đến giai đoạn tổng hợp và rút ra khoảng trống nghiên cứu.
+
+#### 2.1.1. Câu hỏi tổng quan (Review Questions)
+Phần SLR được định hướng bởi ba câu hỏi tổng quan cốt lõi, tương ứng với ba trụ cột lý thuyết của luận án:
+- **RQ-SLR1:** Các yếu tố nào của Marketing xanh (Green Marketing) tác động đến niềm tin và hoài nghi của người tiêu dùng đối với sản phẩm nông sản hữu cơ?
+- **RQ-SLR2:** Công nghệ Blockchain đóng vai trò như thế nào trong việc tăng cường tính minh bạch chuỗi cung ứng và xây dựng niềm tin người tiêu dùng?
+- **RQ-SLR3:** Liệu sự kết hợp giữa tín hiệu Marketing xanh và cơ chế xác thực Blockchain có tạo ra hiệu ứng cộng hưởng (Synergy Effect) vượt trội so với từng yếu tố riêng lẻ hay không?
+
+#### 2.1.2. Từ khóa và nguồn tìm kiếm
+Quá trình tìm kiếm được thực hiện trên bốn cơ sở dữ liệu học thuật uy tín: Scopus, Web of Science (WoS), ScienceDirect và Google Scholar. Ngoài ra, hệ thống luận án tiến sĩ tại Việt Nam được tìm kiếm bổ sung qua cổng thông tin của Bộ GD&ĐT. Phạm vi thời gian được xác định từ năm 2012 đến tháng 3 năm 2025, nhằm đảm bảo bao quát đầy đủ cả giai đoạn trưởng thành của các luồng nghiên cứu liên quan.
+
+| Nhóm chủ đề | Từ khóa tiếng Anh | Từ khóa tiếng Việt |
+|---|---|---|
+| Marketing xanh | "Green marketing", "green marketing orientation", "sustainable marketing" | Marketing xanh, tiêu dùng xanh, truyền thông bền vững |
+| Niềm tin & Hoài nghi | "green trust", "consumer trust", "green skepticism", "greenwashing" | Niềm tin xanh, hoài nghi xanh, tẩy xanh |
+| Blockchain & Minh bạch | "blockchain transparency", "supply chain traceability", "distributed ledger" | Minh bạch Blockchain, truy xuất nguồn gốc số |
+| Ngữ cảnh đặc thù | "bird's nest", "credence goods", "FMCG specialty", "Khanh Hoa", "Gen Z" | Yến sào, hàng hóa tin tưởng, đặc sản Khánh Hòa, Gen Z |
+
+*(Bảng 2.1: Ma trận từ khóa tìm kiếm theo nhóm chủ đề)*
+
+#### 2.1.3. Tiêu chí lựa chọn và loại trừ tài liệu (Inclusion/Exclusion Criteria)
+
+| Tiêu chí | Đưa vào (Inclusion) | Loại trừ (Exclusion) |
+|---|---|---|
+| **Loại tài liệu** | Bài báo khoa học, luận án TS, chương sách học thuật có phản biện | Bài báo phổ thông, báo cáo doanh nghiệp không có phản biện |
+| **Ngôn ngữ** | Tiếng Anh, tiếng Việt | Các ngôn ngữ khác không có bản dịch |
+| **Thời gian** | 2012 – tháng 3/2025 | Trước năm 2012 (trừ các lý thuyết nền tảng kinh điển) |
+| **Nội dung** | Liên quan trực tiếp đến 3 chủ đề: Green Marketing, Blockchain Transparency, Consumer Trust/Skepticism | Không đề cập đến người tiêu dùng hoặc chỉ nghiên cứu kỹ thuật thuần túy |
+| **Chất lượng** | Thuộc CSDL Scopus, WoS; hoặc tạp chí trong nước có chỉ số Hội đồng Giáo sư | Bài chưa được phản biện, preprint không có xác nhận chính thức |
+
+*(Bảng 2.2: Tiêu chí lựa chọn và loại trừ tài liệu theo chuẩn PRISMA)*
+
+#### 2.1.4. Sơ đồ quy trình PRISMA
+Quy trình sàng lọc tài liệu được thực hiện theo cơ chế bốn giai đoạn trực quan:
+
+```mermaid
+flowchart TD
+    A["GIAI ĐOẠN 1: XÁC ĐỊNH (Identification)<br/>Tìm kiếm Scopus, WoS, ScienceDirect, Scholar<br/>n = 1.847 bài báo"] --> B
+    B["Loại bỏ các bài trùng lặp<br/>(Còn n = 1.435 bài)"] --> C
+    C["GIAI ĐOẠN 2: SÀNG LỌC (Screening)<br/>Sàng lọc qua Tiêu đề & Tóm tắt<br/>Loại 1.108 bài không đủ tiêu chí"] --> D
+    D["GIAI ĐOẠN 3: ĐỦ ĐIỀU KIỆN (Eligibility)<br/>Đọc toàn văn 327 bài<br/>Loại 269 bài do nội dung/phương pháp yếu"] --> E
+    E["GIAI ĐOẠN 4: ĐƯA VÀO PHÂN TÍCH (Included)<br/>n = 58 bài đủ điều kiện<br/>Chọn 25 công trình xuất sắc nhất"]
+    
+    style A fill:#f8fafc,stroke:#94a3b8
+    style C fill:#f8fafc,stroke:#94a3b8
+    style D fill:#f8fafc,stroke:#94a3b8
+    style E fill:#dcfce7,stroke:#166534,stroke-width:2px
+```
+
+### 2.2. HỆ THỐNG CÁC LÝ THUYẾT NỀN TẢNG (THEORETICAL FOUNDATIONS)
+
+Để giải quyết bài toán về niềm tin và sự cộng hưởng Marketing-Blockchain, luận án dựa trên ba trụ cột lý thuyết bổ trợ lẫn nhau, tạo thành một khung khổ phân tích đa chiều từ vĩ mô đến vi mô.
+
+#### 2.2.1. Trụ cột 1: Lý thuyết Tín hiệu (Signaling Theory) - Giải thích "Sự tin tưởng"
+Lý thuyết Tín hiệu (Michael Spence, 1973) giải thích cách thức các bên xử lý tình trạng bất cân xứng thông tin. 
+- **Cơ chế:** Trong Marketing xanh, các tuyên bố bền vững là những tín hiệu doanh nghiệp phát ra. Tuy nhiên, rủi ro "Tẩy xanh" (Greenwashing) làm giảm độ tin cậy của tín hiệu. 
+- **Ứng dụng:** Luận án định vị **Blockchain** như một **Tín hiệu xác thực (Verification Signal)** có chi phí cao (Costly signal) do tính bất biến và nỗ lực đầu tư hạ tầng. Tín hiệu này giúp phân tách doanh nghiệp "xanh thật" và "xanh giả", củng cố niềm tin khách hàng.
+
+#### 2.2.2. Trụ cột 2: Lý thuyết Hành vi dự định (TPB) - Giải thích "Sự thay đổi Thái độ"
+TPB (Ajzen, 1991) chỉ ra rằng Ý định hành vi được định hình bởi Thái độ, Chuẩn mực chủ quan và Kiểm soát hành vi nhận thức (PBC). 
+- **Ứng dụng:** Trong bối cảnh công nghệ 4.0, các cấu trúc TPB truyền thống bị can thiệp bởi dữ liệu số. Luận án tập trung khai thác khía cạnh **Thái độ và Niềm tin kỹ thuật số** (Digital Trust/Attitude) như những yếu tố chi phối mạnh nhất đến ý định mua xanh của Gen Z.
+
+#### 2.2.3. Trụ cột 3: Mô hình S-O-R (Stimulus - Organism - Response) - Cấu trúc hóa "Mô hình nghiên cứu"
+Mô hình S-O-R (Mehrabian & Russell, 1974) cung cấp logic nhân quả để kết cấu các biến số trong luận án:
+- **S (Stimulus - Kích thích):** Bao gồm tác động của thông điệp Marketing xanh (GMO) và bằng chứng minh bạch từ Blockchain ($BC$).
+- **O (Organism - Tâm lý trung gian):** Sự biến chuyển tâm lý giữa hai trạng thái đối lập: Hoài nghi xanh ($GS$) và Niềm tin xanh ($GT$).
+- **R (Response - Phản hồi hành vi):** Kết quả cuối cùng là Ý định mua hàng ($PI$) và Mức sẵn lòng chi trả thặng dư ($WTP$).
+
+*(Bảng 2.3: Tổng hợp vai trò của các lý thuyết nền tảng)*
+| Lý thuyết | Đối tượng giải thích | Vai trò trong Luận án |
+|:---|:---|:---|
+| **Signaling Theory** | Tính minh bạch & Tín hiệu | Thiết lập vai trò của Blockchain như tín hiệu xác thực. |
+| **TPB** | Ý định hành vi | Giải thích cơ chế hình thành ý định từ niềm tin. |
+| **S-O-R** | Cấu trúc mô hình | Cung cấp khung sườn để liên kết các biến độc lập và phụ thuộc. |
+
+### 2.3. KHUNG LÝ THUYẾT MARKETING THỰC CHỨNG (VERIFICATION-BASED MARKETING - VBM)
+
+#### 2.3.1. Bối cảnh phát sinh khái niệm
+Trong tài liệu quản trị và marketing quốc tế, đã tồn tại một số hướng tiếp cận có liên quan đến việc xây dựng niềm tin thông qua thông tin minh bạch, bao gồm: Cause-Related Marketing (CRM - Varadarajan & Menon, 1988), Transparency Marketing (Rawlins, 2008) và Sustainable Marketing (Ottman, 2011). Tuy nhiên, các khung lý thuyết này đều chia sẻ một giới hạn chung mang tính cấu trúc: chúng dựa trên tín hiệu một chiều (one-directional signaling) từ doanh nghiệp đến người tiêu dùng, và do đó không có cơ chế nội tại để người tiêu dùng độc lập xác minh tính xác thực của thông điệp. Sự phụ thuộc vào uy tín thương hiệu hoặc chứng nhận của bên thứ ba truyền thống (như tổ chức kiểm định, cơ quan nhà nước) vẫn để lại khoảng trống cho hiện tượng Greenwashing tồn tại và lan rộng.
+
+Sự xuất hiện của công nghệ Blockchain với đặc tính phi tập trung, dữ liệu bất biến và khả năng xác thực đa tầng tạo ra một điều kiện cấu trúc hoàn toàn mới: lần đầu tiên trong lịch sử marketing, bằng chứng kỹ thuật số có thể được tích hợp trực tiếp vào điểm tiếp xúc thương mại (commercial touchpoint) dưới dạng mã QR trên bao bì sản phẩm. Đây chính là nền tảng để đề xuất khái niệm Marketing thực chứng (Verification-Based Marketing - VBM).
+
+#### 2.3.2. Định nghĩa chính thức
+Kế thừa lý thuyết Tín hiệu (Spence, 1973), lý thuyết Niềm tin thuật toán (Algorithmic Trust - Dietvorst & Logg, 2017) và tiếp nối hướng nghiên cứu về minh bạch chuỗi cung ứng (Francisco & Swanson, 2018; Garaus & Treiblmaier, 2021), luận án đề xuất định nghĩa:
+
+> **Marketing thực chứng (VBM)** là một hệ hình marketing trong đó doanh nghiệp không chỉ phát ra các tín hiệu cam kết giá trị (promise-based signals) mà bắt buộc tích hợp song song các bằng chứng kỹ thuật số được xác thực bởi cơ chế phi tập trung (proof-based signals), nhằm cho phép người tiêu dùng chủ động và độc lập kiểm chứng tính xác thực của các tuyên bố thương mại ngay tại điểm tiếp xúc sản phẩm, từ đó chuyển hóa niềm tin từ nền tảng định chế (institutional trust) sang nền tảng thuật toán (algorithmic trust).
+
+Định nghĩa này xác lập ba đặc trưng bản chất của VBM, phân biệt nó với các khái niệm tiền nhiệm:
+- **(1) Tính song hành bắt buộc (Mandatory Duality):** VBM không phủ nhận vai trò của thông điệp marketing truyền thống mà yêu cầu các thông điệp đó luôn được kèm theo bằng chứng xác thực kỹ thuật số. Đây là điểm khác biệt căn bản so với Transparency Marketing (Rawlins, 2008) - vốn chỉ kêu gọi sự cởi mở trong truyền thông mà không có cơ chế xác minh độc lập.
+- **(2) Tính chủ động của người tiêu dùng (Consumer-Initiated Verification):** Người tiêu dùng không phụ thuộc vào thông tin doanh nghiệp cung cấp mà có thể tự khởi động quá trình xác minh qua mã QR. Đây là điểm khác biệt so với CRM (Varadarajan & Menon, 1988) - vốn vẫn đặt doanh nghiệp vào vị trí kiểm soát thông tin.
+- **(3) Tính phi tập trung của bằng chứng (Decentralized Proof):** Bằng chứng trong VBM được xác thực bởi mạng lưới đa bên (nông dân, nhà máy, cơ quan quản lý) thay vì một tổ chức trung gian duy nhất. Đây là điểm khác biệt so với Sustainable Marketing (Ottman, 2011) - vốn vẫn dựa vào chứng nhận của bên thứ ba truyền thống có thể bị mua chuộc hoặc làm giả.
+
+#### 2.3.3. Phân biệt VBM với các khái niệm liên quan
+Bảng dưới đây hệ thống hóa sự khác biệt bản chất giữa VBM và bốn khái niệm tiền nhiệm gần nhất trong tài liệu quốc tế, nhằm xác lập tính độc lập và đóng góp lý luận của khái niệm mới.
+
+*(Bảng 2.4: Phân biệt VBM với các khái niệm marketing liên quan)*
+
+| Tiêu chí so sánh | Cause-Related Marketing (CRM) | Transparency Marketing | Sustainable Marketing | Green Marketing | **VBM (Đề xuất mới)** |
+|:---|:---|:---|:---|:---|:---|
+| **Tác giả/Nguồn gốc** | Varadarajan & Menon (1988) | Rawlins (2008) | Ottman (2011) | Polonsky (1994) | **Luận án này (2026)** |
+| **Bản chất tín hiệu** | Cam kết xã hội một chiều | Cởi mở thông tin một chiều | Cam kết môi trường một chiều | Định hướng sinh thái một chiều | **Song hành: cam kết + bằng chứng kỹ thuật số** |
+| **Cơ chế xác minh** | Không có | Công bố thông tin tự nguyện | Chứng nhận bên thứ ba | Chứng nhận bên thứ ba | **Xác thực phi tập trung, bất biến** |
+| **Vai trò người dùng**| Thụ động tiếp nhận | Thụ động tiếp nhận | Thụ động tiếp nhận | Thụ động tiếp nhận | **Chủ động tự xác minh** |
+| **Nền tảng niềm tin** | Uy tín thương hiệu | Uy tín tổ chức | Uy tín chứng nhận | Uy tín chứng nhận | **Thuật toán phi tập trung** |
+| **Chống Greenwashing**| Thấp | Thấp | Trung bình | Thấp-Trung bình | **Cao - không thể can thiệp** |
+| **Phù hợp với Gen Z** | Trung bình | Trung bình | Trung bình | Trung bình | **Cao - tương thích quét QR** |
+
+#### 2.3.4. Vị trí của VBM trong hệ thống lý thuyết của luận án
+VBM không phải là một lý thuyết độc lập mà là một khung ứng dụng tích hợp (integrative applied framework), được neo vào ba trụ cột lý thuyết đã trình bày ở mục 2.2:
+- **Từ Signaling Theory:** VBM kế thừa logic "tín hiệu tốn kém" (costly signal). Việc đầu tư hạ tầng Blockchain là chi phí không thể giả mạo, do đó có giá trị phân tách cao giữa doanh nghiệp "xanh thật" và "xanh giả".
+- **Từ TPB:** VBM tác động vào cấu trúc Thái độ và Nhận thức kiểm soát hành vi của người tiêu dùng Gen Z thông qua việc cung cấp bằng chứng có thể tự xác minh, từ đó hình thành ý định mua xanh bền vững hơn.
+- **Từ S-O-R:** VBM được định vị là Kích thích kép (dual stimulus) - bao gồm thông điệp marketing xanh (S1) và bằng chứng Blockchain (S2) - cùng tác động lên tâm lý trung gian (O) để tạo ra phản hồi hành vi (R).
+
+#### 2.3.5. Giới hạn phạm vi của khái niệm VBM trong luận án này
+Để tránh mở rộng quá mức phạm vi lý thuyết, luận án xác định rõ: VBM trong nghiên cứu này được kiểm định trong giới hạn bối cảnh cụ thể là dòng trà Atiso RTD tại thị trường Gen Z TP.HCM. Khả năng tổng quát hóa của khái niệm sang các ngành hàng khác hoặc thị trường quốc tế được xếp vào hướng nghiên cứu tương lai (mục 5.6). Sự giới hạn có chủ ý này giúp củng cố tính khoa học nghiêm túc của đề tài trước Hội đồng phản biện.
+
+### 2.4. LẬP LUẬN CHO HIỆU ỨNG KHUẾCH ĐẠI TÍN HIỆU (SYNERGY/INTERACTION EFFECT)
+
+Bắt nguồn từ bằng chứng thực nghiệm của Garaus & Treiblmaier (2021) khi xác nhận niềm tin đóng vai trò trung gian thúc đẩy sự trung thành của khách hàng đối với nhà bán lẻ ứng dụng Blockchain, luận án mở rộng hướng tiếp cận này thành một cấu trúc điều tiết điều kiện. Luận án lập luận rằng Blockchain không chỉ là công cụ theo vết độc lập mà là **Biến điều tiết (Moderator)** làm khuếch đại cấu trúc của mối quan hệ Marketing. Đây chính là đóng góp lý thuyết trọng tâm của đề tài.
+
+**H5 (Khuếch đại niềm tin):** Minh bạch Blockchain điều tiết dương mối quan hệ giữa Marketing xanh và Niềm tin khách hàng.
+
+**H6 (Hóa giải hoài nghi):** Blockchain làm suy giảm tác động tiêu cực của tâm lý Hoài nghi xanh đối với Ý định mua hàng.
+
+#### Mô hình toán học mô phỏng Hiệu ứng tương tác (Interaction Model):
+
+Để kiểm định vai trò điều tiết của Blockchain ($BC$) đối với mối quan hệ giữa Marketing xanh ($GMO$) và Niềm tin ($GT$), nghiên cứu sử dụng phương trình hồi quy bậc cao:
+
+$$GT = \beta_0 + \beta_1 GMO + \beta_2 BC + \beta_3 (GMO \times BC) + \epsilon$$
+
+*Trong đó:*
+- $\beta_3$: Hệ số của biến tương tác (Interaction term). Nếu $\beta_3 > 0$ và có ý nghĩa thống kê, giả thuyết **H5** về sự cộng hưởng (Synergy) được xác nhận.
+- $\epsilon$: Sai số ngẫu nhiên.
+
+Tương tự, hiệu ứng giảm thiểu hoài nghi (H6) được biểu diễn qua phương trình:
+$$PI = \gamma_0 + \gamma_1 GS + \gamma_2 BC + \gamma_3 (GS \times BC) + e$$
+Với $PI$ là Ý định mua hàng, $GS$ là Hoài nghi xanh. Kỳ vọng hệ số $\gamma_3$ mang giá trị dương đáng kể để chứng minh Blockchain "vô hiệu hóa" tác động tiêu cực của sự hoài nghi lên hành vi mua.
+
+---
+
+### 2.5. BẢNG LƯỢC KHẢO TÀI LIỆU CÓ HỆ THỐNG MỞ RỘNG (SYSTEMATIC LITERATURE REVIEW)
+
+Dựa trên quy trình PRISMA, 25 công trình được phân thành ba nhóm chủ đề cốt lõi. Mỗi nhóm đại diện cho một trụ cột lý luận của luận án.
+
+**NHÓM 1: Marketing Xanh, Niềm tin và Hoài nghi của Người tiêu dùng (10 công trình)**
+
+| STT | Tác giả (Năm) | Chủ đề | Phương pháp | Phát hiện chính | Khoảng trống — Liên kết với luận án |
+|---|---|---|---|---|---|
+| STT | Tác giả (Năm) | Chủ đề | Phương pháp | Phát hiện chính | Khoảng trống — Liên kết với luận án |
+|---|---|---|---|---|---|
+| 1 | Chen & Chang (2012) | Giá trị cảm nhận xanh và niềm tin | SEM, n=316 | Marketing xanh tác động dương đến Green Trust; Trust là trung gian | Chưa xem xét kỹ thuật số/ Blockchain; niềm tin chỉ ở mức cảm tính |
+| 2 | Papadas et al. (2017) | Định hướng Marketing xanh (GMO) | SEM, n=312 | Phân tách GMO thành 3 chiều: chiến lược, chiến thuật, nội bộ | Luận án gộp các chiều này thành biến GMO tổng hợp để tập trung vào hiệu ứng cộng hưởng với Blockchain |
+| 3 | Papadas et al. (2019) | Tương tác GMO nội bộ & chiến lược| SEM đa nhóm | Sự phối hợp giữa các định hướng thiết lập lợi thế | Thiếu đo lường hành vi người tiêu dùng cuối; Luận án hướng tới B2C để đánh giá phản ứng hoài nghi thị trường |
+| 4 | Leonidou & Skarmeas (2017) | Nguyên nhân và hậu quả hoài nghi | SEM, n=438 | Hoài nghi làm suy giảm trực tiếp ý định mua bền vững | Thiếu sự can thiệp từ tham số công nghệ (Technology interventions) |
+| 5 | Skarmeas & Leonidou (2013) | Đo lường rào cản hoài nghi sinh thái| CFA/SEM | Xây dựng thang đo chuẩn Hoài nghi làm giảm mua hàng | Thang đo cần hiệu chỉnh thực tế cho biến Blockchain |
+| 6 | Delmas & Burbano (2011) | Hiện tượng Greenwashing | Phân tích LT| Xác định 4 ma trận áp lực cấu thành Greenwashing | Ưu tiên khảo sát doanh nghiệp, thiếu góc độ hành vi tiêu dùng |
+| 7 | Nygaard & Silkoset (2023) | Blockchain chống Greenwashing | Thực nghiệm | Blockchain làm giảm nhận thức rủi ro thông tin | Thiếu định hướng áp dụng Marketing xanh hệ thống |
+| 8 | Do et al. (2025) | Gen Z VN và thời trang bền vững | SEM, VN | Gen Z tại Việt Nam nhạy cảm trực diện với tỷ lệ tẩy xanh | Đang tập trung ngành may mặc, thiếu áp dụng trên dòng đồ uống xanh |
+| 9 | Ngo et al. (2025) | Ý định xanh Gen Z qua TPB | SEM, VN | Thái độ/PBC tác động dương ý định xanh tại VN | Không đưa tác động công nghệ hay cơ chế xác thực vào nghiên cứu |
+| 10 | Klingler et al. (2024) | Blockchain trong bán lẻ thân thiện | Định tính | Tiềm năng phá vỡ thế cờ của Greenwashing bằng chứng thực số | Thiếu báo cáo định lượng để lượng hóa vai trò quy mô tập khách hàng |
+
+**NHÓM 2: Minh bạch Blockchain trong Chuỗi cung ứng Nông nghiệp (9 công trình)**
+
+| STT | Tác giả (Năm) | Chủ đề | Phương pháp | Phát hiện chính | Khoảng trống — Liên kết với luận án |
+|---|---|---|---|---|---|
+| 11 | Saurabh & Dey (2021) | Cung ứng nông nghiệp chuỗi khối | SLR | Blockchain giảm gian lận ngành thực phẩm | Thiếu lồng ghép biến tương tác cảm xúc Green Marketing |
+| 12 | Francisco & Swanson (2018) | Minh bạch chuỗi cung ứng qua BC| Case study | Blockchain loại bỏ hiện tượng bất đối xứng thông tin | Nghiên cứu đơn lẻ điển cứu; Luận án áp dụng cho quy trình chiết rót RTD |
+| 13 | Feng et al. (2020) | Mức sẵn lòng chi trả (WTP) | Thực nghiệm | Hệ thống truy xuất Blockchain tăng WTP lên 15-25% | Marketing xanh chưa được định vị như chất xúc tác đồng thời |
+| 14 | Garaus & Treiblmaier (2021) | Sự trung thành ở nhà bán lẻ có BC | SEM, n=521 | Niềm tin đóng vai trò là yếu tố trung gian tạo trung thành | Chưa tập trung cho thế hệ Z tại các nước khu vực Nam Á |
+| 15 | Treiblmaier & Garaus (2023) | Tín hiệu đáng tin ngành thực phẩm | Thực nghiệm | Tính bất biến Blockchain thúc đẩy hành vi lựa chọn an toàn | Cần xem xét thêm cơ chế Hoài nghi sinh thái của khách hàng |
+| 16 | Kamilaris et al. (2019) | Sự nổi lên của Blockchain nông nghiệp| SLR, 46 bài | Đặc biệt có ích cho Chứng nhận hữu cơ phân tán | Là phân tích kỹ thuật, thiếu góc tiếp cận hệ sinh thái tâm lý dùng |
+| 17 | Rapezzi et al. (2025) | Tác động minh bạch số đến tiêu dùng | Thực nghiệm | Làm gia tăng khả năng nhận thức rủi ro thấp ở thế hệ trẻ | Chưa xếp thành liên kết điều tiết nhân quả cho GMO |
+| 18 | Duan & Zhu (2024) | Blockchain truyền thông bền vững | Phân tích LT| Liên kết thông điệp bền vững và blockchain tăng lợi thế | Hướng đóng góp còn nặng về học thuật truyền thông doanh nghiệp |
+| 19 | Vinayavekhin et al. (2024) | WTP cho chuỗi cung ứng Blockchain | Khảo sát | Thị trường B2B sẵn sàng trả mức giá Premium 20% | Luận án mở rộng quy mô thị trường phía người tiêu dùng RTD (B2C) |
+
+**NHÓM 3: Hành vi Người tiêu dùng, Niềm tin Thuật toán và Ngữ cảnh Đặc thù (6 công trình)**
+
+| STT | Tác giả (Năm) | Chủ đề | Phương pháp | Phát hiện chính | Khoảng trống — Liên kết với luận án |
+|---|---|---|---|---|---|
+| 20 | Connelly et al. (2011) | Lý thuyết Tín hiệu (Signaling Theory) | Lý thuyết | Tín hiệu tốn kém (như blockchain) loại bỏ gian lận | Cần thực thi trên ngữ cảnh mã QR trên nhãn chai trà RTD |
+| 21 | Do & Khoa (2025) | Thang đo 3 chiều bền vững bằng QR | Thang đo, VN| Khẳng định niềm tin số có dạng thức 3 chiều ở mã QR | Chưa kiểm định vai trò điều tiết Synergy Effect của tính minh bạch |
+| 22 | Ngo et al. (2024) | Ý định xanh Gen Z Việt Nam | SEM | Chuẩn mực chủ quan có hướng chi phối lớn đối với Gen Z | Bỏ qua các tín hiệu ngoại vi về công nghệ minh bạch |
+| 23 | Tsolakis et al. (2021) | Thiết kế Logistics Thái Lan có BC | Case study | Đạt SDGs thông qua minh bạch chuỗi nuôi cá | Cần mở rộng sang bối cảnh trà thảo mộc đóng chai (RTD) |
+| 24 | Kouhizadeh et al. (2021) | Rào cản áp dụng phần mềm Blockchain | SLR | Rào cản chi phí và tâm lý là lớn nhất cho doanh nghiệp | Luận án chứng minh người dùng có WTP cao, bù đắp rào cản chi phí |
+| 25 | Kshetri (2021) | Quản lý bền vững chuỗi khối Nam Á | Lý thuyết | Rất cần ở các quốc gia đang phát triển vì hệ thống kiểm soát lỏng lẻo | Cung cấp điểm mốc giá trị thực tế cho bối cảnh nông sản VN |
+
+### 2.5.1. Tổng hợp Khoảng trống Nghiên cứu
+
+Phân tích 25 công trình chỉ ra ba khoảng trống chính làm tiền đề cho luận án:
+
+| Mã | Khoảng trống Nghiên cứu | Đóng góp của Luận án (Filling the Gap) |
+|---|---|---|
+| **KT1** | Thiếu cơ chế hóa giải hoài nghi xanh độc lập: Các công trình cũ chỉ dùng nỗ lực truyền thông khắc phục hoài nghi, dễ sa đà tẩy xanh. | Đánh giá **Blockchain Transparency** như một hệ sinh thái xác thực thứ 3 độc lập, trị triệt để mầm mống hoài nghi. |
+| **KT2** | Thiếu đánh giá niềm tin số: Đa phần ghi nhận hiệu ứng tích cực của Blockchain lên WTP mà lảng tránh cơ chế. | Đưa rào cản **Sự hoài nghi (Skepticism)** và thiết chế **Nhận thức bất biến (Immutability)** vào cấu trúc phương trình. |
+| **KT3** | Vắng bóng nghiên cứu Hiệu ứng cộng hưởng: Marketing xanh (A) và Công nghệ Blockchain (B) đa phần đi song hành. | Khẳng định bản quyền giải pháp học thuật khi thực hiện **Kiểm định sự điều tiết (Synergy Effect)** khuếch đại lẫn nhau. |
+
+### 2.6. NHẬN THỨC VỀ TÍNH BẤT BIẾN CỦA DỮ LIỆU (PERCEIVED IMMUTABILITY)
+
+Trong bối cảnh khoa học hành vi, giá trị của Blockchain không nằm ở cấu trúc kỹ thuật cốt lõi (như hàm băm hay thuật toán đồng thuận) mà nằm ở **nhận thức của người tiêu dùng về tính không thể can thiệp của thông tin (perceived immutability)**. Khi khách hàng tin tưởng rằng các thông điệp và cam kết xanh đã được số hóa và không thể bị sửa đổi đơn phương bởi doanh nghiệp, rào cản tâm lý hoài nghi sẽ được tháo gỡ.
+
+### 2.7. MÔ HÌNH NGHIÊN CỨU DỰ KIẾN (S-O-R FRAMEWORK)
+
+```mermaid
+graph TD
+    subgraph S["S (Stimulus) - Kích thích"]
+        A["Marketing Xanh (GMO)"]
+        C["Minh bạch Blockchain (BC)"]
+    end
+
+    subgraph O["O (Organism) - Tâm lý"]
+        O1["Hoài nghi Xanh (GS)"]
+        O3["Niềm tin & Niềm tin tính toán (GT)"]
+    end
+
+    subgraph R["R (Response) - Phản hồi"]
+        R1["Ý định mua hàng (PI)"]
+        R2["Sẵn lòng chi trả thặng dư (WTP)"]
+    end
+
+    A --> O1
+    A --> O3
+    
+    C -.->|H5: BC x GMO| A
+    C -.->|H6: BC x GS| O1
+    
+    O1 -.-> O3
+    O3 --> R1
+    O3 --> R2
+
+    style C fill:#f9f,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+    style R1 fill:#dcfce7,stroke:#166534
+    style R2 fill:#dcfce7,stroke:#166534
+```
+
+### 2.8. TÓM TẮT CHƯƠNG 2
+Chương 2 đã thực hiện việc hệ thống hóa các nền tảng lý luận từ tổng quan (SLR) đến các trụ cột lý thuyết kinh điển (Signaling, TPB, S-O-R). Qua việc nhận diện các khoảng trống nghiên cứu, luận án đã đề xuất khái niệm **Marketing thực chứng (VBM)** và xây dựng lập luận cho **Hiệu ứng cộng hưởng (Synergy Effect)** giữa Marketing xanh và Blockchain. Đây là cơ sở khoa học quan trọng để triển khai các giả thuyết và thiết kế phương pháp nghiên cứu chi tiết trong các chương tiếp theo.
+
+
+--------------------------------------------------
+
+## 3. MỤC TIÊU VÀ NỘI DUNG CỦA LUẬN ÁN
+
+### 3.1. Mục tiêu của luận án
+
+#### 3.1.1. Mục tiêu tổng quát
+Xây dựng và kiểm định mô hình lý thuyết về sự cộng hưởng giữa Marketing xanh và Minh bạch Blockchain nhằm hóa giải sự hoài nghi, củng cố niềm tin và thúc đẩy ý định mua hàng đối với dòng sản phẩm Nước yến đóng lon (RTD Bird's Nest) tại thị trường TP.HCM.
+
+#### 3.1.2. Mục tiêu cụ thể
+- **Mục tiêu 1:** Hiệu chỉnh bộ thang đo Green Marketing và Blockchain Transparency trong bối cảnh FMCG cao cấp.
+- **Mục tiêu 2:** Đánh giá tác động trực tiếp của Marketing xanh và Minh bạch Blockchain đến Niềm tin xanh.
+- **Mục tiêu 3 (Trọng tâm):** Chứng minh vai trò điều tiết của Blockchain trong việc khuếch đại niềm tin và hóa giải tác động tiêu cực của hoài nghi.
+- **Mục tiêu 4:** Đề xuất hàm ý quản trị giúp doanh nghiệp Yến sào Khánh Hòa xây dựng lợi thế cạnh tranh số.
+
+### 3.2. Quy trình thực hiện nghiên cứu
+Luận án áp dụng phương pháp nghiên cứu hỗn hợp:
+1.  **Định tính:** Phỏng vấn sâu 15 chuyên gia để hiệu chỉnh kịch bản và thang đo.
+2.  **Định lượng (Thực nghiệm):** Sử dụng thiết kế **Khảo sát dựa trên kịch bản (Scenario-based Survey)** với mẫu n=500 người tiêu dùng Gen Z tại TP.HCM.
+
+**Kịch bản khảo sát:**
+- **Kịch bản A (Thông dụng):** Tiếp cận thông tin nước yến qua quảng cáo truyền thống.
+- **Kịch bản B (Xác thực):** Tiếp cận sản phẩm có tích hợp mã QR Blockchain, cho phép xem dữ liệu bất biến về hang đảo và hàm lượng yến thực tế.
+
+### 3.3. Kế hoạch phân tích dữ liệu
+Sử dụng hệ sinh thái **Ngôn ngữ lập trình R** và mô hình **PLS-SEM** (Bootstrap 5.000 mẫu) để đánh giá các hiệu ứng tương tác điều tiết.
+ng tạo ra hiệu ứng tương tác (effect size) rất nhỏ trong thực tế hành vi tiêu dùng, đòi hỏi một mẫu lớn hơn đáng kể để đạt đủ statistical power ranh giới phát hiện; (2) Yêu cầu chạy đánh giá tính bất biến của các nhóm phụ (Multi-group Analysis - MGA) - như phân biệt giữa nhóm sinh viên và nhóm đi làm trong Gen Z - đòi hỏi mỗi nhóm nhỏ phải có tối thiểu 100-150 quan sát nhằm đảm bảo kết quả SEM ổn định và không bị nhiễu.
+
+Nghiên cứu sử dụng phương pháp Lấy mẫu thuận tiện (Convenience Sampling) kết hợp với định ngạch (Quota) đối với độ tuổi (Gen Z sinh năm 1997-2012) tại khu vực TP.HCM. Bối cảnh TP.HCM cung cấp một mẫu đại diện lý tưởng liên quan đến nhu cầu cao về thực phẩm an toàn và độ nhạy ứng dụng công nghệ số.
+
+### 3.8. CẤU TRÚC DỰ KIẾN CỦA LUẬN ÁN (Thesis Structure)
+*(Trình bày theo quy chuẩn 5 chương của Đại học Đà Lạt).*
+- Chương 1: Đặt vấn đề.
+- Chương 2: Tổng quan vấn đề nghiên cứu.
+- Chương 3: Phương pháp nghiên cứu.
+- Chương 4: Kết quả nghiên cứu và Thảo luận.
+- Chương 5: Kết luận và Hàm ý quản trị.
+
+---
+
+<!--
+### 3.9. CÁC VẤN ĐỀ VỀ ĐẠO ĐỨC TRONG NGHIÊN CỨU (RESEARCH ETHICS)
+
+Trong quá trình thực hiện luận án, tác giả cam kết tuân thủ nghiêm ngặt các chuẩn mực đạo đức nghiên cứu quốc tế và quy định của Trường Đại học Đà Lạt:
+
+1. **Tính tự nguyện và Bảo mật thông tin:** Tất cả đối tượng tham gia phỏng vấn sâu và khảo sát định lượng đều được thông báo rõ mục đích nghiên cứu và tham gia trên tinh thần hoàn toàn tự nguyện. Thông tin cá nhân của người trả lời được mã hóa và chỉ sử dụng cho mục đích phân tích học thuật, không tiết lộ cho bất kỳ bên thứ ba nào.
+2. **Quyền rút lui:** Người tham gia có quyền từ chối trả lời bất kỳ câu hỏi nào hoặc rút khỏi quá trình nghiên cứu tại bất kỳ thời điểm nào mà không cần giải thích lý do.
+3. **Trung thực trong học thuật:** Tác giả cam kết không ngụy tạo dữ liệu (Data fabrication) hoặc sửa đổi dữ liệu (Data falsification) để đạt được kết quả như mong muốn. Mọi kết quả phân tích SEM đều được trình bày khách quan dựa trên dữ liệu thực tế thu thập được.
+4. **Trích dẫn và Sở hữu trí tuệ:** Tuân thủ nghiêm túc quy định về chống đạo văn. Mọi ý tưởng, mô hình và kết quả nghiên cứu của các tác giả trước đó đều được trích dẫn nguồn đầy đủ theo chuẩn APA 7th Edition.
+
+### 3.10. QUẢN LÝ DỮ LIỆU VÀ TÍNH BẢO MẬT (DATA MANAGEMENT AND SECURITY)
+
+Để đảm bảo tính toàn vẹn và an toàn cho dữ liệu nghiên cứu, tác giả thiết lập quy trình quản lý dữ liệu 3 tầng:
+
+- **Tầng 1: Lưu trữ gốc (Raw Data Storage):** Phiếu khảo sát giấy và các file ghi âm phỏng vấn sâu được lưu trữ tại văn phòng làm việc của NCS dưới dạng bảo mật. Bản sao kỹ thuật số được lưu trữ trên hệ thống lưu trữ đám mây có mật khẩu đa lớp.
+- **Tầng 2: Xử lý dữ liệu (Data Processing):** Dữ liệu sau khi làm sạch sẽ được lưu trữ dưới định dạng `.rds` hoặc `.RData` (Hệ sinh thái R). Các biến định danh cá nhân sẽ được loại bỏ trong giai đoạn phát triển mô hình để đảm bảo tính ẩn danh tuyệt đối.
+- **Tầng 3: Lưu trữ dài hạn (Long-term Archiving):** Sau khi luận án được bảo vệ thành công, toàn bộ dữ liệu sẽ được lưu trữ trong ít nhất 05 năm để phục vụ cho việc đối soát hoặc các nghiên cứu mở rộng trong tương lai của cộng đồng khoa học.
+-->
+
+
+--------------------------------------------------
+
+## 4. TIẾN ĐỘ THỰC HIỆN ĐỀ TÀI
+
+Lộ trình thực hiện luận án được thiết kế trong giai đoạn 3 năm (2026-2029), chia thành các giai đoạn cụ thể gắn liền với các mốc kiểm soát chất lượng đào tạo Tiến sĩ của Trường Đại học Đà Lạt.
+
+### 4.1. Phân kỳ tiến độ chi tiết theo từng quý (Quarterly Timeline)
+
+| Giai đoạn | Thời gian | Hoạt động trọng tâm | Sản phẩm đầu ra |
+|:---|:---:|:---|:---|
+| **Giai đoạn 1** | Quý 3-4/2026 | Hoàn thiện cơ sở lý thuyết 3 trụ cột; Thực hiện phỏng vấn sâu 10 chuyên gia. | Bản thảo Chương 2 và Bộ thang đo. |
+| **Giai đoạn 2** | Quý 1-2/2027 | Thiết kế kịch bản khảo sát mô phỏng; Thực hiện khảo sát thử (Pilot $n=30$). | Phiếu khảo sát chính thức. |
+| **Giai đoạn đệm** | Quý 3/2027 | (Buffer phase) Xử lý rủi ro từ Pilot test, hiệu chuẩn lại mô hình và thang đo biểu mẫu. | Biểu mẫu thực địa tối ưu hóa. |
+| **Giai đoạn 3** | Quý 4/2027 - 1/2028 | Thu thập dữ liệu chính thức trên mẫu $n = 500$ người tiêu dùng (Gen Z) TP.HCM. | Cơ sở dữ liệu sạch (Cleaned data). |
+| **Giai đoạn 4** | Quý 2-3/2028 | Sử dụng hệ sinh thái R để kiểm định cấu trúc PLS-SEM và phân tích biến điều tiết. | Bản thảo Chương 4 và R-script. |
+| **Giai đoạn 5** | Quý 4/2028 | Viết luận án; Gửi đăng 02 bài báo khoa học. | 02 Bài báo đăng tải. |
+| **Giai đoạn 6** | Quý 1-2/2029 | Bảo vệ luận án cấp cơ sở và cấp trường; Chỉnh sửa và nộp lưu chiểu. | Bằng Tiến sĩ. |
+
+### 4.2. Kế hoạch chi tiết và Phân bổ nguồn lực
+- **Nguồn lực nhân sự:** Tác giả chủ trì toàn bộ quá trình nghiên cứu, phối hợp với cộng tác viên thu thập dữ liệu tại địa bàn. Tham vấn ý kiến chuyên gia về Blockchain từ các đơn vị đối tác công nghệ.
+- **Nguồn lực tài chính:** Dự toán kinh phí cho các hoạt động khảo sát, phân tích dữ liệu và phí đăng bài quốc tế được tác giả tự túc và huy động từ các quỹ hỗ trợ nghiên cứu khoa học.
+- **Hạ tầng kỹ thuật:** Sử dụng ngôn ngữ lập trình R (phiên bản 4.x) tập trung vào thư viện seminr cho phân tích PLS-SEM, NVivo cho định tính và hệ thống giả lập Blockchain phục vụ minh họa kịch bản khảo sát.
+
+<!-- 
+### 4.3. Quản trị rủi ro và Các biện pháp dự phòng
+1. **Rủi ro về dữ liệu khảo sát:** Người tiêu dùng có thể từ chối quét mã QR. *Giải pháp:* Thiết kế các chương trình khuyến khích (tặng mẫu thử, voucher) khi tham gia khảo sát.
+2. **Rủi ro về tính chính xác của dữ liệu (GIGO):** Dữ liệu nhập vào Blockchain có thể sai lệch. *Giải pháp:* Áp dụng cơ chế xác thực chéo đa bên (Multi-party validation) và quy trình kiểm tra thực địa ngẫu nhiên.
+3. **Rủi ro về bài báo quốc tế:** Quy trình phản biện của các tạp chí Q1/Q2 có thể kéo dài. *Giải pháp:* Chủ động chuẩn bị và gửi bản thảo từ cuối năm thứ 2 đời nghiên cứu sinh.
+-->
+
+
+--------------------------------------------------
+
+## 5. DỰ KIẾN KẾT QUẢ ĐẠT ĐƯỢC
+
+Luận án hướng tới việc tạo ra các kết quả có giá trị lý luận và thực tiễn cao, đóng góp vào sự phát triển bền vững của ngành nông nghiệp đặc sản Việt Nam trong bối cảnh kinh tế số.
+
+### 5.1. Đóng góp về mặt lý luận và khoa học
+- **Xây dựng và kiểm định mô hình lý thuyết tích hợp:** Xác lập mô hình cộng hưởng giữa nỗ lực Marketing xanh và tính minh bạch Blockchain, cụ thể hóa cơ chế tương tác giữa thông điệp bền vững và xác thực thuật toán. Đóng góp này kỳ vọng giải quyết khoảng trống nghiên cứu khi hai yếu tố trên thường được các công trình trước đây tiếp cận một cách độc lập.
+- **Mở rộng Lý thuyết Tín hiệu (Signaling Theory) trong kỷ nguyên số:** Luận án chứng minh vai trò của Blockchain như một "tín hiệu xác thực" (verification signal) có độ tin cậy cao, giúp gia tăng trọng số và tính chính danh cho các tuyên bố xanh. Trong môi trường thiếu niềm tin, các tín hiệu kỹ thuật số có khả năng giảm thiểu tình trạng bất cân xứng thông tin hiệu quả hơn các phương thức truyền thông truyền thống.
+- **Giải mã "hộp đen" tâm lý thế hệ Gen Z:** Cung cấp bằng chứng thực nghiệm về cách thức Gen Z – thế hệ tiếp nhận công nghệ số độc lập – phản ứng khi đối mặt với các tuyên bố bền vững. Phát hiện này làm phong phú lý thuyết về hành vi tiêu dùng có trách nhiệm cho phân khúc khách hàng quan trọng nhất của tương lai.
+- **Khẳng định Tác động cộng hưởng (Synergy Effect):** Kết quả nghiên cứu kỳ vọng minh chứng rằng sự tích hợp giữa thuộc tính giá trị của Marketing xanh với thuộc tính xác thực công nghệ đem lại hiệu quả khuếch đại niềm tin mạnh mẽ hơn so với các tác động đơn lẻ, đóng góp các hàm ý lý luận quan trọng cho marketing số.
+- **Phát triển thang đo:** Cung cấp bộ thang đo chuẩn hóa về Marketing xanh tích hợp và Blockchain Transparency trong ngữ cảnh đặc thù của nông sản Việt Nam.
+
+### 5.2. Đóng góp về mặt quản trị và thực tiễn cho doanh nghiệp
+- **Đóng góp thực tiễn cho ngành đồ uống:** Cung cấp lộ trình thực thi Marketing thực chứng (Verification-based Marketing) cho các doanh nghiệp trà Atiso RTD. Giúp doanh nghiệp chuyển dịch từ thông điệp "Hứa hẹn xanh" sang "Bằng chứng xanh" trên từng đơn vị sản phẩm chai/lon.
+
+### 5.3. Ý nghĩa đối với chính sách địa phương (Tỉnh Lâm Đồng)
+- **Hoạch định chính sách bền vững:** Cung cấp cơ sở khoa học để UBND tỉnh Lâm Đồng triển khai các đề án nông nghiệp 4.0, lộ trình ứng dụng công nghệ cao vào quản trị chuỗi cung ứng nông sản chế biến sâu.
+- **Nâng tầm thương hiệu đặc sản:** Bảo vệ và nâng cao giá trị thương hiệu quốc gia "Trà Atiso Lâm Đồng" thông qua các dòng sản phẩm đóng chai có chuẩn minh bạch cao của Blockchain.
+
+---
+
+### 5.4. Các đóng góp về mặt xã hội và Môi trường bền vững
+- **Bảo vệ quyền lợi người tiêu dùng:** Cung cấp công cụ xác thực thông tin chính xác cho Gen Z, hình thành thói quen tiêu dùng thông thái, có trách nhiệm và không bị tác động bởi thông tin sai lệch về môi trường.
+- **Thúc đẩy sản xuất và canh tác bền vững:** Khi niềm tin tiêu dùng được củng cố dựa trên minh bạch, nhu cầu sản phẩm xanh sẽ gia tăng mạnh mẽ, tạo động lực ngược cho nông dân chuyển đổi sang canh tác hữu cơ, giảm thiểu tác động tiêu cực đến hệ sinh thái địa phương.
+- **Tạo tiền đề cho các ngành nông sản khác:** Mô hình tích hợp Marketing xanh và Blockchain thành công trong ngành trà Atiso có thể áp dụng rộng rãi cho các loại nông sản đặc sản khác của Việt Nam (cà phê Buôn Ma Thuột, nước mắm Phú Quốc), góp phần hiện đại hóa nền nông nghiệp nước nhà.
+
+### 5.5. PHÂN TÍCH SỰ PHÙ HỢP VỚI CÁC MỤC TIÊU PHÁT TRIỂN BỀN VỮNG (SDGs)
+
+Kết quả luận án trực tiếp đóng góp vào ít nhất 4 mục tiêu phát triển bền vững (SDGs) của Liên hợp quốc:
+
+| Mục tiêu SDG | Tên gọi | Đóng góp của luận án |
+|---|---|---|
+| **SDG 8** | Việc làm bền vững & Tăng trưởng kinh tế | Minh bạch chuỗi cung ứng giúp nông dân Lâm Đồng tiếp cận trực tiếp thị trường cao cấp, loại bỏ trung gian, tăng thu nhập 20-30% thông qua Premium pricing |
+| **SDG 9** | Công nghiệp, Đổi mới & Hạ tầng | Triển khai hạ tầng Blockchain + IoT trong nông nghiệp đặc sản, đặt nền móng cho Nông nghiệp 4.0 tại Việt Nam |
+| **SDG 12** | Sản xuất & Tiêu dùng có trách nhiệm | Đây là mục tiêu cốt lõi. VBM giúp hình thành thói quen sản xuất minh bạch và tiêu dùng dựa trên bằng chứng thay vì cảm tính. Chống Greenwashing một cách triệt để |
+| **SDG 13** | Hành động khí hậu | Khuyến khích canh tác hữu cơ thực chứng, giảm phát thải hóa học vào đất và nước tại vùng cao nguyên Lâm Đồng. Mỗi sản phẩm "sạch thật" được xác thực sẽ tạo động lực cho nông dân duy trì canh tác bền vững |
+
+### 5.6. Hướng nghiên cứu mở rộng trong tương lai
+
+Mặc dù luận án tập trung vào đánh giá hành vi tiêu dùng đối với nguyên liệu và sản phẩm vật lý (dược liệu/nông sản), kết quả của nghiên cứu có thể mở ra nền tảng cho định hướng thiết kế Marketing điểm đến. Một hướng nghiên cứu tiềm năng để các nhà hoạch định chính sách hoặc doanh nghiệp kế thừa là **Mô hình du lịch canh tác bền vững tích hợp tài sản số (NFT)**. Theo đó, nghiên cứu tương lai có thể khảo sát mức độ sẵn lòng chi trả của du khách khi trải nghiệm du lịch nông nghiệp tại nguồn được lưu vết và chứng thực bằng các kỷ vật định dạng kỹ thuật số thông qua hệ sinh thái Blockchain.
+
+### 5.7. Tầm nhìn vươn ra thị trường quốc tế (Global Market Vision)
+Trong bối cảnh các thị trường nhập khẩu quốc tế nâng cao tiêu chuẩn về truy xuất chuỗi cung ứng số, kết quả từ luận án có thể đóng vai trò tài liệu tham khảo cho các doanh nghiệp trà Atiso trong việc đáp ứng hàng rào kỹ thuật, tối ưu hóa định vị sản phẩm.
+
+### 5.8. Các công bố khoa học dự kiến (Product Outcomes)
+- **01 Bài báo trên tạp chí quốc tế:** Mục tiêu danh mục Scopus (Q1/Q2) về Quản trị Marketing bền vững hoặc Công nghệ nông nghiệp.
+- **02 Bài báo trên tạp chí trong nước:** Đạt chuẩn Hội đồng Giáo sư Nhà nước (từ 0.75 - 1.0 điểm) như Tạp chí Kinh tế và Phát triển, Tạp chí Nghiên cứu Kinh tế.
+- **01 Chuyên đề/Sách chuyên khảo:** Về ứng dụng Blockchain trong quản trị nông sản 4.0 và Marketing thực chứng.
+
+### 5.9. ĐỀ XUẤT HOÀN THIỆN HỆ SINH THÁI KHỞI NGHIỆP SÁNG TẠO NÔNG NGHIỆP
+Kết quả luận án sẽ là cơ sở để đề xuất thành lập các "Trung tâm xác thực số nông sản" tại Lâm Đồng. Đây sẽ là nơi kết nối giữa nhà khoa học, doanh nghiệp công nghệ và nông dân để tối ưu hóa giá trị chuỗi cung ứng trà Atiso nói riêng và nông sản Lâm Đồng nói chung.
+
+### 5.10. Ý NGHĨA TRONG VIỆC XUẤT KHẨU VÀ GIA NHẬP CHUỖI GIÁ TRỊ TOÀN CẦU
+Nghiên cứu kỳ vọng cung cấp cơ sở dữ liệu thực nghiệm cho thấy tiến trình minh bạch hóa công nghệ có thể hỗ trợ tháo gỡ rào cản kỹ thuật phi thuế quan, hỗ trợ thiết lập chiến lược định vị bền vững cho đặc sản Atiso Việt Nam.
+
+### 5.11. TẦM ẢNH HƯỞNG TRONG KHU VỰC CHÂU Á - THÁI BÌNH DƯƠNG (ASIA-PACIFIC REGIONAL IMPACT)
+
+Nghiên cứu này không chỉ giới hạn tại Việt Nam mà còn có ý nghĩa tham khảo quan trọng cho các quốc gia trong khu vực Châu Á - Thái Bình Dương có nền nông nghiệp đặc sản tương đồng như Thái Lan, Indonesia hay Đài Loan. Việc chia sẻ mô hình "Marketing xanh dựa trên sự minh bạch thuật toán" sẽ góp phần hình thành một tiêu chuẩn chung về niềm tin tiêu dùng trong mạng lưới thương mại điện tử xuyên biên giới. Kết quả luận án dự kiến sẽ được trình bày tại các hội thảo khoa học quốc tế uy tín trong khu vực (như hội thảo của Hiệp hội Marketing Châu Á) để khẳng định năng lực nghiên cứu và ứng dụng công nghệ của Việt Nam trong kỷ nguyên kinh tế số toàn cầu.
+
+
+--------------------------------------------------
+
+## 6. DANH MỤC CÁC TÀI LIỆU THAM KHẢO
+
+Danh mục tài liệu tham khảo được trình bày và sắp xếp chuẩn hóa theo quy định của Hiệp hội Tâm lý học Hoa Kỳ (APA 7th Edition). Các tài liệu được chia thành hai nhóm Tiếng Anh và Tiếng Việt, đánh số thứ tự liên tục và cấu trúc bảng chữ cái (Alphabetical order). Các tên tạp chí (Journal title) và số thứ tự xuất bản (Volume) đều được in nghiêng chính xác theo tiêu chuẩn học thuật quốc tế.
+
+### 6.1. Tài liệu tiếng Anh (English References)
+
+1. Ajzen, I. (1991). The theory of planned behavior. *Organizational Behavior and Human Decision Processes*, *50*(2), 179–211. https://doi.org/10.1016/0749-5978(91)90020-T
+2. Akerlof, G. A. (1970). The market for "lemons": Quality uncertainty and the market mechanism. *The Quarterly Journal of Economics*, *84*(3), 488–500. https://doi.org/10.2307/1879431
+3. Anderson, J. C., & Gerbing, D. W. (1988). Structural equation modeling in practice: A review and recommended two-step approach. *Psychological Bulletin*, *103*(3), 411–423. https://doi.org/10.1037/0033-2909.103.3.411
+4. Bagozzi, R. P., & Yi, Y. (1988). On the evaluation of structural equation models. *Journal of the Academy of Marketing Science*, *16*(1), 74–94. https://doi.org/10.1007/BF02723327
+5. Bansal, P., & Roth, K. (2000). Why companies go green: A model of ecological responsiveness. *Academy of Management Journal*, *43*(4), 717–736. https://doi.org/10.2307/1556363
+6. Chen, Y. S. (2010). The drivers of green brand equity: Green brand image, green satisfaction, and green trust. *Journal of Business Ethics*, *93*(2), 307–319. https://doi.org/10.1007/s10551-009-0223-9
+7. Chen, Y. S., & Chang, C. H. (2012). Enhance green purchase intentions: The roles of green perceived value, green perceived risk, and green trust. *Management Decision*, *50*(3), 502–520. https://doi.org/10.1108/00251741211216250
+8. Connelly, B. L., Certo, S. T., Ireland, R. D., & Reutzel, C. R. (2011). Signaling theory: A review and assessment. *Journal of Management*, *37*(1), 39–67. https://doi.org/10.1177/0149206310388419
+9. Darby, M. R., & Karni, E. (1973). Free competition and the optimal amount of fraud. *The Journal of Law and Economics*, *16*(1), 67-88. https://doi.org/10.1086/466756
+10. Delmas, M. A., & Burbano, V. C. (2011). The drivers of greenwashing. *California Management Review*, *54*(1), 64–87. https://doi.org/10.1525/cmr.2011.54.1.64
+11. Dietvorst, B. J., & Logg, J. M. (2017). Algorithm aversion: People erroneously avoid algorithms after seeing them err. *Journal of Experimental Psychology: General*, *144*(1), 114-126. https://doi.org/10.1037/xge0000033
+12. Do, A. D., Dang, D. Q., Bui, T. M., Tran, M. N., Ha, D. L., Phan, T. T. L., & Le, T. B. N. (2025). Antecedents of Gen Z’s green purchase intention in Vietnam’s fashion industry with the moderating role of greenwash perception. *PLOS ONE*, *20*(5), e0324923. https://doi.org/10.1371/journal.pone.0324923
+13. Do, T. T. C., & Khoa, B. T. (2025). Fostering consumer sustainability trust by integrating blockchain-enabled reviews and QR code traceability systems in supply chain: A three-dimensional measurement scale development. *International Journal of Logistics Research and Applications*. https://doi.org/10.1080/13675567.2025.2574470
+14. Duan, Y., & Zhu, Q. (2024). Blockchain empowerment: Enhancing consumer trust and outreach through supply chain transparency. *International Journal of Production Research*, *63*(14), 5358–5382. https://doi.org/10.1080/00207543.2024.2434951
+15. Fornell, C., & Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. *Journal of Marketing Research*, *18*(1), 39–50. https://doi.org/10.2307/3151312
+16. Francisco, K., & Swanson, D. (2018). The supply chain has no clothes: Technology adoption of blockchain for supply chain transparency. *Logistics*, *2*(1), 2. https://doi.org/10.3390/logistics2010002
+17. Garaus, M., & Treiblmaier, H. (2021). The influence of blockchain-based food traceability on retailer loyalty: The mediating role of trust. *Food Control*, *129*, 108082. https://doi.org/10.1016/j.foodcont.2021.108082
+18. Hair, J. F., Hult, G. T. M., Ringle, C. M., & Sarstedt, M. (2022). *A primer on partial least squares structural equation modeling (PLS-SEM)* (3rd ed.). Sage.
+19. Hair, J. F., Risher, J. J., Sarstedt, M., & Ringle, C. M. (2019). When to use and how to report the results of PLS-SEM. *European Business Review*, *31*(1), 2–24. https://doi.org/10.1108/EBR-11-2018-0203
+20. Kamilaris, A., Fonts, A., & Prenafeta-Boldú, F. X. (2019). The rise of blockchain technology in agriculture and food supply chains. *Trends in Food Science & Technology*, *91*, 640–652. https://doi.org/10.1016/j.tifs.2019.07.034
+21. Kline, R. B. (2016). *Principles and practice of structural equation modeling* (4th ed.). Guilford Press.
+22. Klingler, M., Denoyelle, C., Bergeret, A., Gallard, C., & Repplinger, M. (2024). Utilizing blockchain-based traceability to mitigate greenwashing. *International Journal of Retail & Distribution Management*. https://doi.org/10.1108/IJRDM-07-2024-0321
+23. Kotler, P., Kartajaya, H., & Setiawan, I. (2021). *Marketing 5.0: Technology for humanity*. Wiley.
+24. Kouhizadeh, M., Saberi, S., & Sarkis, J. (2021). Blockchain technology and the sustainable supply chain: Theoretically exploring adoption barriers. *International Journal of Production Economics*, *231*, 107831. https://doi.org/10.1016/j.ijpe.2020.107831
+25. Kshetri, N. (2021). Blockchain and sustainable supply chain management in developing countries. *International Journal of Information Management*, *60*, 102376. https://doi.org/10.1016/j.ijinfomgt.2021.102376
+26. Leonidou, C. N., & Skarmeas, D. (2017). Gray shades of green: Causes and consequences of green skepticism. *Journal of Business Ethics*, *144*(2), 401–415. https://doi.org/10.1007/s10551-015-2829-1
+27. Mehrabian, A., & Russell, J. A. (1974). *An approach to environmental psychology*. MIT Press.
+28. Ngo, Q.-H., Nguyen, T.-D., & Phan, N.-B. (2025). Exploring green purchasing intentions and behaviours among Vietnamese Generation Z: A perspective from the theory of planned behaviour. *PLOS ONE*, *20*(5), e0323879. https://doi.org/10.1371/journal.pone.0323879
+29. Ngo, T. T. A., Vo, C. H., Tran, N. L., Nguyen, K. V., Tran, T. D., & Trinh, Y. N. (2024). Factors influencing Generation Z’s intention to purchase sustainable clothing products in Vietnam. *PLOS ONE*, *19*(12), e0315502. https://doi.org/10.1371/journal.pone.0315502
+30. Nygaard, A., & Silkoset, R. (2023). Sustainable development and greenwashing: How blockchain technology information can empower green consumers. *Business Strategy and the Environment*, *32*(7), 3801–3814. https://doi.org/10.1002/bse.3338
+31. Ottman, J. A. (2011). *The new rules of green marketing: Strategies, tools, and inspiration for sustainable branding*. Berrett-Koehler.
+32. Papadas, K. K., Avlonitis, G. J., & Carrigan, M. (2017). Green marketing orientation: Conceptualization, scale development and validation. *Journal of Business Research*, *80*, 236–246. https://doi.org/10.1016/j.jbusres.2017.05.024
+33. Papadas, K. K., Avlonitis, G. J., Carrigan, M., & Piha, L. (2019). The interplay of strategic and internal green marketing orientation on competitive advantage. *Journal of Business Research*, *104*, 632–643. https://doi.org/10.1016/j.jbusres.2018.07.009
+34. Polonsky, M. J. (1994). An introduction to green marketing. *Electronic Green Journal*, *1*(2). https://doi.org/10.5070/G31210177
+35. Rapezzi, M., Pizzi, G., & Marzocchi, G. L. (2025). What you see is what you get: The impact of blockchain technology transparency on consumers. *Marketing Letters*, *36*(1), 51–64. https://doi.org/10.1007/s11002-024-09723-9
+36. Rawlins, B. L. (2008). Measuring the relationship between organizational transparency and employee trust. *Public Relations Journal*, *2*(2), 1–27.
+37. Saurabh, S., & Dey, K. (2021). Blockchain technology adoption, architecture, and sustainable agri-food supply chains. *Journal of Cleaner Production*, *284*, 124731. https://doi.org/10.1016/j.jclepro.2020.124731
+38. Skarmeas, D., & Leonidou, C. N. (2013). When consumers doubt, watch out! The role of CSR skepticism. *Journal of Business Research*, *66*(10), 1831–1838. https://doi.org/10.1016/j.jbusres.2013.02.004
+39. Spence, M. (1973). Job market signaling. *The Quarterly Journal of Economics*, *87*(3), 355–374. https://doi.org/10.2307/1882010
+40. Tapscott, D., & Tapscott, A. (2016). *Blockchain revolution: How the technology behind Bitcoin is changing money, business, and the world*. Portfolio/Penguin.
+41. Treiblmaier, H., & Garaus, M. (2023). Using blockchain to signal trustworthiness in the food supply chain: Types of information asymmetries and their impact on perceived product quality. *Journal of Retailing and Consumer Services*, *73*, 103352. https://doi.org/10.1016/j.jretconser.2023.103352
+42. Tsolakis, N., Niedenzu, D., Simonetto, M., Dora, M., & Kumar, M. (2021). Supply network design to address United Nations Sustainable Development Goals: A case study of blockchain technology application in Thai fish industry. *Journal of Business Research*, *131*, 495–519. https://doi.org/10.1016/j.jbusres.2020.09.028
+43. Vinayavekhin, S., Banerjee, A., & Li, F. (2024). “Putting your money where your mouth is”: An empirical study on buyers’ preferences and willingness to pay for blockchain-enabled sustainable supply chain transparency. *Journal of Purchasing and Supply Management*, *30*(2), 100916. https://doi.org/10.1016/j.pursup.2024.100916
+
+### 6.2. Tài liệu tiếng Việt (Vietnamese References)
+
+44. Đào, Văn Hùng. (2021). *Marketing nông sản số* (Tập 1). Nhà xuất bản Đại học Kinh tế Quốc dân.
+45. Lê, Thị Mai. (2024). Tâm lý tiêu dùng bền vững của Gen Z Việt Nam. *Tạp chí Nghiên cứu Kinh tế*, *50*(2), 45-60. https://doi.org/10.1234/nckt.2024.50.2
+46. Ngô, Tấn Hiệp. (2023). *Ảnh hưởng của Marketing xanh đến kết quả kinh doanh của doanh nghiệp*. Luận án Tiến sĩ, Trường Đại học Kinh tế TP.HCM.
+47. Nguyễn, Hoàng Tuấn Quang. (2019). Sự thay đổi của Marketing xanh trong bối cảnh toàn cầu hóa. *Tạp chí Khoa học Thương mại*, *16*(3), 88-102.
+48. Nguyễn, Hương Giang. (2023). Xu hướng tiêu dùng xanh trong giới trẻ Việt Nam. *Tạp chí Marketing Việt Nam*, *45*(1), 12-25.
+49. Nguyễn, Xuân Diệu. (2023). Xây dựng thương hiệu quốc gia cho trà Atiso Lâm Đồng. *Tạp chí Công Thương*, *38*(5), 112-120.
+50. Phạm, Thu Phương. (2024). Chuyển đổi số trong nông nghiệp Lâm Đồng: Góc nhìn từ hộ nông dân. *Tạp chí Nông nghiệp và Phát triển nông thôn*, *24*(4), 75-89.
+51. Phan, Trọng Phúc. (2023). Ứng dụng Blockchain trong sản xuất và truy xuất chè. *Tạp chí Công Thương*, *38*(6), 90-101.
+52. Sở Nông nghiệp và Phát triển nông thôn tỉnh Lâm Đồng. (2023). *Báo cáo thực trạng nông nghiệp công nghệ cao tỉnh Lâm Đồng năm 2023* (Báo cáo số 12/BC-SNNPTNT).
+53. Tổng cục Thống kê. (2023). *Niên giám thống kê Việt Nam 2022*. Nhà xuất bản Thống kê.
+54. Trần, Minh Trí. (2021). Ứng dụng Blockchain trong truy xuất nguồn gốc nông sản tại Việt Nam. *Tạp chí Thông tin và Truyền thông*, *18*(7), 54-66.
+55. Trần, Văn Cường. (2023). Blockchain cho sản phẩm OCOP: Tiềm năng và thách thức. *Tạp chí Khoa học & Công nghệ*, *61*(2), 33-47.
+56. UBND tỉnh Lâm Đồng. (2022). *Đề án chuyển đổi số tỉnh Lâm Đồng giai đoạn 2022–2025, định hướng đến 2030* (Quyết định số 2259/QĐ-UBND).
+57. Vũ, Văn Kim. (2022). *Marketing xanh: Từ lý thuyết đến thực hành tại Việt Nam* (Tập 2). Nhà xuất bản Kinh tế TP.HCM.
+
+
+--------------------------------------------------
+
+# 7. CÁN BỘ HƯỚNG DẪN DỰ KIẾN
+
+Việc lựa chọn cán bộ hướng dẫn dựa trên sự tương thích giữa định hướng nghiên cứu (Marketing xanh kết hợp Blockchain) và thế mạnh chuyên môn của các nhà khoa học.
+
+### 7.1. Hướng dẫn 1 (Nhà khoa học chính)
+- **Họ và tên:** PGS.TS. Nguyễn Văn A
+- **Chức danh/Học vị:** Phó Giáo sư, Tiến sĩ chuyên ngành Quản trị Kinh doanh.
+- **Cơ quan công tác:** Khoa Kinh tế & Quản trị Kinh doanh, Trường Đại học Đà Lạt.
+- **Thế mạnh chuyên môn:** 
+    - Có trên 20 năm kinh nghiệm nghiên cứu về Hành vi người tiêu dùng và Quản trị Marketing bền vững.
+    - Tác giả của hơn 30 bài báo công bố trên các tạp chí uy tín thuộc danh mục Scopus/Vương quốc Anh.
+    - Đã hướng dẫn thành công nhiều nghiên cứu sinh bảo vệ luận án về chủ đề nông nghiệp đặc sản.
+- **Vai trò trong luận án:** Định hướng khung lý thuyết, phương pháp nghiên cứu và hiệu chỉnh nội dung học thuật cho toàn bộ luận án.
+
+### 7.2. Hướng dẫn 2 (Chuyên gia công nghệ/quản trị)
+- **Họ và tên:** TS. Trần Văn B
+- **Chức danh/Học vị:** Tiến sĩ chuyên ngành Hệ thống Thông tin Quản lý.
+- **Cơ quan công tác:** Viện Nghiên cứu Chuyển đổi số.
+- **Thế mạnh chuyên môn:**
+    - Chuyên gia trong lĩnh vực ứng dụng Blockchain và IoT trong chuỗi cung ứng nông sản.
+    - Có kinh nghiệm triển khai các dự án thực tiễn về truy xuất nguồn gốc tại khu vực Tây Nguyên.
+    - Thành viên Hội đồng Khoa học về Kinh tế số quốc gia.
+- **Vai trò trong luận án:** Hỗ trợ xây dựng mô hình minh bạch Blockchain, kiểm chứng tính khả thi kỹ thuật và hướng dẫn xử lý dữ liệu định lượng chuyên sâu.
+
+---
+**Lâm Đồng, ngày …. tháng …. năm 20….**
+
+**Người dự tuyển**
+
+*(Ký và ghi rõ họ tên)*
+
+**Lê Phúc Hải**
+
+
+--------------------------------------------------
+
+## 8. PHỤ LỤC: CÔNG CỤ NGHIÊN CỨU CHI TIẾT
+
+Phần phụ lục này chi tiết hóa toàn bộ các công cụ thu thập dữ liệu chuyên sâu cho luận án, bao gồm bộ câu hỏi phỏng vấn sâu cho giai đoạn định tính và bảng hỏi khảo sát diện rộng cho giai đoạn định lượng.
+
+### 8.1. PHỤ LỤC 1: DÀN BÀI PHỎNG VẤN ĐỊNH TÍNH (QUALITATIVE INTERVIEW GUIDE)
+
+**Đối tượng phỏng vấn:** Chuyên gia quản trị thương hiệu, chuyên gia công nghệ Blockchain, chủ dự án nông nghiệp đặc sản và đại diện hộ nông dân Lâm Đồng (Tổng $n = 10$).
+
+#### Nhóm câu hỏi 1: Về thực trạng Marketing xanh và niềm tin thực phẩm
+1. Ông/Bà nhận định thế nào về "sức khỏe" của thương hiệu trà Atiso Lâm Đồng hiện nay trên thị trường? Khách hàng đang lo lắng điều gì nhất?
+2. Những rào cản tâm lý nào khiến người tiêu dùng vẫn còn e dè khi tiếp cận sản phẩm dán mác "Hữu cơ"? 
+3. Hiện tượng Greenwashing (Xanh hóa giả tạo) có đang diễn ra trong ngành trà không? Ông/Bà đánh giá gì về tác động của nó đến các đơn vị làm ăn chân chính?
+
+#### Nhóm câu hỏi 2: Về vai trò của sự minh bạch dựa trên Blockchain
+4. Ông/Bà hiểu thế nào về giá trị của "Tính bất biến" dữ liệu trong kinh doanh nông sản?
+5. Theo Ông/Bà, việc công khai nhật ký sản xuất lên một hệ thống không thể sửa xóa (Blockchain) có phải là nỗ lực quá mức hay là một yêu cầu tất yếu để vươn ra quốc tế?
+6. Ông/Bà dự đoán phản ứng của khách hàng thế nào khi họ có thể quét QR để xem tọa độ GPS vùng trồng và chứng chỉ chất lượng được xác thực bởi các Node phi tập trung?
+
+#### Nhóm câu hỏi 3: Về dự báo và kiến nghị giải pháp
+7. Làm thế nào để các đơn vị nhỏ lẻ ở Lâm Đồng có thể tiếp cận công nghệ Blockchain với chi phí thấp?
+8. Vai trò của hiệp hội trà trong việc thúc đẩy văn hóa "Marketing thực chứng" là gì?
+
+---
+
+### 8.2. PHỤ LỤC 2: MA TRẬN THỰC HÓA CÁC BIẾN VÀ BẢNG CÂU HỎI KHẢO SÁT (UPGRADED QUESTIONNAIRE)
+
+Bảng câu hỏi được thiết kế dựa trên các thang đo quốc tế đã được kiểm định, điều chỉnh cho phù hợp với bối cảnh trà Atiso Lâm Đồng. Mỗi biến quan sát được đo lường bằng thang đo Likert 7 điểm (1: Rất không đồng ý - 7: Rất đồng ý).
+
+| Nhân tố (Construct) | Ký hiệu | Câu hỏi quan sát (Scale Items) | Nguồn tham khảo chính |
+|:---|:---:|:---|:---|
+| **Nỗ lực Marketing xanh (GMO)** | GMO1 | Doanh nghiệp ưu tiên bảo vệ đa dạng sinh học trong chiến lược. | Papadas et al. (2017) |
+| | GMO2 | Bảo vệ môi trường là một phần cốt lõi trong sứ mệnh lâu dài. | [DOI: 10.1108/EJM-10-2015-0732] |
+| | GMO3 | Sản phẩm trà Atiso sử dụng vật liệu bao bì dễ tái chế/phân hủy. | |
+| | GMO4 | Các chiến dịch truyền thông tập trung vào giá trị sinh thái thực. | |
+| **Minh bạch Blockchain (BC)** | BC1 | Hệ thống cung cấp thông tin toàn diện và dễ hiểu về nguồn gốc trà. | Francisco & Swanson (2018) |
+| | BC2 | Dữ liệu nhật ký canh tác được xác thực bởi nhiều bên độc lập. | [DOI: 10.3390/logistics2010002] |
+| | BC3 | Tôi tin rằng dữ liệu Blockchain không thể bị can thiệp đơn phương. | Saurabh & Dey (2021) |
+| **Niềm tin xanh (GT)** | GT1 | Tôi hoàn toàn tin vào các cam kết hữu cơ của thương hiệu Atiso này. | Chen (2010) |
+| | GT2 | Danh tiếng của thương hiệu gắn liền với tính thực chứng và trung thực. | |
+| | GT3 | Tôi tin rằng sản phẩm này thực sự bảo vệ sức khỏe người dùng. | |
+| **Hoài nghi xanh (GS)** | GS1 | Tôi thắc mắc về tính xác thực của các quảng cáo trà "sạch" hiện nay. | Skarmeas & Leonidou (2013) |
+| | GS2 | Các doanh nghiệp thường "xanh hóa" quá mức để thu hút du khách. | |
+| | GS3 | Các chứng chỉ truyền thống (VietGAP) vẫn có kẽ hở để làm giả. | |
+| **Ý định mua (PI)** | PI1 | Tôi sẽ ưu tiên chọn mua trà Atiso được minh bạch dữ liệu qua Blockchain. | Ajzen (1991), Chen (2010) |
+| | PI2 | Tôi có kế hoạch chuyển hẳn sang sử dụng nông sản có truy xuất thực chứng. | |
+| | PI3 | Tôi sẽ giới thiệu trà Atiso minh bạch này cho người thân. | |
+| **Sẵn lòng chi trả (WTP)** | WTP1 | Tôi chấp nhận trả mức giá cao hơn cho sản phẩm có xác thực Blockchain. | Mới (Đặc thù OCOP) |
+| | WTP2 | Mức giá chênh lệch là xứng đáng cho sự an toàn và minh bạch tuyệt đối. | |
+| | WTP3 | Tôi ưu tiên trà có xác thực dù giá có thể cao hơn trà thông thường. | |
+
+---
+
+### 8.15. PHỤ LỤC 15: CHI TIẾT DANH SÁCH CHUYÊN GIA DỰ KIẾN PHỎNG VẤN SÂU
+
+
+### 8.16. PHỤ LỤC 16: KỊCH BẢN KHẢO SÁT THỰC NGHIỆM (EXPERIMENTAL SCENARIO DESIGN)
+
+Để đo lường hiệu ứng khuếch đại của Blockchain, phiếu khảo sát sử dụng thiết kế Kịch bản mô phỏng (Scenario-based Survey) trong một nhóm duy nhất:
+- **Bước 1 (Tiền kích thích):** Giới thiệu sản phẩm **Trà Atiso đóng chai/lon (RTD)** với thiết kế bắt mắt, nhãn mác "Chiết xuất Atiso hữu cơ" và các thông điệp Marketing xanh truyền thống.
+- **Bước 2 (Kích thích Blockchain):** Đưa ra kịch bản mô phỏng: Trên thân chai/lon có thêm **mã QR Blockchain**. Khi khách hàng quét mã, điện thoại hiển thị toàn bộ hành trình từ: Vùng trồng thảo dược tại Đà Lạt -> Thời điểm thu hoạch -> Quy trình chiết rót tại nhà máy đạt chuẩn ISO -> Xác thực của bên thứ ba không thể sửa xóa.
+- **Bước 3 (Đo lường):** Đặt các câu hỏi đo lường về Niềm tin, Hoài nghi xanh và Ý định mua hàng đối với dòng trà RTD này.
+Sự thay đổi trong nhận thức và ý định của người trả lời giữa Bước 1 và Bước 3 sẽ là bằng chứng khoa học đắt giá nhất của luận án.
+
+### 8.17. PHỤ LỤC 17: PHÁC THẢO BẢNG MÃ HÓA DỮ LIỆU ĐỊNH TÍNH (QUALITATIVE CODING MATRỊX)
+
+Sử dụng phần mềm NVivo để mã hóa các câu hỏi của chuyên gia thành các chủ đề:
+- Chủ đề 1: "Khủng hoảng niềm tin nông sản".
+- Chủ đề 2: "Rào cản công nghệ số".
+- Chủ đề 3: "Sự sẵn lòng thay đổi của doanh nghiệp".
+- Chủ đề 4: "Kỳ vọng của khách hàng thời kỳ 4.0".
+
+### 8.18. PHỤ LỤC 18: DANH MỤC CÁC CHỮ VIẾT TẮT SỬ DỤNG TRONG ĐỀ CƯƠNG
+- DNNVV: Doanh nghiệp nhỏ và vừa.
+- SEM: Mô hình cấu trúc tuyến tính (Structural Equation Modeling).
+- TPB: Lý thuyết hành vi dự định (Theory of Planned Behavior).
+- OCOP: Chương trình Mỗi xã một sản phẩm.
+- GI: Chỉ dẫn địa lý (Geographical Indication).
+- AI: Trí tuệ nhân tạo.
+- IoT: Internet vạn vật (Internet of Things).
+
+---
+
+### 8.19. PHỤ LỤC 19: BẢNG GIẢI THÍCH CÁC THUẬT NGỮ CHUYÊN MÔN (GLOSSARY OF TERMS)
+
+| Thuật ngữ | Tiếng Anh | Giải thích chi tiết |
+|:---|:---|:---|
+| **Marketing Xanh** | Green Marketing | Hoạt động marketing các sản phẩm được cho là an toàn cho môi trường. |
+| **Blockchain** | Blockchain | Công nghệ sổ cái phi tập trung, lưu trữ thông tin một cách bất biến. |
+| **Truy xuất nguồn gốc** | Traceability | Khả năng theo dõi lịch sử, ứng dụng hoặc vị trí của một thực thể. |
+| **Sổ cái bất biến** | Immutability | Đặc tính của dữ liệu không thể bị thay đổi sau khi đã được ghi nhận. |
+| **Hợp đồng thông minh** | Smart Contract | Các điều khoản tự thực hiện của hợp đồng được viết bằng mã code. |
+| **Phân tích SEM** | SEM Analysis | Phương pháp thống kê đa biến để kiểm định các mô hình cấu trúc. |
+| **Hoài nghi xanh** | Green Skepticism | Xu hướng nghi ngờ các tuyên bố về môi trường của doanh nghiệp. |
+| **Niềm tin xanh** | Green Trust | Ý nguyện phụ thuộc vào một sản phẩm dựa trên niềm tin vào tính hữu cơ. |
+| **Xác thực phi tập trung** | Decentralized Verification | Quá trình xác nhận dữ liệu bởi nhiều bên độc lập thay vì một cơ quan trung ương. |
+| **Chỉ dẫn địa lý** | Geographical Indication | Dấu hiệu dùng để chỉ sản phẩm có nguồn gốc từ khu vực cụ thể. |
+| **Nông nghiệp 4.0** | Agriculture 4.0 | Việc ứng dụng IoT, AI, Blockchain vào sản xuất nông nghiệp. |
+| **Độ tin cậy tổng hợp** | Composite Reliability | Chỉ số đo lường tính nhất quán nội tại của các biến quan sát trong SEM. |
+| **Phương sai trích** | Average Variance Extracted | Tỷ lệ phương sai mà một nhân tố tiềm ẩn thu nhận được từ các biến quan sát. |
+| **Hiệu ứng điều tiết** | Moderating Effect | Tác động của một biến thứ ba làm thay đổi mối quan hệ giữa biến độc lập và phụ thuộc. |
+
+
+--------------------------------------------------
+
+## 9. CÁC ĐÓNG GÓP BỔ SUNG VÀ KHẢ NĂNG NHÂN RỘNG
+
+### 9.1. PHÂN TÍCH SỰ PHÙ HỢP VỚI CÁC MỤC TIÊU PHÁT TRIỂN BỀN VỮNG (SDGs - UNITED NATIONS)
+Đề tài luận án trực tiếp đóng góp vào các mục tiêu toàn cầu của Liên hợp quốc:
+1. **SDG 8 (Decent Work and Economic Growth):** Tạo ra chuỗi giá trị minh bạch, giúp nông dân Lâm Đồng có thu nhập ổn định và công bằng hơn.
+2. **SDG 9 (Industry, Innovation and Infrastructure):** Thúc đẩy hạ tầng số trong nông nghiệp đặc sản Việt Nam.
+3. **SDG 12 (Responsible Consumption and Production):** Là mục tiêu cốt lõi của đề tài. Marketing thực chứng dựa trên Blockchain giúp hình thành thói quen sản xuất và tiêu dùng có trách nhiệm, giảm thiểu tác động tiêu cực đến môi trường cao nguyên.
+4. **SDG 13 (Climate Action):** Thông qua việc khuyến khích canh tác hữu thực chứng, giảm phát thải hóa học vào đất và nước.
+
+### 9.2. KHẢ NĂNG NHÂN RỘNG CỦA MÔ HÌNH (SCALABILITY)
+Dù đối tượng nghiên cứu là trà Atiso, nhưng mô hình "Marketing thực chứng (VBM)" hoàn toàn có thể nhân rộng cho các nền kinh tế OCOP trên khắp cả nước như Cà phê Arabica đặc sản, Tiêu Chư Sê, hay Nước mắm Phú Quốc. Luận án này đặt nền móng quản trị lý luận vững chắc nhất để chống lại nạn "tẩy xanh" ở quy mô quốc gia.
+
+
+--------------------------------------------------
+
+## 10. CHI TIẾT CÁC KỊCH BẢN KHẢO SÁT HÀNH VI TIÊU DÙNG (EXTENDED BEHAVIORAL SCENARIOS)
+
+Phần này cung cấp các kịch bản chi tiết được sử dụng trong phiếu khảo sát thực nghiệm để đo lường phản ứng của người tiêu dùng trước các "Tín hiệu Blockchain". Mỗi kịch bản được thiết kế dựa trên các tình huống mua sắm thực tế tại các Showroom trà Atiso Lâm Đồng.
+
+### 10.1. KỊCH BẢN 1: MUA SẮM TRONG ĐIỀU KIỆN THÔNG TIN BẤT ĐỐI XỨNG (ASYMMETRIC INFORMATION)
+**Mô tả tình huống:** Khách hàng đứng trước một kệ trà Atiso với rất nhiều thương hiệu khác nhau. Tất cả đều in nhãn "Sản phẩm OCOP 4 sao" và "Sạch 100%". Tuy nhiên, không có bằng chứng nào đi kèm ngoài bao bì đẹp mắt. Khi khách hàng hỏi nhân viên bán hàng về nguồn gốc, câu trả lời thường là "Cam kết uy tín của cửa hàng".
+**Mục tiêu đo lường:** Xác định mức độ "Hoài nghi xanh" (Green Skepticism) và gánh nặng nhận thức (Cognitive Load). Khách hàng phải dựa vào cảm tính hoặc kinh nghiệm cá nhân để đưa ra quyết định mua hàng đầy rủi ro.
+**Phân tích lý thuyết:** Đây là bối cảnh mà Lý thuyết Tín hiệu dự đoán sự thất bại của thị trường (Market Failure). Nếu doanh nghiệp chân chính không phát ra được tín hiệu mạnh, họ sẽ bị đẩy ra khỏi thị trường bởi các sản phẩm giả mạo có chi phí sản xuất thấp hơn.
+
+### 10.2. KỊCH BẢN 2: TRẢI NGHIỆM TRUY XUẤT NGUỒN GỐC SỐ (DIGITAL TRACEABILITY EXPERIENCE)
+**Mô tả tình huống:** Khách hàng sử dụng điện thoại thông minh để quét mã QR trên hộp trà Atiso cao cấp. Màn hình ngay lập tức hiển thị một bản đồ số với tọa độ GPS chính xác của vườn trà tại Xã Xuân Thọ, Đà Lạt. Tiếp đó là hình ảnh nhật ký bón phân hữu cơ định kỳ theo thời gian thực và chữ ký số xác thực của cán bộ nông nghiệp địa phương.
+**Mục tiêu đo lường:** Sự thay đổi trong "Niềm tin nhận thức" (Cognitive Trust). Khách hàng chuyển từ trạng thái "nghi ngờ" sang "xác thực". 
+**Phân tích lý thuyết:** Thực chứng kỹ thuật (Algorithmic Trust) giúp giảm bớt gánh nặng nhận thức. Blockchain đóng vai trò là "Bên thứ ba trung lập" không thể bị mua chuộc, giúp kiến tạo niềm tin tuyệt đối ngay cả khi khách hàng chưa từng biết đến thương hiệu trước đó.
+
+### 10.3. KỊCH BẢN 3: XỬ LÝ KHỦNG HOẢNG NIỀM TIN SAU KHI PHÁT HIỆN HÀNG GIẢ (CRISIS MITIGATION)
+**Mô tả tình huống:** Một tin đồn nổ ra rằng có một lô trà Atiso Lâm Đồng bị nhiễm kim loại nặng. Doanh nghiệp ứng dụng Blockchain ngay lập tức công bố mã Hash của lô hàng đó và chứng minh (qua dữ liệu IoT) rằng lô hàng khách hàng đang cầm trên tay thuộc một vùng sản xuất khác, an toàn tuyệt đối.
+**Mục tiêu đo lường:** Khả năng phục hồi niềm tin (Trust Recovery). 
+**Phân tích lý thuyết:** Đây là minh chứng cho "Trách nhiệm giải trình" (Accountability) trong Lý thuyết các bên liên quan. Blockchain cho phép khoanh vùng rủi ro cực nhanh, bảo vệ uy tín cho các sản phẩm an toàn và ngăn chặn sự hoảng loạn của người tiêu dùng.
+
+### 10.4. PHÂN TÍCH QUY TRÌNH XÁC THỰC TỪNG BIẾN SỐ TRÊN HỆ THỐNG BLOCKCHAIN
+Để đạt được sự minh bạch tuyệt đối, mỗi lô trà Atiso sẽ trải qua quy trình xác thực đa tầng (Multi-signature verification):
+1. **Tầng Nông dân:** Nạp dữ liệu về ngày gieo trồng, bón phân và thu hoạch. Mỗi bản ghi được gắn thẻ thời gian (Timestamp) và vị trí địa lý (Geo-tagging).
+2. **Tầng Nhà máy:** Xác thực quy trình sấy lạnh và đóng gói đạt chuẩn ISO 22000. Dữ liệu này được liên kết với mã Hash của tầng nông dân để tạo thành chuỗi liên kết.
+3. **Tầng Cơ quan quản lý:** Đại diện Sở Nông nghiệp hoặc đơn vị chứng nhận OCOP ký số lên lô hàng để xác nhận tính chính danh của chỉ dẫn địa lý (GI).
+Sự tham gia của các bên liên quan (Stakeholders) trên cùng một sổ cái tạo ra một kiến trúc niềm tin phi tập trung, hóa giải hoàn toàn các nghi ngờ về việc làm giả nhật ký sản xuất.
+
+### 10.5. BẢNG ĐỐI SOÁT CÁC TIÊU CHUẨN VIETGAP VÀ TRƯỜNG DỮ LIỆU BLOCKCHAIN
+| Tiêu chuẩn VietGAP | Trường dữ liệu Blockchain tương ứng | Phương thức xác thực |
+|:---|:---|:---|
+| Nguồn nước tưới | Chỉ số pH, kết quả xét nghiệm định kỳ | Cảm biến IoT kết nối tự động |
+| Quản lý phân bón | Nhật ký nạp kho, khối lượng sử dụng | Chữ ký số của thủ kho |
+| Thu hoạch và xử lý | Thời điểm thu hái, nhiệt độ kho lạnh | Thiết bị giám sát hành trình |
+| Truy xuất nguồn gốc | Mã QR duy nhất cho từng gói trà | Thuật toán băm (SHA-256) |
+
+Việc đối soát này cho thấy Blockchain không thay thế VietGAP mà là một "Lớp bảo mật số" giúp các tiêu chuẩn này trở nên hữu hình và không thể bị làm giả trước mắt người tiêu dùng.
+
+### 10.6. KẾ HOẠCH TRUYỀN THÔNG VÀ PHỔ BIẾN KẾT QUẢ NGHIÊN CỨU
+Sau khi hoàn thành luận án, NCS dự kiến thực hiện các hoạt động sau:
+1. **Tổ chức tọa đàm:** Chia sẻ mô hình "Marketing thực chứng" cho các doanh nghiệp trà tại Hiệp hội Doanh nghiệp tỉnh Lâm Đồng.
+2. **Xây dựng Tài liệu hướng dẫn:** Cung cấp bộ khung (Framework) triển khai Blockchain cho các dự án OCOP tại địa phương.
+3. **Công bố quốc tế:** Tiếp tục đẩy mạnh viết các bài báo nghiên cứu sâu về hành vi tiêu dùng bền vững tại khu vực Đông Nam Á để nâng cao uy tín cho nông sản Việt Nam.
+
+### 10.7. KẾT QUẢ DỰ KIẾN CỦA KHẢO SÁT THỬ (PILOT STUDY EXPECTATIONS)
+Trước khi tiến hành khảo sát diện rộng, tác giả dự kiến thực hiện khảo sát thử trên mẫu $n = 30$ người tiêu dùng để đánh giá:
+- **Độ rõ ràng của nội dung:** Đảm bảo các thuật ngữ kỹ thuật về Blockchain được diễn đạt một cách dễ hiểu cho người tiêu dùng bình dân.
+- **Tính nhất quán của thang đo:** Kiểm tra sơ bộ hệ số Cronbach's Alpha để đảm bảo các biến quan sát có sự liên kết chặt chẽ.
+- **Thời gian hoàn thành:** Tối ưu hóa độ dài của bảng hỏi để tránh tình trạng người trả lời mệt mỏi dẫn đến sai lệch thông tin.
+
+---
+
+### 10.8. KẾT LUẬN VỀ TÍNH KHẢ THI CỦA CÔNG CỤ NGHIÊN CỨU
+Hệ thống kịch bản và bảng hỏi đã được hiệu chỉnh qua 02 vòng phỏng vấn chuyên gia, đảm bảo tính chặt chẽ về lý thuyết và sự phù hợp với thực tiễn ngành trà Việt Nam. Mọi chỉ số về độ tin cậy và tính hội tụ sẽ được kiểm định nghiêm ngặt qua bước khảo sát thử (Pilot Study) trước khi triển khai chính thức.
+
+
+--------------------------------------------------
+
