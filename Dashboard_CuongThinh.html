@@ -17,49 +17,452 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #1e293b; --secondary: #10b981; --bg: #f8fafc; }
-        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; height: 100vh; background: var(--bg); }
-        .sidebar { width: 300px; background: var(--primary); color: #fff; padding: 1.5rem; display: flex; flex-direction: column; flex-shrink: 0; box-shadow: 2px 0 10px rgba(0,0,0,0.1); z-index: 10; }
-        .nav-item { padding: 12px; margin: 5px 0; background: rgba(255,255,255,0.05); border-radius: 6px; cursor: pointer; font-size: 13px; transition: 0.2s; border-left: 3px solid transparent; }
-        .nav-item:hover { background: rgba(255,255,255,0.1); border-left-color: var(--secondary); }
-        .nav-item.active { background: var(--secondary); font-weight: 600; }
-        .main { flex-grow: 1; padding: 2rem; overflow-y: auto; }
-        .card { background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative; min-height: 80vh; }
-        #title { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
+        :root {
+            /* Light Theme Custom Properties */
+            --bg-body: #f1f5f9;
+            --bg-sidebar: #0f172a;
+            --bg-card: #ffffff;
+            --bg-stat: #f8fafc;
+            --border-color: #e2e8f0;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --text-sidebar-active: #ffffff;
+            --text-sidebar-inactive: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary: #10b981;
+            --accent: #6366f1;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-card: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --doc-font: 'Times New Roman', Times, Baskerville, Georgia, serif;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme Custom Properties */
+            --bg-body: #090d16;
+            --bg-sidebar: #131b2e;
+            --bg-card: #182236;
+            --bg-stat: #1f2d47;
+            --border-color: #27354d;
+            --text-main: #cbd5e1;
+            --text-heading: #f8fafc;
+            --text-sidebar-active: #ffffff;
+            --text-sidebar-inactive: #64748b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+            --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background: var(--bg-body);
+            color: var(--text-main);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        /* Sidebar Container */
+        .sidebar {
+            width: 320px;
+            background: var(--bg-sidebar);
+            color: #fff;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            box-shadow: 4px 0 25px rgba(0,0,0,0.15);
+            z-index: 10;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .sidebar-header {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.03em;
+        }
+
+        .ncs-badge {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 10px 14px;
+            border-radius: 12px;
+            color: var(--text-sidebar-inactive);
+        }
+
+        .ncs-badge strong {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .nav-container {
+            overflow-y: auto;
+            flex-grow: 1;
+            padding-right: 4px;
+        }
+
+        /* Styling Scrollbars */
+        .nav-container::-webkit-scrollbar,
+        .main::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-container::-webkit-scrollbar-track,
+        .main::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .nav-container::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        .main::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 10px;
+        }
+
+        .nav-header {
+            font-size: 0.7rem;
+            color: var(--text-sidebar-inactive);
+            font-weight: 700;
+            margin: 25px 0 10px 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.6;
+        }
+
+        .nav-item {
+            padding: 12px 14px;
+            margin: 6px 0;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.02);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-sidebar-inactive);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 25%;
+            height: 50%;
+            width: 3px;
+            background: var(--secondary);
+            border-radius: 0 4px 4px 0;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.06);
+            color: var(--text-sidebar-active);
+            transform: translateX(4px);
+        }
+
+        .nav-item.active {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .nav-item.active::before {
+            opacity: 1;
+            background: #3b82f6;
+        }
+
+        .sidebar-footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 1rem;
+            margin-top: auto;
+            font-size: 0.75rem;
+            color: var(--text-sidebar-inactive);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Main Workspace */
+        .main {
+            flex-grow: 1;
+            padding: 2.5rem;
+            overflow-y: auto;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            min-height: 85vh;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            box-sizing: border-box;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Buttons & Toolbar */
+        .btn-group {
+            position: absolute;
+            top: 2.5rem;
+            right: 3.5rem;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 18px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .btn-theme {
+            background: var(--bg-stat);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            box-shadow: none;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+        }
+
+        /* Statistics Cards Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-stat);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-main);
+            opacity: 0.8;
+            font-weight: 600;
+        }
+
+        .stat-val {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .stat-val span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        /* Content Document Styling (APA Standard) */
+        #title {
+            color: var(--text-heading);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-top: 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            transition: var(--transition);
+        }
+
+        #content {
+            font-family: var(--doc-font);
+            font-size: 14pt;
+            line-height: 1.8;
+            color: var(--text-main);
+            text-align: justify;
+            transition: var(--transition);
+            margin-top: 1.5rem;
+        }
+
+        #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+            page-break-after: avoid;
+            line-height: 1.3;
+        }
+
+        #content h1 { font-size: 20pt; text-transform: uppercase; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        #content h2 { font-size: 16pt; border-left: 4px solid var(--primary); padding-left: 12px; }
+        #content h3 { font-size: 14pt; }
+        #content h4 { font-size: 14pt; font-style: italic; }
+        #content h5 { font-size: 13pt; }
+
+        #content p {
+            margin-top: 0;
+            margin-bottom: 16px;
+            text-indent: 0; /* Standard modern spacing */
+        }
         
-        /* Chức năng Thống kê */
-        #doc-stats { font-size: 12.5px; color: #475569; margin-bottom: 25px; padding: 15px; background: #f8fafc; border-radius: 8px; border-left: 4px solid var(--secondary); display: flex; gap: 25px; flex-wrap: wrap; }
-        .stat-item span { font-weight: 700; color: var(--primary); font-size: 15px; margin-left: 5px;}
-        
-        /* Báo lỗi Cú pháp */
-        .error-box { color: #b91c1c; border: 1px solid #fca5a5; padding: 15px; background: #fef2f2; border-radius: 8px; margin: 15px 0; }
-        
-        #content { font-family: 'Times New Roman', serif; font-size: 14pt; line-height: 1.7; color: #334155; text-align: justify; }
-        #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { font-weight: bold; color: #000; margin-top: 18pt; margin-bottom: 6pt; page-break-after: avoid; }
-        #content h1 { font-size: 16pt; text-transform: uppercase; text-align: center; }
-        #content h2 { font-size: 14pt; text-transform: uppercase; }
-        #content h3, #content h4, #content h5 { font-size: 14pt; }
-        #content h6 { font-size: 14pt; font-style: italic; font-weight: normal; }
-        #content table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
-        #content th, #content td { border: 1px solid #cbd5e1; padding: 10px; font-size: 13pt; }
-        #content th { background-color: #f1f5f9; }
-        #content p { margin-bottom: 12px; }
-        .mermaid-box { margin: 30px 0; background: #fff; border: 1px solid #e2e8f0; padding: 20px; border-radius: 10px; display: flex; justify-content: center; overflow-x: auto; }
-        .mermaid-box svg { width: 100% !important; max-width: 800px !important; height: auto !important; min-width: 550px; }
-        
-        .btn-group { position: absolute; top: 2rem; right: 2rem; display: flex; gap: 10px; }
-        button { padding: 10px 15px; border-radius: 6px; border: none; cursor: pointer; font-weight: 600; font-size: 0.85rem; transition: 0.2s; color: white; }
-        button:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        
-        .export-title { text-align: center; font-size: 20pt; font-weight: bold; margin-bottom: 40px; }
+        #content p + p {
+            text-indent: 1.25cm; /* Standard indent for consecutive paragraphs */
+        }
+
+        #content blockquote {
+            margin: 20px 0;
+            padding: 15px 20px;
+            background: var(--bg-stat);
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* Table Styling */
+        #content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: var(--shadow);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        #content th, #content td {
+            padding: 12px 16px;
+            font-size: 13pt;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        #content th {
+            background-color: var(--bg-stat);
+            color: var(--text-heading);
+            font-weight: 700;
+            text-align: left;
+        }
+
+        #content tr:last-child td {
+            border-bottom: none;
+        }
+
+        #content tr:hover td {
+            background-color: rgba(59, 130, 246, 0.02);
+        }
+
+        /* Mermaid Graph Boxes */
+        .mermaid-box {
+            margin: 35px auto;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 24px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+            box-shadow: var(--shadow);
+            max-width: 100%;
+        }
+
+        .mermaid-box svg {
+            width: 100% !important;
+            max-width: 850px !important;
+            height: auto !important;
+            min-width: 550px;
+        }
+
+        [data-theme="dark"] .mermaid-box {
+            background: #ffffff; /* keep white bg for clear readability of black & white mermaid rules */
+            border-color: var(--border-color);
+        }
+
+        /* Error Message Box */
+        .error-box {
+            color: #b91c1c;
+            border: 1px solid #fca5a5;
+            padding: 16px;
+            background: #fef2f2;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Print Formatting & Page Breaks */
+        .export-title { text-align: center; font-size: 22pt; font-weight: bold; margin-bottom: 40px; }
         .export-chapter { margin-bottom: 50px; }
         .page-break { page-break-after: always; }
-        
-        /* Fix lỗi PDF / Print */
-        @media print { 
-            @page { size: A4; margin-top: 2.5cm; margin-bottom: 2.5cm; margin-left: 3.5cm; margin-right: 2cm; }
+
+        @media print {
+            @page { size: A4; margin: 2.5cm 2cm 2.5cm 3cm; }
             body * { visibility: hidden; }
             #print-container, #print-container * { visibility: visible; }
             #print-container { position: absolute; left: 0; top: 0; width: 100%; background: white; padding: 0; }
@@ -67,7 +470,8 @@
             #print-container .mermaid-box, #print-container .mermaid { page-break-inside: avoid; border: none; text-align: center; }
             #print-container img { max-width: 100% !important; height: auto !important; page-break-inside: avoid; display: block; margin: 0 auto; }
             #print-container { font-family: 'Times New Roman', serif; font-size: 14pt; color: #000; line-height: 1.5; text-align: justify; }
-            #print-container p, #print-container li { margin-top: 0pt; margin-bottom: 0pt; text-indent: 1cm; line-height: 1.5; }
+            #print-container p { margin-top: 0pt; margin-bottom: 0pt; line-height: 1.5; }
+            #print-container p + p { text-indent: 1.25cm; }
             #print-container table { page-break-inside: avoid; border-collapse: collapse; width: 100%; }
             #print-container th, #print-container td { border: 1px solid black; padding: 8px; }
         }
@@ -75,43 +479,104 @@
 </head>
 <body>
     <div class="sidebar">
-        <h2 style="color:var(--secondary);margin-bottom:5px">PhD PORTAL</h2>
-        <p style="font-size:12px; opacity:0.7; margin-top:0">NCS: Lê Phúc Hải<br>Tiến độ: 0.0 Trang<br><span id="update-time" style="font-style:italic; font-size:10px"></span></p>
-        <div id="nav" style="overflow-y:auto; flex-grow:1"></div>
-        <div style="font-size:10px; opacity:0.5; border-top:1px solid #444; padding-top:10px">Powered by Antigravity AI</div>
+        <div class="sidebar-header">
+            <h2>PhD RESEARCH PORTAL</h2>
+            <div class="ncs-badge">
+                <span>Nghiên cứu sinh:</span>
+                <strong>Lê Phúc Hải</strong>
+            </div>
+        </div>
+        
+        <div class="nav-container" id="nav"></div>
+        
+        <div class="sidebar-footer">
+            <span id="update-time">Cập nhật: --</span>
+            <span style="opacity: 0.5">v2.1</span>
+        </div>
     </div>
+    
     <div class="main">
         <div class="card">
             <div class="btn-group">
-                <button onclick="exportWord(false)" style="background:#6366f1">Xuất Word (Chương này)</button>
-                <button onclick="exportWord(true)" style="background:#2563eb">Xuất Word (Toàn văn)</button>
-                <button onclick="exportPDF()" style="background:#dc2626">Xuất PDF</button>
+                <button onclick="exportWord(false)" style="background:var(--accent); color:#fff;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    Xuất Word
+                </button>
+                <button onclick="exportWord(true)" style="background:var(--primary); color:#fff;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    Xuất Toàn Văn
+                </button>
+                <button onclick="exportPDF()" style="background:#dc2626; color:#fff;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+                    Xuất PDF
+                </button>
+                <button class="btn-theme" onclick="toggleTheme()" title="Đổi giao diện Sáng/Tối">
+                    <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707-.707M12 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+                </button>
             </div>
+            
             <h2 id="title">Loading...</h2>
             
-            <div id="doc-stats">
-                <div class="stat-item">Số từ: <span id="stat-words">0</span></div>
-                <div class="stat-item">Số trang (ước tính APA): <span id="stat-pages">0</span></div>
-                <div class="stat-item">Hình ảnh/Sơ đồ: <span id="stat-images">0</span></div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Quy mô chương này</span>
+                    <span class="stat-val"><span id="stat-words">0</span> <span>từ</span></span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Số trang dự kiến (APA)</span>
+                    <span class="stat-val"><span id="stat-pages">0.0</span> <span>trang A4</span></span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Hình ảnh & Sơ đồ</span>
+                    <span class="stat-val"><span id="stat-images">0</span> <span>đối tượng</span></span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Tổng tiến độ đề tài</span>
+                    <span class="stat-val">~0.0 <span>trang A4</span></span>
+                </div>
             </div>
 
-            <div id="content">Đang chuẩn bị nội dung...</div>
+            <div id="content">Đang tải và chuẩn bị tài liệu khoa học...</div>
         </div>
     </div>
+    
     <script>
-        const data = {"chapters":[],"standalones":[{"title":"ĐỀ CƯƠNG DỰ TUYỂN TRÌNH ĐỘ TIẾN SĨ","file":"PhD_NhaTrang_CuongThinh.md","chars":39198,"pages":"21.8","content":"# ĐỀ CƯƠNG DỰ TUYỂN TRÌNH ĐỘ TIẾN SĨ\n\n**Tên đề tài dự kiến:** Tác động của tương tác AI Chatbot đến hành vi mua sắm thiết bị điện tử của người tiêu dùng thế hệ Z: Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý\n**Định hướng nghiên cứu:** Ứng dụng Trí tuệ nhân tạo (AI) trong Hành vi Người tiêu dùng\n**Chuyên ngành:** Quản trị Kinh doanh\n**Mã số:** 9340101\n**Tên người dự tuyển:** Nguyễn Cường Thịnh\n**Cơ quan công tác:** ...\n\n---\n\n## 1. LÝ DO CHỌN ĐỀ TÀI VÀ SỰ CẤP THIẾT CỦA NGHIÊN CỨU\n### 1.1. Bối cảnh thực tiễn tại thị trường bán lẻ thiết bị điện tử Việt Nam\nThị trường bán lẻ thiết bị điện tử tại Việt Nam đang trải qua một giai đoạn chuyển đổi số toàn diện và bùng nổ mạnh mẽ, được thúc đẩy bởi sự hội tụ của công nghệ di động, dữ liệu lớn (Big Data) và năng lực tính toán đám mây. Cùng với sự chuyển dịch về mặt hạ tầng công nghệ, sự thay đổi sâu sắc về cơ cấu nhân khẩu học đã và đang định hình lại hoàn toàn luật chơi của thị trường bán lẻ truyền thống. Hiện nay, Thế hệ Z (Gen Z - những người sinh từ năm 1997 đến 2012) đang nổi lên như một lực lượng tiêu dùng mang tính quyết định, không chỉ về sức mua hiện tại mà còn là tệp khách hàng chiến lược định hình toàn bộ hệ sinh thái thương mại điện tử trong thập kỷ tới (Dimock, 2019). Khác với các thế hệ trước (như Millennials hay Gen X), Gen Z được các học giả mệnh danh là những \"bản địa số\" (Digital Natives) thực thụ. Họ lớn lên cùng Internet, màn hình cảm ứng và kết nối không dây mọi lúc mọi nơi (Prensky, 2001; Turner, 2015). Hành vi tiêu dùng của nhóm này đặc trưng bởi sự thiếu kiên nhẫn đối với các dịch vụ chậm trễ: họ không chỉ khao khát tốc độ phản hồi tức thì mà còn đòi hỏi mức độ cá nhân hóa (Personalization) cực kỳ cao trong mọi điểm chạm trải nghiệm (customer touchpoints) (Awad & Krishnan, 2006; Zhang et al., 2014). \n\nNhằm đáp ứng những tiêu chuẩn ngày càng khắt khe này, các chuỗi bán lẻ điện máy hàng đầu tại Việt Nam (điển hình như Thế Giới Di Động, FPT Shop, CellphoneS, Phong Vũ) và các nền tảng thương mại điện tử (Shopee, Lazada, Tiki) đang chạy đua vũ trang trong việc tích hợp Trí tuệ nhân tạo đàm thoại (Conversational AI) và các Trợ lý ảo (AI Chatbots) được trợ lực bởi các Mô hình ngôn ngữ lớn (Large Language Models - LLM). Đối với những sản phẩm tiêu dùng mang tính liên kết cao (high-involvement products) và đòi hỏi mức độ rủi ro tài chính lớn như Laptop, Máy tính bảng hay PC nguyên bộ, người tiêu dùng không thể chỉ ra quyết định dựa trên cảm tính. Quá trình mua sắm đòi hỏi sự so sánh phức tạp về hàng chục thông số kỹ thuật (CPU, RAM, GPU, Tản nhiệt, Màn hình, Thời lượng pin). Trong bối cảnh đó, vai trò tư vấn cấu hình, phân tích nhu cầu và so sánh hiệu năng của AI Chatbot trở thành một lợi thế cạnh tranh cốt lõi. AI có khả năng xử lý lượng dữ liệu khổng lồ trong tích tắc để đưa ra các gợi ý chính xác, vượt xa năng lực của một nhân viên tư vấn con người (Chung et al., 2020; McLean & Osei-Frimpong, 2019; Moriuchi, 2019).\n\n### 1.2. Khoảng trống lý thuyết (Theoretical Gaps) và Nghịch lý hành vi\nMặc dù AI Chatbot mang lại những giá trị to lớn về mặt tối ưu hóa chi phí vận hành và tăng cường hiệu suất chuyển đổi đơn hàng, việc ứng dụng công nghệ thông minh này trong tư vấn bán hàng lại làm nảy sinh một nghịch lý tâm lý học sâu sắc đối với người tiêu dùng. Sự phức tạp trong giao tiếp giữa người và máy tạo ra những tác động hành vi đa chiều chưa được giải quyết triệt để trong y văn.\n\nMột mặt, các đặc tính thiết kế tinh vi của AI như tính cá nhân hóa (Perceived Personalization) và tính nhân hóa (Perceived Anthropomorphism) giúp xây dựng một trạng thái tâm lý tích cực gọi là Niềm tin thuật toán (Algorithmic Trust) (Waytz et al., 2014; Castelo et al., 2019). Khách hàng, đặc biệt là giới trẻ am hiểu công nghệ, ngày càng có xu hướng tin tưởng rằng các quyết định của AI là hoàn toàn dựa trên dữ liệu khách quan, phân tích định lượng chính xác mà không bị chi phối bởi các yếu tố thiên vị, áp lực KPI hay hoa hồng doanh số – những nhược điểm cố hữu của nhân viên tư vấn con người. Hiện tượng chuyển dịch niềm tin từ chuyên gia con người sang hệ thống máy tính này được các học giả đương đại định nghĩa là \"Sự đánh giá cao thuật toán\" (Algorithm Appreciation) (Logg et al., 2019). Khi niềm tin thuật toán được thiết lập, nó đóng vai trò là chất xúc tác mạnh mẽ thúc đẩy ý định mua hàng. Đây được gọi là \"Mặt sáng\" (The Bright Side) của ứng dụng AI trong thương mại điện tử.\n\nTuy nhiên, \"Mặt tối\" (The Dark Side) của AI đang dần hiện rã và trở thành mối đe dọa tiềm tàng đối với các thương hiệu bán lẻ. Khi hệ thống AI khai thác quá sâu dữ liệu lịch sử duyệt web để cá nhân hóa, hoặc đưa ra những đề xuất mang tính ép buộc (ví dụ: liên tục hiển thị bộ đếm lùi, sử dụng từ ngữ thao túng tâm lý để ép buộc khách hàng chốt ngay một dòng máy tính cụ thể nhằm tối ưu hóa biên lợi nhuận của nhà phân phối), nó vô tình vượt qua lằn ranh mỏng manh của quyền riêng tư và sự tự quyết. Theo Lý thuyết Kháng cự tâm lý (Psychological Reactance Theory - PRT) được giới thiệu bởi Brehm (1966), bản chất con người luôn khao khát duy trì quyền tự do lựa chọn (freedom of choice). Khi người tiêu dùng cảm thấy không gian tự quyết này bị thu hẹp hoặc bị đe dọa bởi một thế lực ngoại sinh (trong trường hợp này là thuật toán AI), họ sẽ ngay lập tức nảy sinh một trạng thái căng thẳng tâm lý sâu sắc. Phản ứng tức thì là việc hình thành trạng thái \"Sự kháng cự tâm lý\" (Psychological Reactance) - một động lực thúc đẩy họ thực hiện các hành vi chống đối, né tránh lời khuyên, tẩy chay sản phẩm hoặc có thái độ thù địch với hệ thống để khôi phục lại cảm giác tự do (Clee & Wicklund, 1980; Dillard & Shen, 2005; White et al., 2008).\n\nSự giằng xé nội tâm giữa \"Niềm tin thuật toán\" (một trạng thái hướng tới việc đón nhận công nghệ) và \"Sự kháng cự tâm lý\" (một bản năng bảo vệ tự do cá nhân) khi đối mặt với một thực thể AI quá thông minh tạo ra một vùng trũng lý thuyết khổng lồ. Hầu hết các mô hình nghiên cứu về hành vi chấp nhận công nghệ truyền thống như Mô hình Chấp nhận Công nghệ TAM (Davis, 1989) hay Thuyết Hợp nhất Chấp nhận và Sử dụng Công nghệ UTAUT (Venkatesh et al., 2003) chỉ tiếp cận theo hướng \"Chủ nghĩa thực chứng công nghệ\" (Technology Positivism). Các mô hình này mặc định xem AI là một công cụ mang tính \"Hữu ích\" (Usefulness) và \"Dễ sử dụng\" (Ease of Use), mà bỏ qua hoàn toàn cơ chế phản kháng phòng vệ tự nhiên của con người khi tương tác với những cỗ máy có khả năng thao túng tâm lý (Gefen et al., 2003; Luo et al., 2019; Pelau et al., 2021). \n\n### 1.3. Tính cấp thiết của đề tài\nTừ những phân tích thực tiễn và lý luận nêu trên, việc nghiên cứu cơ chế tác động đa chiều của AI Chatbot đối với người tiêu dùng là yêu cầu mang tính cấp bách. Đề tài *\"Tác động của tương tác AI Chatbot đến hành vi mua sắm thiết bị điện tử của người tiêu dùng thế hệ Z: Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý\"* được đề xuất thực hiện nhằm giải quyết trực diện nghịch lý này. Đề tài không chỉ lấp đầy khoảng trống học thuật về việc tích hợp hai luồng lý thuyết trái ngược nhau (Chấp nhận và Phản kháng), mà còn mang tính ứng dụng thực tiễn sống còn. Kết quả của luận án sẽ cung cấp cơ sở khoa học để các doanh nghiệp bán lẻ thiết bị điện tử (như Thế Giới Di Động, FPT Shop) tinh chỉnh \"mức độ thông minh\", \"giới hạn nhân hóa\" và \"sự can thiệp\" của thuật toán để tối ưu hóa quyết định mua hàng của Gen Z, mà không vô tình tạo ra sự phản tác dụng (backfire effect).\n\n---\n\n## 2. TỔNG QUAN TÌNH HÌNH NGHIÊN CỨU VÀ CƠ SỞ LÝ LUẬN\n### 2.1. Tổng quan các luồng nghiên cứu trước đây\n#### 2.1.1. Luồng nghiên cứu về Chấp nhận công nghệ AI và Tính nhân hóa (Anthropomorphism)\nTrong hơn một thập kỷ qua, khi AI bắt đầu thâm nhập sâu vào mọi khía cạnh của đời sống, giới học thuật đã tiến hành hàng loạt nghiên cứu thực chứng để giải thích tại sao con người lại chấp nhận, yêu thích hoặc từ chối tương tác với máy móc. Nền tảng của các nghiên cứu hành vi này gắn liền với khái niệm \"Tính nhân hóa\" (Anthropomorphism). Theo định nghĩa của Waytz et al. (2014), nhân hóa là xu hướng tâm lý của con người trong việc gán các đặc điểm, tính cách, cảm xúc và ý định của con người cho các thực thể phi nhân loại.\n\nTrong bối cảnh tương tác với AI Chatbot, tính nhân hóa được thể hiện qua thiết kế giao diện (avatar có khuôn mặt người), ngôn ngữ tự nhiên (Natural Language Processing), cách xưng hô (gọi tên khách hàng), và khả năng thể hiện sự đồng cảm (empathy) (Pelau et al., 2021). Các nghiên cứu nền tảng đã khẳng định rằng: khi AI được thiết kế có mức độ nhân hóa cao, nó sẽ kích hoạt \"vùng não xã hội\" của con người. Điều này làm giảm đáng kể cảm giác xa lạ, phá vỡ các rào cản phòng vệ tâm lý ban đầu và gia tăng chất lượng dịch vụ cảm nhận (Service Quality Perception). Điển hình, nghiên cứu của Chung et al. (2020) trên lĩnh vực bán lẻ xa xỉ, hay nghiên cứu của Moriuchi (2019) đối với trợ lý ảo bằng giọng nói (Voice Assistants) đều xác nhận rằng tính nhân hóa là chìa khóa để tạo ra sự hài lòng và lòng trung thành.\n\nTuy nhiên, giới hạn lớn nhất của luồng nghiên cứu chủ lưu này là cái nhìn quá lạc quan và phiến diện về AI. Các tác giả thường mặc định sử dụng Mô hình TAM (Davis, 1989), xem AI như một \"công cụ thụ động\" thuần túy chờ người dùng ra lệnh, thay vì nhìn nhận nó như một \"tác nhân chủ động\" (Active Agent) có khả năng thao túng thông tin và định hướng quyết định. Hơn nữa, việc lạm dụng tính nhân hóa có thể dẫn đến hiệu ứng \"Thung lũng kỳ lạ\" (Uncanny Valley) – nơi sự giống người thái quá của máy móc lại gây ra cảm giác rùng rợn và nghi ngờ (Mori, 1970).\n\n#### 2.1.2. Sự dịch chuyển từ Algorithm Aversion sang Algorithm Appreciation\nMột luồng nghiên cứu khác cực kỳ quan trọng trong khoa học quyết định (Decision Science) tập trung vào mức độ tin cậy của con người đối với các thuật toán định lượng. Khởi thủy, các học giả như Dietvorst et al. (2015) từng giới thiệu khái niệm \"Ác cảm thuật toán\" (Algorithm Aversion), chỉ ra một hiện tượng thú vị: con người thường khắt khe với máy móc hơn đồng loại. Khi máy tính mắc lỗi (dù chỉ là lỗi nhỏ), niềm tin của con người sụt giảm nghiêm trọng và rất khó khôi phục, trong khi họ lại dễ dàng tha thứ cho những sai lầm tương tự của chuyên gia con người.\n\nThế nhưng, sự tiến hóa vượt bậc của Deep Learning và sức mạnh của các mô hình như ChatGPT đã làm đảo lộn hoàn toàn quy luật này trong những năm gần đây. Một bước ngoặt lý thuyết đã xuất hiện thông qua nghiên cứu đột phá của Logg et al. (2019). Các tác giả này phát hiện ra hiện tượng \"Sự đánh giá cao thuật toán\" (Algorithm Appreciation). Trong các thí nghiệm, họ chứng minh rằng đối với các nhiệm vụ mang tính logic cao, đòi hỏi phân tích hàng ngàn dữ liệu cùng lúc (như dự báo tài chính, hoặc so sánh cấu hình thiết bị điện tử phức tạp), con người hiện đại lại thích dựa vào các gợi ý định lượng từ máy tính hơn cả chuyên gia con người. Khái niệm \"Niềm tin thuật toán\" (Algorithmic Trust) ra đời từ đó, đại diện cho một trạng thái nhận thức tin cậy vào tính khách quan và năng lực xử lý vô hạn của máy móc (Castelo et al., 2019). Dù vậy, cơ chế hình thành niềm tin thuật toán trong một bối cảnh mua sắm tự nguyện mang tính thương mại (như mua laptop sinh viên) tại các nước đang phát triển như Việt Nam vẫn là một vùng đất chưa được khai phá.\n\n#### 2.1.3. Sự trỗi dậy của Lý thuyết Kháng cự tâm lý (PRT) trong môi trường số\nTrong khi luồng nghiên cứu về TAM và Niềm tin tập trung vào mặt tích cực, thì Lý thuyết Kháng cự tâm lý (Psychological Reactance Theory - PRT) đại diện cho mặt tối của hành vi tương tác (Brehm, 1966). Ban đầu, PRT được sử dụng trong tâm lý học xã hội và truyền thông sức khỏe để giải thích lý do tại sao các chiến dịch cấm hút thuốc bằng những hình ảnh quá kinh dị thường phản tác dụng (Dillard & Shen, 2005). Theo PRT, khi một cá nhân cảm nhận rằng một quyền tự do cụ thể của họ bị đe dọa (freedom threat), họ sẽ trải qua một trạng thái kích thích cảm xúc tiêu cực gọi là kháng cự (reactance). Trạng thái này thúc đẩy cá nhân cố gắng khôi phục quyền tự do đã mất bằng cách thực hiện các hành vi chống đối trực tiếp (thực hiện chính hành vi bị cấm) hoặc gián tiếp (tẩy chay nguồn phát đi thông điệp) (Clee & Wicklund, 1980; Hong & Faedda, 1996).\n\nGần đây, PRT đang được hồi sinh mạnh mẽ trong kỷ nguyên kỹ thuật số để giải mã \"Nghịch lý cá nhân hóa - quyền riêng tư\" (Privacy Paradox) (Awad & Krishnan, 2006; Barth & de Jong, 2017). Trong hệ sinh thái thương mại điện tử, các thuật toán AI liên tục thu thập dấu chân kỹ thuật số (digital footprint) để đưa ra các khuyến nghị siêu cá nhân hóa (Hyper-personalization). Khi hệ thống đưa ra các gợi ý quá chính xác (đến mức đáng sợ) và liên tục thúc ép mua hàng, nó kích hoạt \"Sự xâm nhập cảm nhận\" (Perceived Intrusiveness). Chẳng hạn, một AI Chatbot nhắn: \"Anh Thịnh ơi, hệ thống biết anh vừa xem dòng Laptop Gaming này 3 lần hôm qua. Kho chỉ còn 1 chiếc, anh phải chốt ngay trong 5 phút tới!\". Sự can thiệp thô bạo này đánh thức bản năng phòng vệ. Dưới lăng kính của PRT, khách hàng không còn đánh giá lời khuyên dựa trên chất lượng sản phẩm, mà quyết định từ chối mua chỉ để chứng minh quyền kiểm soát của mình. Họ cảm thấy bị biến thành một mục tiêu bị thao túng hơn là một khách hàng được phục vụ (White et al., 2008; Tucker, 2014).\n\n**Bảng 2.1: Ma trận tổng hợp các nghiên cứu trọng điểm và Khoảng trống nghiên cứu**\n\n| Tác giả (Năm) | Khung lý thuyết / Phương pháp | Bối cảnh / Lĩnh vực | Phát hiện chính đóng góp | Khoảng trống / Hạn chế chưa giải quyết |\n|---|---|---|---|---|\n| **Awad & Krishnan (2006)** | Privacy Paradox, Khảo sát | Thương mại điện tử (Web tĩnh) | Tìm ra nghịch lý giữa mong muốn cá nhân hóa và nỗi lo sợ mất quyền riêng tư. | Chỉ nghiên cứu trên nền tảng web tĩnh và email, chưa đánh giá AI Chatbot hội thoại thời gian thực. |\n| **Dietvorst et al. (2015)** | Algorithm Aversion (Thực nghiệm) | Dự báo định lượng chung | Con người mất niềm tin vào thuật toán nhanh hơn con người khi máy móc mắc lỗi. | Kết quả bị đảo ngược bởi công nghệ LLM hiện đại, chưa giải thích được bối cảnh hiện tại. |\n| **Logg et al. (2019)** | Algorithm Appreciation (Thực nghiệm) | Quyết định đầu tư & định lượng | Con người thích tin vào lời khuyên của thuật toán hơn chuyên gia khi cần xử lý dữ liệu phức tạp. | Bỏ qua hoàn toàn biến số về \"Sự kháng cự\" khi thuật toán có tính chất ép buộc người dùng mua hàng. |\n| **Luo et al. (2019)** | Field Experiment | Bán hàng qua điện thoại (AI Voice) | Phát hiện \"Sự kiện lộ tẩy\" (Machine disclosure) làm giảm sâu tỷ lệ chốt sales của bot. | Trọng tâm là Voice AI (Giọng nói), chưa xây dựng được mô hình cơ chế tâm lý phân đôi song song. |\n| **Pelau et al. (2021)** | PLS-SEM | Dịch vụ khách hàng (Chung) | Anthropomorphism làm tăng mức độ tương tác, sự đồng cảm và sự hài lòng. | Bỏ qua các tác động tiêu cực của tính nhân hóa và tính xâm nhập cảm nhận (Perceived Intrusiveness). |\n| **White et al. (2008)** | Psychological Reactance (Thực nghiệm) | Marketing trực tiếp (Email) | Cá nhân hóa cao (nhắc đến thông tin nhạy cảm) dẫn đến phản kháng mạnh mẽ. | Chưa ứng dụng PRT vào các tác nhân thông minh (Intelligent Agents) có khả năng tương tác hai chiều. |\n\n### 2.2. Khung phân tích lý thuyết tích hợp (Theoretical Framework)\nĐứng trước bức tranh phân mảnh của các luồng nghiên cứu trên, luận án này đề xuất một Khung lý thuyết tích hợp (Integrated Framework) giữa Khung S-O-R và Lý thuyết Kháng cự tâm lý (PRT).\n\n#### 2.2.1. Khung S-O-R (Stimulus - Organism - Response)\nMô hình S-O-R của Mehrabian & Russell (1974) cung cấp lăng kính chủ đạo để theo dõi quá trình biến đổi tâm lý học của khách hàng. Khác với mô hình hộp đen của Chủ nghĩa hành vi (Behaviorism) chỉ quan tâm đến S (Kích thích) và R (Phản hồi), mô hình S-O-R cho phép bóc tách chi tiết hệ thống não bộ phức tạp:\n*   **Stimulus (Kích thích ngoại sinh - S):** Là các điểm chạm giao tiếp của AI Chatbot mà khách hàng tiếp nhận. Trong phạm vi nghiên cứu, các kích thích này bao gồm: Mức độ Nhân hóa (Perceived Anthropomorphism), Mức độ Cá nhân hóa (Perceived Personalization), và Sự xâm nhập cảm nhận (Perceived Intrusiveness) phát sinh từ các kịch bản tương tác.\n*   **Organism (Tổ chức nội tại - O):** Là hộp đen tâm lý. Tại đây, nghiên cứu mạnh dạn đề xuất hai luồng phản ứng diễn ra đồng thời: Luồng nhận thức - tình cảm hướng tới công nghệ (Niềm tin thuật toán - Algorithmic Trust) và Luồng kích động - phòng vệ (Sự kháng cự tâm lý - Psychological Reactance).\n*   **Response (Phản hồi hành vi - R):** Là các quyết định hành động cuối cùng mang ý nghĩa kinh tế, bao gồm việc Chấp nhận lời khuyên của AI (Recommendation Adoption) và cao hơn là Ý định mua sắm (Purchase Intention).\n\n#### 2.2.2. Sự giao thoa hình thành Cơ chế tác động kép (Dual-path Mechanism)\nSự giao thoa và tích hợp S-O-R với PRT chính là điểm nhấn học thuật (Theoretical Contribution) quan trọng nhất của luận án. Nó lý giải cơ chế \"Con dao hai lưỡi\": Tại sao một tính năng như \"Cá nhân hóa\" (Personalization) lại tồn tại tính chất hai mặt (Dual-effect)? Một mặt, cá nhân hóa hợp lý giúp người dùng tiết kiệm công sức tìm kiếm, gia tăng Niềm tin. Nhưng ở một cực khác, nếu cá nhân hóa đi kèm với tần suất cao và thu thập quá mức cần thiết, nó ngay lập tức đánh thức Sự kháng cự tâm lý. Việc mô hình hóa song song sự tồn tại của Trust và Reactance sẽ phản ánh chính xác nhất diễn biến nội tâm phức tạp của khách hàng Gen Z.\n\n---\n\n## 3. MỤC TIÊU VÀ CÂU HỎI NGHIÊN CỨU\n### 3.1. Mục tiêu tổng quát\nXây dựng và kiểm định mô hình tác động kép (Dual-path model) nhằm giải thích cách thức các đặc điểm thiết kế tương tác của AI Chatbot (nhân hóa, cá nhân hóa, sự xâm nhập) ảnh hưởng đến ý định mua sắm thiết bị điện tử của người tiêu dùng Gen Z thông qua hai cơ chế tâm lý hoạt động đối lập: Niềm tin thuật toán (Algorithmic Trust) và Sự kháng cự tâm lý (Psychological Reactance).\n\n### 3.2. Mục tiêu cụ thể\n1.  **Mục tiêu 1:** Nhận diện và lượng hóa sức mạnh tác động của các đặc tính kích thích từ AI Chatbot (Tính cá nhân hóa, Tính nhân hóa, Sự xâm nhập cảm nhận) đến trạng thái tâm lý bên trong của người tiêu dùng trong bối cảnh mua sắm hàng hóa giá trị cao.\n2.  **Mục tiêu 2:** Kiểm định thực nghiệm vai trò trung gian tích cực của \"Niềm tin thuật toán\" và vai trò trung gian tiêu cực (cản trở) của \"Sự kháng cự tâm lý\" đối với hành vi chấp nhận lời khuyên (Recommendation Adoption) và ý định mua sắm cuối cùng (Purchase Intention).\n3.  **Mục tiêu 3:** Phân tích, đánh giá tính chất hai mặt (Dual-effect) của yếu tố \"Tính cá nhân hóa\" để kiểm chứng ranh giới nơi sự thấu hiểu công nghệ chuyển hóa thành sự xâm phạm quyền riêng tư.\n4.  **Mục tiêu 4:** Từ kết quả định lượng, đề xuất các hàm ý quản trị (Managerial Implications) thực chiến giúp các nhà quản trị bán lẻ (CX/UI Designers, Marketing Managers) thiết kế các hệ thống AI Chatbot tối ưu hóa tỷ lệ chuyển đổi mà không vô tình tạo ra sự phẫn nộ từ khách hàng.\n\n### 3.3. Câu hỏi nghiên cứu\nĐể đạt được các mục tiêu trên, luận án tập trung trả lời 3 nhóm câu hỏi cốt lõi:\n1. Các kích thích giao tiếp từ giao diện AI Chatbot (Mức độ nhân hóa, Cá nhân hóa, Tính xâm nhập) có tác động như thế nào đến sự hình thành Niềm tin thuật toán và Sự kháng cự tâm lý ở phân khúc khách hàng Gen Z?\n2. Liệu có thực sự tồn tại một cơ chế trung gian kép (Dual-mediation) trong não bộ người tiêu dùng, nơi Niềm tin thuật toán thúc đẩy mạnh mẽ, nhưng đồng thời Sự kháng cự tâm lý lại kìm hãm việc chấp nhận lời khuyên của AI?\n3. Điểm bùng phát (tipping point) của Tính cá nhân hóa là ở đâu, để nó không đánh thức sự kháng cự tâm lý của khách hàng?\n\n---\n\n## 4. PHẠM VI VÀ ĐỐI TƯỢNG NGHIÊN CỨU\n### 4.1. Phạm vi nghiên cứu\n*   **Về không gian:** Khảo sát thực địa và tiến hành thực nghiệm (experiment) thông qua các nền tảng trực tuyến tập trung tại khu vực TP. Hồ Chí Minh. Lý do chọn địa bàn này vì TP.HCM là trung tâm kinh tế - công nghệ lớn nhất cả nước, nơi có cơ sở hạ tầng bán lẻ số phát triển nhất và tập trung tệp khách hàng Gen Z có khả năng chi trả cao, sẵn sàng ứng dụng các công nghệ mới.\n*   **Về thời gian:** Dữ liệu nghiên cứu bao gồm định tính và định lượng dự kiến được thu thập và xử lý tập trung trong giai đoạn từ quý III/2026 đến quý IV/2027.\n*   **Về nội dung (Ngữ cảnh):** Đề tài giới hạn việc phân tích trong môi trường tương tác dựa trên văn bản tự nhiên (Text-based / LLM-based AI Chatbot), không nghiên cứu các trợ lý giọng nói (Voice Assistants). Ngành hàng được chọn là thiết bị điện tử cá nhân mang tính phức tạp (Laptop, Máy tính bảng, PC).\n\n### 4.2. Đối tượng và Khách thể nghiên cứu\n*   **Đối tượng nghiên cứu:** Bản chất cơ chế tác động tâm lý (Niềm tin và Sự kháng cự) và sự thay đổi trong Hành vi mua sắm khi chịu sự can thiệp của hệ thống AI Chatbot.\n*   **Khách thể nghiên cứu (Đối tượng khảo sát):** Người tiêu dùng thuộc thế hệ Z (sinh năm 1997 - 2012), hiện đang sinh sống, học tập và làm việc tại TP.HCM. Đặc biệt là những người đã từng có trải nghiệm hoặc có nhu cầu nhận tư vấn thiết bị điện tử trong 6 tháng gần nhất.\n\n---\n\n## 5. PHƯƠNG PHÁP VÀ THIẾT KẾ NGHIÊN CỨU\n### 5.1. Mô hình nghiên cứu đề xuất và Phát triển Giả thuyết\n**Sơ đồ Mô hình nghiên cứu tác động kép (Dual-path Framework):**\n```mermaid\ngraph LR\n    subgraph STIMULUS [Kích thích từ AI Chatbot]\n        PP[\"Tính cá nhân hóa\u003cbr/\u003e(Perceived Personalization)\"]\n        PA[\"Tính nhân hóa\u003cbr/\u003e(Perceived Anthropomorphism)\"]\n        PI[\"Sự xâm nhập cảm nhận\u003cbr/\u003e(Perceived Intrusiveness)\"]\n    end\n\n    subgraph ORGANISM [Hộp đen Tâm lý - Dual Path]\n        AT[\"Niềm tin Thuật toán\u003cbr/\u003e(Algorithmic Trust)\"]\n        AR[\"Sự kháng cự tâm lý\u003cbr/\u003e(Psychological Reactance)\"]\n    end\n\n    subgraph RESPONSE [Phản hồi Hành vi]\n        RA[\"Chấp nhận lời khuyên\u003cbr/\u003e(Recommendation Adoption)\"]\n        PUR[\"Ý định mua sắm\u003cbr/\u003e(Purchase Intention)\"]\n    end\n\n    PP --\u003e|\"+ (H1a)\"| AT\n    PA --\u003e|\"+ (H1b)\"| AT\n    \n    PP --\u003e|\"+ (H2a)\"| AR\n    PI --\u003e|\"+ (H2b)\"| AR\n\n    AT --\u003e|\"+ (H3)\"| RA\n    AR --\u003e|\"- (H4)\"| RA\n    \n    RA --\u003e|\"+ (H5)\"| PUR\n\n    style PP fill:#ffffff,stroke:#000000,stroke-width:1px\n    style PA fill:#ffffff,stroke:#000000,stroke-width:1px\n    style PI fill:#ffffff,stroke:#000000,stroke-width:1px\n    style AT fill:#ffffff,stroke:#000000,stroke-width:1px\n    style AR fill:#ffffff,stroke:#000000,stroke-width:1px\n    style RA fill:#ffffff,stroke:#000000,stroke-width:1px\n    style PUR fill:#ffffff,stroke:#000000,stroke-width:1px\n```\n*Hình 1. Mô hình nghiên cứu tích hợp lý thuyết S-O-R và PRT.*\n\n**Phát triển và Biện luận Giả thuyết Nghiên cứu:**\n*   **H1a & H1b (Hình thành Niềm tin thuật toán):** Dựa trên lý thuyết về Sự đánh giá cao thuật toán (Logg et al., 2019) và nghiên cứu của Waytz et al. (2014), khi AI sở hữu tính năng cá nhân hóa xuất sắc (PP), nó chứng minh năng lực hiểu biết vượt trội về khách hàng. Đồng thời, tính nhân hóa (PA) (ngôn ngữ thân thiện, gọi tên) giúp thu hẹp khoảng cách tâm lý, làm cho thuật toán trở nên ít đáng sợ hơn. Sự kết hợp này củng cố mạnh mẽ niềm tin của con người vào trí tuệ nhân tạo. Do đó, luận án đề xuất Tính cá nhân hóa (H1a) và Tính nhân hóa (H1b) tác động cùng chiều (+) đến Niềm tin thuật toán (AT).\n*   **H2a & H2b (Kích hoạt Sự kháng cự tâm lý):** Đây là các giả thuyết cốt lõi ứng dụng lý thuyết PRT (Brehm, 1966). H2a đại diện cho tính chất \"hai mặt\" (dual-effect) của cá nhân hóa: khi mức độ cá nhân hóa quá sâu, khách hàng sẽ cảm giác bị theo dõi (surveillance anxiety), đánh thức sự kháng cự phòng vệ. Thêm vào đó, sự xâm nhập cảm nhận (PI) từ các thông điệp thúc ép, chèo kéo của AI sẽ là mồi lửa thổi bùng trạng thái tâm lý tiêu cực. Do đó, luận án kỳ vọng Tính cá nhân hóa (H2a) và Sự xâm nhập cảm nhận (H2b) có tác động cùng chiều (+) làm gia tăng Sự kháng cự tâm lý (AR).\n*   **H3 & H4 (Cơ chế Trung gian đối lập):** Về mặt kết quả hành vi, hai luồng cảm xúc này sẽ cạnh tranh quyết liệt. Niềm tin thuật toán sẽ là bệ phóng tác động cùng chiều (+) (H3) thúc đẩy việc khách hàng nghe theo tư vấn (Recommendation Adoption - RA) (Gefen et al., 2003). Ngược lại, những khách hàng rơi vào trạng thái kháng cự sẽ tìm cách lấy lại tự do bằng cách cố tình làm ngược lại gợi ý, dẫn đến Sự kháng cự tâm lý tác động ngược chiều (-) (H4) đến việc Chấp nhận lời khuyên (RA) (Dillard & Shen, 2005).\n*   **H5 (Hành vi Mua sắm):** Theo quy luật nhân quả truyền thống của hành vi người tiêu dùng (Venkatesh et al., 2003), một khi khách hàng đã bị thuyết phục và chấp nhận lời khuyên công nghệ, rào cản tài chính sẽ bị phá vỡ. Việc Chấp nhận lời khuyên (RA) có tác động cùng chiều (+) và trực tiếp đến Ý định mua sắm thiết bị điện tử (PUR).\n\n### 5.2. Cách tiếp cận và Thiết kế nghiên cứu\nNhằm đảm bảo mức độ chặt chẽ tối đa (academic rigor), luận án áp dụng phương pháp **Nghiên cứu Hỗn hợp (Mixed-methods)**. Quá trình này được chia thành hai giai đoạn nối tiếp theo logic Khám phá - Kiểm định:\n\n#### Bước 1: Nghiên cứu định tính (Khám phá và Thẩm định)\n*   **Phương pháp:** Thảo luận nhóm tập trung (Focus Group) và Phỏng vấn sâu chuyên gia (In-depth interviews).\n*   **Hội đồng chuyên gia (n = 12):** Được tuyển chọn gắt gao. Trong đó có 06 Quản lý cấp cao tại các chuỗi bán lẻ (FPT Shop, Thế Giới Di Động, Phong Vũ) để cung cấp góc nhìn thực tiễn về cách AI đang vận hành. Và 06 Tiến sĩ học thuật chuyên ngành Marketing số / Data Science để đảm bảo tính khoa học.\n*   **Mục tiêu:** Hiệu chỉnh (refine) từ ngữ của các thang đo (được dịch từ tiếng Anh) để phù hợp với bối cảnh văn hóa Việt Nam. Quan trọng hơn, chuyên gia sẽ thẩm định và phê duyệt các kịch bản Mockup AI dùng cho thực nghiệm ở Bước 2, đảm bảo chúng trông giống thật nhất có thể.\n\n#### Bước 2: Thiết kế Thực nghiệm (Experimental Design)\nKhác với các nghiên cứu khảo sát cắt ngang truyền thống (cross-sectional surveys) thường mang nhiều yếu tố nhiễu (noise) do phụ thuộc vào trí nhớ chủ quan của đáp viên, nghiên cứu này sử dụng phương pháp **Thực nghiệm dựa trên kịch bản (Scenario-based Factorial Experiment 2×2)**. Thiết kế này giúp cô lập hoàn toàn các yếu tố ngoại lai (ví dụ: ghét nhãn hiệu Apple hay Dell từ trước).\n\n| Thiết kế Yếu tố | Mức 1 (Mức độ Cao) | Mức 2 (Mức độ Thấp) |\n|---|---|---|\n| **Nhân hóa & Cá nhân hóa (PA & PP)** | Avatar có hình người, xưng \"Em\", gọi tên khách, phân tích lịch sử tìm kiếm. | Avatar dạng icon máy tính, xưng \"Hệ thống\", trả lời chung chung theo template. |\n| **Sự xâm nhập / Ép buộc (PI)** | Đếm ngược thời gian (Urgency), Pop-up ép chốt đơn 1 dòng máy duy nhất. | Liệt kê 3 mẫu laptop, để khách hàng tự do suy nghĩ mà không hối thúc. |\n\nNgười tham gia sẽ được phân bổ ngẫu nhiên (random assignment) vào 1 trong 4 nhóm kịch bản (Mockup giao diện Chat của nền tảng giả định \"TechZone\"). Sau khi tương tác (đọc kịch bản chat mô phỏng), họ tiến hành trả lời bảng hỏi.\n\n#### Bước 3: Thu thập và Lấy mẫu dữ liệu\n*   **Mẫu:** Lấy mẫu phi xác suất có mục đích (Purposive Sampling). Đáp viên phải vượt qua câu hỏi gạn lọc (screening questions): Đảm bảo thuộc nhóm tuổi Gen Z, sống tại đô thị, và đang có nhu cầu hoặc am hiểu về mua sắm thiết bị cá nhân.\n*   **Kích thước mẫu:** Dự kiến thu thập n = 400 - 500 phiếu hợp lệ. Quy mô này là vượt trội và rất an toàn cho phân tích SEM, đồng thời cung cấp đủ cỡ mẫu cho mỗi ô kịch bản thực nghiệm (ít nhất 100 mẫu/ô) để thực hiện Phân tích Đa nhóm (MGA).\n\n#### Bước 4: Phương pháp Phân tích Dữ liệu (PLS-SEM)\nNghiên cứu sử dụng kỹ thuật **Mô hình Phương trình cấu trúc bình phương tối thiểu riêng phần (PLS-SEM)** thông qua phần mềm **SmartPLS 4**. PLS-SEM được ưu tiên lựa chọn thay vì CB-SEM (AMOS) vì những lý do học thuật sau:\n1. PLS-SEM có ưu thế tuyệt đối khi phân tích các mô hình dự báo hành vi (prediction-oriented) có chứa cấu trúc trung gian phức tạp (như Dual-mediation path).\n2. Không bị ràng buộc quá khắt khe về giả định phân phối chuẩn của dữ liệu (Hair et al., 2022).\nQuy trình thực hiện chuẩn 4 bước:\n1.  **Đánh giá Outer Model (Mô hình đo lường):** Đảm bảo độ tin cậy nhất quán (Cronbach’s Alpha ≥ 0.7, CR ≥ 0.7), giá trị hội tụ (AVE ≥ 0.5), và giá trị phân biệt (HTMT \u003c 0.85, Fornell-Larcker).\n2.  **Đánh giá Inner Model (Mô hình cấu trúc):** Xác định sự ủng hộ của giả thuyết thông qua các hệ số đường dẫn (Path coefficient β) với p-value \u003c 0.05. Kiểm tra mức độ giải thích (R²) và quy mô tác động (f²).\n3.  **Dự báo ngoài mẫu (Out-of-sample prediction):** Sử dụng thuật toán PLSpredict (chỉ số Q² predict) để kiểm chứng khả năng dự đoán thực tế của mô hình.\n4.  **Kiểm soát Common Method Bias (CMB):** Sử dụng kỹ thuật Full Collinearity VIF của Kock (2015). Đảm bảo tất cả các VIF ở cấp độ nhân tố (factor-level VIF) đều nhỏ hơn ngưỡng 3.3, chứng minh dữ liệu không bị sai lệch do phương pháp chung.\n\n### 5.3. Xây dựng Thang đo đo lường (Measurement Items)\nĐể đảm bảo giá trị khái niệm (construct validity), toàn bộ các biến tiềm ẩn được đo lường bằng thang đo Likert 7 điểm (1 = Hoàn toàn không đồng ý, 7 = Hoàn toàn đồng ý), kế thừa từ các tác giả hàng đầu trên thế giới và được tinh chỉnh cho phù hợp với ngành hàng thiết bị điện tử.\n\n**A. Nhóm biến Kích thích (Stimulus)**\n*   **Tính cá nhân hóa (PP) - 3 biến quan sát** *(Awad & Krishnan, 2006)*: Tập trung vào mức độ tinh chỉnh. *(VD: \"PP1. AI Chatbot đã đưa ra những gợi ý laptop dựa chính xác trên thông tin và nhu cầu cá nhân của tôi\").*\n*   **Tính nhân hóa (PA) - 3 biến quan sát** *(Waytz et al., 2014; Pelau et al., 2021)*: Đo lường cảm giác giao tiếp tự nhiên. *(VD: \"PA1. Khi tương tác với AI Chatbot này, tôi có cảm giác như đang trò chuyện với một nhân viên bán hàng bằng xương bằng thịt\").*\n*   **Sự xâm nhập cảm nhận (PI) - 3 biến quan sát** *(Barth & de Jong, 2017)*: Đánh giá sự phiền nhiễu. *(VD: \"PI1. Cách AI Chatbot liên tục hối thúc tôi mua hàng khiến tôi cảm thấy quyền tự do lựa chọn bị xâm phạm\").*\n\n**B. Nhóm biến Tổ chức nội tâm (Organism - Tâm lý)**\n*   **Niềm tin thuật toán (AT) - 4 biến quan sát** *(Logg et al., 2019; Castelo et al., 2019)*: Đánh giá độ tin cậy vào máy tính. *(VD: \"AT1. Tôi tin tưởng rằng sự tư vấn cấu hình từ thuật toán của AI là hoàn toàn khách quan và chính xác\").*\n*   **Sự kháng cự tâm lý (AR) - 4 biến quan sát** *(Hong & Faedda, 1996; Dillard & Shen, 2005)*: Đo lường sự phản kháng cảm xúc. *(VD: \"AR1. Thái độ áp đặt của AI Chatbot làm tôi vô cùng bực bội và nảy sinh ý muốn từ chối mua sản phẩm\").*\n\n**C. Nhóm biến Phản hồi (Response - Hành vi)**\n*   **Chấp nhận lời khuyên (RA) - 3 biến quan sát** *(Gefen et al., 2003)*: *(VD: \"RA1. Tôi sẽ làm theo các đề xuất kỹ thuật mà hệ thống AI này gợi ý\").*\n*   **Ý định mua sắm (PUR) - 3 biến quan sát** *(Venkatesh et al., 2003)*: *(VD: \"PUR1. Khả năng rất cao tôi sẽ thanh toán đơn hàng laptop/thiết bị này trong tương lai gần\").*\n\n**D. Nhóm biến Kiểm soát và Kiểm tra**\n*   **Manipulation Check (Kiểm tra thao tác):** Cực kỳ quan trọng trong nghiên cứu thực nghiệm. Gồm các câu hỏi trực tiếp để xem đáp viên có thực sự nhận ra mức độ Nhân hóa và Sự ép buộc trong kịch bản họ vừa đọc hay không.\n*   **Biến kiểm soát (Control Variables):** Giới tính, Kinh nghiệm mua sắm thiết bị trực tuyến, và Mức độ am hiểu phần cứng công nghệ (Product Knowledge).\n\n---\n\n## 6. DỰ KIẾN KẾT QUẢ VÀ ĐÓNG GÓP CỦA LUẬN ÁN\n### 6.1. Đóng góp về mặt Học thuật (Theoretical Contributions)\nLuận án kỳ vọng tạo ra những bước đột phá lý luận vững chắc, làm phong phú thêm kho tàng y văn về hành vi số hóa:\n1.  **Mở rộng biên giới của Lý thuyết PRT:** Lần đầu tiên, Sự kháng cự tâm lý được cấu trúc hóa một cách chặt chẽ trong một mô hình cạnh tranh trực tiếp với Niềm tin thuật toán. Luận án chứng minh sự tồn tại của tính chất \"Con dao hai lưỡi\" (Dual-effect) của sự Cá nhân hóa, thách thức lại niềm tin tuyệt đối của các mô hình TAM/UTAUT về tính hữu ích của công nghệ.\n2.  **Làm sáng tỏ Algorithm Appreciation trong bối cảnh tiêu dùng:** Đưa khái niệm sự đánh giá cao thuật toán từ môi trường nghiên cứu tài chính, y tế (của Logg) sang môi trường bán lẻ thiết bị điện tử, nơi cảm xúc và tài chính chi phối người tiêu dùng Gen Z tại thị trường đang phát triển.\n\n### 6.2. Đóng góp về mặt Thực tiễn (Managerial Implications)\nKết quả nghiên cứu cung cấp \"kim chỉ nam\" định lượng cho các Giám đốc Chuyển đổi số (CDO), Chuyên gia thiết kế UX/UI, và Giám đốc Marketing tại các doanh nghiệp bán lẻ (như Thế Giới Di Động, FPT Shop):\n*   **Thiết lập Giới hạn đỏ về quyền riêng tư (Intrusiveness Threshold):** Doanh nghiệp sẽ nhận thức được điểm bùng phát mà tại đó, sự cá nhân hóa trở thành sự theo dõi (surveillance). Việc ép buộc khách hàng chốt đơn bằng AI sẽ được chứng minh là một chiến lược sai lầm, phá hủy tỷ lệ chuyển đổi.\n*   **Tối ưu thiết kế hội thoại AI:** Cung cấp thông số về mức độ cần thiết của tính nhân hóa (khi nào AI nên nói chuyện như con người, khi nào nên duy trì sự khách quan máy móc) để tối đa hóa Niềm tin thuật toán.\n\n---\n\n## 7. KẾ HOẠCH HỌC TẬP VÀ NGHIÊN CỨU TOÀN KHÓA (36 THÁNG)\nChương trình học tập và hoàn thiện luận án được thiết kế chặt chẽ theo khung 3 năm của Bộ Giáo dục & Đào tạo, phân kỳ rõ ràng như sau:\n\n| Giai đoạn | Thời gian | Nhiệm vụ khoa học trọng tâm | Đầu ra / Tiêu chí đánh giá |\n|---|---|---|---|\n| **Kỳ 1** | Tháng 1 - 6 | Hoàn thành các học phần TS (Phương pháp nghiên cứu định lượng, Marketing nâng cao). | Tích lũy đủ tín chỉ học phần bắt buộc. |\n| **Kỳ 2** | Tháng 7 - 12 | Tổng hợp lý thuyết chuyên sâu, viết và bảo vệ Tiểu luận tổng quan trước Hội đồng. | Tiểu luận tổng quan đạt xuất sắc, xác định rõ mô hình. |\n| **Kỳ 3** | Tháng 13 - 18 | Thực hiện nghiên cứu định tính (Phỏng vấn 12 chuyên gia), chạy Pilot test, hoàn thiện kịch bản Mockup thực nghiệm. | Bảng hỏi chuẩn hóa, hoàn thành 02 chuyên đề Tiến sĩ. |\n| **Kỳ 4** | Tháng 19 - 24 | Khảo sát thực địa diện rộng (n=500). Phân tích dữ liệu mô hình cấu trúc bằng SmartPLS. Viết bản thảo báo cáo. | Bộ dữ liệu sạch, Báo cáo phân tích SEM hoàn chỉnh, bản thảo luận án cơ bản. |\n| **Kỳ 5** | Tháng 25 - 30 | Viết và nộp bài báo công bố khoa học. Thuyết trình Seminar kết quả tại Khoa. | Ít nhất 02 bài báo được xuất bản trên tạp chí uy tín thuộc danh mục HĐGSNN hoặc ISI/Scopus. |\n| **Kỳ 6** | Tháng 31 - 36 | Chỉnh sửa toàn văn luận án. Hoàn thiện thủ tục phản biện kín, bảo vệ cấp Cơ sở và Cấp Trường. | Hội đồng thông qua, nhận quyết định công nhận học vị Tiến sĩ. |\n\n---\n\n## 8. NGUỒN KINH PHÍ THỰC HIỆN\nNghiên cứu sinh hoàn toàn độc lập và tự túc đảm bảo 100% kinh phí cho toàn bộ quy trình: từ học phí, tổ chức phỏng vấn chuyên gia, thiết kế Mockup UI/UX, triển khai thu thập dữ liệu diện rộng, đến chi phí phản biện và công bố các bài báo khoa học quốc tế/trong nước.\n\n---\n\n## 9. DANH MỤC TÀI LIỆU THAM KHẢO\n*(Danh sách gồm 30 tài liệu tham khảo cốt lõi, chuẩn định dạng APA phiên bản 7. Tập trung vào các tạp chí hàng đầu như MIS Quarterly, Journal of Marketing Research, Computers in Human Behavior)*\n\n1. Awad, N. F., & Krishnan, M. S. (2006). The personalization privacy paradox: An empirical evaluation of information transparency and the willingness to be profiled online for personalization. *MIS Quarterly, 30*(1), 13-28.\n2. Barth, S., & de Jong, M. D. (2017). The privacy paradox – Investigating discrepancies between expressed privacy concerns and actual online behavior. *Telematics and Informatics, 34*(7), 1038-1058.\n3. Brehm, J. W. (1966). *A theory of psychological reactance*. Academic Press.\n4. Castelo, N., Bos, M. W., & Lehmann, D. R. (2019). Task-dependent algorithm aversion. *Journal of Marketing Research, 56*(5), 809-825.\n5. Chung, M., Ko, E., Joung, H., & Kim, S. J. (2020). Chatbot e-service and customer satisfaction regarding luxury brands. *Journal of Business Research, 117*, 587-595.\n6. Clee, M. A., & Wicklund, R. A. (1980). Consumer behavior and psychological reactance. *Journal of Consumer Research, 6*(4), 389-405.\n7. Davis, F. D. (1989). Perceived usefulness, perceived ease of use, and user acceptance of information technology. *MIS quarterly, 13*(3), 319-340.\n8. Dietvorst, B. J., Simmons, J. P., & Massey, C. (2015). Algorithm aversion: People erroneously avoid algorithms after seeing them err. *Journal of Experimental Psychology: General, 144*(1), 114-126.\n9. Dillard, J. P., & Shen, L. (2005). On the nature of reactance and its role in persuasive health communication. *Communication Monographs, 72*(2), 144-168.\n10. Dimock, M. (2019). Defining generations: Where Millennials end and Generation Z begins. *Pew Research Center, 17*(1), 1-7.\n11. Gefen, D., Karahanna, E., & Straub, D. W. (2003). Trust and TAM in online shopping: An integrated model. *MIS quarterly, 27*(1), 51-90.\n12. Hair, J. F., Hult, G. T. M., Ringle, C. M., & Sarstedt, M. (2022). *A primer on partial least squares structural equation modeling (PLS-SEM)* (3rd ed.). Sage publications.\n13. Henseler, J., Ringle, C. M., & Sarstedt, M. (2015). A new criterion for assessing discriminant validity in variance-based structural equation modeling. *Journal of the Academy of Marketing Science, 43*(1), 115-135.\n14. Hong, S. M., & Faedda, S. (1996). Refinement of the Hong psychological reactance scale. *Educational and Psychological Measurement, 56*(1), 173-182.\n15. Kock, N. (2015). Common method bias in PLS-SEM: A full collinearity assessment approach. *International Journal of e-Collaboration, 11*(4), 1-10.\n16. Logg, J. M., Minson, J. A., & Moore, D. A. (2019). Algorithm appreciation: People prefer algorithmic to human judgment. *Organizational Behavior and Human Decision Processes, 151*, 90-103.\n17. Luo, X., Tong, S., Fang, Z., & Qu, Z. (2019). Frontiers: Machines vs. humans: The impact of artificial intelligence chatbot disclosure on customer purchases. *Marketing Science, 38*(6), 937-947.\n18. McLean, G., & Osei-Frimpong, K. (2019). Chat now... Examining the variables influencing the use of online live chat. *Technological Forecasting and Social Change, 146*, 55-67.\n19. Mehrabian, A., & Russell, J. A. (1974). *An approach to environmental psychology*. MIT Press.\n20. Mori, M. (1970). The uncanny valley. *Energy, 7*(4), 33-35.\n21. Moriuchi, E. (2019). Okay, Google!: An empirical study on voice assistants on consumer engagement and loyalty. *Psychology & Marketing, 36*(5), 489-501.\n22. Pelau, C., Dabija, D. C., & Ene, I. (2021). What makes an AI device human-like? The role of interaction quality, empathy and perceived psychological anthropomorphic characteristics in the acceptance of artificial intelligence. *Computers in Human Behavior, 122*, 106855.\n23. Prensky, M. (2001). Digital natives, digital immigrants part 1. *On the horizon, 9*(5), 1-6.\n24. Ringle, C. M., Wende, S., & Becker, J.-M. (2015). *SmartPLS 3*. Boenningstedt: SmartPLS GmbH.\n25. Steinhoff, L., Aris, Y., Lemon, K. N., & Palmatier, R. W. (2019). Customer engagement and loyalty dynamics. *Journal of the Academy of Marketing Science, 47*(1), 120-133.\n26. Tucker, C. E. (2014). Social networks, personalized advertising, and privacy controls. *Journal of Marketing Research, 51*(5), 546-562.\n27. Turner, A. (2015). Generation Z: Technology and social interest. *The journal of individual psychology, 71*(2), 103-113.\n28. Venkatesh, V., Morris, M. G., Davis, G. B., & Davis, F. D. (2003). User acceptance of information technology: Toward a unified view. *MIS quarterly, 27*(3), 425-478.\n29. Waytz, A., Heafner, J., & Epley, N. (2014). The mind in the machine: Anthropomorphism increases trust in an autonomous vehicle. *Journal of Experimental Social Psychology, 52*, 113-122.\n30. White, T. B., Zahay, D. L., Thorbjørnsen, H., & Shavitt, S. (2008). Getting too personal: Reactance to highly personalized email solicitations. *Marketing Letters, 19*(1), 39-50.\n"}],"others":[{"title":"BÀI LUẬN VỀ DỰ ĐỊNH NGHIÊN CỨU: GIẢI MÃ \"NGHỊCH LÝ NIỀM TIN\" TRONG KỶ NGUYÊN AI","file":"bailuan_THINH.md","chars":3582,"pages":"2.0","content":"# BÀI LUẬN VỀ DỰ ĐỊNH NGHIÊN CỨU: GIẢI MÃ \"NGHỊCH LÝ NIỀM TIN\" TRONG KỶ NGUYÊN AI\n\n**Thí sinh:** Nguyễn Cường Thịnh  \n**Chuyên ngành:** Quản trị Kinh doanh  \n\n---\n\n### 1. Đề tài và Câu hỏi từ thực tiễn (Cơ sở khoa học)\n**Tên đề tài:** Tác động của tương tác AI Chatbot đến hành vi mua sắm thiết bị điện tử của người tiêu dùng thế hệ Z: Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý.\n\nDự định nghiên cứu của tôi bắt nguồn từ một quan sát thực tiễn: *Tại sao chúng ta đôi khi hài lòng khi được AI gợi ý đúng ý mình, nhưng lại thấy khó chịu khi cảm thấy bị máy móc thúc ép?* **Quan sát này phản ánh một cơ chế tác động kép (dual-path mechanism) mà tôi muốn mô hình hóa và kiểm chứng dựa trên các nền tảng lý thuyết vững chắc.**\n\n### 2. Sự trăn trở: Tại sao lại là AI và Gen Z? (Bối cảnh nghiên cứu)\nTôi chọn hướng đi này vì nhận thấy sự chuyển dịch sâu sắc trong tâm lý của Gen Z, nhất là tại các thị trường mới nổi như Việt Nam. Hiện nay, các hệ thống gợi ý AI đang bùng nổ. Tuy nhiên, nỗi lo về quyền riêng tư và sự thao túng thuật toán cũng tăng theo. **Là những \"công dân số\", Gen Z khao khát quyền tự quyết rất cao. Nghiên cứu của tôi sẽ giải mã ranh giới nơi sự hỗ trợ của AI trở thành sự xâm nhập phiền toái.**\n\n### 3. Khung lý thuyết S-O-R và Mô hình khái niệm\nTôi sử dụng khung lý thuyết **S-O-R (Stimulus-Organism-Response)** làm nền tảng. Trong đó, tương tác với AI Chatbot là kích thích (Stimulus). Niềm tin thuật toán và sự kháng cự tâm lý là các phản hồi nhận thức và cảm xúc (Organism). Cuối cùng, kết quả là hành vi mua sắm của khách hàng (Response).\n\n**Mô hình khái niệm đề xuất:**\n1.  Tương tác AI chatbot —(+)—\u003e Niềm tin thuật toán\n2.  Tương tác AI chatbot —(+)—\u003e Sự kháng cự tâm lý\n3.  Niềm tin thuật toán —(+)—\u003e Ý định mua hàng\n4.  Sự kháng cự tâm lý —(–)—\u003e Ý định mua hàng\n\n### 4. Mục tiêu nghiên cứu (Mục tiêu đo lường)\n**Tôi muốn xác định mức độ cá nhân hóa mà tại đó các tác động tích cực của AI bị lấn át bởi sự kháng cự tâm lý.** Việc tìm ra \"điểm bùng phát\" này sẽ giúp các nhà bán lẻ thiết kế hệ thống AI tinh tế hơn, tối ưu hóa hiệu quả mà không gây ra phản ứng ngược từ người dùng.\n\n### 5. Phương pháp nghiên cứu và Thiết kế thực nghiệm\nTôi sử dụng thiết kế thực nghiệm dựa trên kịch bản với hai nhân tố thao túng: cá nhân hóa (Thấp vs Cao) và tính minh bạch (AI giải thích được vs AI \"hộp đen\"). **Các kiểm định thao túng sẽ được thực hiện để đảm bảo hiệu quả thực nghiệm. Tôi cũng kế thừa các thang đo từ các nghiên cứu uy tín đã được kiểm chứng.** Dữ liệu từ 500 người tiêu dùng Gen Z sẽ được tôi phân tích bằng công cụ **PLS-SEM**.\n\n### 6. Biến điều tiết và Đóng góp học thuật\nNghiên cứu này xem xét thêm vai trò điều tiết của **nỗi lo ngại quyền riêng tư**. Về mặt học thuật, tôi kỳ vọng đóng góp vào hệ thống tri thức bằng cách hợp nhất niềm tin thuật toán và sự kháng cự tâm lý vào một khung khổ thống nhất. **Điều này giúp giải thích rõ hơn những tác động mang tính \"nghịch lý\" của AI đối với hành vi con người.**\n\n### 7. Tâm thế và Mục tiêu học thuật\nMục tiêu của tôi là xuất bản ít nhất 02 bài báo quốc tế uy tín. Với sự dẫn dắt của các thầy cô, tôi tin nghiên cứu này sẽ góp phần nâng cao năng lực cạnh tranh cho ngành bán lẻ Việt Nam trong thời đại trí tuệ nhân tạo.\n\n### 8. Tại sao tôi chọn Đại học Nha Trang?\nĐại học Nha Trang là nơi hội tụ các nhà khoa học tâm huyết, có tư duy cởi mở đối với các hướng nghiên cứu hiện đại. Đây chính là môi trường lý tưởng để tôi hiện thực hóa dự định nghiên cứu đầy tham vọng này.\n\n---\n**Khánh Hòa, ngày …. tháng …. năm 20….**\n\n**Người dự tuyển**  \n\n**Nguyễn Cường Thịnh**\n"},{"title":"Yêu Cầu Riêng Của Đề Tài / Tạp Chí (Local Requirements)","file":"Local_Journal_Requirements.md","chars":1171,"pages":"0.7","content":"# Yêu Cầu Riêng Của Đề Tài / Tạp Chí (Local Requirements)\n\n\u003e **LƯU Ý:** Tài liệu này ghi đè và bổ sung cho các quy định tại `Global_Writing_Style_Guide.md` ở thư mục gốc. Khi có xung đột về format hoặc quy tắc, hệ thống sẽ ưu tiên áp dụng các chỉ dẫn tại file này cho riêng dự án hiện tại.\n\n## 1. Định Dạng & Độ Dài (Formatting & Length)\n- **Giới hạn số từ:** [Ví dụ: 8,000 - 10,000 từ / Hoặc Không giới hạn]\n- **Kiểu trích dẫn (Citation Style):** [Ví dụ: APA 7th Edition / Harvard / IEEE]\n- **Ngôn ngữ:** [Tiếng Việt / Tiếng Anh]\n\n## 2. Quy Định Về Khung Lý Thuyết (Theoretical Framework)\n- **Lĩnh vực lõi:** [Ví dụ: Quản trị Kinh doanh / Marketing / Hệ thống Thông tin]\n- **Mô hình phân tích:** [Ví dụ: PLS-SEM / CB-SEM / Thực nghiệm 2x2 / Định tính]\n\n## 3. Khác Biệt So Với Luật Chung (Overrides)\n- [Liệt kê các yêu cầu đặc thù của hội đồng hoặc tạp chí mục tiêu vào đây...]\n- *Ví dụ: \"Hội đồng ĐH Nha Trang yêu cầu bỏ qua phần diễn giải lý thuyết cơ sở quá dài, cần đi thẳng vào khoảng trống nghiên cứu.\"*\n- *Ví dụ: \"Tạp chí Journal of Business Research yêu cầu phần thảo luận (Discussion) phải tách biệt rõ rệt đóng góp lý thuyết và thực tiễn thành 2 sub-heading.\"*\n"}],"lastUpdated":"12:06:40 20/5/2026"};
+        const data = {"chapters":[],"standalones":[{"title":"ĐỀ CƯƠNG DỰ TUYỂN TRÌNH ĐỘ TIẾN SĨ","file":"PhD_NhaTrang_CuongThinh.md","chars":39198,"pages":"21.8","content":"# ĐỀ CƯƠNG DỰ TUYỂN TRÌNH ĐỘ TIẾN SĨ\n\n**Tên đề tài dự kiến:** Tác động của tương tác AI Chatbot đến hành vi mua sắm thiết bị điện tử của người tiêu dùng thế hệ Z: Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý\n**Định hướng nghiên cứu:** Ứng dụng Trí tuệ nhân tạo (AI) trong Hành vi Người tiêu dùng\n**Chuyên ngành:** Quản trị Kinh doanh\n**Mã số:** 9340101\n**Tên người dự tuyển:** Nguyễn Cường Thịnh\n**Cơ quan công tác:** ...\n\n---\n\n## 1. LÝ DO CHỌN ĐỀ TÀI VÀ SỰ CẤP THIẾT CỦA NGHIÊN CỨU\n### 1.1. Bối cảnh thực tiễn tại thị trường bán lẻ thiết bị điện tử Việt Nam\nThị trường bán lẻ thiết bị điện tử tại Việt Nam đang trải qua một giai đoạn chuyển đổi số toàn diện và bùng nổ mạnh mẽ, được thúc đẩy bởi sự hội tụ của công nghệ di động, dữ liệu lớn (Big Data) và năng lực tính toán đám mây. Cùng với sự chuyển dịch về mặt hạ tầng công nghệ, sự thay đổi sâu sắc về cơ cấu nhân khẩu học đã và đang định hình lại hoàn toàn luật chơi của thị trường bán lẻ truyền thống. Hiện nay, Thế hệ Z (Gen Z - những người sinh từ năm 1997 đến 2012) đang nổi lên như một lực lượng tiêu dùng mang tính quyết định, không chỉ về sức mua hiện tại mà còn là tệp khách hàng chiến lược định hình toàn bộ hệ sinh thái thương mại điện tử trong thập kỷ tới (Dimock, 2019). Khác với các thế hệ trước (như Millennials hay Gen X), Gen Z được các học giả mệnh danh là những \"bản địa số\" (Digital Natives) thực thụ. Họ lớn lên cùng Internet, màn hình cảm ứng và kết nối không dây mọi lúc mọi nơi (Prensky, 2001; Turner, 2015). Hành vi tiêu dùng của nhóm này đặc trưng bởi sự thiếu kiên nhẫn đối với các dịch vụ chậm trễ: họ không chỉ khao khát tốc độ phản hồi tức thì mà còn đòi hỏi mức độ cá nhân hóa (Personalization) cực kỳ cao trong mọi điểm chạm trải nghiệm (customer touchpoints) (Awad & Krishnan, 2006; Zhang et al., 2014). \n\nNhằm đáp ứng những tiêu chuẩn ngày càng khắt khe này, các chuỗi bán lẻ điện máy hàng đầu tại Việt Nam (điển hình như Thế Giới Di Động, FPT Shop, CellphoneS, Phong Vũ) và các nền tảng thương mại điện tử (Shopee, Lazada, Tiki) đang chạy đua vũ trang trong việc tích hợp Trí tuệ nhân tạo đàm thoại (Conversational AI) và các Trợ lý ảo (AI Chatbots) được trợ lực bởi các Mô hình ngôn ngữ lớn (Large Language Models - LLM). Đối với những sản phẩm tiêu dùng mang tính liên kết cao (high-involvement products) và đòi hỏi mức độ rủi ro tài chính lớn như Laptop, Máy tính bảng hay PC nguyên bộ, người tiêu dùng không thể chỉ ra quyết định dựa trên cảm tính. Quá trình mua sắm đòi hỏi sự so sánh phức tạp về hàng chục thông số kỹ thuật (CPU, RAM, GPU, Tản nhiệt, Màn hình, Thời lượng pin). Trong bối cảnh đó, vai trò tư vấn cấu hình, phân tích nhu cầu và so sánh hiệu năng của AI Chatbot trở thành một lợi thế cạnh tranh cốt lõi. AI có khả năng xử lý lượng dữ liệu khổng lồ trong tích tắc để đưa ra các gợi ý chính xác, vượt xa năng lực của một nhân viên tư vấn con người (Chung et al., 2020; McLean & Osei-Frimpong, 2019; Moriuchi, 2019).\n\n### 1.2. Khoảng trống lý thuyết (Theoretical Gaps) và Nghịch lý hành vi\nMặc dù AI Chatbot mang lại những giá trị to lớn về mặt tối ưu hóa chi phí vận hành và tăng cường hiệu suất chuyển đổi đơn hàng, việc ứng dụng công nghệ thông minh này trong tư vấn bán hàng lại làm nảy sinh một nghịch lý tâm lý học sâu sắc đối với người tiêu dùng. Sự phức tạp trong giao tiếp giữa người và máy tạo ra những tác động hành vi đa chiều chưa được giải quyết triệt để trong y văn.\n\nMột mặt, các đặc tính thiết kế tinh vi của AI như tính cá nhân hóa (Perceived Personalization) và tính nhân hóa (Perceived Anthropomorphism) giúp xây dựng một trạng thái tâm lý tích cực gọi là Niềm tin thuật toán (Algorithmic Trust) (Waytz et al., 2014; Castelo et al., 2019). Khách hàng, đặc biệt là giới trẻ am hiểu công nghệ, ngày càng có xu hướng tin tưởng rằng các quyết định của AI là hoàn toàn dựa trên dữ liệu khách quan, phân tích định lượng chính xác mà không bị chi phối bởi các yếu tố thiên vị, áp lực KPI hay hoa hồng doanh số – những nhược điểm cố hữu của nhân viên tư vấn con người. Hiện tượng chuyển dịch niềm tin từ chuyên gia con người sang hệ thống máy tính này được các học giả đương đại định nghĩa là \"Sự đánh giá cao thuật toán\" (Algorithm Appreciation) (Logg et al., 2019). Khi niềm tin thuật toán được thiết lập, nó đóng vai trò là chất xúc tác mạnh mẽ thúc đẩy ý định mua hàng. Đây được gọi là \"Mặt sáng\" (The Bright Side) của ứng dụng AI trong thương mại điện tử.\n\nTuy nhiên, \"Mặt tối\" (The Dark Side) của AI đang dần hiện rã và trở thành mối đe dọa tiềm tàng đối với các thương hiệu bán lẻ. Khi hệ thống AI khai thác quá sâu dữ liệu lịch sử duyệt web để cá nhân hóa, hoặc đưa ra những đề xuất mang tính ép buộc (ví dụ: liên tục hiển thị bộ đếm lùi, sử dụng từ ngữ thao túng tâm lý để ép buộc khách hàng chốt ngay một dòng máy tính cụ thể nhằm tối ưu hóa biên lợi nhuận của nhà phân phối), nó vô tình vượt qua lằn ranh mỏng manh của quyền riêng tư và sự tự quyết. Theo Lý thuyết Kháng cự tâm lý (Psychological Reactance Theory - PRT) được giới thiệu bởi Brehm (1966), bản chất con người luôn khao khát duy trì quyền tự do lựa chọn (freedom of choice). Khi người tiêu dùng cảm thấy không gian tự quyết này bị thu hẹp hoặc bị đe dọa bởi một thế lực ngoại sinh (trong trường hợp này là thuật toán AI), họ sẽ ngay lập tức nảy sinh một trạng thái căng thẳng tâm lý sâu sắc. Phản ứng tức thì là việc hình thành trạng thái \"Sự kháng cự tâm lý\" (Psychological Reactance) - một động lực thúc đẩy họ thực hiện các hành vi chống đối, né tránh lời khuyên, tẩy chay sản phẩm hoặc có thái độ thù địch với hệ thống để khôi phục lại cảm giác tự do (Clee & Wicklund, 1980; Dillard & Shen, 2005; White et al., 2008).\n\nSự giằng xé nội tâm giữa \"Niềm tin thuật toán\" (một trạng thái hướng tới việc đón nhận công nghệ) và \"Sự kháng cự tâm lý\" (một bản năng bảo vệ tự do cá nhân) khi đối mặt với một thực thể AI quá thông minh tạo ra một vùng trũng lý thuyết khổng lồ. Hầu hết các mô hình nghiên cứu về hành vi chấp nhận công nghệ truyền thống như Mô hình Chấp nhận Công nghệ TAM (Davis, 1989) hay Thuyết Hợp nhất Chấp nhận và Sử dụng Công nghệ UTAUT (Venkatesh et al., 2003) chỉ tiếp cận theo hướng \"Chủ nghĩa thực chứng công nghệ\" (Technology Positivism). Các mô hình này mặc định xem AI là một công cụ mang tính \"Hữu ích\" (Usefulness) và \"Dễ sử dụng\" (Ease of Use), mà bỏ qua hoàn toàn cơ chế phản kháng phòng vệ tự nhiên của con người khi tương tác với những cỗ máy có khả năng thao túng tâm lý (Gefen et al., 2003; Luo et al., 2019; Pelau et al., 2021). \n\n### 1.3. Tính cấp thiết của đề tài\nTừ những phân tích thực tiễn và lý luận nêu trên, việc nghiên cứu cơ chế tác động đa chiều của AI Chatbot đối với người tiêu dùng là yêu cầu mang tính cấp bách. Đề tài *\"Tác động của tương tác AI Chatbot đến hành vi mua sắm thiết bị điện tử của người tiêu dùng thế hệ Z: Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý\"* được đề xuất thực hiện nhằm giải quyết trực diện nghịch lý này. Đề tài không chỉ lấp đầy khoảng trống học thuật về việc tích hợp hai luồng lý thuyết trái ngược nhau (Chấp nhận và Phản kháng), mà còn mang tính ứng dụng thực tiễn sống còn. Kết quả của luận án sẽ cung cấp cơ sở khoa học để các doanh nghiệp bán lẻ thiết bị điện tử (như Thế Giới Di Động, FPT Shop) tinh chỉnh \"mức độ thông minh\", \"giới hạn nhân hóa\" và \"sự can thiệp\" của thuật toán để tối ưu hóa quyết định mua hàng của Gen Z, mà không vô tình tạo ra sự phản tác dụng (backfire effect).\n\n---\n\n## 2. TỔNG QUAN TÌNH HÌNH NGHIÊN CỨU VÀ CƠ SỞ LÝ LUẬN\n### 2.1. Tổng quan các luồng nghiên cứu trước đây\n#### 2.1.1. Luồng nghiên cứu về Chấp nhận công nghệ AI và Tính nhân hóa (Anthropomorphism)\nTrong hơn một thập kỷ qua, khi AI bắt đầu thâm nhập sâu vào mọi khía cạnh của đời sống, giới học thuật đã tiến hành hàng loạt nghiên cứu thực chứng để giải thích tại sao con người lại chấp nhận, yêu thích hoặc từ chối tương tác với máy móc. Nền tảng của các nghiên cứu hành vi này gắn liền với khái niệm \"Tính nhân hóa\" (Anthropomorphism). Theo định nghĩa của Waytz et al. (2014), nhân hóa là xu hướng tâm lý của con người trong việc gán các đặc điểm, tính cách, cảm xúc và ý định của con người cho các thực thể phi nhân loại.\n\nTrong bối cảnh tương tác với AI Chatbot, tính nhân hóa được thể hiện qua thiết kế giao diện (avatar có khuôn mặt người), ngôn ngữ tự nhiên (Natural Language Processing), cách xưng hô (gọi tên khách hàng), và khả năng thể hiện sự đồng cảm (empathy) (Pelau et al., 2021). Các nghiên cứu nền tảng đã khẳng định rằng: khi AI được thiết kế có mức độ nhân hóa cao, nó sẽ kích hoạt \"vùng não xã hội\" của con người. Điều này làm giảm đáng kể cảm giác xa lạ, phá vỡ các rào cản phòng vệ tâm lý ban đầu và gia tăng chất lượng dịch vụ cảm nhận (Service Quality Perception). Điển hình, nghiên cứu của Chung et al. (2020) trên lĩnh vực bán lẻ xa xỉ, hay nghiên cứu của Moriuchi (2019) đối với trợ lý ảo bằng giọng nói (Voice Assistants) đều xác nhận rằng tính nhân hóa là chìa khóa để tạo ra sự hài lòng và lòng trung thành.\n\nTuy nhiên, giới hạn lớn nhất của luồng nghiên cứu chủ lưu này là cái nhìn quá lạc quan và phiến diện về AI. Các tác giả thường mặc định sử dụng Mô hình TAM (Davis, 1989), xem AI như một \"công cụ thụ động\" thuần túy chờ người dùng ra lệnh, thay vì nhìn nhận nó như một \"tác nhân chủ động\" (Active Agent) có khả năng thao túng thông tin và định hướng quyết định. Hơn nữa, việc lạm dụng tính nhân hóa có thể dẫn đến hiệu ứng \"Thung lũng kỳ lạ\" (Uncanny Valley) – nơi sự giống người thái quá của máy móc lại gây ra cảm giác rùng rợn và nghi ngờ (Mori, 1970).\n\n#### 2.1.2. Sự dịch chuyển từ Algorithm Aversion sang Algorithm Appreciation\nMột luồng nghiên cứu khác cực kỳ quan trọng trong khoa học quyết định (Decision Science) tập trung vào mức độ tin cậy của con người đối với các thuật toán định lượng. Khởi thủy, các học giả như Dietvorst et al. (2015) từng giới thiệu khái niệm \"Ác cảm thuật toán\" (Algorithm Aversion), chỉ ra một hiện tượng thú vị: con người thường khắt khe với máy móc hơn đồng loại. Khi máy tính mắc lỗi (dù chỉ là lỗi nhỏ), niềm tin của con người sụt giảm nghiêm trọng và rất khó khôi phục, trong khi họ lại dễ dàng tha thứ cho những sai lầm tương tự của chuyên gia con người.\n\nThế nhưng, sự tiến hóa vượt bậc của Deep Learning và sức mạnh của các mô hình như ChatGPT đã làm đảo lộn hoàn toàn quy luật này trong những năm gần đây. Một bước ngoặt lý thuyết đã xuất hiện thông qua nghiên cứu đột phá của Logg et al. (2019). Các tác giả này phát hiện ra hiện tượng \"Sự đánh giá cao thuật toán\" (Algorithm Appreciation). Trong các thí nghiệm, họ chứng minh rằng đối với các nhiệm vụ mang tính logic cao, đòi hỏi phân tích hàng ngàn dữ liệu cùng lúc (như dự báo tài chính, hoặc so sánh cấu hình thiết bị điện tử phức tạp), con người hiện đại lại thích dựa vào các gợi ý định lượng từ máy tính hơn cả chuyên gia con người. Khái niệm \"Niềm tin thuật toán\" (Algorithmic Trust) ra đời từ đó, đại diện cho một trạng thái nhận thức tin cậy vào tính khách quan và năng lực xử lý vô hạn của máy móc (Castelo et al., 2019). Dù vậy, cơ chế hình thành niềm tin thuật toán trong một bối cảnh mua sắm tự nguyện mang tính thương mại (như mua laptop sinh viên) tại các nước đang phát triển như Việt Nam vẫn là một vùng đất chưa được khai phá.\n\n#### 2.1.3. Sự trỗi dậy của Lý thuyết Kháng cự tâm lý (PRT) trong môi trường số\nTrong khi luồng nghiên cứu về TAM và Niềm tin tập trung vào mặt tích cực, thì Lý thuyết Kháng cự tâm lý (Psychological Reactance Theory - PRT) đại diện cho mặt tối của hành vi tương tác (Brehm, 1966). Ban đầu, PRT được sử dụng trong tâm lý học xã hội và truyền thông sức khỏe để giải thích lý do tại sao các chiến dịch cấm hút thuốc bằng những hình ảnh quá kinh dị thường phản tác dụng (Dillard & Shen, 2005). Theo PRT, khi một cá nhân cảm nhận rằng một quyền tự do cụ thể của họ bị đe dọa (freedom threat), họ sẽ trải qua một trạng thái kích thích cảm xúc tiêu cực gọi là kháng cự (reactance). Trạng thái này thúc đẩy cá nhân cố gắng khôi phục quyền tự do đã mất bằng cách thực hiện các hành vi chống đối trực tiếp (thực hiện chính hành vi bị cấm) hoặc gián tiếp (tẩy chay nguồn phát đi thông điệp) (Clee & Wicklund, 1980; Hong & Faedda, 1996).\n\nGần đây, PRT đang được hồi sinh mạnh mẽ trong kỷ nguyên kỹ thuật số để giải mã \"Nghịch lý cá nhân hóa - quyền riêng tư\" (Privacy Paradox) (Awad & Krishnan, 2006; Barth & de Jong, 2017). Trong hệ sinh thái thương mại điện tử, các thuật toán AI liên tục thu thập dấu chân kỹ thuật số (digital footprint) để đưa ra các khuyến nghị siêu cá nhân hóa (Hyper-personalization). Khi hệ thống đưa ra các gợi ý quá chính xác (đến mức đáng sợ) và liên tục thúc ép mua hàng, nó kích hoạt \"Sự xâm nhập cảm nhận\" (Perceived Intrusiveness). Chẳng hạn, một AI Chatbot nhắn: \"Anh Thịnh ơi, hệ thống biết anh vừa xem dòng Laptop Gaming này 3 lần hôm qua. Kho chỉ còn 1 chiếc, anh phải chốt ngay trong 5 phút tới!\". Sự can thiệp thô bạo này đánh thức bản năng phòng vệ. Dưới lăng kính của PRT, khách hàng không còn đánh giá lời khuyên dựa trên chất lượng sản phẩm, mà quyết định từ chối mua chỉ để chứng minh quyền kiểm soát của mình. Họ cảm thấy bị biến thành một mục tiêu bị thao túng hơn là một khách hàng được phục vụ (White et al., 2008; Tucker, 2014).\n\n**Bảng 2.1: Ma trận tổng hợp các nghiên cứu trọng điểm và Khoảng trống nghiên cứu**\n\n| Tác giả (Năm) | Khung lý thuyết / Phương pháp | Bối cảnh / Lĩnh vực | Phát hiện chính đóng góp | Khoảng trống / Hạn chế chưa giải quyết |\n|---|---|---|---|---|\n| **Awad & Krishnan (2006)** | Privacy Paradox, Khảo sát | Thương mại điện tử (Web tĩnh) | Tìm ra nghịch lý giữa mong muốn cá nhân hóa và nỗi lo sợ mất quyền riêng tư. | Chỉ nghiên cứu trên nền tảng web tĩnh và email, chưa đánh giá AI Chatbot hội thoại thời gian thực. |\n| **Dietvorst et al. (2015)** | Algorithm Aversion (Thực nghiệm) | Dự báo định lượng chung | Con người mất niềm tin vào thuật toán nhanh hơn con người khi máy móc mắc lỗi. | Kết quả bị đảo ngược bởi công nghệ LLM hiện đại, chưa giải thích được bối cảnh hiện tại. |\n| **Logg et al. (2019)** | Algorithm Appreciation (Thực nghiệm) | Quyết định đầu tư & định lượng | Con người thích tin vào lời khuyên của thuật toán hơn chuyên gia khi cần xử lý dữ liệu phức tạp. | Bỏ qua hoàn toàn biến số về \"Sự kháng cự\" khi thuật toán có tính chất ép buộc người dùng mua hàng. |\n| **Luo et al. (2019)** | Field Experiment | Bán hàng qua điện thoại (AI Voice) | Phát hiện \"Sự kiện lộ tẩy\" (Machine disclosure) làm giảm sâu tỷ lệ chốt sales của bot. | Trọng tâm là Voice AI (Giọng nói), chưa xây dựng được mô hình cơ chế tâm lý phân đôi song song. |\n| **Pelau et al. (2021)** | PLS-SEM | Dịch vụ khách hàng (Chung) | Anthropomorphism làm tăng mức độ tương tác, sự đồng cảm và sự hài lòng. | Bỏ qua các tác động tiêu cực của tính nhân hóa và tính xâm nhập cảm nhận (Perceived Intrusiveness). |\n| **White et al. (2008)** | Psychological Reactance (Thực nghiệm) | Marketing trực tiếp (Email) | Cá nhân hóa cao (nhắc đến thông tin nhạy cảm) dẫn đến phản kháng mạnh mẽ. | Chưa ứng dụng PRT vào các tác nhân thông minh (Intelligent Agents) có khả năng tương tác hai chiều. |\n\n### 2.2. Khung phân tích lý thuyết tích hợp (Theoretical Framework)\nĐứng trước bức tranh phân mảnh của các luồng nghiên cứu trên, luận án này đề xuất một Khung lý thuyết tích hợp (Integrated Framework) giữa Khung S-O-R và Lý thuyết Kháng cự tâm lý (PRT).\n\n#### 2.2.1. Khung S-O-R (Stimulus - Organism - Response)\nMô hình S-O-R của Mehrabian & Russell (1974) cung cấp lăng kính chủ đạo để theo dõi quá trình biến đổi tâm lý học của khách hàng. Khác với mô hình hộp đen của Chủ nghĩa hành vi (Behaviorism) chỉ quan tâm đến S (Kích thích) và R (Phản hồi), mô hình S-O-R cho phép bóc tách chi tiết hệ thống não bộ phức tạp:\n*   **Stimulus (Kích thích ngoại sinh - S):** Là các điểm chạm giao tiếp của AI Chatbot mà khách hàng tiếp nhận. Trong phạm vi nghiên cứu, các kích thích này bao gồm: Mức độ Nhân hóa (Perceived Anthropomorphism), Mức độ Cá nhân hóa (Perceived Personalization), và Sự xâm nhập cảm nhận (Perceived Intrusiveness) phát sinh từ các kịch bản tương tác.\n*   **Organism (Tổ chức nội tại - O):** Là hộp đen tâm lý. Tại đây, nghiên cứu mạnh dạn đề xuất hai luồng phản ứng diễn ra đồng thời: Luồng nhận thức - tình cảm hướng tới công nghệ (Niềm tin thuật toán - Algorithmic Trust) và Luồng kích động - phòng vệ (Sự kháng cự tâm lý - Psychological Reactance).\n*   **Response (Phản hồi hành vi - R):** Là các quyết định hành động cuối cùng mang ý nghĩa kinh tế, bao gồm việc Chấp nhận lời khuyên của AI (Recommendation Adoption) và cao hơn là Ý định mua sắm (Purchase Intention).\n\n#### 2.2.2. Sự giao thoa hình thành Cơ chế tác động kép (Dual-path Mechanism)\nSự giao thoa và tích hợp S-O-R với PRT chính là điểm nhấn học thuật (Theoretical Contribution) quan trọng nhất của luận án. Nó lý giải cơ chế \"Con dao hai lưỡi\": Tại sao một tính năng như \"Cá nhân hóa\" (Personalization) lại tồn tại tính chất hai mặt (Dual-effect)? Một mặt, cá nhân hóa hợp lý giúp người dùng tiết kiệm công sức tìm kiếm, gia tăng Niềm tin. Nhưng ở một cực khác, nếu cá nhân hóa đi kèm với tần suất cao và thu thập quá mức cần thiết, nó ngay lập tức đánh thức Sự kháng cự tâm lý. Việc mô hình hóa song song sự tồn tại của Trust và Reactance sẽ phản ánh chính xác nhất diễn biến nội tâm phức tạp của khách hàng Gen Z.\n\n---\n\n## 3. MỤC TIÊU VÀ CÂU HỎI NGHIÊN CỨU\n### 3.1. Mục tiêu tổng quát\nXây dựng và kiểm định mô hình tác động kép (Dual-path model) nhằm giải thích cách thức các đặc điểm thiết kế tương tác của AI Chatbot (nhân hóa, cá nhân hóa, sự xâm nhập) ảnh hưởng đến ý định mua sắm thiết bị điện tử của người tiêu dùng Gen Z thông qua hai cơ chế tâm lý hoạt động đối lập: Niềm tin thuật toán (Algorithmic Trust) và Sự kháng cự tâm lý (Psychological Reactance).\n\n### 3.2. Mục tiêu cụ thể\n1.  **Mục tiêu 1:** Nhận diện và lượng hóa sức mạnh tác động của các đặc tính kích thích từ AI Chatbot (Tính cá nhân hóa, Tính nhân hóa, Sự xâm nhập cảm nhận) đến trạng thái tâm lý bên trong của người tiêu dùng trong bối cảnh mua sắm hàng hóa giá trị cao.\n2.  **Mục tiêu 2:** Kiểm định thực nghiệm vai trò trung gian tích cực của \"Niềm tin thuật toán\" và vai trò trung gian tiêu cực (cản trở) của \"Sự kháng cự tâm lý\" đối với hành vi chấp nhận lời khuyên (Recommendation Adoption) và ý định mua sắm cuối cùng (Purchase Intention).\n3.  **Mục tiêu 3:** Phân tích, đánh giá tính chất hai mặt (Dual-effect) của yếu tố \"Tính cá nhân hóa\" để kiểm chứng ranh giới nơi sự thấu hiểu công nghệ chuyển hóa thành sự xâm phạm quyền riêng tư.\n4.  **Mục tiêu 4:** Từ kết quả định lượng, đề xuất các hàm ý quản trị (Managerial Implications) thực chiến giúp các nhà quản trị bán lẻ (CX/UI Designers, Marketing Managers) thiết kế các hệ thống AI Chatbot tối ưu hóa tỷ lệ chuyển đổi mà không vô tình tạo ra sự phẫn nộ từ khách hàng.\n\n### 3.3. Câu hỏi nghiên cứu\nĐể đạt được các mục tiêu trên, luận án tập trung trả lời 3 nhóm câu hỏi cốt lõi:\n1. Các kích thích giao tiếp từ giao diện AI Chatbot (Mức độ nhân hóa, Cá nhân hóa, Tính xâm nhập) có tác động như thế nào đến sự hình thành Niềm tin thuật toán và Sự kháng cự tâm lý ở phân khúc khách hàng Gen Z?\n2. Liệu có thực sự tồn tại một cơ chế trung gian kép (Dual-mediation) trong não bộ người tiêu dùng, nơi Niềm tin thuật toán thúc đẩy mạnh mẽ, nhưng đồng thời Sự kháng cự tâm lý lại kìm hãm việc chấp nhận lời khuyên của AI?\n3. Điểm bùng phát (tipping point) của Tính cá nhân hóa là ở đâu, để nó không đánh thức sự kháng cự tâm lý của khách hàng?\n\n---\n\n## 4. PHẠM VI VÀ ĐỐI TƯỢNG NGHIÊN CỨU\n### 4.1. Phạm vi nghiên cứu\n*   **Về không gian:** Khảo sát thực địa và tiến hành thực nghiệm (experiment) thông qua các nền tảng trực tuyến tập trung tại khu vực TP. Hồ Chí Minh. Lý do chọn địa bàn này vì TP.HCM là trung tâm kinh tế - công nghệ lớn nhất cả nước, nơi có cơ sở hạ tầng bán lẻ số phát triển nhất và tập trung tệp khách hàng Gen Z có khả năng chi trả cao, sẵn sàng ứng dụng các công nghệ mới.\n*   **Về thời gian:** Dữ liệu nghiên cứu bao gồm định tính và định lượng dự kiến được thu thập và xử lý tập trung trong giai đoạn từ quý III/2026 đến quý IV/2027.\n*   **Về nội dung (Ngữ cảnh):** Đề tài giới hạn việc phân tích trong môi trường tương tác dựa trên văn bản tự nhiên (Text-based / LLM-based AI Chatbot), không nghiên cứu các trợ lý giọng nói (Voice Assistants). Ngành hàng được chọn là thiết bị điện tử cá nhân mang tính phức tạp (Laptop, Máy tính bảng, PC).\n\n### 4.2. Đối tượng và Khách thể nghiên cứu\n*   **Đối tượng nghiên cứu:** Bản chất cơ chế tác động tâm lý (Niềm tin và Sự kháng cự) và sự thay đổi trong Hành vi mua sắm khi chịu sự can thiệp của hệ thống AI Chatbot.\n*   **Khách thể nghiên cứu (Đối tượng khảo sát):** Người tiêu dùng thuộc thế hệ Z (sinh năm 1997 - 2012), hiện đang sinh sống, học tập và làm việc tại TP.HCM. Đặc biệt là những người đã từng có trải nghiệm hoặc có nhu cầu nhận tư vấn thiết bị điện tử trong 6 tháng gần nhất.\n\n---\n\n## 5. PHƯƠNG PHÁP VÀ THIẾT KẾ NGHIÊN CỨU\n### 5.1. Mô hình nghiên cứu đề xuất và Phát triển Giả thuyết\n**Sơ đồ Mô hình nghiên cứu tác động kép (Dual-path Framework):**\n```mermaid\ngraph LR\n    subgraph STIMULUS [Kích thích từ AI Chatbot]\n        PP[\"Tính cá nhân hóa\u003cbr/\u003e(Perceived Personalization)\"]\n        PA[\"Tính nhân hóa\u003cbr/\u003e(Perceived Anthropomorphism)\"]\n        PI[\"Sự xâm nhập cảm nhận\u003cbr/\u003e(Perceived Intrusiveness)\"]\n    end\n\n    subgraph ORGANISM [Hộp đen Tâm lý - Dual Path]\n        AT[\"Niềm tin Thuật toán\u003cbr/\u003e(Algorithmic Trust)\"]\n        AR[\"Sự kháng cự tâm lý\u003cbr/\u003e(Psychological Reactance)\"]\n    end\n\n    subgraph RESPONSE [Phản hồi Hành vi]\n        RA[\"Chấp nhận lời khuyên\u003cbr/\u003e(Recommendation Adoption)\"]\n        PUR[\"Ý định mua sắm\u003cbr/\u003e(Purchase Intention)\"]\n    end\n\n    PP --\u003e|\"+ (H1a)\"| AT\n    PA --\u003e|\"+ (H1b)\"| AT\n    \n    PP --\u003e|\"+ (H2a)\"| AR\n    PI --\u003e|\"+ (H2b)\"| AR\n\n    AT --\u003e|\"+ (H3)\"| RA\n    AR --\u003e|\"- (H4)\"| RA\n    \n    RA --\u003e|\"+ (H5)\"| PUR\n\n    style PP fill:#ffffff,stroke:#000000,stroke-width:1px\n    style PA fill:#ffffff,stroke:#000000,stroke-width:1px\n    style PI fill:#ffffff,stroke:#000000,stroke-width:1px\n    style AT fill:#ffffff,stroke:#000000,stroke-width:1px\n    style AR fill:#ffffff,stroke:#000000,stroke-width:1px\n    style RA fill:#ffffff,stroke:#000000,stroke-width:1px\n    style PUR fill:#ffffff,stroke:#000000,stroke-width:1px\n```\n*Hình 1. Mô hình nghiên cứu tích hợp lý thuyết S-O-R và PRT.*\n\n**Phát triển và Biện luận Giả thuyết Nghiên cứu:**\n*   **H1a & H1b (Hình thành Niềm tin thuật toán):** Dựa trên lý thuyết về Sự đánh giá cao thuật toán (Logg et al., 2019) và nghiên cứu của Waytz et al. (2014), khi AI sở hữu tính năng cá nhân hóa xuất sắc (PP), nó chứng minh năng lực hiểu biết vượt trội về khách hàng. Đồng thời, tính nhân hóa (PA) (ngôn ngữ thân thiện, gọi tên) giúp thu hẹp khoảng cách tâm lý, làm cho thuật toán trở nên ít đáng sợ hơn. Sự kết hợp này củng cố mạnh mẽ niềm tin của con người vào trí tuệ nhân tạo. Do đó, luận án đề xuất Tính cá nhân hóa (H1a) và Tính nhân hóa (H1b) tác động cùng chiều (+) đến Niềm tin thuật toán (AT).\n*   **H2a & H2b (Kích hoạt Sự kháng cự tâm lý):** Đây là các giả thuyết cốt lõi ứng dụng lý thuyết PRT (Brehm, 1966). H2a đại diện cho tính chất \"hai mặt\" (dual-effect) của cá nhân hóa: khi mức độ cá nhân hóa quá sâu, khách hàng sẽ cảm giác bị theo dõi (surveillance anxiety), đánh thức sự kháng cự phòng vệ. Thêm vào đó, sự xâm nhập cảm nhận (PI) từ các thông điệp thúc ép, chèo kéo của AI sẽ là mồi lửa thổi bùng trạng thái tâm lý tiêu cực. Do đó, luận án kỳ vọng Tính cá nhân hóa (H2a) và Sự xâm nhập cảm nhận (H2b) có tác động cùng chiều (+) làm gia tăng Sự kháng cự tâm lý (AR).\n*   **H3 & H4 (Cơ chế Trung gian đối lập):** Về mặt kết quả hành vi, hai luồng cảm xúc này sẽ cạnh tranh quyết liệt. Niềm tin thuật toán sẽ là bệ phóng tác động cùng chiều (+) (H3) thúc đẩy việc khách hàng nghe theo tư vấn (Recommendation Adoption - RA) (Gefen et al., 2003). Ngược lại, những khách hàng rơi vào trạng thái kháng cự sẽ tìm cách lấy lại tự do bằng cách cố tình làm ngược lại gợi ý, dẫn đến Sự kháng cự tâm lý tác động ngược chiều (-) (H4) đến việc Chấp nhận lời khuyên (RA) (Dillard & Shen, 2005).\n*   **H5 (Hành vi Mua sắm):** Theo quy luật nhân quả truyền thống của hành vi người tiêu dùng (Venkatesh et al., 2003), một khi khách hàng đã bị thuyết phục và chấp nhận lời khuyên công nghệ, rào cản tài chính sẽ bị phá vỡ. Việc Chấp nhận lời khuyên (RA) có tác động cùng chiều (+) và trực tiếp đến Ý định mua sắm thiết bị điện tử (PUR).\n\n### 5.2. Cách tiếp cận và Thiết kế nghiên cứu\nNhằm đảm bảo mức độ chặt chẽ tối đa (academic rigor), luận án áp dụng phương pháp **Nghiên cứu Hỗn hợp (Mixed-methods)**. Quá trình này được chia thành hai giai đoạn nối tiếp theo logic Khám phá - Kiểm định:\n\n#### Bước 1: Nghiên cứu định tính (Khám phá và Thẩm định)\n*   **Phương pháp:** Thảo luận nhóm tập trung (Focus Group) và Phỏng vấn sâu chuyên gia (In-depth interviews).\n*   **Hội đồng chuyên gia (n = 12):** Được tuyển chọn gắt gao. Trong đó có 06 Quản lý cấp cao tại các chuỗi bán lẻ (FPT Shop, Thế Giới Di Động, Phong Vũ) để cung cấp góc nhìn thực tiễn về cách AI đang vận hành. Và 06 Tiến sĩ học thuật chuyên ngành Marketing số / Data Science để đảm bảo tính khoa học.\n*   **Mục tiêu:** Hiệu chỉnh (refine) từ ngữ của các thang đo (được dịch từ tiếng Anh) để phù hợp với bối cảnh văn hóa Việt Nam. Quan trọng hơn, chuyên gia sẽ thẩm định và phê duyệt các kịch bản Mockup AI dùng cho thực nghiệm ở Bước 2, đảm bảo chúng trông giống thật nhất có thể.\n\n#### Bước 2: Thiết kế Thực nghiệm (Experimental Design)\nKhác với các nghiên cứu khảo sát cắt ngang truyền thống (cross-sectional surveys) thường mang nhiều yếu tố nhiễu (noise) do phụ thuộc vào trí nhớ chủ quan của đáp viên, nghiên cứu này sử dụng phương pháp **Thực nghiệm dựa trên kịch bản (Scenario-based Factorial Experiment 2×2)**. Thiết kế này giúp cô lập hoàn toàn các yếu tố ngoại lai (ví dụ: ghét nhãn hiệu Apple hay Dell từ trước).\n\n| Thiết kế Yếu tố | Mức 1 (Mức độ Cao) | Mức 2 (Mức độ Thấp) |\n|---|---|---|\n| **Nhân hóa & Cá nhân hóa (PA & PP)** | Avatar có hình người, xưng \"Em\", gọi tên khách, phân tích lịch sử tìm kiếm. | Avatar dạng icon máy tính, xưng \"Hệ thống\", trả lời chung chung theo template. |\n| **Sự xâm nhập / Ép buộc (PI)** | Đếm ngược thời gian (Urgency), Pop-up ép chốt đơn 1 dòng máy duy nhất. | Liệt kê 3 mẫu laptop, để khách hàng tự do suy nghĩ mà không hối thúc. |\n\nNgười tham gia sẽ được phân bổ ngẫu nhiên (random assignment) vào 1 trong 4 nhóm kịch bản (Mockup giao diện Chat của nền tảng giả định \"TechZone\"). Sau khi tương tác (đọc kịch bản chat mô phỏng), họ tiến hành trả lời bảng hỏi.\n\n#### Bước 3: Thu thập và Lấy mẫu dữ liệu\n*   **Mẫu:** Lấy mẫu phi xác suất có mục đích (Purposive Sampling). Đáp viên phải vượt qua câu hỏi gạn lọc (screening questions): Đảm bảo thuộc nhóm tuổi Gen Z, sống tại đô thị, và đang có nhu cầu hoặc am hiểu về mua sắm thiết bị cá nhân.\n*   **Kích thước mẫu:** Dự kiến thu thập n = 400 - 500 phiếu hợp lệ. Quy mô này là vượt trội và rất an toàn cho phân tích SEM, đồng thời cung cấp đủ cỡ mẫu cho mỗi ô kịch bản thực nghiệm (ít nhất 100 mẫu/ô) để thực hiện Phân tích Đa nhóm (MGA).\n\n#### Bước 4: Phương pháp Phân tích Dữ liệu (PLS-SEM)\nNghiên cứu sử dụng kỹ thuật **Mô hình Phương trình cấu trúc bình phương tối thiểu riêng phần (PLS-SEM)** thông qua phần mềm **SmartPLS 4**. PLS-SEM được ưu tiên lựa chọn thay vì CB-SEM (AMOS) vì những lý do học thuật sau:\n1. PLS-SEM có ưu thế tuyệt đối khi phân tích các mô hình dự báo hành vi (prediction-oriented) có chứa cấu trúc trung gian phức tạp (như Dual-mediation path).\n2. Không bị ràng buộc quá khắt khe về giả định phân phối chuẩn của dữ liệu (Hair et al., 2022).\nQuy trình thực hiện chuẩn 4 bước:\n1.  **Đánh giá Outer Model (Mô hình đo lường):** Đảm bảo độ tin cậy nhất quán (Cronbach’s Alpha ≥ 0.7, CR ≥ 0.7), giá trị hội tụ (AVE ≥ 0.5), và giá trị phân biệt (HTMT \u003c 0.85, Fornell-Larcker).\n2.  **Đánh giá Inner Model (Mô hình cấu trúc):** Xác định sự ủng hộ của giả thuyết thông qua các hệ số đường dẫn (Path coefficient β) với p-value \u003c 0.05. Kiểm tra mức độ giải thích (R²) và quy mô tác động (f²).\n3.  **Dự báo ngoài mẫu (Out-of-sample prediction):** Sử dụng thuật toán PLSpredict (chỉ số Q² predict) để kiểm chứng khả năng dự đoán thực tế của mô hình.\n4.  **Kiểm soát Common Method Bias (CMB):** Sử dụng kỹ thuật Full Collinearity VIF của Kock (2015). Đảm bảo tất cả các VIF ở cấp độ nhân tố (factor-level VIF) đều nhỏ hơn ngưỡng 3.3, chứng minh dữ liệu không bị sai lệch do phương pháp chung.\n\n### 5.3. Xây dựng Thang đo đo lường (Measurement Items)\nĐể đảm bảo giá trị khái niệm (construct validity), toàn bộ các biến tiềm ẩn được đo lường bằng thang đo Likert 7 điểm (1 = Hoàn toàn không đồng ý, 7 = Hoàn toàn đồng ý), kế thừa từ các tác giả hàng đầu trên thế giới và được tinh chỉnh cho phù hợp với ngành hàng thiết bị điện tử.\n\n**A. Nhóm biến Kích thích (Stimulus)**\n*   **Tính cá nhân hóa (PP) - 3 biến quan sát** *(Awad & Krishnan, 2006)*: Tập trung vào mức độ tinh chỉnh. *(VD: \"PP1. AI Chatbot đã đưa ra những gợi ý laptop dựa chính xác trên thông tin và nhu cầu cá nhân của tôi\").*\n*   **Tính nhân hóa (PA) - 3 biến quan sát** *(Waytz et al., 2014; Pelau et al., 2021)*: Đo lường cảm giác giao tiếp tự nhiên. *(VD: \"PA1. Khi tương tác với AI Chatbot này, tôi có cảm giác như đang trò chuyện với một nhân viên bán hàng bằng xương bằng thịt\").*\n*   **Sự xâm nhập cảm nhận (PI) - 3 biến quan sát** *(Barth & de Jong, 2017)*: Đánh giá sự phiền nhiễu. *(VD: \"PI1. Cách AI Chatbot liên tục hối thúc tôi mua hàng khiến tôi cảm thấy quyền tự do lựa chọn bị xâm phạm\").*\n\n**B. Nhóm biến Tổ chức nội tâm (Organism - Tâm lý)**\n*   **Niềm tin thuật toán (AT) - 4 biến quan sát** *(Logg et al., 2019; Castelo et al., 2019)*: Đánh giá độ tin cậy vào máy tính. *(VD: \"AT1. Tôi tin tưởng rằng sự tư vấn cấu hình từ thuật toán của AI là hoàn toàn khách quan và chính xác\").*\n*   **Sự kháng cự tâm lý (AR) - 4 biến quan sát** *(Hong & Faedda, 1996; Dillard & Shen, 2005)*: Đo lường sự phản kháng cảm xúc. *(VD: \"AR1. Thái độ áp đặt của AI Chatbot làm tôi vô cùng bực bội và nảy sinh ý muốn từ chối mua sản phẩm\").*\n\n**C. Nhóm biến Phản hồi (Response - Hành vi)**\n*   **Chấp nhận lời khuyên (RA) - 3 biến quan sát** *(Gefen et al., 2003)*: *(VD: \"RA1. Tôi sẽ làm theo các đề xuất kỹ thuật mà hệ thống AI này gợi ý\").*\n*   **Ý định mua sắm (PUR) - 3 biến quan sát** *(Venkatesh et al., 2003)*: *(VD: \"PUR1. Khả năng rất cao tôi sẽ thanh toán đơn hàng laptop/thiết bị này trong tương lai gần\").*\n\n**D. Nhóm biến Kiểm soát và Kiểm tra**\n*   **Manipulation Check (Kiểm tra thao tác):** Cực kỳ quan trọng trong nghiên cứu thực nghiệm. Gồm các câu hỏi trực tiếp để xem đáp viên có thực sự nhận ra mức độ Nhân hóa và Sự ép buộc trong kịch bản họ vừa đọc hay không.\n*   **Biến kiểm soát (Control Variables):** Giới tính, Kinh nghiệm mua sắm thiết bị trực tuyến, và Mức độ am hiểu phần cứng công nghệ (Product Knowledge).\n\n---\n\n## 6. DỰ KIẾN KẾT QUẢ VÀ ĐÓNG GÓP CỦA LUẬN ÁN\n### 6.1. Đóng góp về mặt Học thuật (Theoretical Contributions)\nLuận án kỳ vọng tạo ra những bước đột phá lý luận vững chắc, làm phong phú thêm kho tàng y văn về hành vi số hóa:\n1.  **Mở rộng biên giới của Lý thuyết PRT:** Lần đầu tiên, Sự kháng cự tâm lý được cấu trúc hóa một cách chặt chẽ trong một mô hình cạnh tranh trực tiếp với Niềm tin thuật toán. Luận án chứng minh sự tồn tại của tính chất \"Con dao hai lưỡi\" (Dual-effect) của sự Cá nhân hóa, thách thức lại niềm tin tuyệt đối của các mô hình TAM/UTAUT về tính hữu ích của công nghệ.\n2.  **Làm sáng tỏ Algorithm Appreciation trong bối cảnh tiêu dùng:** Đưa khái niệm sự đánh giá cao thuật toán từ môi trường nghiên cứu tài chính, y tế (của Logg) sang môi trường bán lẻ thiết bị điện tử, nơi cảm xúc và tài chính chi phối người tiêu dùng Gen Z tại thị trường đang phát triển.\n\n### 6.2. Đóng góp về mặt Thực tiễn (Managerial Implications)\nKết quả nghiên cứu cung cấp \"kim chỉ nam\" định lượng cho các Giám đốc Chuyển đổi số (CDO), Chuyên gia thiết kế UX/UI, và Giám đốc Marketing tại các doanh nghiệp bán lẻ (như Thế Giới Di Động, FPT Shop):\n*   **Thiết lập Giới hạn đỏ về quyền riêng tư (Intrusiveness Threshold):** Doanh nghiệp sẽ nhận thức được điểm bùng phát mà tại đó, sự cá nhân hóa trở thành sự theo dõi (surveillance). Việc ép buộc khách hàng chốt đơn bằng AI sẽ được chứng minh là một chiến lược sai lầm, phá hủy tỷ lệ chuyển đổi.\n*   **Tối ưu thiết kế hội thoại AI:** Cung cấp thông số về mức độ cần thiết của tính nhân hóa (khi nào AI nên nói chuyện như con người, khi nào nên duy trì sự khách quan máy móc) để tối đa hóa Niềm tin thuật toán.\n\n---\n\n## 7. KẾ HOẠCH HỌC TẬP VÀ NGHIÊN CỨU TOÀN KHÓA (36 THÁNG)\nChương trình học tập và hoàn thiện luận án được thiết kế chặt chẽ theo khung 3 năm của Bộ Giáo dục & Đào tạo, phân kỳ rõ ràng như sau:\n\n| Giai đoạn | Thời gian | Nhiệm vụ khoa học trọng tâm | Đầu ra / Tiêu chí đánh giá |\n|---|---|---|---|\n| **Kỳ 1** | Tháng 1 - 6 | Hoàn thành các học phần TS (Phương pháp nghiên cứu định lượng, Marketing nâng cao). | Tích lũy đủ tín chỉ học phần bắt buộc. |\n| **Kỳ 2** | Tháng 7 - 12 | Tổng hợp lý thuyết chuyên sâu, viết và bảo vệ Tiểu luận tổng quan trước Hội đồng. | Tiểu luận tổng quan đạt xuất sắc, xác định rõ mô hình. |\n| **Kỳ 3** | Tháng 13 - 18 | Thực hiện nghiên cứu định tính (Phỏng vấn 12 chuyên gia), chạy Pilot test, hoàn thiện kịch bản Mockup thực nghiệm. | Bảng hỏi chuẩn hóa, hoàn thành 02 chuyên đề Tiến sĩ. |\n| **Kỳ 4** | Tháng 19 - 24 | Khảo sát thực địa diện rộng (n=500). Phân tích dữ liệu mô hình cấu trúc bằng SmartPLS. Viết bản thảo báo cáo. | Bộ dữ liệu sạch, Báo cáo phân tích SEM hoàn chỉnh, bản thảo luận án cơ bản. |\n| **Kỳ 5** | Tháng 25 - 30 | Viết và nộp bài báo công bố khoa học. Thuyết trình Seminar kết quả tại Khoa. | Ít nhất 02 bài báo được xuất bản trên tạp chí uy tín thuộc danh mục HĐGSNN hoặc ISI/Scopus. |\n| **Kỳ 6** | Tháng 31 - 36 | Chỉnh sửa toàn văn luận án. Hoàn thiện thủ tục phản biện kín, bảo vệ cấp Cơ sở và Cấp Trường. | Hội đồng thông qua, nhận quyết định công nhận học vị Tiến sĩ. |\n\n---\n\n## 8. NGUỒN KINH PHÍ THỰC HIỆN\nNghiên cứu sinh hoàn toàn độc lập và tự túc đảm bảo 100% kinh phí cho toàn bộ quy trình: từ học phí, tổ chức phỏng vấn chuyên gia, thiết kế Mockup UI/UX, triển khai thu thập dữ liệu diện rộng, đến chi phí phản biện và công bố các bài báo khoa học quốc tế/trong nước.\n\n---\n\n## 9. DANH MỤC TÀI LIỆU THAM KHẢO\n*(Danh sách gồm 30 tài liệu tham khảo cốt lõi, chuẩn định dạng APA phiên bản 7. Tập trung vào các tạp chí hàng đầu như MIS Quarterly, Journal of Marketing Research, Computers in Human Behavior)*\n\n1. Awad, N. F., & Krishnan, M. S. (2006). The personalization privacy paradox: An empirical evaluation of information transparency and the willingness to be profiled online for personalization. *MIS Quarterly, 30*(1), 13-28.\n2. Barth, S., & de Jong, M. D. (2017). The privacy paradox – Investigating discrepancies between expressed privacy concerns and actual online behavior. *Telematics and Informatics, 34*(7), 1038-1058.\n3. Brehm, J. W. (1966). *A theory of psychological reactance*. Academic Press.\n4. Castelo, N., Bos, M. W., & Lehmann, D. R. (2019). Task-dependent algorithm aversion. *Journal of Marketing Research, 56*(5), 809-825.\n5. Chung, M., Ko, E., Joung, H., & Kim, S. J. (2020). Chatbot e-service and customer satisfaction regarding luxury brands. *Journal of Business Research, 117*, 587-595.\n6. Clee, M. A., & Wicklund, R. A. (1980). Consumer behavior and psychological reactance. *Journal of Consumer Research, 6*(4), 389-405.\n7. Davis, F. D. (1989). Perceived usefulness, perceived ease of use, and user acceptance of information technology. *MIS quarterly, 13*(3), 319-340.\n8. Dietvorst, B. J., Simmons, J. P., & Massey, C. (2015). Algorithm aversion: People erroneously avoid algorithms after seeing them err. *Journal of Experimental Psychology: General, 144*(1), 114-126.\n9. Dillard, J. P., & Shen, L. (2005). On the nature of reactance and its role in persuasive health communication. *Communication Monographs, 72*(2), 144-168.\n10. Dimock, M. (2019). Defining generations: Where Millennials end and Generation Z begins. *Pew Research Center, 17*(1), 1-7.\n11. Gefen, D., Karahanna, E., & Straub, D. W. (2003). Trust and TAM in online shopping: An integrated model. *MIS quarterly, 27*(1), 51-90.\n12. Hair, J. F., Hult, G. T. M., Ringle, C. M., & Sarstedt, M. (2022). *A primer on partial least squares structural equation modeling (PLS-SEM)* (3rd ed.). Sage publications.\n13. Henseler, J., Ringle, C. M., & Sarstedt, M. (2015). A new criterion for assessing discriminant validity in variance-based structural equation modeling. *Journal of the Academy of Marketing Science, 43*(1), 115-135.\n14. Hong, S. M., & Faedda, S. (1996). Refinement of the Hong psychological reactance scale. *Educational and Psychological Measurement, 56*(1), 173-182.\n15. Kock, N. (2015). Common method bias in PLS-SEM: A full collinearity assessment approach. *International Journal of e-Collaboration, 11*(4), 1-10.\n16. Logg, J. M., Minson, J. A., & Moore, D. A. (2019). Algorithm appreciation: People prefer algorithmic to human judgment. *Organizational Behavior and Human Decision Processes, 151*, 90-103.\n17. Luo, X., Tong, S., Fang, Z., & Qu, Z. (2019). Frontiers: Machines vs. humans: The impact of artificial intelligence chatbot disclosure on customer purchases. *Marketing Science, 38*(6), 937-947.\n18. McLean, G., & Osei-Frimpong, K. (2019). Chat now... Examining the variables influencing the use of online live chat. *Technological Forecasting and Social Change, 146*, 55-67.\n19. Mehrabian, A., & Russell, J. A. (1974). *An approach to environmental psychology*. MIT Press.\n20. Mori, M. (1970). The uncanny valley. *Energy, 7*(4), 33-35.\n21. Moriuchi, E. (2019). Okay, Google!: An empirical study on voice assistants on consumer engagement and loyalty. *Psychology & Marketing, 36*(5), 489-501.\n22. Pelau, C., Dabija, D. C., & Ene, I. (2021). What makes an AI device human-like? The role of interaction quality, empathy and perceived psychological anthropomorphic characteristics in the acceptance of artificial intelligence. *Computers in Human Behavior, 122*, 106855.\n23. Prensky, M. (2001). Digital natives, digital immigrants part 1. *On the horizon, 9*(5), 1-6.\n24. Ringle, C. M., Wende, S., & Becker, J.-M. (2015). *SmartPLS 3*. Boenningstedt: SmartPLS GmbH.\n25. Steinhoff, L., Aris, Y., Lemon, K. N., & Palmatier, R. W. (2019). Customer engagement and loyalty dynamics. *Journal of the Academy of Marketing Science, 47*(1), 120-133.\n26. Tucker, C. E. (2014). Social networks, personalized advertising, and privacy controls. *Journal of Marketing Research, 51*(5), 546-562.\n27. Turner, A. (2015). Generation Z: Technology and social interest. *The journal of individual psychology, 71*(2), 103-113.\n28. Venkatesh, V., Morris, M. G., Davis, G. B., & Davis, F. D. (2003). User acceptance of information technology: Toward a unified view. *MIS quarterly, 27*(3), 425-478.\n29. Waytz, A., Heafner, J., & Epley, N. (2014). The mind in the machine: Anthropomorphism increases trust in an autonomous vehicle. *Journal of Experimental Social Psychology, 52*, 113-122.\n30. White, T. B., Zahay, D. L., Thorbjørnsen, H., & Shavitt, S. (2008). Getting too personal: Reactance to highly personalized email solicitations. *Marketing Letters, 19*(1), 39-50.\n"}],"others":[{"title":"BÀI LUẬN VỀ DỰ ĐỊNH NGHIÊN CỨU: GIẢI MÃ \"NGHỊCH LÝ NIỀM TIN\" TRONG KỶ NGUYÊN AI","file":"bailuan_THINH.md","chars":3582,"pages":"2.0","content":"# BÀI LUẬN VỀ DỰ ĐỊNH NGHIÊN CỨU: GIẢI MÃ \"NGHỊCH LÝ NIỀM TIN\" TRONG KỶ NGUYÊN AI\n\n**Thí sinh:** Nguyễn Cường Thịnh  \n**Chuyên ngành:** Quản trị Kinh doanh  \n\n---\n\n### 1. Đề tài và Câu hỏi từ thực tiễn (Cơ sở khoa học)\n**Tên đề tài:** Tác động của tương tác AI Chatbot đến hành vi mua sắm thiết bị điện tử của người tiêu dùng thế hệ Z: Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý.\n\nDự định nghiên cứu của tôi bắt nguồn từ một quan sát thực tiễn: *Tại sao chúng ta đôi khi hài lòng khi được AI gợi ý đúng ý mình, nhưng lại thấy khó chịu khi cảm thấy bị máy móc thúc ép?* **Quan sát này phản ánh một cơ chế tác động kép (dual-path mechanism) mà tôi muốn mô hình hóa và kiểm chứng dựa trên các nền tảng lý thuyết vững chắc.**\n\n### 2. Sự trăn trở: Tại sao lại là AI và Gen Z? (Bối cảnh nghiên cứu)\nTôi chọn hướng đi này vì nhận thấy sự chuyển dịch sâu sắc trong tâm lý của Gen Z, nhất là tại các thị trường mới nổi như Việt Nam. Hiện nay, các hệ thống gợi ý AI đang bùng nổ. Tuy nhiên, nỗi lo về quyền riêng tư và sự thao túng thuật toán cũng tăng theo. **Là những \"công dân số\", Gen Z khao khát quyền tự quyết rất cao. Nghiên cứu của tôi sẽ giải mã ranh giới nơi sự hỗ trợ của AI trở thành sự xâm nhập phiền toái.**\n\n### 3. Khung lý thuyết S-O-R và Mô hình khái niệm\nTôi sử dụng khung lý thuyết **S-O-R (Stimulus-Organism-Response)** làm nền tảng. Trong đó, tương tác với AI Chatbot là kích thích (Stimulus). Niềm tin thuật toán và sự kháng cự tâm lý là các phản hồi nhận thức và cảm xúc (Organism). Cuối cùng, kết quả là hành vi mua sắm của khách hàng (Response).\n\n**Mô hình khái niệm đề xuất:**\n1.  Tương tác AI chatbot —(+)—\u003e Niềm tin thuật toán\n2.  Tương tác AI chatbot —(+)—\u003e Sự kháng cự tâm lý\n3.  Niềm tin thuật toán —(+)—\u003e Ý định mua hàng\n4.  Sự kháng cự tâm lý —(–)—\u003e Ý định mua hàng\n\n### 4. Mục tiêu nghiên cứu (Mục tiêu đo lường)\n**Tôi muốn xác định mức độ cá nhân hóa mà tại đó các tác động tích cực của AI bị lấn át bởi sự kháng cự tâm lý.** Việc tìm ra \"điểm bùng phát\" này sẽ giúp các nhà bán lẻ thiết kế hệ thống AI tinh tế hơn, tối ưu hóa hiệu quả mà không gây ra phản ứng ngược từ người dùng.\n\n### 5. Phương pháp nghiên cứu và Thiết kế thực nghiệm\nTôi sử dụng thiết kế thực nghiệm dựa trên kịch bản với hai nhân tố thao túng: cá nhân hóa (Thấp vs Cao) và tính minh bạch (AI giải thích được vs AI \"hộp đen\"). **Các kiểm định thao túng sẽ được thực hiện để đảm bảo hiệu quả thực nghiệm. Tôi cũng kế thừa các thang đo từ các nghiên cứu uy tín đã được kiểm chứng.** Dữ liệu từ 500 người tiêu dùng Gen Z sẽ được tôi phân tích bằng công cụ **PLS-SEM**.\n\n### 6. Biến điều tiết và Đóng góp học thuật\nNghiên cứu này xem xét thêm vai trò điều tiết của **nỗi lo ngại quyền riêng tư**. Về mặt học thuật, tôi kỳ vọng đóng góp vào hệ thống tri thức bằng cách hợp nhất niềm tin thuật toán và sự kháng cự tâm lý vào một khung khổ thống nhất. **Điều này giúp giải thích rõ hơn những tác động mang tính \"nghịch lý\" của AI đối với hành vi con người.**\n\n### 7. Tâm thế và Mục tiêu học thuật\nMục tiêu của tôi là xuất bản ít nhất 02 bài báo quốc tế uy tín. Với sự dẫn dắt của các thầy cô, tôi tin nghiên cứu này sẽ góp phần nâng cao năng lực cạnh tranh cho ngành bán lẻ Việt Nam trong thời đại trí tuệ nhân tạo.\n\n### 8. Tại sao tôi chọn Đại học Nha Trang?\nĐại học Nha Trang là nơi hội tụ các nhà khoa học tâm huyết, có tư duy cởi mở đối với các hướng nghiên cứu hiện đại. Đây chính là môi trường lý tưởng để tôi hiện thực hóa dự định nghiên cứu đầy tham vọng này.\n\n---\n**Khánh Hòa, ngày …. tháng …. năm 20….**\n\n**Người dự tuyển**  \n\n**Nguyễn Cường Thịnh**\n"},{"title":"Yêu Cầu Riêng Của Đề Tài / Tạp Chí (Local Requirements)","file":"Local_Journal_Requirements.md","chars":1171,"pages":"0.7","content":"# Yêu Cầu Riêng Của Đề Tài / Tạp Chí (Local Requirements)\n\n\u003e **LƯU Ý:** Tài liệu này ghi đè và bổ sung cho các quy định tại `Global_Writing_Style_Guide.md` ở thư mục gốc. Khi có xung đột về format hoặc quy tắc, hệ thống sẽ ưu tiên áp dụng các chỉ dẫn tại file này cho riêng dự án hiện tại.\n\n## 1. Định Dạng & Độ Dài (Formatting & Length)\n- **Giới hạn số từ:** [Ví dụ: 8,000 - 10,000 từ / Hoặc Không giới hạn]\n- **Kiểu trích dẫn (Citation Style):** [Ví dụ: APA 7th Edition / Harvard / IEEE]\n- **Ngôn ngữ:** [Tiếng Việt / Tiếng Anh]\n\n## 2. Quy Định Về Khung Lý Thuyết (Theoretical Framework)\n- **Lĩnh vực lõi:** [Ví dụ: Quản trị Kinh doanh / Marketing / Hệ thống Thông tin]\n- **Mô hình phân tích:** [Ví dụ: PLS-SEM / CB-SEM / Thực nghiệm 2x2 / Định tính]\n\n## 3. Khác Biệt So Với Luật Chung (Overrides)\n- [Liệt kê các yêu cầu đặc thù của hội đồng hoặc tạp chí mục tiêu vào đây...]\n- *Ví dụ: \"Hội đồng ĐH Nha Trang yêu cầu bỏ qua phần diễn giải lý thuyết cơ sở quá dài, cần đi thẳng vào khoảng trống nghiên cứu.\"*\n- *Ví dụ: \"Tạp chí Journal of Business Research yêu cầu phần thảo luận (Discussion) phải tách biệt rõ rệt đóng góp lý thuyết và thực tiễn thành 2 sub-heading.\"*\n"}],"lastUpdated":"19:35:44 28/6/2026"};
         window.onerror = function(msg, url, line, col, error) { console.error(error); return false; };
 
-        // Live-Reload SSE
+        // SSE Live Reload for Local dev
         if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
             const evtSource = new EventSource('/events');
             evtSource.onmessage = function(event) {
                 if (event.data === 'reload') {
-                    console.log('🔄 Đang làm mới giao diện...');
+                    console.log('🔄 Reloading workspace...');
                     location.reload();
                 }
             };
         }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            if (theme === 'dark') {
+                icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+            } else {
+                icon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707-.707M12 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>';
+            }
+        }
+
+        // Initialize Theme from localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
 
         const nav = document.getElementById('nav');
         const content = document.getElementById('content');
@@ -150,12 +615,12 @@
             content.innerHTML = htmlContent;
             document.querySelector('.main').scrollTop = 0;
             
-            // Tính toán dung lượng
+            // Stats Calculation
             setTimeout(() => {
                 let textContent = content.innerText || content.textContent;
                 let wordCount = textContent.trim().split(/\s+/).length;
                 let pages = (wordCount / 350).toFixed(1);
-                let images = content.querySelectorAll('img, .mermaid-box').length;
+                let images = content.querySelectorAll('img, .mermaid-box, table').length;
                 document.getElementById('stat-words').innerText = wordCount;
                 document.getElementById('stat-pages').innerText = pages;
                 document.getElementById('stat-images').innerText = images;
@@ -167,7 +632,6 @@
                     await mermaid.run({ querySelector: '.mermaid' });
                 } catch(e) { 
                     console.error("Rendering error:", e);
-                    // Báo lỗi Cú pháp thông minh
                     document.querySelectorAll('.mermaid').forEach(el => {
                         if(el.innerHTML.includes('Syntax error') || !el.querySelector('svg')) {
                             el.innerHTML = `<div class="error-box">
@@ -183,7 +647,7 @@
 
         function addHeader(text) {
             const h = document.createElement('div');
-            h.style = "font-size: 11px; color: var(--secondary); font-weight: bold; margin: 20px 0 10px 5px; letter-spacing: 1px; opacity: 0.8";
+            h.className = 'nav-header';
             h.innerText = text;
             nav.appendChild(h);
         }
@@ -192,14 +656,26 @@
             const div = document.createElement('div');
             div.id = type + '-' + (item.file || item.title).replace(/\s/g, '_');
             div.className = 'nav-item';
-            div.innerText = item.title + (item.file ? ` [${item.file}]` : '');
+            
+            // Icon assignment based on type/content
+            let iconSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>'; // File icon
+            if (type === 'st') {
+                iconSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>'; // Folder/Package icon
+            } else if (type === 'ot') {
+                iconSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>'; // Info icon
+            } else if (item.title.match(/^\d+\./)) {
+                // If it is a chapter with number
+                iconSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3c0-1.1.9-2 2-2h14v20H6.5"/></svg>'; // Book icon
+            }
+            
+            div.innerHTML = iconSvg + `<span>${item.title}</span>`;
             div.onclick = () => show(item, type);
             nav.appendChild(div);
         }
 
-        if (data.chapters) { addHeader("CÁC CHƯƠNG CHI TIẾT"); data.chapters.forEach(ch => addItem(ch, 'ch')); }
-        if (data.standalones) { addHeader("CÁC BẢN ĐỀ CƯƠNG ĐẦY ĐỦ"); data.standalones.forEach(st => addItem(st, 'st')); }
-        if (data.others) { addHeader("TÀI LIỆU HƯỚNG DẪN & KHÁC"); data.others.forEach(ot => addItem(ot, 'ot')); }
+        if (data.chapters) { addHeader("CHƯƠNG ĐỀ CƯƠNG CHI TIẾT"); data.chapters.forEach(ch => addItem(ch, 'ch')); }
+        if (data.standalones) { addHeader("ĐỀ CƯƠNG TOÀN VĂN"); data.standalones.forEach(st => addItem(st, 'st')); }
+        if (data.others) { addHeader("TÀI LIỆU VÀ NHÁP KHÁC"); data.others.forEach(ot => addItem(ot, 'ot')); }
         if (data.lastUpdated) { document.getElementById('update-time').innerText = "Cập nhật: " + data.lastUpdated; }
         
         mermaid.initialize({startOnLoad: false, theme: 'neutral', htmlLabels: false});
@@ -207,6 +683,7 @@
         if (data.chapters && data.chapters.length > 0) show(data.chapters[0], 'ch');
         else if (data.standalones && data.standalones.length > 0) show(data.standalones[0], 'st');
 
+        // Export Functionality
         function getExportHTML(isFull) {
             let html = '';
             let targetItems = [];
@@ -260,7 +737,6 @@
             
             await new Promise(r => setTimeout(r, 1200));
 
-            // Convert SVG to high-quality Base64 PNG
             const svgs = container.querySelectorAll('svg');
             for (let svg of svgs) {
                 try {
@@ -276,7 +752,7 @@
                     svgClone.setAttribute('height', h);
                     svgClone.querySelectorAll('style').forEach(styleTag => {
                         let css = styleTag.innerHTML;
-                        css = css.replace(/@import\s+url\([^)]+\);/g, ''); // Strip imports
+                        css = css.replace(/@import\s+url\([^)]+\);/g, ''); 
                         styleTag.innerHTML = css;
                     });
                     
@@ -309,7 +785,7 @@
                                 
                                 svg.parentNode.replaceChild(newImg, svg);
                             } catch (err) {
-                                console.error("Canvas draw/dataURL failed, using Fallback:", err);
+                                console.error("Canvas draw failed, using Fallback:", err);
                                 const fallbackImg = document.createElement('img');
                                 fallbackImg.setAttribute('src', imgSrc);
                                 fallbackImg.setAttribute('width', targetWidth);
@@ -323,7 +799,6 @@
                             resolve();
                         };
                         img.onerror = (err) => {
-                            console.error("Image load failed, using Fallback:", err);
                             const fallbackImg = document.createElement('img');
                             fallbackImg.setAttribute('src', imgSrc);
                             fallbackImg.setAttribute('width', targetWidth);
@@ -352,9 +827,9 @@
         }
 
         async function exportWord(isFull) {
-            const btn = event.target;
-            const originalText = btn.innerText;
-            btn.innerText = "Đang xử lý...";
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = "Đang xử lý...";
 
             const tempDiv = document.createElement('div');
             tempDiv.id = "word-export-container";
@@ -372,9 +847,6 @@
             try {
                 await processExportContainer(tempDiv);
 
-                // ==========================================
-                // TÍNH NĂNG XUẤT NATIVE DOCX BẰNG SERVER
-                // ==========================================
                 if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
                     try {
                         const response = await fetch('/api/export-docx', {
@@ -391,16 +863,13 @@
                             let safeTitle = exportTitle.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
                             link.download = `DeCuong_${safeTitle}.docx`;
                             link.click();
-                            return; // Thoát nếu thành công
+                            return; 
                         }
                     } catch(err) {
                         console.warn("Lỗi API DOCX. Rớt về định dạng MHT dự phòng.", err);
                     }
                 }
 
-                // ==========================================
-                // OFFLINE FALLBACK MHT EXPORT
-                // ==========================================
                 const wordStyles = `
                     <style>
                         @page WordSection1 { size: A4; margin: 2.5cm 2.0cm 2.5cm 3.5cm; mso-header-margin: 1.25cm; mso-footer-margin: 1.25cm; mso-paper-source: 0; }
@@ -408,15 +877,14 @@
                         table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
                         th, td { border: 1px solid black; padding: 8px; text-align: left; }
                         th { background-color: #f2f2f2; }
-                         h1, h2, h3, h4 { font-family: 'Times New Roman', serif; color: black; margin-top: 12pt; margin-bottom: 6pt; text-align: left; }
-                         p { font-family: 'Times New Roman', serif; font-size: 14pt; line-height: 1.5; text-align: justify; margin-top: 0pt; margin-bottom: 6pt; text-indent: 1.25cm; }
-                         li { font-family: 'Times New Roman', serif; font-size: 14pt; line-height: 1.5; text-align: justify; margin-top: 0pt; margin-bottom: 4pt; }
-                         img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+                        h1, h2, h3, h4 { font-family: 'Times New Roman', serif; color: black; margin-top: 12pt; margin-bottom: 6pt; text-align: left; }
+                        p { font-family: 'Times New Roman', serif; font-size: 14pt; line-height: 1.5; text-align: justify; margin-top: 0pt; margin-bottom: 6pt; text-indent: 1.25cm; }
+                        li { font-family: 'Times New Roman', serif; font-size: 14pt; line-height: 1.5; text-align: justify; margin-top: 0pt; margin-bottom: 4pt; }
+                        img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
                         .export-title { text-align: center; font-size: 16pt; font-weight: bold; margin-bottom: 30px; text-transform: uppercase; }
                     </style>
                 `;
 
-                // Extract all base64 images and replace src with local references
                 const images = tempDiv.querySelectorAll('img');
                 const imageAttachments = [];
                 let imgCounter = 0;
@@ -430,14 +898,8 @@
                             const base64Data = parts[1];
                             const extension = mimeType.split('/')[1] || 'png';
                             const loc = `image_${imgCounter}.${extension}`;
-                            
                             img.setAttribute('src', loc);
-                            
-                            imageAttachments.push({
-                                location: loc,
-                                mime: mimeType,
-                                data: base64Data
-                            });
+                            imageAttachments.push({ location: loc, mime: mimeType, data: base64Data });
                             imgCounter++;
                         }
                     }
@@ -447,24 +909,20 @@
                 <head><meta charset='utf-8'><title>Export Word</title>${wordStyles}</head>
                 <body style="font-family:'Times New Roman'"><div class="WordSection1">${tempDiv.innerHTML}</div></body></html>`;
 
-                // Build MHT format
                 const boundary = "----=_NextPart_PhD_Export_" + Math.random().toString(36).substring(2);
                 let mhtContent = "MIME-Version: 1.0\r\n";
                 mhtContent += `Content-Type: multipart/related; boundary="${boundary}"\r\n\r\n`;
                 
-                // HTML Part
                 mhtContent += `--${boundary}\r\n`;
                 mhtContent += "Content-Type: text/html; charset=\"utf-8\"\r\n";
                 mhtContent += "Content-Transfer-Encoding: 8bit\r\n\r\n";
                 mhtContent += htmlContent + "\r\n\r\n";
                 
-                // Image Parts
                 imageAttachments.forEach(att => {
                     mhtContent += `--${boundary}\r\n`;
                     mhtContent += `Content-Type: ${att.mime}\r\n`;
                     mhtContent += "Content-Transfer-Encoding: base64\r\n";
                     mhtContent += `Content-Location: ${att.location}\r\n\r\n`;
-                    // Break base64 into 76-character lines as per MIME standard
                     const b64 = att.data;
                     for (let i = 0; i < b64.length; i += 76) {
                         mhtContent += b64.substring(i, i + 76) + "\r\n";
@@ -486,18 +944,17 @@
                 alert("Lỗi xuất Word: " + e.message); 
             } finally {
                 document.body.removeChild(tempDiv);
-                btn.innerText = originalText;
+                btn.innerHTML = originalText;
             }
         }
 
         async function exportPDF() {
-            const btn = event.target;
-            const originalText = btn.innerText;
-            btn.innerText = "Chuẩn bị PDF...";
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = "Chuẩn bị PDF...";
 
             const tempDiv = document.createElement('div');
             tempDiv.id = "print-container";
-            // Luôn in toàn văn khi xuất PDF cho an toàn, hoặc có thể làm Selective PDF sau.
             tempDiv.innerHTML = getExportHTML(true); 
             document.body.appendChild(tempDiv);
             
@@ -509,7 +966,6 @@
             tempDiv.style.opacity = '0.01';
 
             try {
-                // Xử lý tất cả Mermaid thành ảnh Base64 chống lỗi mất khúc/tràn viền khi in
                 await processExportContainer(tempDiv);
                 
                 tempDiv.style.position = 'absolute';
@@ -524,7 +980,7 @@
                 alert("Lỗi xuất PDF: " + e.message);
             } finally {
                 document.body.removeChild(tempDiv);
-                btn.innerText = originalText;
+                btn.innerHTML = originalText;
             }
         }
     </script>
