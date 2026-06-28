@@ -18,7 +18,4 @@ Kiểm định hiệu ứng trung gian (mediation) và điều tiết (moderatio
 Phản hồi và chỉnh sửa các bài báo đã nộp theo phản biện (reviewer comments). Bắt đầu viết bản thảo toàn văn luận án. Báo cáo chuyên đề tiến sĩ số 3. Nộp thêm bài báo quốc tế số 3 (nếu có thể). Hội thảo học thuật tại TDTU: trình bày kết quả nghiên cứu nhận phản hồi từ cộng đồng học thuật.
 
 **Giai đoạn 6 (Tháng 31–36): Hoàn thiện và bảo vệ luận án**
-Hoàn thiện bản thảo luận án theo góp ý của người hướng dẫn. Bảo vệ luận án cấp Cơ sở (Hội đồng Khoa). Chỉnh sửa theo góp ý Hội đồng cấp Cơ sở. Nộp hồ sơ và bảo vệ luận án cấp Trường / Nhà nước. Hoàn tất thủ tục và nhận bằng tiến sĩ.
-
----
-
+Hoàn thiện bản thảo luận án theo góp ý của người hướng dẫn. Bảo vệ luận án cấp Cơ sở (Hội đồng Khoa). Chỉnh sửa theo góp ý Hội đồng cấp Cơ sở. Nộp hồ sơ và bảo vệ luận án cấp Trường / Nhà nước. Hoàn tất thủ tục và nhận bằng tiến sĩ.\n

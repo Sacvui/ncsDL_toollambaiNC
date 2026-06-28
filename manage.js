@@ -72,7 +72,7 @@ function compileProject(targetSlug, quiet = false) {
 
         if (/^\d+/.test(file)) {
             chapters.push(fileData);
-            combinedContent += content.trim() + "\n\n---\n\n";
+            combinedContent += content.trim() + "\n\n";
         } else if (file.startsWith('PhD_')) {
             standalones.push(fileData);
         } else {
@@ -80,9 +80,7 @@ function compileProject(targetSlug, quiet = false) {
         }
     });
 
-    if (combinedContent.endsWith("\n\n---\n\n")) {
-        combinedContent = combinedContent.slice(0, -7);
-    }
+    combinedContent = combinedContent.trimEnd() + "\n";
 
     const monolithicFilePath = path.join(targetPath, monolithicFileName);
     fs.writeFileSync(monolithicFilePath, combinedContent, 'utf8');

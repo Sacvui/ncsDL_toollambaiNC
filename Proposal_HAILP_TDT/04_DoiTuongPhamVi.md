@@ -17,7 +17,4 @@ Mối quan hệ giữa Chỉ số Hài lòng Khách hàng (CSI) và Hiệu quả
 
 **Phạm vi thời gian:**
 - Dữ liệu sơ cấp (khảo sát người tiêu dùng): Thực hiện trong giai đoạn 2027–2028.
-- Dữ liệu thứ cấp (hiệu quả tài chính doanh nghiệp): Thu thập đồng thời và trễ 1 năm (tương ứng với báo cáo tài chính kiểm toán năm 2027, 2028, và 2029) để giải quyết triệt để lỗi nghịch lý thời gian (Time-lag paradox) và hiện tượng nhân quả ngược. Việc khảo sát sự hài lòng trong hiện tại không thể dùng để giải thích hiệu quả tài chính trong quá khứ. Do đó, thiết kế nghiên cứu đảm bảo sự đồng bộ chặt chẽ về mốc thời gian giữa biến độc lập và biến phụ thuộc.
-
----
-
+- Dữ liệu thứ cấp (hiệu quả tài chính doanh nghiệp): Thu thập đồng thời và trễ 1 năm (tương ứng với báo cáo tài chính kiểm toán năm 2027, 2028, và 2029) để giải quyết triệt để lỗi nghịch lý thời gian (Time-lag paradox) và hiện tượng nhân quả ngược. Việc khảo sát sự hài lòng trong hiện tại không thể dùng để giải thích hiệu quả tài chính trong quá khứ. Do đó, thiết kế nghiên cứu đảm bảo sự đồng bộ chặt chẽ về mốc thời gian giữa biến độc lập và biến phụ thuộc.\n

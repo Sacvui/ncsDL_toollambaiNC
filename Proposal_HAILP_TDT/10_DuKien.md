@@ -13,6 +13,4 @@ Sau khi hoàn thành chương trình tiến sĩ, nghiên cứu sinh dự kiến 
 - Thứ nhất, AI cá nhân hóa trải nghiệm khách hàng — thông qua các hệ thống gợi ý sản phẩm, chatbot hỗ trợ sau mua, và nội dung marketing được tùy chỉnh theo từng phân khúc — trực tiếp tác động đến chất lượng cảm nhận và giá trị cảm nhận, tức là các tiền đề hình thành CSI. Điều này đặt ra câu hỏi liệu mô hình ACSI gốc có cần bổ sung nhân tố “chất lượng trải nghiệm số do AI hỗ trợ” hay không.
 - Thứ hai, AI khuếch đại eWOM qua hai cơ chế: thuật toán của TikTok, Shopee, và Google ưu tiên phân phối nội dung đánh giá có độ tin cậy cao đến đúng đối tượng tiếp nhận, làm tăng phạm vi và tốc độ lan truyền của eWOM tích cực; đồng thời, các công cụ sentiment analysis tự động tổng hợp và hiển thị điểm đánh giá tổng hợp (aggregate rating) làm giảm chi phí tìm kiếm thông tin của người mua mới, từ đó tăng hệ số chuyển đổi từ eWOM sang hành vi mua.
 
-Nghiên cứu tiếp theo có thể đo lường tác động điều tiết của mức độ AI-personalization của kênh phân phối lên mối quan hệ CSI – eWOM, sử dụng dữ liệu API từ các nền tảng thương mại điện tử kết hợp với dữ liệu khảo sát.
-
----
+Nghiên cứu tiếp theo có thể đo lường tác động điều tiết của mức độ AI-personalization của kênh phân phối lên mối quan hệ CSI – eWOM, sử dụng dữ liệu API từ các nền tảng thương mại điện tử kết hợp với dữ liệu khảo sát.\n

@@ -18,6 +18,4 @@ Kinh nghiệm thực địa trong quản lý kênh phân phối truyền thống
 - Google: Foundations of Project Management
 
 **Hoạt động học thuật và cộng đồng:**
-Tham gia mạng lưới chuyên gia trong lĩnh vực quản trị kinh doanh và marketing; duy trì hoạt động kết nối học thuật — thực tiễn thông qua website lehai.edu.vn nhằm chia sẻ kiến thức quản trị tài chính cá nhân và phát triển năng lực lãnh đạo cho cộng đồng doanh nghiệp Việt Nam.
-
----
+Tham gia mạng lưới chuyên gia trong lĩnh vực quản trị kinh doanh và marketing; duy trì hoạt động kết nối học thuật — thực tiễn thông qua website lehai.edu.vn nhằm chia sẻ kiến thức quản trị tài chính cá nhân và phát triển năng lực lãnh đạo cho cộng đồng doanh nghiệp Việt Nam.\n

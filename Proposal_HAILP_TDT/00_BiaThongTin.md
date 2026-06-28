@@ -12,7 +12,4 @@ Tác động của Chỉ số Hài lòng Khách hàng đến Hiệu quả Hoạt
 
 **Lĩnh vực nghiên cứu:** Quản trị Kinh doanh
 **Chuyên ngành dự kiến:** Quản trị Kinh doanh
-**Cơ sở đào tạo:** Đại học Tôn Đức Thắng (TDTU)
-
----
-
+**Cơ sở đào tạo:** Đại học Tôn Đức Thắng (TDTU)\n

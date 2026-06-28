@@ -48,7 +48,4 @@ Tổng quan tài liệu được thực hiện bằng cách tìm kiếm có hệ
 
 **Khoảng trống 2, Cơ chế truyền dẫn trong bối cảnh số:** Chưa kiểm định đồng thời vai trò trung gian của lòng trung thành thương hiệu và truyền miệng điện tử (eWOM) trong chuỗi CSI–Firm Performance trong ngành FMCG Việt Nam, đặc biệt trong bối cảnh thương mại điện tử và mạng xã hội đang thay đổi cách sự hài lòng được chuyển hóa thành hành vi mua và ảnh hưởng xã hội.
 
-**Khoảng trống 3, Yếu tố điều tiết theo kênh và biến kiểm soát:** Chưa kiểm định vai trò điều tiết của loại hình kênh phân phối (truyền thống, hiện đại, thương mại điện tử) đối với cả hai tuyến trung gian, đồng thời chưa có nghiên cứu nào kiểm soát đồng thời các biến nội sinh tiềm năng như tuổi doanh nghiệp, đòn bẩy tài chính và mức độ tập trung ngành trong mối quan hệ CSI–Firm Performance tại Việt Nam.
-
----
-
+**Khoảng trống 3, Yếu tố điều tiết theo kênh và biến kiểm soát:** Chưa kiểm định vai trò điều tiết của loại hình kênh phân phối (truyền thống, hiện đại, thương mại điện tử) đối với cả hai tuyến trung gian, đồng thời chưa có nghiên cứu nào kiểm soát đồng thời các biến nội sinh tiềm năng như tuổi doanh nghiệp, đòn bẩy tài chính và mức độ tập trung ngành trong mối quan hệ CSI–Firm Performance tại Việt Nam.\n

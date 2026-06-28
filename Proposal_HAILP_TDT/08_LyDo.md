@@ -10,7 +10,4 @@
 
 **Đội ngũ chuyên môn phù hợp:** Khoa Quản trị Kinh doanh tại TDTU có đội ngũ giảng viên với hồ sơ công bố quốc tế trong lĩnh vực Marketing, hành vi người tiêu dùng và quản trị chiến lược, là điều kiện tiên quyết để có người hướng dẫn đủ năng lực và kinh nghiệm cho đề tài này.
 
-**Vị trí địa lý thuận lợi:** TP. Hồ Chí Minh là trung tâm kinh tế, tiêu dùng và FMCG lớn nhất cả nước. Điều này tạo điều kiện tối đa cho việc tiếp cận doanh nghiệp FMCG để thu thập dữ liệu thứ cấp và phỏng vấn sâu nhà quản lý, cũng như thu thập dữ liệu khảo sát người tiêu dùng trên một thị trường đa dạng và đại diện.
-
----
-
+**Vị trí địa lý thuận lợi:** TP. Hồ Chí Minh là trung tâm kinh tế, tiêu dùng và FMCG lớn nhất cả nước. Điều này tạo điều kiện tối đa cho việc tiếp cận doanh nghiệp FMCG để thu thập dữ liệu thứ cấp và phỏng vấn sâu nhà quản lý, cũng như thu thập dữ liệu khảo sát người tiêu dùng trên một thị trường đa dạng và đại diện.\n

@@ -8,7 +8,4 @@ Về đóng góp thực tiễn, kết quả nghiên cứu được kỳ vọng c
 
 Về định hướng nghề nghiệp, bằng tiến sĩ là nền tảng để chuyển sang vai trò giảng dạy bậc đại học và sau đại học, đồng thời nâng cao năng lực tư vấn chiến lược về quản lý trải nghiệm khách hàng, lĩnh vực có nhu cầu ngày càng tăng nhưng thiếu chuyên gia có nền tảng học thuật vững tại Việt Nam.
 
-Về đóng góp phát triển ngành, giai đoạn hiện tại của nền kinh tế Việt Nam đang chứng kiến sự dịch chuyển từ cạnh tranh giá sang cạnh tranh giá trị và trải nghiệm. Bằng chứng thực nghiệm về mối quan hệ CSI, hiệu quả doanh nghiệp có thể đóng góp vào cơ sở bằng chứng cần thiết cho sự dịch chuyển này, thay vì chỉ dừng lại ở khuyến nghị định tính.
-
----
-
+Về đóng góp phát triển ngành, giai đoạn hiện tại của nền kinh tế Việt Nam đang chứng kiến sự dịch chuyển từ cạnh tranh giá sang cạnh tranh giá trị và trải nghiệm. Bằng chứng thực nghiệm về mối quan hệ CSI, hiệu quả doanh nghiệp có thể đóng góp vào cơ sở bằng chứng cần thiết cho sự dịch chuyển này, thay vì chỉ dừng lại ở khuyến nghị định tính.\n

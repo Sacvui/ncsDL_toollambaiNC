@@ -271,7 +271,4 @@ Seiders et al. (2005) chỉ ra rằng sự hài lòng chỉ chuyển hóa thành
 
 Vấn đề nội sinh tiềm năng — CSI cao có thể vừa là nguyên nhân lẫn kết quả của hiệu quả cao — được xử lý bằng phương pháp Hồi quy Biến công cụ hai giai đoạn trên dữ liệu bảng (Panel 2SLS) hoặc sử dụng các biến trễ (lagged variables) trong mô hình tác động cố định (FEM) nhằm giải quyết hiện tượng đồng thời (simultaneity) và loại bỏ chệch do biến bị bỏ sót. Quyết định loại bỏ System-GMM do số lượng doanh nghiệp (N=15) giới hạn có thể dẫn đến hiện tượng quá nhiều biến công cụ (instrument proliferation) gây chệch kết quả hồi quy nghiêm trọng trong mẫu nhỏ. Biến công cụ trễ một kỳ của CSI và điểm CSI trung bình của các doanh nghiệp đối thủ cùng phân khúc trong cùng năm được sử dụng làm biến công cụ hợp lệ. Tính hợp lệ của biến công cụ sẽ được kiểm định bằng Hansen J-test để xác nhận tính ngoại sinh của các công cụ.
 
-**Phân tích:** PLS-SEM (SmartPLS 4) để kiểm định mô hình đo lường và mô hình cấu trúc ở cấp cá nhân; bootstrapping 5.000 lần lặp để kiểm định hiệu ứng trung gian. Phân tích đa nhóm (MGA) để kiểm định H10a và H10b. Panel Data analysis (FEM/REM kết hợp kiểm định Hausman và hồi quy biến công cụ 2SLS) với dữ liệu bảng cấp thương hiệu — năm cho phần kiểm định tác động CSI đến Firm Performance.
-
----
-
+**Phân tích:** PLS-SEM (SmartPLS 4) để kiểm định mô hình đo lường và mô hình cấu trúc ở cấp cá nhân; bootstrapping 5.000 lần lặp để kiểm định hiệu ứng trung gian. Phân tích đa nhóm (MGA) để kiểm định H10a và H10b. Panel Data analysis (FEM/REM kết hợp kiểm định Hausman và hồi quy biến công cụ 2SLS) với dữ liệu bảng cấp thương hiệu — năm cho phần kiểm định tác động CSI đến Firm Performance.\n
