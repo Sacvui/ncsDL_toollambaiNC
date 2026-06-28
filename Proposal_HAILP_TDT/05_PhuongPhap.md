@@ -2,143 +2,227 @@
 
 ### 5.1. Thiết kế nghiên cứu tổng thể
 
-Nghiên cứu sử dụng **phương pháp hỗn hợp tuần tự (Sequential Mixed-Method Design)** theo tiến trình: Khám phá (Qualitative) → Xây dựng thang đo → Xác nhận (Quantitative). Cách tiếp cận này đảm bảo thang đo CSI được phát triển phù hợp với ngữ cảnh văn hóa và ngành trước khi kiểm định trên diện rộng.
+Nghiên cứu sử dụng **thiết kế đa nghiên cứu (Multi-study Design)** nhằm tăng cường độ tin cậy và giá trị học thuật của nghiên cứu, bao gồm:
 
-**Giai đoạn 1, Nghiên cứu định tính (Qualitative):**
-Thực hiện phỏng vấn sâu bán cấu trúc (semi-structured in-depth interviews) với hai nhóm:
-- 10–15 nhà quản lý cấp trung và cấp cao tại các doanh nghiệp FMCG (Brand Manager, Customer Experience Manager, Sales Director).
+**Study 1 - Khảo sát dọc:**
+Thiết kế khảo sát 2 đợt trên mẫu N = 900 người tiêu dùng FMCG nhằm kiểm định toàn bộ mô hình cấu trúc CSI–CL–eWOM–CBO. Mục đích tách biệt thời điểm đo lường biến độc lập và biến phụ thuộc để kiểm soát chặt chẽ rủi ro phương pháp chung.
+
+- **Wave 1 (T1):** Đo lường thói quen tiêu dùng (HB), chất lượng cảm nhận (PQ), giá trị cảm nhận (PV), và Chỉ số Hài lòng tổng thể (CSI). Đồng thời thu thập Biến đánh dấu không liên quan về mặt lý thuyết.
+- **Wave 2 (T2, cách T1 ba tuần):** Đo lường lòng trung thành thương hiệu (CL), truyền miệng điện tử (eWOM), ý định chi trả giá cao (WTPP), tỷ trọng chi tiêu dự kiến (eSOW), và sự phụ thuộc vào thuật toán đề xuất (ARD).
+
+Khoảng cách 3 tuần giữa hai đợt đủ dài để phá vỡ hiệu ứng nhất quán cảm xúc nhưng đủ ngắn để giảm thiểu tỷ lệ hao hụt mẫu. Dựa trên tỷ lệ phản hồi thận trọng 30-40% trong nghiên cứu hành vi tiêu dùng thực tế, cần phát ra tối thiểu 2.500–3.000 bảng hỏi ở Wave 1 để thu về ít nhất 900 cặp dữ liệu hợp lệ. Nghiên cứu sẽ sử dụng hệ thống incentive (phiếu mua hàng/voucher trị giá 20.000–50.000 VND) và cơ chế nhắc nhở qua SMS/Zalo sau 1 tuần và 2 tuần để tối đa hóa tỷ lệ giữ chân mẫu.
+
+**Kiểm định sự khác biệt nhóm (Non-response Bias Test):** Sau khi thu thập xong Wave 2, thực hiện kiểm định Independent Samples t-test so sánh các đặc điểm nhân khẩu học và điểm trung bình các biến Wave 1 giữa hai nhóm: (1) những người phản hồi cả Wave 2, và (2) những người chỉ phản hồi Wave 1 rồi bỏ cuộc. Nếu không có sự khác biệt có ý nghĩa thống kê (p > 0.05) trên các biến chính, kết luận việc hao hụt mẫu mang tính ngẫu nhiên và không tạo ra thiên lệch hệ thống.
+
+**Study 2 - Thực nghiệm kịch bản:**
+Thiết kế thực nghiệm giữa các nhóm trên mẫu N = 200 người tiêu dùng, chia thành hai nhóm:
+
+- **Nhóm Kiểm soát:** Trải nghiệm kịch bản mua sắm trực tuyến truyền thống, không có gợi ý sản phẩm thay thế từ thuật toán.
+- **Nhóm Xử lý:** Trải nghiệm kịch bản mua sắm trực tuyến có thuật toán AI chủ động gợi ý sản phẩm đối thủ giá rẻ hơn, hiển thị flash sale, và so sánh giá tự động.
+
+Sau khi tiếp xúc với kịch bản, cả hai nhóm được đo lường: (1) tính nhạy cảm về giá như biến trung gian tâm lý giải thích cơ chế tại sao thuật toán làm suy giảm lòng trung thành; (2) lòng trung thành (CL), ý định chi trả giá cao (WTPP), và tỷ trọng chi tiêu (eSOW) như biến kết quả. Study 2 nhằm chứng minh quan hệ nhân quả cho giả thuyết: thuật toán AI gợi ý sản phẩm thay thế làm tăng tính nhạy cảm về giá (PS), thông qua đó làm giảm lòng trung thành và WTPP. Thiết kế Mediation-within-Experiment này bổ khuyết cho Study 1 vốn chỉ xác lập quan hệ tương quan, đồng thời giải thích rõ cơ chế tâm lý trung gian.
+
+**Giai đoạn Định tính bổ trợ:**
+Trước cả hai Study, thực hiện phỏng vấn sâu bán cấu trúc với hai nhóm:
+- 10–15 nhà quản lý cấp trung và cấp cao tại các doanh nghiệp FMCG.
 - 15–20 người tiêu dùng FMCG đại diện theo giới tính, độ tuổi, và khu vực địa lý.
 
 Mục đích: khám phá các chiều kích đặc thù của sự hài lòng và lòng trung thành trong bối cảnh FMCG Việt Nam chưa được mô hình ACSI gốc phản ánh đầy đủ; điều chỉnh và bổ sung thang đo cho phù hợp.
 
-**Giai đoạn 2, Nghiên cứu định lượng (Quantitative):**
-Khảo sát diện rộng bằng bảng hỏi cấu trúc (structured questionnaire), kết hợp phân tích dữ liệu thứ cấp từ báo cáo tài chính doanh nghiệp.
+### 5.2. Mô hình nghiên cứu đề xuất (Study 1)
 
-### 5.2. Mô hình nghiên cứu đề xuất
+Mô hình nghiên cứu được xây dựng theo cấu trúc tích hợp gồm ba tầng, phản ánh hai kênh truyền dẫn song song từ CSI đến hiệu quả hành vi khách hàng.
 
-Mô hình nghiên cứu được xây dựng theo cấu trúc tích hợp gồm ba tầng, phản ánh hai kênh truyền dẫn song song từ CSI đến hiệu quả doanh nghiệp trong bối cảnh mua sắm đa kênh tại Việt Nam.
+Tầng tiền đề gồm ba biến hình thành CSI: thói quen tiêu dùng (đại diện cho sự thân thuộc và hành vi mua lặp lại phi lý trí), chất lượng cảm nhận, và giá trị cảm nhận. Tầng trung gian gồm hai biến song song: lòng trung thành thương hiệu (CL) và truyền miệng điện tử (eWOM). Hai biến trung gian này đại diện cho hai cơ chế chuyển hóa: CL phản ánh sự gắn kết thái độ, trong khi eWOM phản ánh hành vi ủng hộ công khai. Tầng kết quả đo lường Hiệu quả Hành vi Khách hàng (CBO) bao gồm: ý định chi trả giá cao (WTPP) và tỷ trọng chi tiêu dự kiến (eSOW). Biến điều tiết gồm: sự phụ thuộc vào thuật toán đề xuất (ARD) và Tài sản thương hiệu (cảm nhận).
 
-Tầng tiền đề gồm ba biến hình thành CSI: kỳ vọng khách hàng, chất lượng cảm nhận (bao gồm chất lượng sản phẩm và chất lượng dịch vụ kèm theo), và giá trị cảm nhận (tương quan chất lượng trên giá). Tầng trung gian gồm hai biến song song: lòng trung thành thương hiệu (Customer Loyalty - CL), phản ánh hành vi tái mua và gắn kết thương hiệu dài hạn, và truyền miệng điện tử (eWOM), phản ánh hành vi chia sẻ đánh giá tích cực trên các nền tảng số. Hai biến trung gian này đại diện cho hai cơ chế chuyển hóa khác nhau: CL tác động chủ yếu đến hiệu quả tài chính qua ổn định dòng tiền từ khách hàng trung thành, trong khi eWOM tác động chủ yếu đến hiệu quả phi tài chính qua mở rộng tập khách hàng mới và cải thiện chỉ số đánh giá trực tuyến. Tầng kết quả gồm hiệu quả tài chính (ROA, ROE, tốc độ tăng trưởng doanh thu) và hiệu quả phi tài chính (thị phần, online rating tổng hợp). Biến điều tiết là kênh mua sắm (offline vs. online) và quy mô doanh nghiệp.
-
-#### Sơ đồ mô hình nghiên cứu tích hợp
+#### Sơ đồ mô hình nghiên cứu tích hợp (Hình 1 - Study 1)
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" font-family="Arial,sans-serif" font-size="12">
   <rect width="920" height="480" fill="#fff"/>
   <text x="60" y="20" font-size="11" font-weight="bold" text-anchor="middle">TIỀN ĐỀ</text>
-  <text x="300" y="20" font-size="11" font-weight="bold" text-anchor="middle">BIẾN PHỤ THUỘC</text>
+  <text x="300" y="20" font-size="11" font-weight="bold" text-anchor="middle">NÚT TRUNG TÂM</text>
   <text x="530" y="20" font-size="11" font-weight="bold" text-anchor="middle">TRUNG GIAN</text>
-  <text x="770" y="20" font-size="11" font-weight="bold" text-anchor="middle">KẾT QUẢ</text>
-  <rect x="10" y="30" width="100" height="40" rx="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
-  <text x="60" y="47" text-anchor="middle" font-weight="bold">CE</text>
-  <text x="60" y="61" text-anchor="middle" font-size="10">Kỳ vọng KH</text>
-  <rect x="10" y="202" width="100" height="40" rx="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
-  <text x="60" y="219" text-anchor="middle" font-weight="bold">PQ</text>
-  <text x="60" y="233" text-anchor="middle" font-size="10">Chất lượng CN</text>
-  <rect x="10" y="374" width="100" height="40" rx="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
-  <text x="60" y="391" text-anchor="middle" font-weight="bold">PV</text>
-  <text x="60" y="405" text-anchor="middle" font-size="10">Giá trị CN</text>
-  <rect x="240" y="195" width="120" height="54" rx="3" fill="#f2f2f2" stroke="#000" stroke-width="2"/>
+  <text x="770" y="20" font-size="11" font-weight="bold" text-anchor="middle">KẾT QUẢ CẤP KHÁCH HÀNG</text>
+  <!-- Latent constructs = ELLIPSES (SEM convention) -->
+  <ellipse cx="60" cy="55" rx="55" ry="22" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="60" y="51" text-anchor="middle" font-weight="bold">HB</text>
+  <text x="60" y="65" text-anchor="middle" font-size="9">Thói quen TD</text>
+  <ellipse cx="60" cy="222" rx="55" ry="22" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="60" y="218" text-anchor="middle" font-weight="bold">PQ</text>
+  <text x="60" y="232" text-anchor="middle" font-size="9">Chất lượng CN</text>
+  <ellipse cx="60" cy="394" rx="55" ry="22" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="60" y="390" text-anchor="middle" font-weight="bold">PV</text>
+  <text x="60" y="404" text-anchor="middle" font-size="9">Giá trị CN</text>
+  <ellipse cx="300" cy="222" rx="65" ry="30" fill="#f2f2f2" stroke="#000" stroke-width="2"/>
   <text x="300" y="218" text-anchor="middle" font-weight="bold" font-size="14">CSI</text>
-  <text x="300" y="236" text-anchor="middle" font-size="10">Chỉ số Hài lòng</text>
-  <text x="300" y="248" text-anchor="middle" font-size="10">Khách hàng</text>
-  <rect x="470" y="110" width="120" height="50" rx="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="300" y="236" text-anchor="middle" font-size="9">Chỉ số Hài lòng KH</text>
+  <ellipse cx="530" cy="135" rx="60" ry="26" fill="#fff" stroke="#000" stroke-width="1.5"/>
   <text x="530" y="131" text-anchor="middle" font-weight="bold">CL</text>
-  <text x="530" y="145" text-anchor="middle" font-size="10">Lòng trung thành</text>
-  <text x="530" y="157" text-anchor="middle" font-size="10">thương hiệu</text>
-  <rect x="470" y="300" width="120" height="50" rx="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="530" y="147" text-anchor="middle" font-size="9">Lòng trung thành TH</text>
+  <ellipse cx="530" cy="325" rx="60" ry="26" fill="#fff" stroke="#000" stroke-width="1.5"/>
   <text x="530" y="321" text-anchor="middle" font-weight="bold">eWOM</text>
-  <text x="530" y="335" text-anchor="middle" font-size="10">Truyền miệng</text>
-  <text x="530" y="347" text-anchor="middle" font-size="10">điện tử</text>
-  <rect x="700" y="110" width="140" height="50" rx="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
-  <text x="770" y="131" text-anchor="middle" font-weight="bold">FP1</text>
-  <text x="770" y="145" text-anchor="middle" font-size="10">Hiệu quả tài chính</text>
-  <text x="770" y="157" text-anchor="middle" font-size="10">ROA · ROE · Revenue</text>
-  <rect x="700" y="300" width="140" height="50" rx="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
-  <text x="770" y="321" text-anchor="middle" font-weight="bold">FP2</text>
-  <text x="770" y="335" text-anchor="middle" font-size="10">Hiệu quả phi TC</text>
-  <text x="770" y="347" text-anchor="middle" font-size="10">Thị phần · Online Rating</text>
-  <line x1="110" y1="50" x2="238" y2="210" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="155" y="115" font-size="10" font-weight="bold">H1</text>
-  <line x1="110" y1="222" x2="238" y2="222" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="140" y="215" font-size="10" font-weight="bold">H2</text>
-  <line x1="110" y1="394" x2="238" y2="238" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="148" y="338" font-size="10" font-weight="bold">H3</text>
-  <line x1="360" y1="208" x2="468" y2="145" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="387" y="165" font-size="10" font-weight="bold">H4</text>
-  <line x1="360" y1="235" x2="468" y2="318" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="387" y="290" font-size="10" font-weight="bold">H5</text>
-  <line x1="590" y1="135" x2="698" y2="135" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="620" y="126" font-size="10" font-weight="bold">H6</text>
-  <line x1="590" y1="155" x2="698" y2="308" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="615" y="248" font-size="10" font-weight="bold">H7</text>
-  <line x1="590" y1="312" x2="698" y2="152" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="628" y="225" font-size="10" font-weight="bold">H8</text>
+  <text x="530" y="337" text-anchor="middle" font-size="9">Truyền miệng ĐT</text>
+  <ellipse cx="770" cy="135" rx="72" ry="26" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="770" y="128" text-anchor="middle" font-weight="bold" font-size="11">CBO1</text>
+  <text x="770" y="145" text-anchor="middle" font-size="9">WTPP</text>
+  <ellipse cx="770" cy="325" rx="72" ry="26" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="770" y="318" text-anchor="middle" font-weight="bold" font-size="11">CBO2</text>
+  <text x="770" y="335" text-anchor="middle" font-size="9">eSOW (Freq. Alloc.)</text>
+  <!-- H1-H3: Antecedents to CSI -->
+  <line x1="115" y1="55" x2="235" y2="210" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="145" y="105" font-size="10" font-weight="bold">H1</text>
+  <line x1="115" y1="222" x2="235" y2="222" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="155" y="200" font-size="10" font-weight="bold">H2</text>
+  <line x1="115" y1="394" x2="235" y2="238" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="145" y="325" font-size="10" font-weight="bold">H3</text>
+  <!-- H4-H5: CSI to Mediators -->
+  <line x1="365" y1="208" x2="470" y2="140" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="390" y="155" font-size="10" font-weight="bold">H4</text>
+  <line x1="365" y1="236" x2="470" y2="320" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="390" y="280" font-size="10" font-weight="bold">H5</text>
+  <!-- H6-H9: Mediators to CBOs -->
+  <line x1="590" y1="130" x2="698" y2="130" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="630" y="115" font-size="10" font-weight="bold">H6</text>
+  <line x1="590" y1="145" x2="698" y2="315" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="575" y="185" font-size="10" font-weight="bold">H7</text>
+  <line x1="590" y1="315" x2="698" y2="145" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="575" y="240" font-size="10" font-weight="bold">H8</text>
   <line x1="590" y1="325" x2="698" y2="325" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="620" y="316" font-size="10" font-weight="bold">H9</text>
-  <rect x="185" y="430" width="140" height="38" rx="3" fill="#fafafa" stroke="#777" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="255" y="446" text-anchor="middle" font-size="10" font-weight="bold">W2: Quy mô DN</text>
-  <text x="255" y="460" text-anchor="middle" font-size="9" fill="#555">Nhỏ / Vừa / Lớn</text>
-  <rect x="370" y="430" width="160" height="38" rx="3" fill="#fafafa" stroke="#777" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="450" y="446" text-anchor="middle" font-size="10" font-weight="bold">W1: Kênh mua sắm</text>
-  <text x="450" y="460" text-anchor="middle" font-size="9" fill="#555">Offline / Online</text>
-  <rect x="560" y="430" width="180" height="38" rx="3" fill="#fafafa" stroke="#777" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="650" y="446" text-anchor="middle" font-size="10" font-weight="bold">CV: Biến kiểm soát</text>
-  <text x="650" y="460" text-anchor="middle" font-size="9" fill="#555">Tuổi DN · Đòn bẩy · HHI</text>
-  <line x1="450" y1="430" x2="530" y2="352" stroke="#777" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ag)"/>
-  <text x="490" y="402" font-size="9" fill="#555">H10a</text>
-  <line x1="430" y1="430" x2="515" y2="162" stroke="#777" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ag)"/>
-  <text x="435" y="385" font-size="9" fill="#555">H10b</text>
-  <line x1="255" y1="430" x2="490" y2="162" stroke="#777" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ag)"/>
-  <text x="285" y="388" font-size="9" fill="#555">H11</text>
-  <line x1="650" y1="430" x2="740" y2="162" stroke="#777" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ag)"/>
+  <text x="630" y="310" font-size="10" font-weight="bold">H9</text>
+  <!-- Moderator boxes (observed/categorical = rectangles with dashed) -->
+  <rect x="250" y="420" width="160" height="38" rx="3" fill="#fafafa" stroke="#777" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="330" y="436" text-anchor="middle" font-size="10" font-weight="bold">W1: ARD</text>
+  <text x="330" y="451" text-anchor="middle" font-size="9" fill="#555">Phụ thuộc Thuật toán</text>
+  <!-- Moderator 2 (Brand Size) moved to the TOP for clean straight lines (adjusted down to clear headers) -->
+  <rect x="340" y="45" width="160" height="38" rx="3" fill="#fafafa" stroke="#777" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="420" y="61" text-anchor="middle" font-size="10" font-weight="bold">BE: Tài sản TH</text>
+  <text x="420" y="76" text-anchor="middle" font-size="9" fill="#555">Thấp / Vừa / Cao</text>
+  
+  <!-- Moderation arrows pointing to PATHS (perpendicular to path midpoints) -->
+  <!-- H10a: ARD moderates CSI->eWOM path. Midpoint of CSI->eWOM path is ~(415, 278) -->
+  <line x1="330" y1="420" x2="415" y2="290" stroke="#777" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ag)"/>
+  <text x="355" y="355" font-size="9" fill="#555">H10a</text>
+  <!-- H10b: ARD moderates CSI->CL path. Midpoint of CSI->CL path is ~(415, 174) -->
+  <line x1="330" y1="420" x2="415" y2="185" stroke="#777" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ag)"/>
+  <text x="355" y="305" font-size="9" fill="#555">H10b</text>
+  
+  <!-- H11: Brand Size moderates CSI->CL path. Points straight down from top -->
+  <line x1="420" y1="83" x2="415" y2="174" stroke="#777" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ag)"/>
+  <text x="428" y="105" font-size="9" fill="#555">H11</text>
+  
+  <!-- Small circle on path midpoints to indicate moderation interaction point -->
+  <circle cx="415" cy="174" r="4" fill="#777" opacity="0.6"/>
+  <circle cx="415" cy="185" r="4" fill="#777" opacity="0.6"/>
+  <circle cx="415" cy="290" r="4" fill="#777" opacity="0.6"/>
   <defs>
     <marker id="a" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#000"/></marker>
     <marker id="ag" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#777"/></marker>
   </defs>
 </svg>
 
-*Hình 1. Mô hình nghiên cứu tích hợp CSI–CL–eWOM–Firm Performance, ngành FMCG Việt Nam.*
+*Hình 1. Mô hình cấu trúc tuyến tính CSI–CL–eWOM và Hiệu quả Hành vi Khách hàng (Study 1).*
 *(Nguồn: Tác giả đề xuất, 2026)*
 
 **Chú giải:**
+- Hình Elip: biến tiềm ẩn đo lường bằng nhiều items
+- Hình chữ nhật đứt nét: biến điều tiết (quan sát trực tiếp hoặc phân loại)
 - Mũi tên liền đen: tác động nhân quả trực tiếp (H1-H9)
-- Mũi tên đứt xám: tác động điều tiết (H10a, H10b, H11)
-- H10a: kênh trực tuyến điều tiết mối quan hệ CSI - truyền miệng điện tử
-- H10b: kênh trực tuyến điều tiết mối quan hệ CSI - lòng trung thành thương hiệu
-- H11: quy mô doanh nghiệp điều tiết mối quan hệ CSI - lòng trung thành thương hiệu
-- CV: biến kiểm soát cấp doanh nghiệp trong mô hình hồi quy dữ liệu bảng
+- Mũi tên đứt xám trỏ vuông góc vào đường dẫn (có chấm tròn): tác động điều tiết (H10a, H10b, H11) - biến điều tiết tác động lên **mối quan hệ** giữa hai biến, không phải lên chính biến đó
+- H10a: ARD điều tiết đường dẫn CSI -> eWOM
+- H10b: ARD điều tiết đường dẫn CSI -> CL
+- H11: Tài sản thương hiệu điều tiết đường dẫn CSI -> CL
 
-#### Bảng tổng hợp biến và thang đo
+#### Sơ đồ mô hình thực nghiệm (Hình 2 - Study 2)
 
-| Ký hiệu | Tên biến | Vai trò | Biến quan sát | Nguồn thang đo |
-|---------|----------|---------|--------------|----------------|
-| CE | Kỳ vọng khách hàng | Tiền đề CSI | 3 nhân tố quan sát | Fornell et al. (1996); Johnson et al. (2001) |
-| PQ | Chất lượng cảm nhận | Tiền đề CSI | 4 nhân tố quan sát | Fornell et al. (1996); Zeithaml et al. (1996) |
-| PV | Giá trị cảm nhận | Tiền đề CSI | 3 nhân tố quan sát | Fornell et al. (1996) |
-| CSI | Chỉ số hài lòng tổng thể | Biến phụ thuộc (cấp 1) | 3 nhân tố quan sát | ACSI model; Oliver (1980) |
-| CL | Lòng trung thành thương hiệu | Biến trung gian (song song) | 4 nhân tố quan sát | Zeithaml et al. (1996); Dawes et al. (2015) |
-| eWOM | Truyền miệng điện tử | Biến trung gian (song song) | 4 nhân tố quan sát | Hennig-Thurau et al. (2004); Mithas et al. (2005) |
-| FP1 | Hiệu quả tài chính (ROA, ROE, Revenue Growth) | Biến kết quả | Dữ liệu thứ cấp | FiinPro; Vietstock |
-| FP2 | Hiệu quả phi tài chính (thị phần, online rating) | Biến kết quả | Thứ cấp + 2 nhân tố quan sát | Euromonitor; Nielsen; Google/Shopee ratings |
-| W1 | Kênh mua sắm | Biến điều tiết | Phân loại (offline/online) | Tự khai báo trong khảo sát |
-| W2 | Quy mô doanh nghiệp | Biến điều tiết | Phân loại (nhỏ/vừa/lớn) | Nghị định 80/2021/ND-CP |
-| CV | Biến kiểm soát | Kiểm soát nội sinh | Dữ liệu thứ cấp | FiinPro; Vietstock |
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" width="100%" font-family="Arial,sans-serif" font-size="12">
+  <rect width="780" height="360" fill="#fff"/>
+  <text x="390" y="20" font-size="13" font-weight="bold" text-anchor="middle">MÔ HÌNH THỰC NGHIỆM KỊCH BẢN (Study 2)</text>
+  <!-- Manipulation variable (rectangle = observed) -->
+  <rect x="30" y="120" width="170" height="55" rx="5" fill="#e8f4fd" stroke="#2196F3" stroke-width="2"/>
+  <text x="115" y="142" text-anchor="middle" font-weight="bold" font-size="11" fill="#1565C0">BIẾN THAO TÁC</text>
+  <text x="115" y="158" text-anchor="middle" font-size="10">Giao diện có AI gợi ý</text>
+  <text x="115" y="172" text-anchor="middle" font-size="9" fill="#555">vs. Không có AI</text>
+  <!-- Mediator (ellipse = latent) -->
+  <ellipse cx="370" cy="148" rx="85" ry="30" fill="#fff3e0" stroke="#FF9800" stroke-width="1.8"/>
+  <text x="370" y="142" text-anchor="middle" font-weight="bold" font-size="11" fill="#E65100">PS</text>
+  <text x="370" y="158" text-anchor="middle" font-size="9">Tính nhạy cảm về Giá</text>
+  <text x="370" y="170" text-anchor="middle" font-size="8" fill="#888">(Price Sensitivity)</text>
+  <!-- DVs (ellipses = latent) -->
+  <ellipse cx="640" cy="80" rx="65" ry="22" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="640" y="76" text-anchor="middle" font-weight="bold">CL</text>
+  <text x="640" y="92" text-anchor="middle" font-size="9">Lòng trung thành</text>
+  <ellipse cx="640" cy="150" rx="65" ry="22" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="640" y="146" text-anchor="middle" font-weight="bold">WTPP</text>
+  <text x="640" y="162" text-anchor="middle" font-size="9">Ý định trả giá cao</text>
+  <ellipse cx="640" cy="220" rx="65" ry="22" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="640" y="216" text-anchor="middle" font-weight="bold">eSOW</text>
+  <text x="640" y="232" text-anchor="middle" font-size="9">Tỷ trọng chi tiêu</text>
+  <!-- Arrows: Manipulation -> Mediator -->
+  <line x1="200" y1="148" x2="285" y2="148" stroke="#2196F3" stroke-width="2" marker-end="url(#ab)"/>
+  <text x="240" y="140" font-size="10" fill="#1565C0" font-weight="bold">a</text>
+  <!-- Arrows: Mediator -> DVs -->
+  <line x1="455" y1="132" x2="575" y2="85" stroke="#FF9800" stroke-width="1.5" marker-end="url(#ao)"/>
+  <text x="510" y="100" font-size="10" fill="#E65100" font-weight="bold">b1</text>
+  <line x1="455" y1="148" x2="575" y2="148" stroke="#FF9800" stroke-width="1.5" marker-end="url(#ao)"/>
+  <text x="510" y="140" font-size="10" fill="#E65100" font-weight="bold">b2</text>
+  <line x1="455" y1="163" x2="575" y2="215" stroke="#FF9800" stroke-width="1.5" marker-end="url(#ao)"/>
+  <text x="510" y="200" font-size="10" fill="#E65100" font-weight="bold">b3</text>
+  <!-- Direct effect (Manipulation -> DVs, dashed = controlled for mediator) -->
+  <line x1="200" y1="130" x2="575" y2="80" stroke="#999" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#ag2)"/>
+  <text x="380" y="90" font-size="9" fill="#999">c' (trực tiếp)</text>
+  <!-- Control variables -->
+  <rect x="30" y="280" width="140" height="55" rx="3" fill="#fafafa" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="100" y="298" text-anchor="middle" font-size="10" font-weight="bold" fill="#666">BIẾN KIỂM SOÁT</text>
+  <text x="100" y="312" text-anchor="middle" font-size="9" fill="#888">Giới tính</text>
+  <text x="100" y="324" text-anchor="middle" font-size="9" fill="#888">Độ tuổi | Tần suất online</text>
+  <line x1="170" y1="300" x2="575" y2="88" stroke="#ccc" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#ag2)"/>
+  <line x1="170" y1="310" x2="575" y2="155" stroke="#ccc" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#ag2)"/>
+  <line x1="170" y1="320" x2="575" y2="222" stroke="#ccc" stroke-width="0.8" stroke-dasharray="3,3" marker-end="url(#ag2)"/>
+  <defs>
+    <marker id="ab" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#2196F3"/></marker>
+    <marker id="ao" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#FF9800"/></marker>
+    <marker id="ag2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#ccc"/></marker>
+  </defs>
+</svg>
 
-**Tổng: 9 construct, 21 nhân tố quan sát**
+*Hình 2. Mô hình thực nghiệm kịch bản với biến trung gian tâm lý (Study 2).*
+*(Nguồn: Tác giả đề xuất, 2026)*
 
-**Biến kiểm soát cấp doanh nghiệp (đưa vào mô hình hồi quy dữ liệu bảng):** tuổi doanh nghiệp (số năm hoạt động), đòn bẩy tài chính (tổng nợ/tổng tài sản), logarit tổng tài sản, tốc độ tăng trưởng doanh thu ngành, chỉ số tập trung thị trường Herfindahl-Hirschman.
+**Chú giải Hình 2:**
+- Đường a: Tác động của thuật toán AI lên tính nhạy cảm về giá (PS)
+- Đường b1, b2, b3: Tác động trung gian của Price Sensitivity lên CL, WTPP, eSOW
+- Đường c' (đứt nét): Tác động trực tiếp còn lại sau khi kiểm soát trung gian
+- Đường mờ nhạt: Tác động kiểm soát của biến nhân khẩu học
+
+#### Bảng tổng hợp biến và thang đo (Study 1)
+
+| Ký hiệu | Tên biến | Vai trò | Biến quan sát | Nguồn thang đo | Đợt |
+|---------|----------|---------|--------------|----------------|-----|
+| HB | thói quen tiêu dùng | Tiền đề CSI | 3 items (Likert 5) | Verplanken & Orbell (2003); Khare & Inman (2006) | Wave 1 |
+| PQ | chất lượng cảm nhận | Tiền đề CSI | 4 items (Likert 5) | Fornell et al. (1996); Zeithaml et al. (1996) | Wave 1 |
+| PV | giá trị cảm nhận | Tiền đề CSI | 3 items (Likert 5) | Fornell et al. (1996) | Wave 1 |
+| CSI | Chỉ số hài lòng tổng thể | Biến phụ thuộc (cấp 1) | 3 items (Likert 5) | ACSI model; Oliver (1980) | Wave 1 |
+| MV | Biến đánh dấu | Kiểm soát CMB | 2 items (Likert 5) | Lindell & Whitney (2001) | Wave 1 |
+| CL | lòng trung thành thương hiệu | Biến trung gian | 4 items (Likert 5) | Zeithaml et al. (1996); Dawes et al. (2015) | Wave 2 |
+| eWOM | Truyền miệng điện tử | Biến trung gian | 4 items (Likert 5) | Hennig-Thurau et al. (2004) | Wave 2 |
+| CBO1 | ý định chi trả giá cao (WTPP) | Biến kết quả | 3 items (Likert 5) | Homburg et al. (2005) | Wave 2 |
+| CBO2 | tỷ trọng chi tiêu dự kiến (eSOW) | Biến kết quả | Frequency Allocation (/10) | Keiningham et al. (2007), điều chỉnh | Wave 2 |
+| ARD | sự phụ thuộc vào thuật toán đề xuất | Biến điều tiết | 4 items (Likert 5) | Tự phát triển (dựa trên định tính) | Wave 2 |
+| BE | Tài sản thương hiệu | Biến điều tiết | Phân loại (thấp/vừa/cao) | Tự khai báo (cảm nhận tài sản) | Wave 2 |
+
+**Tổng Study 1: 10 construct, 30+ items (chưa kể câu hỏi nhân khẩu học)**
 
 #### Bảng chi tiết nhân tố quan sát theo từng construct
 
-**CE: Kỳ vọng khách hàng** *(3 nhân tố quan sát, kế thừa Fornell et al., 1996; Johnson et al., 2001)*
+**HB: Thói quen tiêu dùng** *(3 items, kế thừa Verplanken & Orbell, 2003)* — Wave 1
 
 | Mã | Nội dung nhân tố quan sát |
 |---|---|
-| CE1 | Trước khi mua, tôi kỳ vọng sản phẩm [TH] có chất lượng tổng thể ở mức cao. |
-| CE2 | Tôi kỳ vọng sản phẩm [TH] đáp ứng tốt nhu cầu sử dụng cá nhân của tôi. |
-| CE3 | Tôi kỳ vọng sản phẩm [TH] ít gặp vấn đề sau khi mua và sử dụng. |
+| HB1 | Tôi mua sản phẩm [TH] một cách tự động mà không cần suy nghĩ nhiều. |
+| HB2 | Việc chọn mua [TH] là một phần tự nhiên trong thói quen mua sắm của tôi. |
+| HB3 | Tôi cảm thấy quen thuộc và an tâm khi chọn [TH] thay vì tìm hiểu sản phẩm mới. |
 
-**PQ: Chất lượng cảm nhận** *(4 nhân tố quan sát, kế thừa Fornell et al., 1996; Zeithaml et al., 1996)*
+**PQ: Chất lượng cảm nhận** *(4 items, kế thừa Fornell et al., 1996; Zeithaml et al., 1996)* — Wave 1
 
 | Mã | Nội dung nhân tố quan sát |
 |---|---|
@@ -147,7 +231,7 @@ Tầng tiền đề gồm ba biến hình thành CSI: kỳ vọng khách hàng, 
 | PQ3 | Sản phẩm [TH] đáp ứng đúng với những gì được công bố hoặc quảng cáo. |
 | PQ4 | Dịch vụ hỗ trợ và sau mua của [TH] đáp ứng tốt nhu cầu của tôi. |
 
-**PV: Giá trị cảm nhận** *(3 nhân tố quan sát, kế thừa Fornell et al., 1996)*
+**PV: Giá trị cảm nhận** *(3 items, kế thừa Fornell et al., 1996)* — Wave 1
 
 | Mã | Nội dung nhân tố quan sát |
 |---|---|
@@ -155,120 +239,142 @@ Tầng tiền đề gồm ba biến hình thành CSI: kỳ vọng khách hàng, 
 | PV2 | Với mức giá hiện tại, [TH] mang lại giá trị tốt hơn so với các thương hiệu khác. |
 | PV3 | Tôi cảm thấy chi phí bỏ ra để mua [TH] là hợp lý. |
 
-**CSI: Chỉ số hài lòng tổng thể** *(3 nhân tố quan sát, kế thừa ACSI; Oliver, 1980)*
+**CSI: Chỉ số hài lòng tổng thể** *(3 items, kế thừa ACSI; Oliver, 1980)* — Wave 1
 
 | Mã | Nội dung nhân tố quan sát |
 |---|---|
 | CSI1 | Nhìn chung, tôi hài lòng với sản phẩm [TH]. |
-| CSI2 | [TH] đáp ứng kỳ vọng của tôi tốt hơn so với mong đợi ban đầu. |
+| CSI2 | [TH] mang lại trải nghiệm tích cực trong quá trình sử dụng. |
 | CSI3 | Nếu hình dung sản phẩm FMCG lý tưởng, [TH] gần với hình ảnh đó đến mức nào? |
 
-**CL: Lòng trung thành thương hiệu** *(4 nhân tố quan sát, kế thừa Zeithaml et al., 1996; Dawes et al., 2015)*
+**MV: Biến đánh dấu** *(2 items, không liên quan lý thuyết)* — Wave 1
+
+| Mã | Nội dung nhân tố quan sát |
+|---|---|
+| MV1 | Tôi thích đọc tin tức về thời tiết mỗi ngày. |
+| MV2 | Tôi thường xuyên theo dõi các giải thể thao trực tiếp. |
+
+*Ghi chú: Hai câu hỏi trên không có tương quan lý thuyết đến hành vi mua sắm FMCG, được đặt xen giữa các thang đo để phục vụ kỹ thuật kiểm soát CMB theo phương pháp Lindell & Whitney (2001).*
+
+**CL: Lòng trung thành thương hiệu** *(4 items, kế thừa Zeithaml et al., 1996; Dawes et al., 2015)* — Wave 2
 
 | Mã | Nội dung nhân tố quan sát |
 |---|---|
 | CL1 | Tôi có ý định tiếp tục mua sản phẩm [TH] trong tương lai. |
 | CL2 | [TH] là lựa chọn đầu tiên của tôi khi mua sản phẩm trong danh mục này. |
-| CL3 | Tôi sẽ tiếp tục mua [TH] dù giá có tăng nhẹ. |
-| CL4 | Tôi giới thiệu [TH] cho người thân hoặc bạn bè khi họ hỏi ý kiến. |
+| CL3 | Tôi cảm thấy gắn kết thực sự với [TH]. |
+| CL4 | Tôi ưu tiên [TH] ngay cả khi có sản phẩm khuyến mãi từ thương hiệu khác. |
 
-**eWOM: Truyền miệng điện tử** *(4 nhân tố quan sát, kế thừa Hennig-Thurau et al., 2004; Mithas et al., 2005)*
+**eWOM: Truyền miệng điện tử** *(4 items, kế thừa Hennig-Thurau et al., 2004)* — Wave 2
 
 | Mã | Nội dung nhân tố quan sát |
 |---|---|
-| eWOM1 | Tôi đã hoặc sẽ viết đánh giá tích cực về [TH] trên các nền tảng trực tuyến (Shopee, Google, TikTok...). |
+| eWOM1 | Tôi đã hoặc sẽ viết đánh giá tích cực về [TH] trên các nền tảng trực tuyến. |
 | eWOM2 | Tôi chia sẻ thông tin về [TH] với người khác qua mạng xã hội hoặc nhóm chat. |
-| eWOM3 | Khi ai đó hỏi về sản phẩm tương tự, tôi sẽ giới thiệu [TH] trên các diễn đàn hoặc nhóm trực tuyến. |
-| eWOM4 | Tôi cho rằng đánh giá tích cực của mình về [TH] có thể giúp ích cho quyết định mua của người khác. |
+| eWOM3 | Khi ai đó hỏi về sản phẩm tương tự, tôi sẽ giới thiệu [TH] trên không gian mạng. |
+| eWOM4 | Tôi chủ động bảo vệ [TH] khi đọc được những bình luận tiêu cực trực tuyến. |
 
-**Phần G - Thông tin phân loại (Đặc điểm nhân khẩu học và phân loại mẫu)**
+**CBO1: Ý định chi trả giá cao (WTPP)** *(3 items, kế thừa Homburg et al., 2005)* — Wave 2
+
+| Mã | Nội dung nhân tố quan sát |
+|---|---|
+| WTPP1 | Tôi sẵn sàng trả giá cao hơn một chút cho [TH] so với các sản phẩm cạnh tranh. |
+| WTPP2 | Tôi vẫn tiếp tục mua [TH] ngay cả khi giá của nó tăng nhẹ (ví dụ: tăng 5-10%). |
+| WTPP3 | Việc mua [TH] xứng đáng với một mức giá premium (phụ phí) vì sự an tâm nó mang lại. |
+
+**CBO2: Tỷ trọng chi tiêu dự kiến (eSOW)** *(Thang đo phân bổ tần suất - Frequency Allocation Scale, điều chỉnh từ Keiningham et al., 2007)* — Wave 2
+
+| Mã | Nội dung câu hỏi |
+|---|---|
+| eSOW1 | Giả sử trong **10 lần mua** sản phẩm [danh mục] tiếp theo, bạn dự kiến sẽ mua [TH] bao nhiêu lần? *(Ghi số từ 0-10)* |
+| eSOW2 | Ước tính trong 6 tháng tới, phần trăm tổng chi tiêu của bạn dành cho [TH] (share of category spending) so với toàn bộ ngành hàng sẽ rơi vào khoảng nào? *(1: Dưới 20%, 2: 20-40%, 3: 40-60%, 4: 60-80%, 5: Trên 80%)* |
+
+*Ghi chú: eSOW được đo lường kết hợp 2 phương pháp để tăng độ tin cậy: eSOW1 dùng Phân bổ tần suất (dễ mường tượng cho hàng FMCG mua lặp lại), và eSOW2 dùng Tự báo cáo % chi tiêu theo khoảng (Share of category spending) để làm biến phụ trợ đối chiếu chéo.*
+
+**ARD: Sự phụ thuộc vào thuật toán đề xuất** *(4 items, tự phát triển dựa trên nghiên cứu định tính)* — Wave 2
+
+| Mã | Nội dung nhân tố quan sát |
+|---|---|
+| ARD1 | Khi mua sắm online, tôi thường xuyên nhấp vào các sản phẩm do thuật toán gợi ý ("Bạn có thể thích", "Sản phẩm tương tự"). |
+| ARD2 | Tôi dễ bị thu hút bởi các chương trình flash sale hoặc mã giảm giá xuất hiện đột ngột trên sàn thương mại điện tử. |
+| ARD3 | Khi thấy một sản phẩm thay thế được gợi ý với giá rẻ hơn, tôi thường cân nhắc chuyển đổi thương hiệu. |
+| ARD4 | Các đề xuất cá nhân hóa của ứng dụng mua sắm (Shopee, TikTok Shop, Lazada) ảnh hưởng đáng kể đến quyết định mua hàng của tôi. |
+
+*Ghi chú: Thang đo ARD được phát triển mới theo quy trình chuẩn (DeVellis & Thorpe, 2022): (1) Tạo item pool từ phỏng vấn định tính, (2) Đánh giá nội dung bởi panel chuyên gia, (3) Kiểm định sơ bộ qua Pilot Study (n=80), (4) Tinh chỉnh và xác nhận trong Study 1. Để đảm bảo giá trị mạng lưới khái niệm, kiểm tra rằng ARD có tương quan dương có ý nghĩa thống kê với thời gian sử dụng smartphone hàng ngày (r > 0.3, p < 0.01) và tương quan âm với độ tuổi (người trẻ phụ thuộc thuật toán nhiều hơn). Nếu các tương quan này không đạt, thang đo sẽ được điều chỉnh lại trước khi đưa vào khảo sát chính thức.*
+
+**Phần G - Thông tin phân loại** — Wave 1
 
 | Mã | Nội dung câu hỏi | Phương án trả lời |
 |---|---|---|
-| G1 | Kênh mua sắm chủ yếu của bạn đối với [TH] là gì? | Offline / Online / Cả hai |
-| G2 | Tần suất mua [TH] trong 6 tháng qua | Ít hơn 1 lần/tháng / 1–3 lần/tháng / Hơn 3 lần/tháng |
-| G3 | Giới tính | Nam / Nữ / Khác |
-| G4 | Độ tuổi | 18–24 / 25–34 / 35–44 / 45–54 / 55+ |
-| G5 | Khu vực sinh sống | TP.HCM / Hà Nội / Đà Nẵng / Cần Thơ / Bình Dương / Khác |
-
-*Ghi chú: Toàn bộ nhân tố quan sát (từ phần A đến phần F) sử dụng thang đo Likert 5 điểm (1 = Hoàn toàn không đồng ý; 5 = Hoàn toàn đồng ý). Nội dung cụ thể sẽ được điều chỉnh lần cuối sau giai đoạn phỏng vấn sâu định tính và nghiên cứu thử nghiệm (pilot study, n = 50–80).*
+| G1 | Tần suất mua [TH] trong 6 tháng qua | Ít hơn 1 lần/tháng / 1–3 lần/tháng / Hơn 3 lần/tháng |
+| G2 | Giới tính | Nam / Nữ / Khác |
+| G3 | Độ tuổi | 18–24 / 25–34 / 35–44 / 45–54 / 55+ |
+| G4 | Khu vực sinh sống | TP.HCM / Hà Nội / Đà Nẵng / Cần Thơ / Bình Dương / Khác |
+| G5 | Thời gian sử dụng smartphone trung bình hàng ngày | Dưới 2 giờ / 2-4 giờ / 4-6 giờ / Trên 6 giờ |
 
 #### Hệ thống giả thuyết nghiên cứu
 
-Mười một giả thuyết được phát triển theo ba tuyến nhân quả:
+Mười một giả thuyết được phát triển theo ba tuyến nhân quả, loại bỏ các liên kết vĩ mô để đảm bảo tính nhất quán của cấp độ phân tích:
 
-* **Tuyến 1 - Hình thành CSI (H1–H3):** Kỳ vọng (H1), chất lượng cảm nhận (H2) và giá trị cảm nhận (H3) đều tác động dương đến CSI. Chất lượng cảm nhận được kỳ vọng có trọng số cao nhất do đặc thù FMCG tần suất mua cao, nơi trải nghiệm thực tế tích lũy vượt trội so với kỳ vọng ban đầu và phán đoán giá trị.
-* **Tuyến 2 - Hai kênh truyền dẫn song song (H4–H9):** CSI tác động dương đến lòng trung thành thương hiệu (H4) và eWOM (H5). CL tác động dương đến hiệu quả tài chính (H6) thông qua ổn định dòng tiền từ mua lặp lại, và đến hiệu quả phi tài chính (H7) thông qua duy trì thị phần. eWOM tác động dương đến hiệu quả tài chính (H8) thông qua thu hút khách hàng mới, và tác động mạnh hơn đến hiệu quả phi tài chính (H9) thông qua cải thiện online rating - chỉ số ngày càng ảnh hưởng đến quyết định mua trên nền tảng thương mại điện tử.
-* **Tuyến 3 - Điều tiết theo kênh và quy mô (H10a, H10b, H11):**
-  - **H10a:** Kênh online củng cố mối quan hệ CSI – eWOM theo chiều dương. Trong môi trường mua sắm trực tuyến, người tiêu dùng hài lòng có công cụ sẵn có (star rating, comment, share) và thói quen chia sẻ đánh giá ngay lập tức, làm tăng cường hành vi eWOM so với kênh offline nơi hành vi này đòi hỏi nỗ lực chủ động hơn.
-  - **H10b:** Kênh online làm yếu mối quan hệ CSI – CL theo chiều âm. Thuật toán gợi ý của Shopee, TikTok Shop và Lazada liên tục đề xuất sản phẩm thay thế với giá cạnh tranh, tạo ra platform loyalty thay thế brand loyalty. Điều này làm đứt gãy cơ chế chuyển hóa từ sự hài lòng thương hiệu thành hành vi mua lặp lại trung thành với thương hiệu (Seiders et al., 2005; Dawes et al., 2023).
-  - **H11:** Quy mô doanh nghiệp lớn điều tiết mối quan hệ CSI – CL theo chiều dương. Doanh nghiệp lớn có năng lực đầu tư vào hệ thống loyalty program, CRM và marketing automation cao hơn, cho phép chuyển hóa sự hài lòng thành hành vi tái mua có hệ thống và hiệu quả hơn so với doanh nghiệp nhỏ (Luo & Bhattacharya, 2006).
+* **Tuyến 1 - Hình thành CSI (H1-H3):** thói quen (H1), chất lượng cảm nhận (H2) và giá trị cảm nhận (H3) đều tác động dương đến CSI.
+* **Tuyến 2 - Hai kênh truyền dẫn song song (H4-H9):** CSI tác động dương đến lòng trung thành thương hiệu (H4) và eWOM (H5). CL và eWOM tiếp tục thúc đẩy người tiêu dùng sẵn sàng trả giá cao (WTPP) và gia tăng tỷ trọng chi tiêu (eSOW).
+* **Tuyến 3 - Điều tiết theo thuật toán và tài sản thương hiệu (H10a, H10b, H11):**
 
-**Nhóm 1 - Các nhân tố tác động đến CSI (H1–H3)**
+**Nhóm 1 - Các nhân tố tác động đến CSI (H1-H3)**
 
-Fornell et al. (1996, tr. 8) xác định CSI là “biến tiềm ẩn được hình thành từ ba tiền đề đo lường: kỳ vọng khách hàng, chất lượng cảm nhận, và giá trị cảm nhận.” Cấu trúc này sau đó được tái kiểm định bởi Johnson et al. (2001) trong dữ liệu đa quốc gia, xác nhận tính ổn định của ba nhân tố tiền đề qua các bối cảnh khác nhau. Tuy nhiên, trọng số tương đối giữa ba nhân tố này không nhất quán giữa các thị trường: Johnson et al. (2001) ghi nhận kỳ vọng thường có trọng số thấp hơn đáng kể ở các thị trường châu Âu (EPSI) so với Hoa Kỳ (ACSI), và trong nhiều bối cảnh tiêu dùng nhanh, kỳ vọng thậm chí không có tác động có ý nghĩa thống kê đến CSI do người tiêu dùng đã quá quen thuộc với sản phẩm qua nhiều lần mua lặp lại. Tại thị trường Việt Nam, Nguyen et al. (2018) gợi ý kỳ vọng có vai trò yếu hơn chất lượng cảm nhận trong ngành bảo hiểm nhân thọ, song chưa có kiểm định tương đương trong ngành hàng tiêu dùng nhanh. Sự không nhất quán này tạo cơ sở cho việc kiểm định lại cấu trúc tiền đề CSI trong bối cảnh FMCG Việt Nam.
+Việc ứng dụng nguyên bản mô hình ACSI (với biến kỳ vọng khách hàng - CE) vào ngành FMCG bộc lộ một số hạn chế do đặc thù mua lặp lại và sự thân thuộc. Theo Lý thuyết Hành vi Lập trình, khách hàng FMCG hiếm khi hình thành một "kỳ vọng" lý trí trước mỗi lần mua; thay vào đó, thói quen và sự thân thuộc lấn át nhận thức (Khare & Inman, 2006). Vì vậy, nghiên cứu loại bỏ biến CE và thay thế bằng biến **thói quen tiêu dùng (HB)**. Sự thân thuộc và thói quen giảm thiểu nỗ lực nhận thức, tạo ra sự thoải mái tâm lý, từ đó gia tăng chỉ số hài lòng.
 
-- **H1:** Kỳ vọng khách hàng có tác động tích cực đến CSI.
-- **H2:** Chất lượng cảm nhận có tác động tích cực đến CSI.
-- **H3:** Giá trị cảm nhận có tác động tích cực đến CSI.
+- **H1:** thói quen tiêu dùng có tác động tích cực đến CSI.
+- **H2:** chất lượng cảm nhận có tác động tích cực đến CSI.
+- **H3:** giá trị cảm nhận có tác động tích cực đến CSI.
 
-**Nhóm 2 - Ảnh hưởng của CSI đến các biến trung gian (H4–H5)**
-
-Mô hình ACSI gốc (Fornell et al., 1996) đã xác lập mối quan hệ CSI đến lòng trung thành như một trong hai hệ quả được đo lường trực tiếp của chỉ số. Anderson & Sullivan (1993) kiểm định mối quan hệ này trong dữ liệu ngành tại Thụy Điển, ghi nhận tương quan dương nhất quán giữa sự hài lòng và ý định mua lại. Về phía eWOM, Hennig-Thurau et al. (2004) lập luận rằng sự hài lòng là động cơ chính thúc đẩy khách hàng chia sẻ đánh giá tích cực trực tuyến, qua cơ chế “mong muốn giúp đỡ người khác” và “khẳng định bản thân.” Mithas et al. (2005) bổ sung bằng chứng rằng mức độ hài lòng cao tương quan với tần suất và nội dung tích cực của đánh giá trực tuyến trong ngành bán lẻ. Chưa có nghiên cứu kiểm định đồng thời cả hai mối quan hệ này trong ngành FMCG Việt Nam.
+**Nhóm 2 - Ảnh hưởng của CSI đến các biến trung gian (H4-H5)**
 
 - **H4:** CSI có tác động tích cực đến lòng trung thành thương hiệu.
 - **H5:** CSI có tác động tích cực đến truyền miệng điện tử.
 
-**Nhóm 3 - Ảnh hưởng của các biến trung gian đến hiệu quả doanh nghiệp (H6–H9)**
+**Nhóm 3 - Ảnh hưởng của các biến trung gian đến Hiệu quả Hành vi (H6-H9)**
 
-Gruca & Rego (2005) xác định lòng trung thành là cơ chế trực tiếp ổn định dòng tiền từ việc mua lặp lại, từ đó tác động đến cả ROA lẫn tốc độ tăng trưởng doanh thu. Tuli & Bharadwaj (2009) mở rộng cơ chế này đến hiệu quả phi tài chính khi cho thấy doanh nghiệp với tỷ lệ giữ chân khách hàng cao (biểu hiện của lòng trung thành) duy trì thị phần ổn định hơn trong điều kiện cạnh tranh. Về eWOM, Fornell et al. (2020) ghi nhận hệ số tương quan giữa truyền miệng và doanh thu ở mức r = 0,48 trong dữ liệu 40 năm, song phần lớn bằng chứng này đến từ thị trường Hoa Kỳ nơi eWOM qua nền tảng công khai phổ biến hơn. Tại Việt Nam, cơ chế eWOM qua Shopee và TikTok Shop gợi ý tác động trực tiếp đến hiệu quả phi tài chính qua online rating, tuy chưa được kiểm định định lượng.
+Để khắc phục nghịch lý Ecological Fallacy khi nối dữ liệu cá nhân vào dữ liệu doanh nghiệp vĩ mô, nghiên cứu chuyển hướng sử dụng biến đầu ra cấp độ khách hàng. lòng trung thành thái độ (CL) là động lực cốt lõi khiến khách hàng chấp nhận rủi ro giá cả và giới hạn lựa chọn, từ đó sẵn sàng trả giá cao (WTPP) và dồn ngân sách (eSOW) cho thương hiệu (Zeithaml et al., 1996). Tương tự, hành vi eWOM, thông qua việc bảo vệ thương hiệu công khai, tạo ra cam kết tâm lý vững chắc hơn, củng cố ý định chi tiêu thực tế.
 
-- **H6:** Lòng trung thành thương hiệu có tác động tích cực đến hiệu quả tài chính doanh nghiệp.
-- **H7:** Lòng trung thành thương hiệu có tác động tích cực đến hiệu quả phi tài chính doanh nghiệp.
-- **H8:** Truyền miệng điện tử có tác động tích cực đến hiệu quả tài chính doanh nghiệp.
-- **H9:** Truyền miệng điện tử có tác động tích cực đến hiệu quả phi tài chính doanh nghiệp.
+- **H6:** lòng trung thành thương hiệu có tác động tích cực đến ý định chi trả giá cao (WTPP).
+- **H7:** lòng trung thành thương hiệu có tác động tích cực đến tỷ trọng chi tiêu dự kiến (eSOW).
+- **H8:** truyền miệng điện tử có tác động tích cực đến ý định chi trả giá cao (WTPP).
+- **H9:** truyền miệng điện tử có tác động tích cực đến tỷ trọng chi tiêu dự kiến (eSOW).
 
-**Nhóm 4 - Vai trò điều tiết của kênh mua sắm và quy mô doanh nghiệp (H10a, H10b, H11)**
+**Nhóm 4 - Vai trò điều tiết (H10a, H10b, H11)**
 
-Seiders et al. (2005) chỉ ra rằng sự hài lòng chỉ chuyển hóa thành hành vi mua lặp lại trung thành khi đồng thời có yếu tố thuận tiện kênh. Trong môi trường trực tuyến, thuật toán gợi ý của các sàn thương mại điện tử liên tục đề xuất sản phẩm thay thế với giá cạnh tranh, tạo ra cơ chế trung thành với nền tảng thay thế cho trung thành thương hiệu - điều Dawes et al. (2015) xác nhận qua dữ liệu ngành FMCG tại Úc và Anh. Ngược lại, trong môi trường trực tuyến, công cụ đánh giá sẵn có làm giảm ngưỡng hành động của người tiêu dùng hài lòng, dẫn đến hành vi chia sẻ eWOM dày đặc hơn. Luo & Bhattacharya (2006) gợi ý rằng doanh nghiệp lớn có năng lực hệ thống hóa việc chuyển hóa sự hài lòng thành lòng trung thành qua các chương trình khách hàng thân thiết, trong khi doanh nghiệp nhỏ phụ thuộc nhiều hơn vào tính cá nhân hóa không có hệ thống.
+Thay vì sử dụng biến phân loại thô sơ "Kênh mua sắm (Offline/Online)", nghiên cứu nâng cấp lên cấu trúc định lượng đo lường **Sự phụ thuộc vào Thuật toán Đề xuất (ARD)**. Lập luận: trong kỷ nguyên số, thuật toán AI của các sàn thương mại điện tử (Shopee, TikTok Shop, Lazada) liên tục gợi ý sản phẩm thay thế, flash sale, và so sánh giá. Khách hàng có độ nhạy cảm cao với các tác nhân này sẽ dễ bị suy giảm lòng trung thành thương hiệu, nhưng ngược lại, sự tiếp xúc thường xuyên với nền tảng số cũng khuyến khích hành vi eWOM chủ động hơn.
 
-- **H10a:** Kênh mua sắm trực tuyến điều tiết tích cực mối quan hệ giữa CSI và truyền miệng điện tử.
-- **H10b:** Kênh mua sắm trực tuyến điều tiết tiêu cực mối quan hệ giữa CSI và lòng trung thành thương hiệu.
-- **H11:** Quy mô doanh nghiệp điều tiết tích cực mối quan hệ giữa CSI và lòng trung thành thương hiệu.
+- **H10a:** Sự phụ thuộc vào thuật toán đề xuất (ARD) điều tiết tích cực mối quan hệ giữa CSI và truyền miệng điện tử (những người phụ thuộc thuật toán nhiều hơn có xu hướng eWOM mạnh hơn khi hài lòng).
+- **H10b:** Sự phụ thuộc vào thuật toán đề xuất (ARD) điều tiết tiêu cực mối quan hệ giữa CSI và lòng trung thành thương hiệu (thuật toán làm suy giảm lòng trung thành ngay cả khi khách hàng hài lòng).
+- **H11:** Tài sản thương hiệu (cảm nhận) điều tiết tích cực mối quan hệ giữa CSI và lòng trung thành thương hiệu (thương hiệu lớn có lợi thế bảo vệ lòng trung thành trước sự làm suy giảm của thuật toán).
 
-#### Bảng tổng hợp bằng chứng thực nghiệm theo từng mối quan hệ
+### 5.3. Thu thập và Phân tích dữ liệu
 
-| Mối quan hệ | Nghiên cứu | Bối cảnh | Kết quả |
-|---|---|---|---|
-| CE → CSI | Fornell et al. (1996) | Hoa Kỳ, đa ngành | Có ý nghĩa, β = 0,28 |
-| CE → CSI | Johnson et al. (2001) | Na Uy, đa ngành | Có ý nghĩa |
-| CE → CSI | Johnson et al. (2001) | Đa quốc gia, EPSI | Trọng số yếu / Không ý nghĩa |
-| CE → CSI | Nguyen et al. (2018) | Việt Nam, bảo hiểm | Có ý nghĩa yếu |
-| PQ → CSI | Fornell et al. (1996) | Hoa Kỳ, đa ngành | Có ý nghĩa, trọng số cao nhất |
-| PQ → CSI | Tran (2020) | Việt Nam, bán lẻ | Có ý nghĩa |
-| PV → CSI | Fornell et al. (1996) | Hoa Kỳ, đa ngành | Có ý nghĩa |
-| PV → CSI | Johnson et al. (2001) | Na Uy, đa ngành | Có ý nghĩa, trọng số thấp hơn PQ |
-| CSI → CL | Anderson & Sullivan (1993) | Thụy Điển, đa ngành | Có ý nghĩa |
-| CSI → CL | Seiders et al. (2005) | Hoa Kỳ, bán lẻ | Có ý nghĩa, bị điều tiết bởi kênh |
-| CSI → eWOM | Hennig-Thurau et al. (2004) | Đức, đa ngành | Có ý nghĩa |
-| CSI → eWOM | Mithas et al. (2005) | Hoa Kỳ, bán lẻ | Có ý nghĩa |
-| CL → Hiệu quả TC | Gruca & Rego (2005) | Hoa Kỳ, đa ngành | Có ý nghĩa, qua dòng tiền |
-| CL → Hiệu quả TC | Anderson et al. (1994) | Thụy Điển | Có ý nghĩa |
-| eWOM → Hiệu quả | Fornell et al. (2020) | Hoa Kỳ, đa ngành | r = 0,48 với doanh thu |
-| CSI → Hiệu quả TC | Luo & Bhattacharya (2006) | Hoa Kỳ | Có điều kiện - phụ thuộc R&D |
+#### Study 1: Khảo sát dọc
 
-*Ghi chú: Chưa xác định được nghiên cứu nào kiểm định đồng thời toàn bộ chuỗi CE/PQ/PV → CSI → CL/eWOM → Hiệu quả doanh nghiệp trong bối cảnh FMCG Việt Nam.*
+**Dữ liệu sơ cấp:** Bảng khảo sát với cỡ mẫu dự kiến n = 900 cặp dữ liệu hợp lệ (từ 2 đợt), tập trung vào các thương hiệu FMCG lớn thuộc nhóm Thực phẩm & Đồ uống tại Việt Nam. Mỗi người trả lời được yêu cầu đánh giá về một thương hiệu FMCG cụ thể mà họ thường xuyên sử dụng nhất trong 6 tháng qua. Thang đo Likert 5 điểm (trừ eSOW dùng Frequency Allocation). Biến eSOW sử dụng thang đo phân bổ tần suất yêu cầu người trả lời phân bổ 10 lần mua tiếp theo cho các thương hiệu cạnh tranh, tạo ra biến liên tục tỷ lệ có tính trực quan và dễ hiểu hơn đáng kể so với thang % ngân sách.
 
-### 5.3. Thu thập, tích hợp và phân tích dữ liệu
+**Kiểm soát Common Method Bias (CMB):**
 
-**Dữ liệu sơ cấp:** Bảng khảo sát với cỡ mẫu dự kiến n = 900 người tiêu dùng, tập trung vào 15 thương hiệu FMCG lớn nhất thuộc nhóm Thực phẩm & Đồ uống niêm yết tại Việt Nam. Mức mẫu này đảm bảo trung bình 60 quan sát trên mỗi thương hiệu - vượt đáng kể ngưỡng tối thiểu 30 quan sát cần thiết cho độ tin cậy thống kê khi tổng hợp lên cấp thương hiệu (Fornell et al., 1996), đồng thời đáp ứng yêu cầu quyền năng thống kê (statistical power ≥ 0,80) cho thiết kế tích hợp đa cấp phức tạp theo khuyến nghị của Ringle et al. (2012) cho phương pháp PLS-SEM. Lý do nâng mẫu từ mức tối thiểu 500: với n = 500 và 15 thương hiệu, mỗi thương hiệu chỉ có khoảng 33 quan sát - đây là mức biên tối thiểu và nhạy cảm với các trường hợp thu thập không đều giữa thương hiệu. Mẫu 900 tạo bộ đệm đủ lớn để dữ liệu vẫn đạt yêu cầu tổng hợp cấp thương hiệu ngay cả khi phân phối không đồng đều. Thang đo Likert 5 điểm, điều chỉnh từ bộ thang đo ACSI đã được kiểm định. Mỗi người trả lời được yêu cầu đánh giá về một thương hiệu FMCG cụ thể mà họ thường xuyên sử dụng nhất trong 6 tháng qua.
+Nghiên cứu áp dụng ba tầng kiểm soát CMB theo khuyến nghị của Podsakoff et al. (2003):
 
-**Dữ liệu thứ cấp và lý do giới hạn phạm vi:** Nghiên cứu tập trung vào nhóm doanh nghiệp F&B (Thực phẩm & Đồ uống) niêm yết trên HOSE/HNX/UPCoM thay vì mở rộng sang toàn bộ FMCG (bao gồm hóa mỹ phẩm, chăm sóc gia đình). Lý do: dữ liệu ROA/ROE của nhóm F&B niêm yết là số liệu kiểm toán độc lập, minh bạch và có thể đối chiếu trực tiếp với điểm CSI khảo sát. Ngược lại, các tập đoàn đa quốc gia trong nhóm hóa mỹ phẩm (Unilever, P&G, Nestlé) hoạt động tại Việt Nam qua công ty con không niêm yết - dữ liệu tài chính của họ không công khai hoặc bị ảnh hưởng bởi chính sách chuyển giá nội bộ tập đoàn, không phản ánh hiệu quả thực tế tại thị trường Việt Nam. Danh sách doanh nghiệp đưa vào mẫu nghiên cứu: Vinamilk (VNM), Sabeco (SAB), Habeco (BHN), Kido Group (KDC), Đường Quảng Ngãi (QNS), Thành Thành Công - Biên Hòa (SBT), Bibica (BBC), Safoco (SAF), Thực phẩm Bích Chi (BCF), Cholimex Food (CMF - sàn UPCoM), và các doanh nghiệp F&B khác niêm yết trên HOSE/HNX/UPCoM. Dữ liệu tài chính thu thập từ FiinPro và Vietstock; dữ liệu thị phần từ Euromonitor, Nielsen Vietnam.
+1. **Tách biệt thời điểm đo lường:** Biến nguyên nhân (HB, PQ, PV, CSI) được đo ở Wave 1 (T1), biến kết quả (CL, eWOM, WTPP, eSOW) được đo ở Wave 2 (T2, cách 3 tuần). Thiết kế này phá vỡ hiệu ứng nhất quán cảm xúc, giảm thiểu xu hướng trả lời theo quán tính.
+2. **Biến đánh dấu:** Hai câu hỏi về chủ đề không liên quan (thời tiết, thể thao) được chèn vào Wave 1. Tương quan giữa biến đánh dấu và các biến chính sẽ được sử dụng làm ước lượng thận trọng cho mức độ CMB theo phương pháp Lindell & Whitney (2001).
+3. **Kiểm định Harman's Single Factor:** Thực hiện Phân tích Nhân tố Khám phá (EFA) trên tất cả items. Nếu một nhân tố duy nhất giải thích dưới 50% tổng phương sai, kết luận CMB không phải là mối đe dọa nghiêm trọng.
 
-**Chiến lược tích hợp dữ liệu đa cấp (Cross-level data linkage):** Đây là bước kỹ thuật trọng tâm nhằm giải quyết sự khác biệt đơn vị phân tích giữa dữ liệu sơ cấp (cấp cá nhân) và dữ liệu thứ cấp (cấp doanh nghiệp). Sau khi thu thập khảo sát, điểm CSI, CL và eWOM của từng người tiêu dùng sẽ được tổng hợp lên cấp thương hiệu bằng giá trị trung bình có trọng số (weighted brand-level aggregation), với điều kiện tối thiểu 30 quan sát trên mỗi thương hiệu để đảm bảo độ tin cậy thống kê của giá trị tổng hợp (Fornell et al., 1996). eWOM tổng hợp theo thương hiệu được bổ sung bằng dữ liệu đánh giá công khai (average star rating trên Shopee, Google) để tăng tính hội tụ và giảm common method bias. Cách tiếp cận này tương đồng với phương pháp vận hành của chỉ số ACSI gốc và cho phép kiểm định mối quan hệ CSI–Firm Performance trong khuôn khổ phân tích dữ liệu bảng (panel data) theo thương hiệu và năm. Để đảm bảo tính đồng thời và logic thời gian nhân quả (tránh nghịch lý lệch pha thời gian), dữ liệu khảo sát người tiêu dùng (CSI, eWOM) sẽ được thu thập song song và khớp trực tiếp với kết quả tài chính của chính các doanh nghiệp này trong cùng thời kỳ thực hiện nghiên cứu (giai đoạn 2027–2028), thay vì hồi quy ngược về giai đoạn tài chính quá khứ.
+**Phân tích:**
+- Đánh giá mô hình đo lường: Kiểm định độ tin cậy nhất quán nội bộ (Cronbach's Alpha, Composite Reliability), giá trị hội tụ (AVE), và giá trị phân biệt (HTMT ratio) sử dụng SmartPLS 4.
+- Đánh giá mô hình cấu trúc: Sử dụng thuật toán PLS-SEM và Bootstrapping (5.000 lần lặp) để kiểm định các giả thuyết nhân quả (H1-H9) và đánh giá sức mạnh giải thích (R-square, f-square).
+- Phân tích điều tiết: Sử dụng kỹ thuật Biến tương tác trong PLS-SEM để kiểm định H10a, H10b (ARD điều tiết) và H11 (Tài sản thương hiệu điều tiết). Bổ sung Phân tích Đa nhóm dựa trên điểm cắt trung vị của ARD.
+- Phân tích trung gian: Sử dụng phương pháp Specific Indirect Effects (Bootstrapping) để đánh giá sức mạnh của từng tuyến trung gian (CSI -> CL -> CBO vs. CSI -> eWOM -> CBO).
 
-**Biến kiểm soát và xử lý nội sinh:** Để kiểm soát các yếu tố ảnh hưởng đến ROA/ROE ngoài CSI, mô hình hồi quy dữ liệu bảng bao gồm: tuổi doanh nghiệp (số năm hoạt động), đòn bẩy tài chính (tổng nợ/tổng tài sản), logarit tổng tài sản, tốc độ tăng trưởng doanh thu ngành, và chỉ số tập trung thị trường Herfindahl-Hirschman.
+#### Study 2: Thực nghiệm kịch bản
 
-Vấn đề nội sinh tiềm năng - CSI cao có thể vừa là nguyên nhân lẫn kết quả của hiệu quả cao - được xử lý bằng phương pháp Hồi quy Biến công cụ hai giai đoạn trên dữ liệu bảng (Panel 2SLS) hoặc sử dụng các biến trễ (lagged variables) trong mô hình tác động cố định (FEM) nhằm giải quyết hiện tượng đồng thời (simultaneity) và loại bỏ chệch do biến bị bỏ sót. Quyết định loại bỏ System-GMM do số lượng doanh nghiệp (N=15) giới hạn có thể dẫn đến hiện tượng quá nhiều biến công cụ (instrument proliferation) gây chệch kết quả hồi quy nghiêm trọng trong mẫu nhỏ. Biến công cụ trễ một kỳ của CSI và điểm CSI trung bình của các doanh nghiệp đối thủ cùng phân khúc trong cùng năm được sử dụng làm biến công cụ hợp lệ. Tính hợp lệ của biến công cụ sẽ được kiểm định bằng Hansen J-test để xác nhận tính ngoại sinh của các công cụ.
-
-**Phân tích:** PLS-SEM (SmartPLS 4) để kiểm định mô hình đo lường và mô hình cấu trúc ở cấp cá nhân; bootstrapping 5.000 lần lặp để kiểm định hiệu ứng trung gian. Phân tích đa nhóm (MGA) để kiểm định H10a và H10b. Panel Data analysis (FEM/REM kết hợp kiểm định Hausman và hồi quy biến công cụ 2SLS) với dữ liệu bảng cấp thương hiệu - năm cho phần kiểm định tác động CSI đến Firm Performance.\n
+**Thiết kế:** Thực nghiệm giữa các nhóm, 2 điều kiện (Có thuật toán gợi ý vs. Không có thuật toán gợi ý), N = 200.
+**Biến thao tác:** Tạo hai kịch bản mua sắm trực tuyến giả lập. Nhóm Treatment xem giao diện có AI chủ động hiển thị sản phẩm đối thủ giá rẻ, flash sale, và so sánh giá. Nhóm Control xem giao diện mua sắm thông thường không có gợi ý.
+**Biến trung gian tâm lý:** tính nhạy cảm về giá, đo lường bằng 3 items (Likert 5): (1) Sau khi xem kịch bản, tôi quan tâm nhiều hơn đến việc tìm mức giá thấp nhất; (2) Tôi cảm thấy mình đang trả quá nhiều cho thương hiệu quen thuộc; (3) Sự khác biệt giá giữa các thương hiệu trở nên quan trọng hơn với tôi. Kế thừa và điều chỉnh từ Lichtenstein et al. (1993).
+**Biến đo lường kết quả (sau kịch bản):** CL, WTPP, eSOW.
+**Kiểm tra thao tác:** Sử dụng 2 items kiểm tra xem người tham gia có nhận thức được sự hiện diện của thuật toán gợi ý không.
+**Phân tích:** (1) So sánh trung bình giữa hai nhóm bằng Independent Samples t-test cho tất cả biến kết quả. (2) Kiểm định trung gian trong thực nghiệm: sử dụng PROCESS macro Model 4 (Hayes, 2022) để kiểm tra chuỗi nhân quả Thuật toán AI -> Price Sensitivity -> CL/WTPP/eSOW. (3) Phân tích ANCOVA với các biến kiểm soát (giới tính, độ tuổi, tần suất mua sắm online).

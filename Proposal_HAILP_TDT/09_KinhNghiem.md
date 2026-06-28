@@ -11,7 +11,7 @@ Hiện đang tham gia giảng dạy tại hai cơ sở đào tạo:
 **Kinh nghiệm thực tiễn:**
 Hơn 13 năm kinh nghiệm quản lý trong ngành hàng tiêu dùng nhanh (FMCG), bao gồm thời gian làm việc tại Coca-Cola Việt Nam và vị trí gần nhất là Training & Capability Development Manager tại Mondelez Kinh Do. Ở vị trí này, đảm nhận thiết kế và triển khai các chương trình đào tạo nâng cao năng lực nhân viên; đánh giá hiệu suất và xác định khoảng cách kỹ năng; triển khai đào tạo qua hình thức workshop, e-learning và on-the-job training; hỗ trợ hoạch định kế thừa nhân tài thông qua việc xác định nhân sự tiềm năng cao và xây dựng lộ trình phát triển cá nhân hóa.
 
-Kinh nghiệm thực địa trong quản lý kênh phân phối truyền thống và hiện đại, quản lý quan hệ nhà phân phối, và đo lường hiệu quả thương mại là nền tảng trực tiếp cho việc thiết kế nghiên cứu về CSI và hiệu quả doanh nghiệp FMCG, đặc biệt trong việc xác định các biến điều tiết theo kênh phân phối.
+Kinh nghiệm thực địa trong quản lý kênh phân phối truyền thống và hiện đại, quản lý quan hệ nhà phân phối, và đo lường hiệu quả thương mại là nền tảng trực tiếp cho việc thiết kế nghiên cứu về CSI và hiệu quả hành vi khách hàng FMCG, đặc biệt trong việc xác định các biến điều tiết liên quan đến thuật toán đề xuất.
 
 **Chứng chỉ và phát triển chuyên môn:**
 - Harvard ManageMentor: Coaching; Innovation and Creative Thinking
