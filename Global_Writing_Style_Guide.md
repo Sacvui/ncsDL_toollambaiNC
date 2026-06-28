@@ -73,6 +73,20 @@ Nguyên tắc: Tuyệt đối chuẩn mực, nói KHÔNG với phong cách hình
 - **Cấm màu sắc phi học thuật:** Tuyệt đối KHÔNG sử dụng màu pastel (xanh nhạt, vàng nhạt...), màu gradient, hay bo góc quá đà.
 - **Tiêu chuẩn đầu ra:** Hình ảnh vẽ bằng code (Mermaid) phải có ngoại quan sắc nét, góc cạnh, mộc mạc và chuyên nghiệp giống hệt như được trích xuất từ các phần mềm học thuật kinh điển (SmartPLS, AMOS, Visio).
 
+## TRỤ CỘT 9: TÍNH TOÀN VẸN TRÍCH DẪN VÀ LOGIC NGHIÊN CỨU (CITATION & LOGIC INTEGRITY)
+Nguyên tắc: Tuyệt đối không ngụy tạo bằng chứng, đảm bảo sự ăn khớp 1:1 giữa nội dung và danh mục tham khảo.
+
+- **Chống "Trích dẫn ma" (Ghost Citations):** Bất kỳ tài liệu nào được trích dẫn trong thân bài (in-text citation) bắt buộc phải có mặt trong Danh mục tài liệu tham khảo với DOI/đường dẫn xác thực. Tuyệt đối không tự bịa ra tài liệu (hallucination) để hợp thức hóa lập luận.
+- **Sự nhất quán logic thời gian (Time-lag paradox):** Tuyệt đối tuân thủ logic nhân quả trong thiết kế nghiên cứu. Biến độc lập (nguyên nhân) phải xảy ra trước hoặc đồng thời với biến phụ thuộc (kết quả). (Ví dụ: Không được dùng dữ liệu sơ cấp lấy ở tương lai để giải thích cho dữ liệu thứ cấp của quá khứ).
+- **Trích dẫn thực chất:** Không gắn danh sách hàng loạt tác giả (A, 2020; B, 2021; C, 2022) vào cuối câu chỉ để làm "đẹp" bài nếu các tác giả này không thực sự cùng đóng góp trực tiếp cho luận điểm đó.
+
+## TRỤ CỘT 10: CHUẨN MỰC ĐỊNH DẠNG VĂN BẢN (FORMATTING STANDARDS)
+Nguyên tắc: Văn bản cần "sạch", chuyên nghiệp, tối giản để tập trung vào nội dung học thuật.
+
+- **Kiểm soát bôi đậm (Bold Text):** Chỉ sử dụng in đậm (`**text**`) cho các mục đích cấu trúc: Tên biến số chính, Giả thuyết nghiên cứu (H1, H2), hoặc Tiêu đề phụ (Sub-heading). Tuyệt đối không lạm dụng bôi đậm giữa câu văn thông thường để nhấn mạnh cảm xúc hay ý đồ cá nhân.
+- **Sử dụng dấu câu chuẩn xác:** Hạn chế lạm dụng dấu gạch ngang dài (em-dash `—`). Chỉ dùng em-dash để ngắt nhịp bổ sung ý nghĩa hoặc chú thích. Sử dụng dấu hai chấm (`:`) cho các định nghĩa hoặc liệt kê.
+- **Không ngắt trang/ngắt dòng tùy tiện:** Không dùng các vạch ngang (`---`) làm đứt gãy mạch đọc của một văn bản liền mạch khi xuất ra định dạng văn bản (Word/PDF).
+
 ---
 
 ## KIỂM TRA ĐẦU RA (SELF-CHECK CHECKLIST)

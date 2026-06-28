@@ -13,5 +13,5 @@ Nghiên cứu hướng đến sáu mục tiêu cụ thể theo thứ tự logic 
 - **Q1:** Các cấu phần nào của CSI (chất lượng cảm nhận, giá trị cảm nhận, kỳ vọng) có trọng số tác động lớn nhất đến sự hài lòng tổng thể của người tiêu dùng FMCG tại Việt Nam trong bối cảnh mua sắm đa kênh?
 - **Q2:** CSI tác động như thế nào đến hiệu quả tài chính và phi tài chính của doanh nghiệp FMCG niêm yết tại Việt Nam?
 - **Q3:** Lòng trung thành thương hiệu và eWOM có đóng vai trò trung gian trong mối quan hệ CSI–Firm Performance không? Cơ chế nào chiếm ưu thế trong kênh thương mại điện tử so với kênh truyền thống?
-- **Q4:** Kênh mua sắm (offline vs. online) điều tiết hai tuyến trung gian này như thế nào — cụ thể là kênh online có làm mạnh tuyến CSI–eWOM — FP và làm yếu tuyến CSI–CL — FP không?
+- **Q4:** Kênh mua sắm (offline vs. online) điều tiết hai tuyến trung gian này như thế nào - cụ thể là kênh online có làm mạnh tuyến CSI–eWOM - FP và làm yếu tuyến CSI–CL - FP không?
 - **Q5:** Hàm ý quản trị nào phù hợp cho doanh nghiệp FMCG Việt Nam khi phân bổ ngân sách giữa xây dựng lòng trung thành và kích hoạt eWOM nhằm tối đa hóa hiệu quả hoạt động?\n

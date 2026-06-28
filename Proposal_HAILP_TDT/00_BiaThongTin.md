@@ -1,5 +1,5 @@
 # ĐỀ CƯƠNG NGHIÊN CỨU
-**(Dự tuyển Nghiên cứu sinh — Đại học Tôn Đức Thắng)**
+**(Dự tuyển Nghiên cứu sinh - Đại học Tôn Đức Thắng)**
 
 **Tên đề tài dự kiến:**
 Tác động của Chỉ số Hài lòng Khách hàng đến Hiệu quả Hoạt động Doanh nghiệp: Vai trò Trung gian của Lòng trung thành Thương hiệu và Truyền miệng Điện tử trong Ngành Hàng Tiêu dùng Nhanh tại Việt Nam
