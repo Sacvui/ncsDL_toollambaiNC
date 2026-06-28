@@ -116,7 +116,7 @@ Tầng tiền đề gồm ba biến hình thành CSI: kỳ vọng khách hàng, 
 | PQ | Chất lượng cảm nhận | Tiền đề CSI | 4 nhân tố quan sát | Fornell et al. (1996); Zeithaml et al. (1996) |
 | PV | Giá trị cảm nhận | Tiền đề CSI | 3 nhân tố quan sát | Fornell et al. (1996) |
 | CSI | Chỉ số hài lòng tổng thể | Biến phụ thuộc (cấp 1) | 3 nhân tố quan sát | ACSI model; Oliver (1980) |
-| CL | Lòng trung thành thương hiệu | Biến trung gian (song song) | 4 nhân tố quan sát | Zeithaml et al. (1996); Dawes et al. (2023) |
+| CL | Lòng trung thành thương hiệu | Biến trung gian (song song) | 4 nhân tố quan sát | Zeithaml et al. (1996); Dawes et al. (2015) |
 | eWOM | Truyền miệng điện tử | Biến trung gian (song song) | 4 nhân tố quan sát | Hennig-Thurau et al. (2004); Mithas et al. (2005) |
 | FP1 | Hiệu quả tài chính (ROA, ROE, Revenue Growth) | Biến kết quả | Dữ liệu thứ cấp | FiinPro; Vietstock |
 | FP2 | Hiệu quả phi tài chính (thị phần, online rating) | Biến kết quả | Thứ cấp + 2 nhân tố quan sát | Euromonitor; Nielsen; Google/Shopee ratings |
@@ -221,7 +221,7 @@ Mô hình ACSI gốc (Fornell et al., 1996) đã xác lập mối quan hệ CSI 
 
 **Nhóm 3 — Ảnh hưởng của các biến trung gian đến hiệu quả doanh nghiệp (H6–H9)**
 
-Gruca & Rego (2005) xác định lòng trung thành là cơ chế trực tiếp ổn định dòng tiền từ việc mua lặp lại, từ đó tác động đến cả ROA lẫn tốc độ tăng trưởng doanh thu. Tuli & Bharadwaj (2009) mở rộng cơ chế này đến hiệu quả phi tài chính khi cho thấy doanh nghiệp với tỷ lệ giữ chân khách hàng cao (biểu hiện của lòng trung thành) duy trì thị phần ổn định hơn trong điều kiện cạnh tranh. Về eWOM, Fornell et al. (2023) ghi nhận hệ số tương quan giữa truyền miệng và doanh thu ở mức r = 0,48 trong dữ liệu 40 năm, song phần lớn bằng chứng này đến từ thị trường Hoa Kỳ nơi eWOM qua nền tảng công khai phổ biến hơn. Tại Việt Nam, cơ chế eWOM qua Shopee và TikTok Shop gợi ý tác động trực tiếp đến hiệu quả phi tài chính qua online rating, tuy chưa được kiểm định định lượng.
+Gruca & Rego (2005) xác định lòng trung thành là cơ chế trực tiếp ổn định dòng tiền từ việc mua lặp lại, từ đó tác động đến cả ROA lẫn tốc độ tăng trưởng doanh thu. Tuli & Bharadwaj (2009) mở rộng cơ chế này đến hiệu quả phi tài chính khi cho thấy doanh nghiệp với tỷ lệ giữ chân khách hàng cao (biểu hiện của lòng trung thành) duy trì thị phần ổn định hơn trong điều kiện cạnh tranh. Về eWOM, Fornell et al. (2020) ghi nhận hệ số tương quan giữa truyền miệng và doanh thu ở mức r = 0,48 trong dữ liệu 40 năm, song phần lớn bằng chứng này đến từ thị trường Hoa Kỳ nơi eWOM qua nền tảng công khai phổ biến hơn. Tại Việt Nam, cơ chế eWOM qua Shopee và TikTok Shop gợi ý tác động trực tiếp đến hiệu quả phi tài chính qua online rating, tuy chưa được kiểm định định lượng.
 
 - **H6:** Lòng trung thành thương hiệu có tác động tích cực đến hiệu quả tài chính doanh nghiệp.
 - **H7:** Lòng trung thành thương hiệu có tác động tích cực đến hiệu quả phi tài chính doanh nghiệp.
@@ -230,7 +230,7 @@ Gruca & Rego (2005) xác định lòng trung thành là cơ chế trực tiếp 
 
 **Nhóm 4 — Vai trò điều tiết của kênh mua sắm và quy mô doanh nghiệp (H10a, H10b, H11)**
 
-Seiders et al. (2005) chỉ ra rằng sự hài lòng chỉ chuyển hóa thành hành vi mua lặp lại trung thành khi đồng thời có yếu tố thuận tiện kênh. Trong môi trường trực tuyến, thuật toán gợi ý của các sàn thương mại điện tử liên tục đề xuất sản phẩm thay thế với giá cạnh tranh, tạo ra cơ chế trung thành với nền tảng thay thế cho trung thành thương hiệu — điều Dawes et al. (2023) xác nhận qua dữ liệu ngành FMCG tại Úc và Anh. Ngược lại, trong môi trường trực tuyến, công cụ đánh giá sẵn có làm giảm ngưỡng hành động của người tiêu dùng hài lòng, dẫn đến hành vi chia sẻ eWOM dày đặc hơn. Luo & Bhattacharya (2006) gợi ý rằng doanh nghiệp lớn có năng lực hệ thống hóa việc chuyển hóa sự hài lòng thành lòng trung thành qua các chương trình khách hàng thân thiết, trong khi doanh nghiệp nhỏ phụ thuộc nhiều hơn vào tính cá nhân hóa không có hệ thống.
+Seiders et al. (2005) chỉ ra rằng sự hài lòng chỉ chuyển hóa thành hành vi mua lặp lại trung thành khi đồng thời có yếu tố thuận tiện kênh. Trong môi trường trực tuyến, thuật toán gợi ý của các sàn thương mại điện tử liên tục đề xuất sản phẩm thay thế với giá cạnh tranh, tạo ra cơ chế trung thành với nền tảng thay thế cho trung thành thương hiệu — điều Dawes et al. (2015) xác nhận qua dữ liệu ngành FMCG tại Úc và Anh. Ngược lại, trong môi trường trực tuyến, công cụ đánh giá sẵn có làm giảm ngưỡng hành động của người tiêu dùng hài lòng, dẫn đến hành vi chia sẻ eWOM dày đặc hơn. Luo & Bhattacharya (2006) gợi ý rằng doanh nghiệp lớn có năng lực hệ thống hóa việc chuyển hóa sự hài lòng thành lòng trung thành qua các chương trình khách hàng thân thiết, trong khi doanh nghiệp nhỏ phụ thuộc nhiều hơn vào tính cá nhân hóa không có hệ thống.
 
 - **H10a:** Kênh mua sắm trực tuyến điều tiết tích cực mối quan hệ giữa CSI và truyền miệng điện tử.
 - **H10b:** Kênh mua sắm trực tuyến điều tiết tiêu cực mối quan hệ giữa CSI và lòng trung thành thương hiệu.
@@ -254,7 +254,7 @@ Seiders et al. (2005) chỉ ra rằng sự hài lòng chỉ chuyển hóa thành
 | CSI → eWOM | Mithas et al. (2005) | Hoa Kỳ, bán lẻ | Có ý nghĩa |
 | CL → Hiệu quả TC | Gruca & Rego (2005) | Hoa Kỳ, đa ngành | Có ý nghĩa, qua dòng tiền |
 | CL → Hiệu quả TC | Anderson et al. (1994) | Thụy Điển | Có ý nghĩa |
-| eWOM → Hiệu quả | Fornell et al. (2023) | Hoa Kỳ, đa ngành | r = 0,48 với doanh thu |
+| eWOM → Hiệu quả | Fornell et al. (2020) | Hoa Kỳ, đa ngành | r = 0,48 với doanh thu |
 | CSI → Hiệu quả TC | Luo & Bhattacharya (2006) | Hoa Kỳ | Có điều kiện — phụ thuộc R&D |
 
 *Ghi chú: Chưa xác định được nghiên cứu nào kiểm định đồng thời toàn bộ chuỗi CE/PQ/PV → CSI → CL/eWOM → Hiệu quả doanh nghiệp trong bối cảnh FMCG Việt Nam.*

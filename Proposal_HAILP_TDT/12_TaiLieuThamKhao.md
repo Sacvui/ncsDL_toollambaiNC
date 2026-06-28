@@ -8,15 +8,15 @@
 
 3. Barney, J. (1991). Firm resources and sustained competitive advantage. *Journal of Management*, *17*(1), 99–120. https://doi.org/10.1177/014920639101700108
 
-4. Dawes, J., Nenycz-Thiel, M., & Tanusondjaja, A. (2023). What really drives loyalty in the fast-moving consumer goods market? *Journal of Global Scholars of Marketing Science*, *33*(2), 144–161. https://doi.org/10.1080/21639159.2023.2154645
+4. Dawes, J., Meyer-Waarden, L., & Driesener, C. (2015). Has brand loyalty declined? A longitudinal analysis of repeat purchase behavior in the UK and the USA. *Journal of Business Research*, *68*(2), 425–432. https://doi.org/10.1016/j.jbusres.2014.06.006
 
 5. Fornell, C., Johnson, M. D., Anderson, E. W., Cha, J., & Bryant, B. E. (1996). The American Customer Satisfaction Index: Nature, purpose, and findings. *Journal of Marketing*, *60*(4), 7–18. https://doi.org/10.2307/1251898
 
-6. Fornell, C., Morgeson, F. V., Hult, G. T. M., & VanAmburg, D. (2023). Customer satisfaction, loyalty behaviors, and firm financial performance: What 40 years of research tells us. *Marketing Letters*, *34*(1), 171–178. https://doi.org/10.1007/s11002-023–09671-w
+6. Fornell, C., Morgeson, F. V., III, Hult, G. T. M., & VanAmburg, D. (2020). *The reign of the customer: Customer-centric approaches to improving satisfaction*. Palgrave Macmillan. https://doi.org/10.1007/978-3-030-13562-1
 
-7. Freeman, R. E. (1984). *Strategic management: A stakeholder approach*. Pitman Publishing.
+7. Freeman, R. E. (1984). *Strategic management: A stakeholder approach*. Pitman. (Tái bản: Cambridge University Press, 2010).
 
-8. Gruca, T. S., & Rego, L. L. (2005). Customer satisfaction, cash flow, and shareholder value. *Journal of Marketing*, *69*(3), 115–130. https://doi.org/10.1509/jmkg.2005.69.3.115
+8. Gruca, T. S., & Rego, L. L. (2005). Customer satisfaction, cash flow, and shareholder value. *Journal of Marketing*, *69*(3), 115–130. https://doi.org/10.1509/jmkg.69.3.115.66364
 
 9. Hennig-Thurau, T., Gwinner, K. P., Walsh, G., & Gremler, D. D. (2004). Electronic word-of-mouth via consumer-opinion platforms: What motivates consumers to articulate themselves on the internet? *Journal of Interactive Marketing*, *18*(1), 38–52. https://doi.org/10.1002/dir.10073
 
@@ -38,7 +38,7 @@
 
 18. Spence, M. (1973). Job market signaling. *The Quarterly Journal of Economics*, *87*(3), 355–374. https://doi.org/10.2307/1882010
 
-19. Tran, V. D. (2020). The relationship among service quality, customer satisfaction and customer loyalty: Evidence from supermarkets in Vietnam. *Journal of Asian Finance, Economics and Business*, *7*(11), 1113–1122. https://doi.org/10.13106/jafeb.2020.vol7.no11.1113
+19. Tran, V. D., & Le, N. M. T. (2020). Impact of service quality and perceived value on customer satisfaction and behavioral intentions: Evidence from convenience stores in Vietnam. *Journal of Asian Finance, Economics and Business*, *7*(9), 517–526. https://doi.org/10.13106/jafeb.2020.vol7.no9.517
 
 20. Tuli, K. R., & Bharadwaj, S. G. (2009). Customer satisfaction and stock returns risk. *Journal of Marketing*, *73*(6), 184–197. https://doi.org/10.1509/jmkg.73.6.184
 
