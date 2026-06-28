@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhD Portal - Cổng thông tin NCS</title>
+    <title>PhD Research Portal - Cổng quản lý đề tài khoa học</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
-        
         :root {
             --bg-color: #0f172a;
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
-            --accent-1: #3b82f6;
-            --accent-2: #10b981;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --card-hover: rgba(51, 65, 85, 0.9);
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --accent-yellow: #f59e0b;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-hover: rgba(51, 65, 85, 0.85);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%), 
-                radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.15), transparent 25%);
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12), transparent 35%), 
+                radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.12), transparent 35%),
+                radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.06), transparent 30%);
             background-size: cover;
             background-attachment: fixed;
             color: var(--text-primary);
@@ -33,53 +37,198 @@
             flex-direction: column;
             align-items: center;
         }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 3rem 2rem;
+            box-sizing: border-box;
+        }
+
+        /* Top Header */
         .header {
             text-align: center;
-            margin-top: 5rem;
-            margin-bottom: 4rem;
-            padding: 0 1rem;
+            margin-bottom: 3.5rem;
+            position: relative;
         }
+
         .header h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 800;
             margin: 0;
-            background: linear-gradient(135deg, #60a5fa, #34d399);
+            background: linear-gradient(135deg, #60a5fa, #34d399, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.05em;
+            line-height: 1.1;
         }
+
         .header p {
             font-size: 1.15rem;
             color: var(--text-secondary);
-            margin-top: 1rem;
-            max-width: 600px;
+            margin: 1rem auto 0 auto;
+            max-width: 700px;
             line-height: 1.6;
+            font-weight: 400;
         }
+
+        /* Overview Stats Panel */
+        .overview-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .overview-card {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 0.5rem 1rem;
+        }
+
+        .overview-card:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            .overview-card:not(:last-child) {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding-bottom: 1rem;
+            }
+        }
+
+        .overview-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .overview-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .overview-value span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        /* Interactive Controls Panel (Search & Filters) */
+        .control-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            width: 100%;
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--card-border);
+            padding: 1rem 1.5rem 1rem 3.5rem;
+            border-radius: 16px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: var(--transition);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .tab.active {
+            background: var(--accent-blue);
+            color: #fff;
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Project Cards Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
             width: 100%;
-            max-width: 1100px;
-            padding: 0 2rem 4rem 2rem;
             box-sizing: border-box;
         }
+
         .card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 2.5rem 2rem;
+            border-radius: 24px;
+            padding: 2rem;
             text-decoration: none;
             color: var(--text-primary);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: var(--transition);
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
         }
+
         .card::before {
             content: '';
             position: absolute;
@@ -87,237 +236,410 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.3s ease;
         }
-        .card.hai::before { background: linear-gradient(90deg, #8b5cf6, #3b82f6); }
-        .card.thinh::before { background: linear-gradient(90deg, #10b981, #06b6d4); }
-        .card.slides::before { background: linear-gradient(90deg, #c9a94e, #e0c97a); }
-        
+
+        .card.hai::before { background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue)); }
+        .card.thinh::before { background: linear-gradient(90deg, var(--accent-green), #06b6d4); }
+        .card.slides::before { background: linear-gradient(90deg, var(--accent-yellow), #f59e0b); }
+        .card.other-author::before { background: linear-gradient(90deg, #f43f5e, #fb7185); }
+
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 0 10px 15px -6px rgba(0, 0, 0, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.15);
             background: var(--card-hover);
-            border-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.18);
         }
+
         .card:hover::before {
             opacity: 1;
         }
+
         .card-tag {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             display: inline-block;
-            padding: 4px 10px;
+            padding: 6px 12px;
             border-radius: 20px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.04);
+            align-self: flex-start;
+            border: 1px solid rgba(255,255,255,0.06);
         }
-        .card.hai .card-tag { color: #a78bfa; border: 1px solid rgba(167, 139, 250, 0.2); }
-        .card.thinh .card-tag { color: #34d399; border: 1px solid rgba(52, 211, 153, 0.2); }
-        .card.slides .card-tag { color: #e0c97a; border: 1px solid rgba(224, 201, 122, 0.2); }
-        
+
+        .card.hai .card-tag { color: #c084fc; border-color: rgba(192, 132, 252, 0.2); background: rgba(192, 132, 252, 0.04); }
+        .card.thinh .card-tag { color: #34d399; border-color: rgba(52, 211, 153, 0.2); background: rgba(52, 211, 153, 0.04); }
+        .card.slides .card-tag { color: #fcd34d; border-color: rgba(252, 211, 77, 0.2); background: rgba(252, 211, 77, 0.04); }
+        .card.other-author .card-tag { color: #fda4af; border-color: rgba(253, 164, 175, 0.2); background: rgba(253, 164, 175, 0.04); }
+
         .card h2 {
-            font-size: 1.75rem;
-            margin: 0 0 1rem 0;
-            font-weight: 600;
+            font-size: 1.5rem;
+            margin: 0 0 0.75rem 0;
+            font-weight: 700;
             line-height: 1.3;
             letter-spacing: -0.02em;
+            color: #fff;
+            transition: var(--transition);
         }
+
+        .card:hover h2 {
+            color: #60a5fa;
+        }
+
         .card p {
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.92rem;
             line-height: 1.6;
             flex-grow: 1;
             margin: 0 0 2rem 0;
         }
+
         .card-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid var(--card-border);
-            padding-top: 1.5rem;
-            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 1.25rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
         }
-        .btn {
-            background: rgba(255,255,255,0.1);
+
+        .btn-link {
+            background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.05);
-            padding: 10px 18px;
+            padding: 8px 16px;
             border-radius: 10px;
             color: #fff;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
-        .card:hover .btn {
+
+        .card:hover .btn-link {
             background: #fff;
-            color: #0f172a;
+            color: var(--bg-color);
+            box-shadow: 0 4px 12px rgba(255,255,255,0.25);
         }
+
+        /* Add New Card styling */
         .add-new {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 2px dashed var(--card-border);
+            border: 2px dashed rgba(255, 255, 255, 0.12);
             background: transparent;
-            min-height: 300px;
-            cursor: default;
+            min-height: 280px;
+            cursor: pointer;
+            transition: var(--transition);
         }
+
         .add-new:hover {
             border-color: rgba(255,255,255,0.3);
-            transform: none;
-            box-shadow: none;
+            transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.02);
         }
+
         .add-icon {
             font-size: 3rem;
             color: var(--text-secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-weight: 200;
-            transition: color 0.3s;
+            transition: var(--transition);
         }
+
         .add-new:hover .add-icon {
             color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Empty Search Alert */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(30, 41, 59, 0.2);
+            border: 1px dashed var(--card-border);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .no-results svg {
+            margin-bottom: 1rem;
+            opacity: 0.5;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>PhD Research Portal</h1>
-        <p>Hệ thống Quản lý và Trình diễn Đề cương Nghiên cứu sinh. Vui lòng chọn một kho lưu trữ bên dưới để truy cập vào Dashboard tương tác.</p>
-    </div>
+    <div class="container">
+        <!-- Top Header -->
+        <div class="header">
+            <h1>PhD Research Portal</h1>
+            <p>Hệ thống Quản lý và Trình diễn Đề cương Nghiên cứu sinh. Vui lòng tìm kiếm hoặc lọc dự án để truy cập nhanh vào Workspace và Dashboard tương tác.</p>
+        </div>
 
-    <div class="grid">
-        <!-- Dashboard Lê Phúc Hải -->
-        <a href="Dashboard_LePhucHai.html" class="card hai">
-            <div>
-                <span class="card-tag">ĐH Nha Trang • NCS. Lê Phúc Hải</span>
-                <h2>Truy Xuất Nguồn Gốc (VBM)</h2>
-                <p>Nghiên cứu về cơ chế đánh giá tác động của hoạt động Marketing truy xuất nguồn gốc đến hành vi mua của người tiêu dùng trong bối cảnh thực phẩm tại Việt Nam.</p>
+        <!-- Overview Stats Panel -->
+        <div class="overview-panel">
+            <div class="overview-card">
+                <span class="overview-label">Tổng số đề án</span>
+                <span class="overview-value" id="count-total">9 <span>Đề tài</span></span>
             </div>
-            <div class="card-footer">
-                <span>Cập nhật: Gần đây</span>
-                <span class="btn">Mở Dashboard <span style="font-size:1.2em">→</span></span>
+            <div class="overview-card">
+                <span class="overview-label">Hội đồng học thuật</span>
+                <span class="overview-value">2 <span>Trường ĐH</span></span>
             </div>
-        </a>
+            <div class="overview-card">
+                <span class="overview-label">Cập nhật hệ thống</span>
+                <span class="overview-value">Gần đây <span>Realtime</span></span>
+            </div>
+            <div class="overview-card" style="justify-content: center;">
+                <a href="https://github.com/Sacvui/ncsDL_toollambaiNC" target="_blank" class="btn-link" style="align-self: center; padding: 12px 20px; background: #24292e; border: 1px solid #444; width: fit-content; border-radius: 12px; cursor: pointer;">
+                    <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.57-.18-3.23-.79-3.23-3.5 0-.78.28-1.42.75-1.93-.07-.18-.33-.9.07-1.9 0 0 .6-.19 1.9.72a6.73 6.73 0 013.8 0c1.3-.91 1.9-.72 1.9-.72.4 1 .14 1.72.07 1.9.47.51.75 1.15.75 1.93 0 2.78-1.66 3.31-3.24 3.49.26.22.49.66.49 1.34 0 1.29-.01 2.33-.01 2.65 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    Mở GitHub Repo
+                </a>
+            </div>
+        </div>
 
-        <!-- Slide Báo cáo bảo vệ đề cương -->
-        <a href="Proposal_LePhucHai/Slide_BaoVe_DauVao.html" class="card slides">
-            <div>
-                <span class="card-tag">ĐH Nha Trang • NCS. Lê Phúc Hải</span>
-                <h2>Slide Bảo Vệ Đề Cương</h2>
-                <p>Hệ thống slide trình bày tương tác phục vụ buổi bảo vệ đề cương Tiến sĩ trước Hội đồng Khoa học. Tích hợp sơ đồ chuẩn hóa và tính năng xuất PowerPoint (.pptx) tự động.</p>
+        <!-- Controls (Search + Filters) -->
+        <div class="control-panel">
+            <div class="search-wrapper">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input type="text" class="search-input" id="search-box" placeholder="Tìm kiếm tên đề tài, tên nghiên cứu sinh, trường hoặc nội dung..." onkeyup="filterCards()">
             </div>
-            <div class="card-footer">
-                <span>Cập nhật: Vừa xong</span>
-                <span class="btn">Xem Slide Báo Cáo <span style="font-size:1.2em">→</span></span>
-            </div>
-        </a>
 
-        <!-- Dashboard Nguyễn Cường Thịnh -->
-        <a href="Dashboard_CuongThinh.html" class="card thinh">
-            <div>
-                <span class="card-tag">ĐH Nha Trang • NCS. Nguyễn Cường Thịnh</span>
-                <h2>Sự Gắn Kết Của Người Có Ảnh Hưởng</h2>
-                <p>Đề cương nghiên cứu sinh: Nghiên cứu cấu trúc và tác động của sự gắn kết từ những người có ảnh hưởng đến hành vi mua sắm trực tuyến.</p>
+            <div class="filter-tabs">
+                <div class="tab active" onclick="setFilter('all', this)">Tất cả đề tài</div>
+                <div class="tab" onclick="setFilter('hai', this)">NCS. Lê Phúc Hải</div>
+                <div class="tab" onclick="setFilter('thinh', this)">NCS. Nguyễn Cường Thịnh</div>
+                <div class="tab" onclick="setFilter('nhatrang', this)">ĐH Nha Trang</div>
+                <div class="tab" onclick="setFilter('tdt', this)">ĐH Tôn Đức Thắng</div>
+                <div class="tab" onclick="setFilter('slides', this)">Hệ thống Slides</div>
+                <div class="tab" onclick="setFilter('other', this)">Đề tài & Bài báo khác</div>
             </div>
-            <div class="card-footer">
-                <span>Cập nhật: Gần đây</span>
-                <span class="btn">Mở Dashboard <span style="font-size:1.2em">→</span></span>
-            </div>
-        </a>
+        </div>
 
-        <!-- Slide Báo cáo bảo vệ đề cương Nguyễn Cường Thịnh -->
-        <a href="Proposal_CuongThinh/Slide_BaoVe_CuongThinh.html" class="card slides">
-            <div>
-                <span class="card-tag">ĐH Nha Trang • NCS. Nguyễn Cường Thịnh</span>
-                <h2>Slide Bảo Vệ Đề Cương</h2>
-                <p>Hệ thống slide trình bày tương tác phục vụ buổi bảo vệ đề cương Tiến sĩ trước Hội đồng Khoa học. Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý.</p>
-            </div>
-            <div class="card-footer">
-                <span>Cập nhật: Vừa xong</span>
-                <span class="btn">Xem Slide Báo Cáo <span style="font-size:1.2em">→</span></span>
-            </div>
-        </a>
+        <!-- Grid of Projects -->
+        <div class="grid" id="project-grid">
+            <!-- [1] Dashboard Lê Phúc Hải -->
+            <a href="Dashboard_LePhucHai.html" class="card hai" data-author="hai" data-school="nhatrang" data-type="doc" data-keywords="truy xuat nguon goc marketing vbm thuc pham">
+                <div>
+                    <span class="card-tag">ĐH Nha Trang • NCS. Lê Phúc Hải</span>
+                    <h2>Truy Xuất Nguồn Gốc (VBM)</h2>
+                    <p>Nghiên cứu về cơ chế đánh giá tác động của hoạt động Marketing truy xuất nguồn gốc đến hành vi mua của người tiêu dùng trong bối cảnh thực phẩm tại Việt Nam.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Hoàn thiện</span>
+                    <span class="btn-link">Mở Dashboard <span>→</span></span>
+                </div>
+            </a>
 
-        <!-- Báo cáo nghiên cứu: Ảnh Hưởng Của Họp Hành -->
-        <a href="Dashboard_AnhHuongCuaHop.html" class="card" style="border-top: 4px solid #f59e0b;">
-            <div>
-                <span class="card-tag" style="color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2);">Nhóm NC: Lê Phúc Hải & Nguyễn Đức Tín</span>
-                <h2>Ảnh Hưởng Của Họp Hành</h2>
-                <p>Nghiên cứu tác động vi mô: Ảnh hưởng của quá tải họp hành đối với hiệu quả cá nhân, năng lượng làm việc và chất lượng nhiệm vụ trong môi trường doanh nghiệp.</p>
-            </div>
-            <div class="card-footer">
-                <span>Cập nhật: Vừa xong</span>
-                <span class="btn">Mở Bài Báo <span style="font-size:1.2em">→</span></span>
-            </div>
-        </a>
+            <!-- [2] Slide Báo cáo bảo vệ đề cương -->
+            <a href="Proposal_LePhucHai/Slide_BaoVe_DauVao.html" class="card slides" data-author="hai" data-school="nhatrang" data-type="slide" data-keywords="slide bao ve de cuong thuyet trinh pptx">
+                <div>
+                    <span class="card-tag">ĐH Nha Trang • NCS. Lê Phúc Hải</span>
+                    <h2>Slide Bảo Vệ Đề Cương (VBM)</h2>
+                    <p>Hệ thống slide trình bày tương tác phục vụ buổi bảo vệ đề cương Tiến sĩ trước Hội đồng Khoa học. Tích hợp sơ đồ chuẩn hóa và tính năng xuất PowerPoint (.pptx) tự động.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Hoàn thiện</span>
+                    <span class="btn-link">Xem Slide Báo Cáo <span>→</span></span>
+                </div>
+            </a>
 
-        <!-- Dashboard Nguyễn Cường Thịnh - TDT -->
-        <a href="Dashboard_ThinhNC_TDT.html" class="card thinh">
-            <div>
-                <span class="card-tag">ĐH Tôn Đức Thắng • NCS. Nguyễn Cường Thịnh</span>
-                <h2>CSI &amp; Điện tử Tiêu dùng</h2>
-                <p>Đề cương dự tuyển NCS: Nghiên cứu tác động của Chỉ số Hài lòng Khách hàng đến hiệu quả doanh nghiệp ngành điện tử tiêu dùng (laptop, smartphone, thiết bị thông minh) tại Việt Nam.</p>
-            </div>
-            <div class="card-footer">
-                <span>Cập nhật: Vừa xong</span>
-                <span class="btn">Mở Dashboard <span style="font-size:1.2em">→</span></span>
-            </div>
-        </a>
+            <!-- [3] Dashboard Nguyễn Cường Thịnh -->
+            <a href="Dashboard_CuongThinh.html" class="card thinh" data-author="thinh" data-school="nhatrang" data-type="doc" data-keywords="influencer engagement hanh vi mua sam truc tuyen nguoi co anh huong">
+                <div>
+                    <span class="card-tag">ĐH Nha Trang • NCS. Nguyễn Cường Thịnh</span>
+                    <h2>Sự Gắn Kết Của Người Có Ảnh Hưởng</h2>
+                    <p>Đề cương nghiên cứu sinh: Nghiên cứu cấu trúc và tác động của sự gắn kết từ những người có ảnh hưởng đến hành vi mua sắm trực tuyến của khách hàng.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Hoàn thiện</span>
+                    <span class="btn-link">Mở Dashboard <span>→</span></span>
+                </div>
+            </a>
 
-        <!-- Dashboard Lê Phúc Hải - TDT -->
-        <a href="Dashboard_HAILP_TDT.html" class="card hai">
-            <div>
-                <span class="card-tag">ĐH Tôn Đức Thắng • NCS. Lê Phúc Hải (Bản cũ)</span>
-                <h2>CSI &amp; Hiệu Quả Doanh Nghiệp FMCG</h2>
-                <p>Đề cương dự tuyển NCS: Nghiên cứu tác động của Chỉ số Hài lòng Khách hàng (CSI) đến hiệu quả hoạt động doanh nghiệp ngành hàng tiêu dùng nhanh tại Việt Nam.</p>
-            </div>
-            <div class="card-footer">
-                <span>Cập nhật: Vừa xong</span>
-                <span class="btn">Mở Dashboard <span style="font-size:1.2em">→</span></span>
-            </div>
-        </a>
+            <!-- [4] Slide Báo cáo bảo vệ đề cương Nguyễn Cường Thịnh -->
+            <a href="Proposal_CuongThinh/Slide_BaoVe_CuongThinh.html" class="card slides" data-author="thinh" data-school="nhatrang" data-type="slide" data-keywords="slide bao ve de cuong thuyet trinh influencer">
+                <div>
+                    <span class="card-tag">ĐH Nha Trang • NCS. Nguyễn Cường Thịnh</span>
+                    <h2>Slide Bảo Vệ Đề Cương (Influencer)</h2>
+                    <p>Hệ thống slide trình bày tương tác phục vụ buổi bảo vệ đề cương Tiến sĩ trước Hội đồng Khoa học. Phân tích cơ chế tác động kép giữa Niềm tin thuật toán và Sự kháng cự tâm lý.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Hoàn thiện</span>
+                    <span class="btn-link">Xem Slide Báo Cáo <span>→</span></span>
+                </div>
+            </a>
 
-        <!-- Dashboard Lê Phúc Hải - TDT (Bản Đầy Đủ) -->
-        <a href="Dashboard_TDT_TaiChinhMKT_Full.html" class="card hai" style="border-top: 4px solid #3b82f6;">
-            <div>
-                <span class="card-tag" style="color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.2);">ĐH Tôn Đức Thắng • NCS. Lê Phúc Hải (Bản chuẩn)</span>
-                <h2>eWOM, Hài Lòng &amp; Hiệu Quả Tài Chính (Big Data)</h2>
-                <p>Tên đề tài: Tác động của eWOM và Sự hài lòng khách hàng đến Hiệu quả Tài chính Doanh nghiệp: Phương pháp tiếp cận Big Data trong ngành FMCG tại Việt Nam.</p>
-            </div>
-            <div class="card-footer">
-                <span>Cập nhật: Mới nhất</span>
-                <span class="btn">Mở Đề Cương Hoàn Chỉnh <span style="font-size:1.2em">→</span></span>
-            </div>
-        </a>
+            <!-- [5] Dashboard Nguyễn Cường Thịnh - TDT -->
+            <a href="Dashboard_ThinhNC_TDT.html" class="card thinh" data-author="thinh" data-school="tdt" data-type="doc" data-keywords="csi dien tu tieu dung hai long khach hang laptop smartphone">
+                <div>
+                    <span class="card-tag">ĐH Tôn Đức Thắng • NCS. Nguyễn Cường Thịnh</span>
+                    <h2>CSI &amp; Điện tử Tiêu dùng</h2>
+                    <p>Đề cương dự tuyển NCS: Nghiên cứu tác động của Chỉ số Hài lòng Khách hàng đến hiệu quả doanh nghiệp ngành điện tử tiêu dùng (laptop, smartphone, thiết bị thông minh) tại Việt Nam.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Hoàn thiện</span>
+                    <span class="btn-link">Mở Dashboard <span>→</span></span>
+                </div>
+            </a>
 
-        <!-- Dashboard Lê Phúc Hải - TDT (D2C) -->
-        <a href="Dashboard_CSI_DMS.html" class="card hai" style="border-top: 4px solid #10b981;">
-            <div>
-                <span class="card-tag" style="color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2);">ĐH Tôn Đức Thắng • NCS. Lê Phúc Hải (D2C)</span>
-                <h2>Số hóa kênh D2C &amp; Giá trị cổ đông</h2>
-                <p>Đề cương luận án: Tác động của số hóa kênh D2C đến giá trị cổ đông và hiệu quả tài chính của các doanh nghiệp FMCG và Bán lẻ tại Việt Nam.</p>
-            </div>
-            <div class="card-footer">
-                <span>Cập nhật: Mới nhất</span>
-                <span class="btn">Mở Dashboard <span style="font-size:1.2em">→</span></span>
-            </div>
-        </a>
+            <!-- [6] Dashboard Lê Phúc Hải - TDT (Bản Khảo sát gốc) -->
+            <a href="Dashboard_HAILP_TDT.html" class="card hai" data-author="hai" data-school="tdt" data-type="doc" data-keywords="csi khao sat fmcg hai long trung thanh eWOM bai_final.doc">
+                <div>
+                    <span class="card-tag">ĐH Tôn Đức Thắng • NCS. Lê Phúc Hải (CSI Khảo Sát)</span>
+                    <h2>CSI &amp; Hiệu Quả Doanh Nghiệp FMCG</h2>
+                    <p>Đề cương dự tuyển NCS: Nghiên cứu tác động của Chỉ số Hài lòng Khách hàng (CSI) và eWOM đến hiệu quả doanh nghiệp FMCG. <strong>Đồng bộ 100% nội dung từ file Bai_final.doc</strong>.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Khớp Bai_final.doc</span>
+                    <span class="btn-link">Mở Đề Cương Khảo Sát <span>→</span></span>
+                </div>
+            </a>
 
-        <!-- Placeholder cho dự án tương lai -->
-        <div class="card add-new">
-            <div class="add-icon">+</div>
-            <h3 style="margin:0; color:var(--text-secondary); font-weight: 500; font-size:1.25rem;">Thêm NCS mới...</h3>
-            <p style="text-align:center; margin-top:0.75rem; font-size:0.9rem;">(Hệ thống tự động sẵn sàng mở rộng)</p>
+            <!-- [7] Dashboard Lê Phúc Hải - TDT (Bản Chuẩn Big Data) -->
+            <a href="Dashboard_TDT_TaiChinhMKT_Full.html" class="card hai" data-author="hai" data-school="tdt" data-type="doc" data-keywords="ewom hai long hieu qua tai chinh big data fmcg taichinhmkt">
+                <div>
+                    <span class="card-tag">ĐH Tôn Đức Thắng • NCS. Lê Phúc Hải (Big Data)</span>
+                    <h2>eWOM &amp; Hiệu Quả Tài Chính (Big Data)</h2>
+                    <p>Đề cương hoàn chỉnh: Tác động của eWOM và Sự hài lòng khách hàng đến Hiệu quả Tài chính Doanh nghiệp: Tiếp cận phương pháp Big Data và Panel Data trong ngành FMCG Việt Nam.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Hoàn thiện</span>
+                    <span class="btn-link">Mở Đề Cương Big Data <span>→</span></span>
+                </div>
+            </a>
+
+            <!-- [8] Dashboard Lê Phúc Hải - TDT (D2C) -->
+            <a href="Dashboard_CSI_DMS.html" class="card hai" data-author="hai" data-school="tdt" data-type="doc" data-keywords="d2c so hoa kenh gia tri co dong ban le retail">
+                <div>
+                    <span class="card-tag">ĐH Tôn Đức Thắng • NCS. Lê Phúc Hải (D2C)</span>
+                    <h2>Số hóa kênh D2C &amp; Giá trị cổ đông</h2>
+                    <p>Đề cương luận án phát triển: Tác động của số hóa kênh D2C (Direct-to-Consumer) đến giá trị cổ đông và hiệu quả tài chính của các doanh nghiệp FMCG và Bán lẻ tại Việt Nam.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Hoàn thiện</span>
+                    <span class="btn-link">Mở Dashboard <span>→</span></span>
+                </div>
+            </a>
+
+            <!-- [9] Báo cáo nghiên cứu: Ảnh Hưởng Của Họp Hành -->
+            <a href="Dashboard_AnhHuongCuaHop.html" class="card other-author" data-author="other" data-school="other" data-type="other" data-keywords="anh huong hop hanh le phuc hai nguyen duc tin doanh nghiep">
+                <div>
+                    <span class="card-tag">Nhóm NC • L.P. Hải &amp; N.Đ. Tín</span>
+                    <h2>Ảnh Hưởng Của Họp Hành</h2>
+                    <p>Nghiên cứu tác động vi mô: Ảnh hưởng của quá tải họp hành đối với hiệu quả cá nhân, năng lượng làm việc và chất lượng thực hiện nhiệm vụ trong môi trường doanh nghiệp.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Trạng thái: Bài báo xuất bản</span>
+                    <span class="btn-link">Mở Bài Báo <span>→</span></span>
+                </div>
+            </a>
+
+            <!-- Placeholder cho dự án tương lai -->
+            <div class="card add-new" onclick="alert('Hệ thống quản trị sẵn sàng cấu hình thêm đề tài mới bằng CLI: node manage.js create <slug> <title>')">
+                <div class="add-icon">+</div>
+                <h3 style="margin:0; color:var(--text-secondary); font-weight: 600; font-size:1.2rem;">Thêm NCS / Đề tài mới...</h3>
+                <p style="text-align:center; margin: 0.5rem 0 0 0; font-size:0.85rem; color: var(--text-secondary);">Quản lý tự động qua file cấu hình và CLI</p>
+            </div>
+        </div>
+
+        <!-- No Results Box -->
+        <div class="no-results" id="no-results-alert">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto 10px auto;"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+            <h3 style="margin:0; font-size:1.2rem; color: #fff;">Không tìm thấy đề tài phù hợp</h3>
+            <p style="margin: 5px 0 0 0; font-size: 0.9rem;">Vui lòng kiểm tra lại từ khóa tìm kiếm hoặc đổi bộ lọc.</p>
         </div>
     </div>
+
+    <script>
+        let currentFilter = 'all';
+
+        function setFilter(filterType, element) {
+            currentFilter = filterType;
+            
+            // Toggle active state in tabs
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
+            
+            filterCards();
+        }
+
+        function filterCards() {
+            const query = document.getElementById('search-box').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.grid .card:not(.add-new)');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const author = card.getAttribute('data-author');
+                const school = card.getAttribute('data-school');
+                const type = card.getAttribute('data-type');
+                const keywords = card.getAttribute('data-keywords') || '';
+                const title = card.querySelector('h2').innerText.toLowerCase();
+                const desc = card.querySelector('p').innerText.toLowerCase();
+                const tag = card.querySelector('.card-tag').innerText.toLowerCase();
+
+                // 1. Check Filter Tab
+                let matchesFilter = false;
+                if (currentFilter === 'all') {
+                    matchesFilter = true;
+                } else if (currentFilter === 'hai') {
+                    matchesFilter = (author === 'hai');
+                } else if (currentFilter === 'thinh') {
+                    matchesFilter = (author === 'thinh');
+                } else if (currentFilter === 'nhatrang') {
+                    matchesFilter = (school === 'nhatrang');
+                } else if (currentFilter === 'tdt') {
+                    matchesFilter = (school === 'tdt');
+                } else if (currentFilter === 'slides') {
+                    matchesFilter = (type === 'slide');
+                } else if (currentFilter === 'other') {
+                    matchesFilter = (author === 'other' || type === 'other');
+                }
+
+                // 2. Check Search Input Query
+                let matchesSearch = true;
+                if (query !== '') {
+                    matchesSearch = title.includes(query) || 
+                                    desc.includes(query) || 
+                                    tag.includes(query) || 
+                                    keywords.includes(query);
+                }
+
+                // Apply visibility
+                if (matchesFilter && matchesSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Handle Empty State Alert
+            const noResultsAlert = document.getElementById('no-results-alert');
+            if (visibleCount === 0) {
+                noResultsAlert.style.display = 'block';
+            } else {
+                noResultsAlert.style.display = 'none';
+            }
+
+            // Update visible project count badge
+            document.getElementById('count-total').innerHTML = `${visibleCount} <span>Đề tài hiển thị</span>`;
+        }
+
+        // Run filter initial layout on load
+        window.addEventListener('DOMContentLoaded', () => {
+            filterCards();
+        });
+    </script>
 </body>
 </html>
