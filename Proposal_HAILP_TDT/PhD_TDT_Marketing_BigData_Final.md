@@ -72,38 +72,38 @@ Dựa trên tổng quan y văn, luận án xác định 3 khoảng trống cốt
 ```mermaid
 graph TD
     subgraph Giai đoạn 1: Lượng hóa Big Data (AI/NLP)
-        eWOM[Dữ liệu eWOM phi cấu trúc<br/>100.000+ bình luận]
-        Topic[Topic Modeling<br/>BERTopic]
-        Sent[Sentiment Analysis<br/>PhoBERT]
+        eWOM["Dữ liệu eWOM phi cấu trúc (100.000+ bình luận)"]
+        Topic["Topic Modeling (BERTopic)"]
+        Sent["Sentiment Analysis (PhoBERT)"]
         
-        eWOM —> Topic
-        Topic —> |Phân cụm| Dim1(Chủ đề: Chất lượng)
-        Topic —> |Phân cụm| Dim2(Chủ đề: Giá trị/Giá cả)
-        Topic —> |Phân cụm| Dim3(Chủ đề: Dịch vụ)
+        eWOM --> Topic
+        Topic --> Dim1["Chủ đề: Chất lượng"]
+        Topic --> Dim2["Chủ đề: Giá trị/Giá cả"]
+        Topic --> Dim3["Chủ đề: Dịch vụ"]
         
-        Dim1 —> Sent
-        Dim2 —> Sent
-        Dim3 —> Sent
+        Dim1 --> Sent
+        Dim2 --> Sent
+        Dim3 --> Sent
         
-        Sent —> CSI_Proxy((Chỉ số Hài lòng<br/>CSI Proxy Đa chiều))
-        eWOM —> eWOM_Vol((Khối lượng<br/>eWOM Volume))
+        Sent --> CSI_Proxy(("Chỉ số Hài lòng (CSI Proxy Đa chiều)"))
+        eWOM --> eWOM_Vol(("Khối lượng (eWOM Volume)"))
     end
 
     subgraph Giai đoạn 2: Phân tích Kinh tế lượng (System-GMM)
-        CSI_Proxy -. H1 (+) .-> MS[Thị phần<br/>Market Share]
-        CSI_Proxy -. H2 (+) .-> FP[Lợi nhuận<br/>ROA/ROE]
+        CSI_Proxy -.->|H1 +| MS["Thị phần (Market Share)"]
+        CSI_Proxy -.->|H2 +| FP["Lợi nhuận (ROA/ROE)"]
         
-        eWOM_Vol -. H3 (+) .-> MS
+        eWOM_Vol -.->|H3 +| MS
         
-        MI[Cường độ Marketing<br/>SGA/Sales]
-        MI -. H4 (+) .-> |Điều tiết| Link1(Tương tác CSI x MI)
-        MI -. H5 (+) .-> |Điều tiết| Link2(Tương tác CSI x MI)
+        MI["Cường độ Marketing (SGA/Sales)"]
+        MI -.->|H4 + (Điều tiết)| Link1["Tương tác CSI x MI"]
+        MI -.->|H5 + (Điều tiết)| Link2["Tương tác CSI x MI"]
         
-        Link1 —> MS
-        Link2 —> FP
+        Link1 --> MS
+        Link2 --> FP
         
-        Controls[Biến kiểm soát:<br/>Firm Size, Leverage, Age] —> MS
-        Controls —> FP
+        Controls["Biến kiểm soát: Firm Size, Leverage, Age"] --> MS
+        Controls --> FP
     end
     
     style CSI_Proxy fill:#e1f5fe,stroke:#01579b,stroke-width:2px
